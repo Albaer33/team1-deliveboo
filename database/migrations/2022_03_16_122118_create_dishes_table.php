@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePiattiTable extends Migration
+class CreateDishesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreatePiattiTable extends Migration
      */
     public function up()
     {
-        Schema::create('piatti', function (Blueprint $table) {
-            //da sistemare le categorie dei dati
+        Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 15);
             $table->string('slug', 15)->unique();
@@ -22,13 +21,12 @@ class CreatePiattiTable extends Migration
             $table->decimal('prezzo', 5, 2);
             $table->text('immagine');
             $table->boolean('visibile');
-            $table->unsignedBigInteger('ristorante_id');
+            $table->unsignedBigInteger('restaurants_id');
             $table->timestamps();
 
-            $table->foreign('ristorante_id')
+            $table->foreign('restaurants_id')
                 ->references('id')
-                ->on('ristorante_info');
-            
+                ->on('restaurants');
         });
     }
 
@@ -39,6 +37,6 @@ class CreatePiattiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('piatti');
+        Schema::dropIfExists('dishes');
     }
 }
