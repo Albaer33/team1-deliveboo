@@ -44,7 +44,22 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $form_data = $request->all();
+
+        if(isset($form_data['visibile'])) {
+            
+            if($form_data['visibile'] === 'on'){
+    
+                $form_data['visibile'] = 1;
         
+            }
+
+        }
+        else{
+
+            $form_data['visibile'] = 0;
+
+        }
+
         $request->validate($this->getValidationRules());
         $new_dish = new Dish();
         $new_dish->fill($form_data);
@@ -101,6 +116,22 @@ class DishController extends Controller
     public function update(Request $request, $id)
     {
         $form_data = $request->all();
+
+        if(isset($form_data['visibile'])) {
+            
+            if($form_data['visibile'] === 'on'){
+    
+                $form_data['visibile'] = 1;
+        
+            }
+
+        }
+        else{
+
+            $form_data['visibile'] = 0;
+
+        }
+
         $request->validate($this->getValidationRules());
         $dish = Dish::findOrFail($id);
 

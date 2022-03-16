@@ -11,7 +11,17 @@
                             <h5 class="card-title">{{$dish->nome}}</h5>
                             <p class="card-text">{{$dish->descrizione}}</p>
                             <div class="price">€{{$dish->prezzo}}</div>
-                            <div class="visible">{{$dish->visibile}}</div>
+                            
+                            @if ($dish->visibile === 1)
+                            
+                                <div class="visible">Visibile</div>
+
+                            @else
+
+                                <div class="visible">Non visibile</div>
+                                
+                            @endif
+
                             <a href="{{route('admin.dishes.show',['dish'=>$dish->id])}}" class="btn btn-primary">Serve me</a>
                         </div>
                     </div>
