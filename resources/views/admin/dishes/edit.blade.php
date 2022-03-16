@@ -38,7 +38,7 @@
             </div> --}} 
             <div class="mb-3">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="visibile" name="visibile">
+                    <input {{ $dish->visibile === 1 ? 'checked' : '' }} class="form-check-input" type="checkbox" id="visibile" name="visibile">
                     <label class="form-check-label" for="visibile">Rendi il piatto visibile</label>
                 </div>
             </div>

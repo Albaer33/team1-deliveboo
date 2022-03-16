@@ -64,8 +64,6 @@ class DishController extends Controller
         $new_dish = new Dish();
         $new_dish->fill($form_data);
 
-        
-        
         $new_dish->slug = $this->getUniqueSlug($form_data['nome']);
         $new_dish->save();
 
