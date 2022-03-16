@@ -19,9 +19,10 @@ class CreateDishesTable extends Migration
             $table->string('slug', 40)->unique();
             $table->text('descrizione');
             $table->decimal('prezzo', 5, 2);
-            $table->text('immagine');
-            $table->boolean('visibile');
-            $table->unsignedBigInteger('restaurants_id');
+            // NULLABLE AD RIMUOVERE
+            $table->text('immagine')->nullable();
+            $table->boolean('visibile')->nullable();
+            $table->unsignedBigInteger('restaurants_id')->nullable();
             $table->timestamps();
 
             $table->foreign('restaurants_id')
