@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePiattiTagsTable extends Migration
+class CreateDishesTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreatePiattiTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('piatti_tags', function (Blueprint $table) {
-            
-            $table->unsignedBigInteger('piatti_id');
-            $table->foreign('piatti_id')->references('id')->on('piatti');
+        Schema::create('dishes_tags', function (Blueprint $table) {
+            $table->unsignedBigInteger('dishes_id');
+            $table->foreign('dishes_id')->references('id')->on('dishes');
 
             $table->unsignedBigInteger('tags_id');
             $table->foreign('tags_id')->references('id')->on('tags');
-            
         });
     }
 
@@ -31,6 +29,6 @@ class CreatePiattiTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('piatti_tags');
+        Schema::dropIfExists('dishes_tags');
     }
 }

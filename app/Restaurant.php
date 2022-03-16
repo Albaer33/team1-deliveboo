@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RistoranteInfo extends Model
+class Restaurant extends Model
 {
     public function user() {
 
@@ -12,10 +12,9 @@ class RistoranteInfo extends Model
 
     }
 
-    public function piatto() {
+    public function dish() {
 
-        return $this->hasMany('App\Piatto');
+        return $this->belongsToMany('App\Dish');
 
     }
-
 }
