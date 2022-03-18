@@ -22,6 +22,7 @@ class DishesTableSeeder extends Seeder
             $new_dish->prezzo = $faker-> randomFloat(2, 0, 999);
             $new_dish->immagine = $faker ->sentence();
             $new_dish->visibile = rand(0, 1);
+            $new_dish->ingredienti = $faker ->words(15, true);
             // $new_dish->restaurant_id = rand(1000, 3000);
             $new_dish->save();
         }

@@ -19,6 +19,7 @@ class CreateDishesTable extends Migration
             $table->string('slug', 40)->unique();
             $table->text('descrizione');
             $table->decimal('prezzo', 5, 2);
+            $table->text('ingredienti');
             // NULLABLE AD RIMUOVERE
             $table->text('immagine')->nullable();
             $table->boolean('visibile')->nullable();

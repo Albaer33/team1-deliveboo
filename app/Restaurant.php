@@ -12,9 +12,14 @@ class Restaurant extends Model
 
     }
 
-    public function dish() {
+    public function dishes() {
 
         return $this->belongsToMany('App\Dish');
+
+    }
+    public function tipologies() {
+
+        return $this->belongsToMany('App\Tipology');
 
     }
 }

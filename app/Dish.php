@@ -14,6 +14,7 @@ class Dish extends Model
         'prezzo',
         'immagine',
         'visibile',
+        'ingredienti',
         'restaurants_id',
         'categories_id'
     ];
@@ -24,15 +25,9 @@ class Dish extends Model
 
     }
 
-    public function order() {
+    public function orders() {
 
         return $this->belongsToMany('App\Order');
-
-    }
-
-    public function tag() {
-
-        return $this->belongsToMany('App\Tag');
 
     }
 
