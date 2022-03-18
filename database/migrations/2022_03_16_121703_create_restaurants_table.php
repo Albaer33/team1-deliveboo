@@ -17,10 +17,10 @@ class CreateRestaurantsTable extends Migration
             $table->id();
             $table->string('nome_attivita', 30);
             $table->string('P_IVA', 50);
-            $table->string('tipologia', 20);
             $table->string('telefono', 15);
             $table->string('indirizzo', 50);
             $table->unsignedBigInteger('user_id');
+            $table->text('immagine')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

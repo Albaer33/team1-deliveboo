@@ -15,11 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 15);
+            $table->string('nome', 25);
             $table->string('indirizzo', 50);
             $table->text('dettaglio');
-            $table->string('carta', 20);
+            $table->string('codice_transazione', 30);
             $table->decimal('totale', 5, 2);
+            $table->string('email', 30);
+            $table->string('telefono', 15);
+            $table->boolean('pagato')->nullable();
             $table->timestamps();
         });
     }

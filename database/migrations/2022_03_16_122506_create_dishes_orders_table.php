@@ -19,6 +19,9 @@ class CreateDishesOrdersTable extends Migration
 
             $table->unsignedBigInteger('orders_id');
             $table->foreign('orders_id')->references('id')->on('orders');
+            // aggiunte
+            $table->tinyInteger('quantita')->nullable();
+            $table->date('data_transazione')->nullable();
         });
     }
 
