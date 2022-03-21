@@ -159,7 +159,7 @@ class DishController extends Controller
         return[
             'nome'=>'required|max:30',
             'descrizione'=>'max:60000',
-            'prezzo'=>'required|numeric',
+            'prezzo'=>'required|numeric|min:0.01|max:999.99',
             'ingredienti'=>'max:60000',
             'immagine'=>'max:60000'
 
