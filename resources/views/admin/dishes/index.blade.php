@@ -6,12 +6,16 @@
             <div class="row row-cols-3">
                 @foreach ($dishes as $dish)
                     <div class="card">
+
                         @if ($dish->immagine)
-                            <img src="{{$dish->immagine}}" class="card-img-top" alt="...">
+                            <div>
+                                <img src="{{ asset('storage/' . $dish->immagine) }}" alt="{{ $dish->nome }}">
+                            </div>
                         @endif
+                        
                         <div class="card-body">
                             <h5 class="card-title">{{$dish->nome}}</h5>
-                            {{-- <p class="card-text">{{$dish->descrizione}}</p> --}}
+                            
                             <div class="price">€{{$dish->prezzo}}</div>
                             
                             @if ($dish->visibile === 1)
