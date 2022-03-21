@@ -98,12 +98,14 @@ class DishController extends Controller
     public function show($id)
     {
         $dish = Dish::findOrFail($id);
+        $categories = Category::all();
         
         $data = [
-            'dish'=>$dish
+            'dish'=> $dish,
+            'categories' => $categories
         ];
 
-        return view('admin.dishes.show',$data);
+        return view('admin.dishes.show', $data);
     }
 
     /**
@@ -158,7 +160,7 @@ class DishController extends Controller
             $form_data['slug'] = $this->getUniqueSlug($form_data['nome']);
         }
         
-        if($form_data['immagine']) {
+        if(isset($form_data['immagine'])) {
             // Cancello il file vecchio
             if($dish->immagine) {
                 Storage::delete($dish->immagine);
@@ -195,7 +197,8 @@ class DishController extends Controller
             'descrizione'=>'max:60000',
             'prezzo'=>'required|numeric|min:0.01|max:999.99',
             'ingredienti'=>'max:60000',
-            'immagine'=>'image|max:3500'
+            'immagine'=>'image|max:3500',
+            'categories_id' => 'exists:categories,id|nullable',
         ];
     }
 

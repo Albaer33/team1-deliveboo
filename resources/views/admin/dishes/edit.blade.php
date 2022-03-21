@@ -29,8 +29,11 @@
                 <select class="form-select" id="categories_id" name="categories_id">
                     <option value="">Nessuna</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('categories_id') == $category->id ? 'selected' : '' }}>{{ $category->nome }}</option>
+
+                        <option value="{{ $category->id }}" {{ old('categories_id', $dish->categories_id) == $category->id ? 'selected' : '' }}>{{ $category->nome }}</option>
+
                     @endforeach
+
                 </select>
             </div>
 
@@ -41,12 +44,12 @@
 
             <div class="mb3">
                 <label for="ingredienti" class="form-label">Ingredienti</label>   
-                <textarea class="form-control" name="ingredienti" id="ingredienti" cols="30" rows="10">{{old('ingredienti',$dish->ingredienti)}}</textarea>
+                <textarea class="form-control" name="ingredienti" id="ingredienti" cols="30" rows="10">{{old('ingredienti', $dish->ingredienti)}}</textarea>
             </div>
 
             <div class="mb3">
                 <label for="descrizione" class="form-label">Descrizione</label>   
-                <textarea class="form-control" name="descrizione" id="descrizione" cols="30" rows="10">{{old('descrizione',$dish->descrizione)}}</textarea>
+                <textarea class="form-control" name="descrizione" id="descrizione" cols="30" rows="10">{{old('descrizione', $dish->descrizione)}}</textarea>
             </div>
 
             <div class="mb-3">
