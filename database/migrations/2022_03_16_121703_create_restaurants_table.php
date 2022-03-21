@@ -19,7 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('P_IVA', 50);
             $table->string('telefono', 15);
             $table->string('indirizzo', 50);
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->text('immagine')->nullable();
             $table->timestamps();
 
