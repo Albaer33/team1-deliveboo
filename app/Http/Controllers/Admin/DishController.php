@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Dish;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use App\Dish;
+use App\Category;
 
 class DishController extends Controller
 {
@@ -16,6 +18,7 @@ class DishController extends Controller
      */
     public function index()
     {
+        // la query andrà modificata per far visionare solo i piatti del ristorante loggato
         $dishes = Dish::all();
 
         $data = [
@@ -32,7 +35,13 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('admin.dishes.create');
+        $categories = Category::all();
+
+        $data = [
+            'categories' => $categories,
+        ];
+
+        return view('admin.dishes.create', $data);
     }
 
     /**
@@ -45,6 +54,7 @@ class DishController extends Controller
     {
         $form_data = $request->all();
 
+        // fare una func per visible
         if(isset($form_data['visibile'])) {
             
             if($form_data['visibile'] === 'on'){
@@ -65,6 +75,15 @@ class DishController extends Controller
         $new_dish->fill($form_data);
 
         $new_dish->slug = $this->getUniqueSlug($form_data['nome']);
+
+        if(isset($form_data['immagine'])) {
+            // 1- Mettere l'immagine caricata nella cartella di Storage
+            $img_path = Storage::put('dish_images', $form_data['immagine']);
+
+            // 2- Salvare il path al file nella colonna immagine del piatto
+            $new_dish->immagine = $img_path;
+        }
+
         $new_dish->save();
 
         return redirect()->route('admin.dishes.show',['dish' => $new_dish->id]);
@@ -79,7 +98,7 @@ class DishController extends Controller
     public function show($id)
     {
         $dish = Dish::findOrFail($id);
-
+        
         $data = [
             'dish'=>$dish
         ];
@@ -96,9 +115,11 @@ class DishController extends Controller
     public function edit($id)
     {
         $dish = Dish::findOrFail($id);
+        $categories = Category::all();
 
         $data = [
-            'dish'=> $dish
+            'dish'=> $dish,
+            'categories' => $categories
         ];
 
         return view('admin.dishes.edit', $data);
@@ -136,6 +157,19 @@ class DishController extends Controller
         if($form_data['nome'] != $dish->nome){
             $form_data['slug'] = $this->getUniqueSlug($form_data['nome']);
         }
+        
+        if($form_data['immagine']) {
+            // Cancello il file vecchio
+            if($dish->immagine) {
+                Storage::delete($dish->immagine);
+            }
+
+            // Faccio l'upload il nuovo file
+            $img_path = Storage::put('dish_images', $form_data['immagine']);
+
+            // Salvo nella colonna cover il path al nuovo file
+            $form_data['immagine'] = $img_path;
+        }
 
         $dish->update($form_data);
 
@@ -161,26 +195,13 @@ class DishController extends Controller
             'descrizione'=>'max:60000',
             'prezzo'=>'required|numeric|min:0.01|max:999.99',
             'ingredienti'=>'max:60000',
-            'immagine'=>'max:60000'
-
-/*
-
-            $table->string('nome', 30);
-            $table->string('slug', 40)->unique();
-            $table->text('descrizione')->nullable();
-            $table->decimal('prezzo', 5, 2);
-            $table->text('ingredienti')->nullable();
-            // NULLABLE AD RIMUOVERE
-            $table->text('immagine')->nullable();
-            $table->boolean('visibile')->nullable();
-
-*/
+            'immagine'=>'image|max:3500'
         ];
     }
 
     protected function getUniqueSlug($nome){
         //controllo se esiste un post con lo stesso slug
-        //se si aggiungo un numero incremenale fino a non avere duplicati
+        //se si aggiungo un numero incrementale fino a non avere duplicati
         $slug = Str::slug($nome);
         $slug_base = $slug;
         $dish_found = Dish::where('slug','=',$slug)->first();

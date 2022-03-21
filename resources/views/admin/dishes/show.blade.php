@@ -6,6 +6,8 @@
             <h1>{{$dish->nome}}</h1>
 
             <div class="mb-2"><strong>Slug:</strong> {{$dish->slug}}</div>
+            
+            <div class="mb-2"><strong>Categoria:</strong> {{ $dish->categories_id ? $dish->categories->nome : 'nessuna' }}</div>
 
             <p>{{$dish->descrizione}}</p>
 
@@ -14,7 +16,9 @@
             <div>{{$dish->ingredienti}}</div>
 
             @if ($dish->immagine)
-                <div><img src="{{$dish->immagine}}" alt="{{$dish->nome}}"></div>
+                <div>
+                    <img src="{{ asset('storage/' . $dish->immagine) }}" alt="{{ $dish->nome }}">
+                </div>
             @endif
             
             @if ($dish->visibile === 1)

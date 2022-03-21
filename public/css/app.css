@@ -21257,3 +21257,11 @@ fieldset:disabled .btn {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
+.current-image img {
+  width: 200px;
+}
+
