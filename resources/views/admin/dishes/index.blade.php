@@ -6,7 +6,9 @@
             <div class="row row-cols-3">
                 @foreach ($dishes as $dish)
                     <div class="card">
-                        <img src="{{$dish->immagine}}" class="card-img-top" alt="...">
+                        @if ($dish->immagine)
+                            <img src="{{$dish->immagine}}" class="card-img-top" alt="...">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{$dish->nome}}</h5>
                             {{-- <p class="card-text">{{$dish->descrizione}}</p> --}}

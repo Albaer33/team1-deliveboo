@@ -13,8 +13,10 @@
 
             <div>{{$dish->ingredienti}}</div>
 
-            <div><img src="{{$dish->immagine}}" alt="{{$dish->nome}}"></div>
-
+            @if ($dish->immagine)
+                <div><img src="{{$dish->immagine}}" alt="{{$dish->nome}}"></div>
+            @endif
+            
             @if ($dish->visibile === 1)
                             
                 <div class="visible">Visibile</div>
