@@ -9,7 +9,7 @@
                         <img src="{{$dish->immagine}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$dish->nome}}</h5>
-                            <p class="card-text">{{$dish->descrizione}}</p>
+                            {{-- <p class="card-text">{{$dish->descrizione}}</p> --}}
                             <div class="price">€{{$dish->prezzo}}</div>
                             
                             @if ($dish->visibile === 1)
@@ -22,7 +22,8 @@
                                 
                             @endif
 
-                            <a href="{{route('admin.dishes.show',['dish'=>$dish->id])}}" class="btn btn-primary">Serve me</a>
+                            <a href="{{route('admin.dishes.show',['dish'=>$dish->id])}}" class="btn btn-primary">Dettagli</a>
+                            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}"><button class="btn btn-primary">Modifica piatto</button></a>
                         </div>
                     </div>
                 @endforeach

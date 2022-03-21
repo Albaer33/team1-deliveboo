@@ -28,6 +28,10 @@
                 <input type="text" class="form-control" id="prezzo" name="prezzo" value="{{old('prezzo',$dish->prezzo)}}" placeholder="Prezzo in euro">
             </div>
             <div class="mb3">
+                <label for="ingredienti" class="form-label">Ingredienti</label>   
+                <textarea class="form-control" name="ingredienti" id="ingredienti" cols="30" rows="10">{{old('ingredienti',$dish->ingredienti)}}</textarea>
+            </div>
+            <div class="mb3">
                 <label for="descrizione" class="form-label">Descrizione</label>   
                 <textarea class="form-control" name="descrizione" id="descrizione" cols="30" rows="10">{{old('descrizione',$dish->descrizione)}}</textarea>
             </div>

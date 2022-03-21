@@ -157,8 +157,24 @@ class DishController extends Controller
 
     protected function getValidationRules(){
         return[
-            'nome'=>'required|max:255',
-            'descrizione'=>'required|max:60000'
+            'nome'=>'required|max:30',
+            'descrizione'=>'max:60000',
+            'prezzo'=>'required|numeric',
+            'ingredienti'=>'max:60000',
+            'immagine'=>'max:60000'
+
+/*
+
+            $table->string('nome', 30);
+            $table->string('slug', 40)->unique();
+            $table->text('descrizione')->nullable();
+            $table->decimal('prezzo', 5, 2);
+            $table->text('ingredienti')->nullable();
+            // NULLABLE AD RIMUOVERE
+            $table->text('immagine')->nullable();
+            $table->boolean('visibile')->nullable();
+
+*/
         ];
     }
 

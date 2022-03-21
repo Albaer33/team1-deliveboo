@@ -9,6 +9,12 @@
 
             <p>{{$dish->descrizione}}</p>
 
+            <div>{{$dish->prezzo}}</div>
+
+            <div>{{$dish->ingredienti}}</div>
+
+            <div><img src="{{$dish->immagine}}" alt="{{$dish->nome}}"></div>
+
             @if ($dish->visibile === 1)
                             
                 <div class="visible">Visibile</div>
@@ -19,7 +25,7 @@
                 
             @endif
             
-            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}">Modifica piatto</a>
+            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}"><button class="btn btn-primary">Modifica piatto</button></a>
         
             <form action="{{route('admin.dishes.destroy',['dish'=>$dish->id])}}" method="post">
                 @csrf
