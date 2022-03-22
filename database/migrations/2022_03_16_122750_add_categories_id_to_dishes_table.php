@@ -14,7 +14,6 @@ class AddCategoriesIdToDishesTable extends Migration
     public function up()
     {
         Schema::table('dishes', function (Blueprint $table) {
-            // NULLABLE DA RIMUOVERE
             $table->unsignedBigInteger('categories_id')->after('restaurants_id')->nullable();
 
             $table->foreign('categories_id')

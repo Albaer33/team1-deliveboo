@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function dish() {
+    public function dishes() {
 
-        return $this->belongsToMany('App\Dish');
+        return $this->hasMany('App\Dish');
 
     }
 }

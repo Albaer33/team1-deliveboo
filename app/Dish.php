@@ -21,7 +21,7 @@ class Dish extends Model
 
     public function restaurant() {
 
-        return $this->hasOne('App\Restaurant');
+        return $this->belongsTo('App\Restaurant');
 
     }
 
