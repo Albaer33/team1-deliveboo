@@ -22,6 +22,8 @@ class CreateDishesOrdersTable extends Migration
             // aggiunte
             $table->tinyInteger('quantita')->nullable();
             $table->date('data_transazione')->nullable();
+
+            $table->primary(['dishes_id', 'orders_id']);
         });
     }
 
