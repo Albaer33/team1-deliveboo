@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Restaurant;
+use App\Dish;
 
 class RestaurantController extends Controller
 {
@@ -19,10 +20,14 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
+
+        $user = Auth::user();
+
+        $restaurants = Restaurant::all()->where('user_id', '=', $user->id);
 
         $data = [
-            'restaurants' => $restaurants
+            'restaurants' => $restaurants,
+            'user' => $user
         ];
 
         return view('admin.restaurants.index', $data);
@@ -35,11 +40,15 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        $current_user = Auth::user();
-        
+        $user = Auth::user();
+        $restaurant_id = Restaurant::all()->where('user_id', '=', $user->id);
+
+        /* dd($restaurant_id); */
+
         $data = [
-            'current_user' => $current_user,
-            'restaurant' => $current_user->restaurant
+            'user' => $user,
+            'restaurant' => $user->restaurant,
+            'restaurant_id' => $restaurant_id
         ];
 
         return view('admin.restaurants.create', $data);
@@ -58,12 +67,29 @@ class RestaurantController extends Controller
         $request->validate($this->getValidationRules());
 
         $user = Auth::user();
-
         $restaurant = new Restaurant();
+
         $restaurant->fill($form_data);
         $restaurant->user_id = $user->id;
-
         $restaurant->save();
+
+        if (!isset($user->createdRestaurants)) {
+            $user->createdRestaurants = $restaurant->id;
+
+            $user->save();
+        }
+        else{
+
+            $restaurants = Restaurant::all()->where('user_id', '=', $user->id);
+
+            $data = [
+                'restaurants' => $restaurants
+            ];
+
+            return view('admin.restaurants.index', $data);
+
+        }
+
 
         return redirect()->route('admin.restaurants.show',['restaurant' => $restaurant->id]);
     }
@@ -78,9 +104,12 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::findOrFail($id);
 
+        $user = Auth::user();
+
         $data = [
 
             'restaurants' => $restaurant,
+            'user' => $user
             
         ];
 
@@ -153,7 +182,23 @@ class RestaurantController extends Controller
     public function destroy($id)
     {
         $restaurants = Restaurant::findOrFail($id);
+
+        $dishes = Dish::all()->where('restaurants_id', '=', $restaurants->id);
+
+        $user = Auth::user();
+
+        foreach($dishes as $dish){
+
+            $dish->delete();
+
+        }
+
+        $user->createdRestaurants = null;
+
+        $user->save();
+
         $restaurants->delete();
+
         return redirect()->route('admin.restaurants.index');
     }
 

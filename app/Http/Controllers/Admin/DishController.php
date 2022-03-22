@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Dish;
 use App\Category;
+use App\Restaurant;
 
 class DishController extends Controller
 {
@@ -18,11 +20,15 @@ class DishController extends Controller
      */
     public function index()
     {
-        // la query andrà modificata per far visionare solo i piatti del ristorante loggato
-        $dishes = Dish::all();
+        $user = Auth::user();
+
+        $restaurants = Restaurant::all()->where('user_id', '=', $user->id);
+
+        $dishes = Dish::all()->where('restaurants_id', '=', $user->createdRestaurants);
 
         $data = [
-            'dishes' => $dishes
+            'dishes' => $dishes,
+            'user' => $user
         ];
 
         return view('admin.dishes.index', $data);
@@ -37,8 +43,11 @@ class DishController extends Controller
     {
         $categories = Category::all();
 
+        $user = Auth::user();
+
         $data = [
             'categories' => $categories,
+            'user' => $user
         ];
 
         return view('admin.dishes.create', $data);
@@ -53,6 +62,8 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $form_data = $request->all();
+
+        $request->validate($this->getValidationRules());
 
         // fare una func per visible
         if(isset($form_data['visibile'])) {
@@ -70,7 +81,6 @@ class DishController extends Controller
 
         }
 
-        $request->validate($this->getValidationRules());
         $new_dish = new Dish();
         $new_dish->fill($form_data);
 
@@ -83,6 +93,10 @@ class DishController extends Controller
             // 2- Salvare il path al file nella colonna immagine del piatto
             $new_dish->immagine = $img_path;
         }
+
+        $user = Auth::user();
+        
+        $new_dish->restaurants_id = $user->createdRestaurants;
 
         $new_dish->save();
 
@@ -99,10 +113,13 @@ class DishController extends Controller
     {
         $dish = Dish::findOrFail($id);
         $categories = Category::all();
+        $user = Auth::user();
         
         $data = [
             'dish'=> $dish,
-            'categories' => $categories
+            'categories' => $categories,
+            'user' => $user
+
         ];
 
         return view('admin.dishes.show', $data);
