@@ -19,7 +19,11 @@ class CreateRestaurantsTipologiesTable extends Migration
 
             $table->unsignedBigInteger('tipologies_id');
             $table->foreign('tipologies_id')->references('id')->on('tipologies');
+
+            $table->primary(['restaurants_id', 'tipologies_id']);
+
         });
+
     }
 
     /**

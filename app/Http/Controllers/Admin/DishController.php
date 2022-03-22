@@ -25,7 +25,7 @@ class DishController extends Controller
             'dishes' => $dishes
         ];
 
-        return view('admin.dishes.index',$data);
+        return view('admin.dishes.index', $data);
     }
 
     /**
