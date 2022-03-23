@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Restaurant;
 use App\Dish;
+use App\Tipology;
 
 class RestaurantController extends Controller
 {
@@ -42,13 +43,13 @@ class RestaurantController extends Controller
     {
         $user = Auth::user();
         $restaurant_id = Restaurant::all()->where('user_id', '=', $user->id);
-
-        /* dd($restaurant_id); */
+        $tipologies = Tipology::all();
 
         $data = [
             'user' => $user,
             'restaurant' => $user->restaurant,
-            'restaurant_id' => $restaurant_id
+            'restaurant_id' => $restaurant_id,
+            'tipologies' => $tipologies
         ];
 
         return view('admin.restaurants.create', $data);
@@ -90,6 +91,9 @@ class RestaurantController extends Controller
 
         }
 
+        if(isset($form_data['tipologies'])) {
+            $restaurant->tipologies()->sync($form_data['tipologies']);
+        }
 
         return redirect()->route('admin.restaurants.show',['restaurant' => $restaurant->id]);
     }
@@ -125,10 +129,12 @@ class RestaurantController extends Controller
     public function edit($id)
     {
         $restaurants = Restaurant::findOrFail($id);
+        $tipologies = Tipology::all();
         
         $data = [
 
             'restaurants' => $restaurants,
+            'tipologies' => $tipologies
         ];
 
         return view('admin.restaurants.edit', $data);
@@ -164,11 +170,12 @@ class RestaurantController extends Controller
 
         $restaurants->update($form_data);
 
-/*         $user_info = $user->userInfo ? $user->userInfo : new UserInfo();
-        $user_info->phone = $form_data['user-telephone'];
-        $user_info->address = $form_data['user-address'];
-        $user_info->user_id = $user->id;
-        $user_info->save(); */
+        if(isset($form_data['tipologies'])) {
+            $restaurants->tipologies()->sync($form_data['tipologies']);
+        } else {
+
+            $restaurants->tipologies()->sync([]);
+        }
 
         return redirect()->route('admin.restaurants.show',['restaurant' => $restaurants->id]);
     }
@@ -210,6 +217,7 @@ class RestaurantController extends Controller
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500',
             'user_id' => 'exists:user,id|nullable',
+            'tipologies' => 'exists:tipologies,id|nullable'
         ];
     }
 
