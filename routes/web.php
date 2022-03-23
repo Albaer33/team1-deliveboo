@@ -26,13 +26,7 @@ Route::middleware('auth')
         
         Route::resource('restaurants', 'RestaurantController');
 
-/*         Route::get('/restaurants', 'RestaurantController@index')->name('restaurants.index');
-        Route::get('/restaurants/create', 'RestaurantController@create')->name('restaurants.create');
-        Route::put('/restaurants/store', 'RestaurantController@store')->name('restaurants.store');
-        Route::get('/restaurants/{restaurant}', 'RestaurantController@show')->name('restaurants.show');
-        Route::get('/restaurants/{restaurant}/edit', 'RestaurantController@edit')->name('restaurants.edit');
-        Route::put('/restaurants/update/{restaurant}', 'RestaurantController@update')->name('restaurants.update');
-        Route::delete('/restaurants/{restaurant}', 'RestaurantController@destroy')->name('restaurants.destroy'); */
+        Route::get('/orders', 'OrderController@index')->name('orders.index');
 
     });
 
