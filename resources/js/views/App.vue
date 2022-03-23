@@ -1,9 +1,13 @@
 <template>
+<section>
+
   <div class="page_content">
     <Header />
     <Main />
+   
     <Footer />
   </div>
+</section>
 </template>
 
 <script>

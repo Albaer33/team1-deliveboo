@@ -8,6 +8,7 @@
         <TagsSection />
         <NewsSection />
         <WorkSection />
+        <router-view></router-view>
     </main>
 </template>
 
