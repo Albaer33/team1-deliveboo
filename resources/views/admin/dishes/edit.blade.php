@@ -33,7 +33,6 @@
                         <option value="{{ $category->id }}" {{ old('categories_id', $dish->categories_id) == $category->id ? 'selected' : '' }}>{{ $category->nome }}</option>
 
                     @endforeach
-
                 </select>
             </div>
 

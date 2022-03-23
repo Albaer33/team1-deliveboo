@@ -188,9 +188,9 @@ class RestaurantController extends Controller
      */
     public function destroy($id)
     {
-        $restaurants = Restaurant::findOrFail($id);
+        $restaurant = Restaurant::findOrFail($id);
 
-        $dishes = Dish::all()->where('restaurants_id', '=', $restaurants->id);
+        $dishes = Dish::all()->where('restaurants_id', '=', $restaurant->id);
 
         $user = Auth::user();
 
@@ -202,9 +202,12 @@ class RestaurantController extends Controller
 
         $user->createdRestaurants = null;
 
+        // cancella la tabella ponte di restaurant_tipology
+        $restaurant->tipologies()->sync([]);
+
         $user->save();
 
-        $restaurants->delete();
+        $restaurant->delete();
 
         return redirect()->route('admin.restaurants.index');
     }
@@ -217,7 +220,7 @@ class RestaurantController extends Controller
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500',
             'user_id' => 'exists:user,id|nullable',
-            'tipologies' => 'exists:tipologies,id|nullable'
+            'tipologies' => 'exists:tipologies,id|required'
         ];
     }
 

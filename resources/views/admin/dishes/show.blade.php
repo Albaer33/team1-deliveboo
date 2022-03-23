@@ -9,11 +9,11 @@
 
             <div class="mb-2"><strong>Categoria:</strong> {{ $dish->categories_id ? $categories[$dish->categories_id - 1]['nome'] : 'Nessuna' }}</div>
 
-            <p>{{$dish->descrizione}}</p>
+            <p>Descrizione: {{$dish->descrizione}}</p>
 
-            <div>{{$dish->prezzo}}</div>
+            <div>€{{$dish->prezzo}}</div>
 
-            <div>{{$dish->ingredienti}}</div>
+            <div>Ingredienti: {{$dish->ingredienti}}</div>
 
             @if ($dish->immagine)
                 <div>

@@ -73,6 +73,10 @@
                     </div>
                 @endforeach
             </div>
+            
+            @error('tipologies')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             @if ($restaurants->immagine)
                 <div class="current-image">
