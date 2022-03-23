@@ -15,32 +15,35 @@ class RestaurantController extends Controller
      */
     public function index()
     {
+        // prendo i ristoranti dal model   
         $restaurants = Restaurant::all();
-        
+    
+    // rimando i dati a json per vue, controllo tramite postman
+    // return response()->json($restaurants);
         return response()->json([
             'success' => true,
             'results' => $restaurants
         ]);
     }
 
-    public function show($id)
-    {
-        $restaurants = Restaurant::findOrFail($id);
+    // public function show($id)
+    // {
+    //     $restaurants = Restaurant::findOrFail($id);
     
     
-        if($restaurants) {
-                return response()->json([
-            'success' => true,
-            'results' => $restaurants
-        ]);
-        }else {
+    //     if($restaurants) {
+    //             return response()->json([
+    //         'success' => true,
+    //         'results' => $restaurants
+    //     ]);
+    //     }else {
             
-            return response()->json([
-                'success' => false,
-                'results' => []
+    //         return response()->json([
+    //             'success' => false,
+    //             'results' => []
                 
-            ]);
-        }
+    //         ]);
+    //     }
 
-    }
+    // }
 }

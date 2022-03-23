@@ -2307,6 +2307,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2326,6 +2340,26 @@ __webpack_require__.r(__webpack_exports__);
     TagsSection: _TagsSection_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     NewsSection: _NewsSection_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     WorkSection: _WorkSection_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+  },
+  data: function data() {
+    return {
+      restaurants: []
+    };
+  },
+  methods: {
+    getRestaurants: function getRestaurants() {
+      var _this = this;
+
+      //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+      // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+      axios.get('http://127.0.0.1:8000/api/restaurants').then(function (response) {
+        // console.log(response);
+        _this.restaurants = response.data.results;
+      });
+    }
+  },
+  created: function created() {
+    this.getRestaurants();
   }
 });
 
@@ -4023,6 +4057,34 @@ var render = function () {
       _c("NewsSection"),
       _vm._v(" "),
       _c("WorkSection"),
+      _vm._v(" "),
+      _c(
+        "section",
+        _vm._l(_vm.restaurants, function (restaurant, index) {
+          return _c("div", { key: index, staticClass: "container" }, [
+            _c("h1", [
+              _vm._v(
+                "\n            " +
+                  _vm._s(restaurant.nome_attivita) +
+                  "\n        "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("h1", [
+              _vm._v(
+                "\n            " + _vm._s(restaurant.indirizzo) + "\n        "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("h1", [
+              _vm._v(
+                "\n            " + _vm._s(restaurant.telefono) + "\n        "
+              ),
+            ]),
+          ])
+        }),
+        0
+      ),
       _vm._v(" "),
       _c("router-view"),
     ],
