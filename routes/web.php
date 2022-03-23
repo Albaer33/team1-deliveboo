@@ -27,6 +27,8 @@ Route::middleware('auth')
         Route::resource('restaurants', 'RestaurantController');
 
         Route::get('/orders', 'OrderController@index')->name('orders.index');
+        Route::put('/orders', 'OrderController@store')->name('orders.store');
+        Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');
 
     });
 

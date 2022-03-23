@@ -59,13 +59,3 @@ class DishesTableSeeder extends Seeder
         }
     }
 }
-
-
-//             $table->id();
-//             $table->string('nome', 15);
-//             $table->string('slug', 15)->unique();
-//             $table->text('descrizione');
-//             $table->decimal('prezzo', 5, 2);
-//             $table->text('immagine');
-//             $table->boolean('visibile');
-//             $table->unsignedBigInteger('restaurants_id');

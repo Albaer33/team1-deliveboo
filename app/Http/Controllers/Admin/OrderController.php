@@ -17,9 +17,9 @@ class OrderController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $orders = Order::all()->where('user_id', '=', $user->id);
+        $orders = Order::all()/* ->where('user_id', '=', $user->id) */;
 
-        return view('admin.orders.index', compact('orders'));
+        return view('admin.orders.index', compact('user', 'orders'));
     }
 
     /**
@@ -40,7 +40,18 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $request->validate($this->getValidationRules());
+
+        $user = Auth::user();
+
+        $orders = new Order();
+
+        $orders->fill($form_data);
+        $orders->save();
+
+        return redirect()->route('admin.orders.show',['order' => $orders->id]);
     }
 
     /**
@@ -51,7 +62,18 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $user = Auth::user();
+
+        $data = [
+
+            'order' => $order,
+            'user' => $user
+            
+        ];
+
+        return view('admin.orders.show', $data);
+
     }
 
     /**

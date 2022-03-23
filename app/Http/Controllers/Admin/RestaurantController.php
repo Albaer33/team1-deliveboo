@@ -215,7 +215,7 @@ class RestaurantController extends Controller
     protected function getValidationRules(){
         return[
             'nome_attivita'=>'required|max:30',
-            'P_IVA'=>'required|max:50',
+            'P_IVA'=>'required|max:50|unique:restaurants',
             'telefono'=>'required|max:15',
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500',

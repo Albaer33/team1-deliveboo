@@ -16,7 +16,7 @@
             </div>
 
             @error('nome_attivita')
-                <div class="alert alert-danger">E' richiesto il nome del ristorante</div>
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
             <div class="mb-3">
@@ -117,7 +117,7 @@
             <input type="file" id="immagine" name="immagine" disabled="disabled">
         </div>
 
-        <button type="submit" class="btn btn-primary" disabled="disabled">Registra ristorante</button>
+        <button type="submit" class="btn btn-primary" disabled="disabled" >Registra ristorante</button>
 
     </form>
 </section>      
