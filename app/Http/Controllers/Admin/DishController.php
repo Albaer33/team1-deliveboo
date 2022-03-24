@@ -135,10 +135,12 @@ class DishController extends Controller
     {
         $dish = Dish::findOrFail($id);
         $categories = Category::all();
+        $user = Auth::user();
 
         $data = [
             'dish'=> $dish,
-            'categories' => $categories
+            'categories' => $categories,
+            'user' => $user
         ];
 
         return view('admin.dishes.edit', $data);

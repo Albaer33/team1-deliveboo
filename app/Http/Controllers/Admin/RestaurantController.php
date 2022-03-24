@@ -130,11 +130,13 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::findOrFail($id);
         $tipologies = Tipology::all();
+        $user = Auth::user();
         
         $data = [
 
             'restaurants' => $restaurants,
-            'tipologies' => $tipologies
+            'tipologies' => $tipologies,
+            'user' => $user
         ];
 
         return view('admin.restaurants.edit', $data);
@@ -151,7 +153,7 @@ class RestaurantController extends Controller
     {
         $form_data = $request->all();
 
-        $request->validate($this->getValidationRules());
+        $request->validate($this->getValidationRulesEdit());
         
         $restaurants = Restaurant::findOrFail($id);
 
@@ -216,6 +218,18 @@ class RestaurantController extends Controller
         return[
             'nome_attivita'=>'required|max:30',
             'P_IVA'=>'required|max:50|unique:restaurants',
+            'telefono'=>'required|max:15',
+            'indirizzo'=>'required|max:50',
+            'immagine'=>'image|max:3500',
+            'user_id' => 'exists:user,id|nullable',
+            'tipologies' => 'exists:tipologies,id|required'
+        ];
+    }
+
+    protected function getValidationRulesEdit(){
+        return[
+            'nome_attivita'=>'required|max:30',
+            'P_IVA'=>'required|max:50',
             'telefono'=>'required|max:15',
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500',
