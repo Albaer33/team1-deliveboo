@@ -58,7 +58,31 @@ body {
         -moz-appearance: none;
         appearance: none;
     }
+
     .btn-ms:hover {
         color: $primary_color;
     }
+
+}
+
+.navbar_ms{
+
+    a{
+
+        color: white;
+
+        &:hover{
+
+            color: $primary_color;
+
+        }
+
+    }
+
+}
+
+.title-c{
+
+    text-align: center;
+
 }

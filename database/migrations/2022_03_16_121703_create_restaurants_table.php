@@ -16,11 +16,11 @@ class CreateRestaurantsTable extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('nome_attivita', 30);
-            $table->string('P_IVA', 50);
-            $table->string('telefono', 15);
+            $table->string('P_IVA', 11);
+            $table->string('telefono', 16);
             $table->string('indirizzo', 50);
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->text('immagine')->nullable();
+            $table->text('immagine');
             $table->timestamps();
 
             $table->foreign('user_id')

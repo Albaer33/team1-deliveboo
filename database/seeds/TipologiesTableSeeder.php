@@ -15,17 +15,20 @@ class TipologiesTableSeeder extends Seeder
     {
         $tipologies = [
 
-            'Carne',
-            'Pesce',
-            'Sushi',
+            'Americano',
+            'Colazione',
+            'Italiano',
+            'Giapponese',
             'Vegetariano',
-            'Vegano',
+            'Sushi',
             'Pizzeria',
             'Cinese',
-            'Americano',
             'Indiano',
-            'Fast food',
-            'Pasticceria'
+            'Messicano',
+            'Dolci',
+            'Greco',
+            'Halal',
+            'Thai'
 
         ];
 

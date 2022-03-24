@@ -74,6 +74,8 @@
             <button type="submit" class="btn btn_ms_primary_color">Registra ristorante</button>
 
         </form>
+
+        <a href="{{ route('admin.home') }}"><button class="btn btn_ms_primary_color">Annulla</button></a>
     </section>
 
 @else

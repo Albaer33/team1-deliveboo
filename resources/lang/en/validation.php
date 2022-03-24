@@ -129,10 +129,70 @@ return [
     |
     */
 
-    'custom' => [
+/*     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+    ], */
+
+    'custom' => [
+        'nome_attivita' => [
+            'required' => 'Il nome del ristorante è obbligatorio',
+            'max' => 'Puoi inserire massimo :max caratteri',
+        ],
+        'P_IVA' => [
+            'required' => 'La Partita IVA è obbligatoria',
+            'min'=> 'Devi inserire :min caratteri',
+            'max' => 'Devi inserire :max caratteri',
+            'unique' => 'La Partita IVA inserita è gia esistente',
+
+        ],
+        'telefono' => [
+            'required' => 'Il numero di telefono è obbligatorio',
+            'min'=> 'Puoi inserire minimo :min caratteri',
+            'max' => 'Puoi inserire massimo :max caratteri',
+            'unique' => 'Il numero di telefono inserito è gia esistente',
+            
+        ],
+        'indirizzo' => [
+            'required' => 'L\'indirizzo del ristorante è obbligatorio',
+            'max' => 'Puoi inserire massimo :max caratteri',
+
+        ],
+        'tipologies' => [
+            'required' => 'La tipologia del ristorante è obbligatoria',
+        ],
+        'immagine' => [
+            'required' => 'L\'immagine del ristorante è obbligatoria',
+            'max' => 'Puoi inserire massimo :max kilobyte',
+            'image' => 'Il file deve essere un\'immagine',
+        ],
+        'nome' => [
+            'required' => 'Il nome del piatto è obbligatorio',
+            'max' => 'Puoi inserire massimo :max caratteri',
+
+        ],
+        'descrizione' => [
+            'max' => 'Puoi inserire massimo :max caratteri',
+            
+        ],
+        'prezzo' => [
+            'required' => 'Il prezzo del piatto è obbligatorio',
+            'numeric'=> 'Devi inserire un numero',
+            'min' => 'Puoi inserire massimo :min euro',
+            'max' => 'Puoi inserire massimo :max euro',
+
+        ],
+        'ingredienti' => [
+            'max' => 'Puoi inserire massimo :max caratteri',
+            
+        ],
+        'immagine' => [
+            'image' => 'Il file deve essere un\'immagine',
+            'max' => 'Puoi inserire massimo :max caratteri',
+            
+        ],
+        
     ],
 
     /*

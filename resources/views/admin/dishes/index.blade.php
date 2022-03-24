@@ -2,8 +2,14 @@
 
 @section('content')
     <section>
+
+        <h1 class="title-c">Lista dei tuoi piatti</h1>
+
         <div class="container">
+
+
             <div class="row row-cols-3">
+
                 @foreach ($dishes as $dish)
                     <div class="card">
 

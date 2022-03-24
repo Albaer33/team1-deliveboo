@@ -72,6 +72,17 @@ class RestaurantController extends Controller
 
         $restaurant->fill($form_data);
         $restaurant->user_id = $user->id;
+
+        if(isset($form_data['immagine'])) {
+            
+            // Faccio l'upload il nuovo file
+            $img_path = Storage::put('restaurant_images', $form_data['immagine']);
+
+            // Salvo nella colonna cover il path al nuovo file
+            $restaurant->immagine = $img_path;
+
+        }
+
         $restaurant->save();
 
         if (!isset($user->createdRestaurants)) {
@@ -168,6 +179,7 @@ class RestaurantController extends Controller
 
             // Salvo nella colonna cover il path al nuovo file
             $form_data['immagine'] = $img_path;
+
         }
 
         $restaurants->update($form_data);
@@ -215,12 +227,13 @@ class RestaurantController extends Controller
     }
 
     protected function getValidationRules(){
+
         return[
             'nome_attivita'=>'required|max:30',
-            'P_IVA'=>'required|max:50|unique:restaurants',
-            'telefono'=>'required|max:15',
+            'P_IVA'=>'required|min:11|max:11|unique:restaurants',
+            'telefono'=>'required|min:9|max:16|unique:restaurants',
             'indirizzo'=>'required|max:50',
-            'immagine'=>'image|max:3500',
+            'immagine'=>'image|max:3500|required',
             'user_id' => 'exists:user,id|nullable',
             'tipologies' => 'exists:tipologies,id|required'
         ];
@@ -229,8 +242,8 @@ class RestaurantController extends Controller
     protected function getValidationRulesEdit(){
         return[
             'nome_attivita'=>'required|max:30',
-            'P_IVA'=>'required|max:50',
-            'telefono'=>'required|max:15',
+            'P_IVA'=>'required|min:11|max:11',
+            'telefono'=>'required|min:9|max:16',
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500',
             'user_id' => 'exists:user,id|nullable',
