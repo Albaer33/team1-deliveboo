@@ -1,5 +1,7 @@
+@import '../variables';
+
 .dashboard_ms {
-    background-color: rgba(0, 204, 188, 1);
+    background-color: $primary_color;
     height: 100%;
 }
 .height_ms {
@@ -57,6 +59,6 @@ body {
         appearance: none;
     }
     .btn-ms:hover {
-        color: #00ccbc;
+        color: $primary_color;
     }
 }

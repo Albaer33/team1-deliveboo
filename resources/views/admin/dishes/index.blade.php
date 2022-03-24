@@ -28,8 +28,8 @@
                                 
                             @endif
 
-                            <a href="{{route('admin.dishes.show',['dish'=>$dish->id])}}" class="btn btn-primary">Dettagli</a>
-                            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}"><button class="btn btn-primary">Modifica piatto</button></a>
+                            <a href="{{route('admin.dishes.show',['dish'=>$dish->id])}}" class="btn btn_ms_primary_color">Dettagli</a>
+                            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}"><button class="btn btn_ms_primary_color">Modifica piatto</button></a>
                         </div>
                     </div>
                 @endforeach

@@ -1,9 +1,11 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/* @import url('https://fonts.googleapis.com/css?family=Nunito'); */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Delius+Swash+Caps&family=Roboto:wght@300&display=swap');
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
+
 
 
 // Variables
@@ -19,10 +21,32 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body{
+
+    font-family: 'Delius Swash Caps', cursive;
+    
+}
+
 img {
     max-width: 100%;
 }
 
 .current-image img {
     width: 200px;
+}
+
+.btn_ms_primary_color{
+
+    background-color: rgba($color: $primary_color, $alpha: 0.8);
+
+    color: white;
+
+    &:hover{
+
+        color: white;
+
+        background-color: rgba($color: $primary_color, $alpha: 1);
+
+    }
+
 }

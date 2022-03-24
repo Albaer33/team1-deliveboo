@@ -71,7 +71,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-            <button type="submit" class="btn btn-primary">Registra ristorante</button>
+            <button type="submit" class="btn btn_ms_primary_color">Registra ristorante</button>
 
         </form>
     </section>
@@ -117,7 +117,7 @@
             <input type="file" id="immagine" name="immagine" disabled="disabled">
         </div>
 
-        <button type="submit" class="btn btn-primary" disabled="disabled" >Registra ristorante</button>
+        <button type="submit" class="btn btn_ms_primary_color" disabled="disabled" >Registra ristorante</button>
 
     </form>
 </section>      

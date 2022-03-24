@@ -17,8 +17,8 @@
                         
                         <div class="card-body">
 
-                            <a href="{{route('admin.restaurants.show',['restaurant'=>$restaurant->id])}}" class="btn btn-primary">Dettagli</a>
-                            <a href="{{ route('admin.restaurants.edit', ['restaurant'=>$restaurant->id]) }}"><button class="btn btn-primary">Modifica ristorante</button></a>
+                            <a href="{{route('admin.restaurants.show',['restaurant'=>$restaurant->id])}}" class="btn btn_ms_primary_color">Dettagli</a>
+                            <a href="{{ route('admin.restaurants.edit', ['restaurant'=>$restaurant->id]) }}"><button class="btn btn_ms_primary_color">Modifica ristorante</button></a>
                         
                         </div>
                     </div>
