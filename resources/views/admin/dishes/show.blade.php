@@ -31,7 +31,7 @@
                 
             @endif
             
-            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}"><button class="btn btn-primary">Modifica piatto</button></a>
+            <a href="{{ route('admin.dishes.edit', ['dish'=>$dish->id]) }}"><button class="btn btn_ms_primary_color">Modifica piatto</button></a>
         
             <form action="{{route('admin.dishes.destroy',['dish'=>$dish->id])}}" method="post">
                 @csrf

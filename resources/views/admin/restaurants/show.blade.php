@@ -18,7 +18,7 @@
             @endif
             
             
-            <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurants->id]) }}"><button class="btn btn-primary">Modifica ristorante</button></a>
+            <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurants->id]) }}"><button class="btn btn_ms_primary_color">Modifica ristorante</button></a>
         
             <form action="{{route('admin.restaurants.destroy', ['restaurant'=>$restaurants->id])}}" method="post">
                 @csrf

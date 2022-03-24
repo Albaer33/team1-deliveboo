@@ -70,7 +70,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Modifica piatto</button>
+            <button type="submit" class="btn btn_ms_primary_color">Modifica piatto</button>
 
           </form>
     </section>

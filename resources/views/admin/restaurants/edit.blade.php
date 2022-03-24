@@ -85,7 +85,7 @@
                 </div>
             @endif
 
-            <button type="submit" class="btn btn-primary">Modifica Ristorante</button>
+            <button type="submit" class="btn btn_ms_primary_color">Modifica Ristorante</button>
 
           </form>
     </section>

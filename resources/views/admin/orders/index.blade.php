@@ -33,7 +33,7 @@
                                 
                             @endif
 
-                            <a href="{{route('admin.orders.show',['order' => $order->id])}}" class="btn btn-primary">Dettagli</a>
+                            <a href="{{route('admin.orders.show',['order' => $order->id])}}" class="btn btn_ms_primary_color">Dettagli</a>
 
                         </div>
                     </div>
