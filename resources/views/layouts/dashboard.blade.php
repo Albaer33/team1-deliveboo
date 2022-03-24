@@ -24,8 +24,8 @@
 </head>
 <body>
     <div class="app-wrapper">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-md-nowrap p-0">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Deliveboo</a>
+        <nav class="navbar navbar_ms navbar-expand-md primary_color flex-md-nowrap p-0 d-flex justify-content-between">
+            <div class="navbar-brand col-sm-3 col-md-2 mr-0" ><a href="http://127.0.0.1:8000">Deliveboo</a></div>
             <ul class="navbar-nav px-3 ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"

@@ -53,6 +53,13 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
+            @if ($restaurants->immagine)
+                <div class="current-image">
+                    Immagine attuale:
+                    <img src="{{ asset('storage/' . $restaurants->immagine) }}" alt="">
+                </div>
+            @endif
+
             <div class="mb-3">
                 <h4>Tipologie</h4>
 
@@ -78,15 +85,11 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-            @if ($restaurants->immagine)
-                <div class="current-image">
-                    Immagine attuale:
-                    <img src="{{ asset('storage/' . $restaurants->immagine) }}" alt="">
-                </div>
-            @endif
-
             <button type="submit" class="btn btn_ms_primary_color">Modifica Ristorante</button>
 
           </form>
+
+          <a href="{{ route('admin.restaurants.index') }}"><button class="btn btn_ms_primary_color">Annulla</button></a>
+          
     </section>
 @endsection

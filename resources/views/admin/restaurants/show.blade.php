@@ -2,29 +2,41 @@
 
 @section('content')
     <section>
+
         <div class="container">
-            <h1>{{$restaurants->nome_attivita}}</h1>
 
-            <div>{{$restaurants->P_IVA}}</div>
+            <h1 class="title-c">Il tuo ristorante</h1>
 
-            <div>{{$restaurants->telefono}}</div>
+            <div class="card" style="width: 18rem;">
 
-            <div>{{$restaurants->indirizzo}}</div>
+                @if ($restaurants->immagine)
+                    <div>
+                        <img src="{{ asset('storage/' . $restaurants->immagine) }}" alt="{{ $restaurants->nome_attivita }}">
+                    </div>
+                @endif
 
-            @if ($restaurants->immagine)
-                <div>
-                    <img src="{{ asset('storage/' . $restaurants->immagine) }}" alt="{{ $restaurants->nome_attivita }}">
+
+                <div class="card-body">
+
+                    <h1 class="card-title">{{$restaurants->nome_attivita}}</h1>
+
+                    <div>Partita IVA: {{$restaurants->P_IVA}}</div>
+
+                    <div>Telefono: {{$restaurants->telefono}}</div>
+
+                    <div>Indirizzo: {{$restaurants->indirizzo}}</div>
+                  
+                    <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurants->id]) }}"><button class="btn btn_ms_primary_color">Modifica ristorante</button></a>
+                
+                    <form action="{{route('admin.restaurants.destroy', ['restaurant'=>$restaurants->id])}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">Cancella ristorante</button>
+                    </form>
+
                 </div>
-            @endif
-            
-            
-            <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurants->id]) }}"><button class="btn btn_ms_primary_color">Modifica ristorante</button></a>
-        
-            <form action="{{route('admin.restaurants.destroy', ['restaurant'=>$restaurants->id])}}" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger">Cancella ristorante</button>
-            </form>
+
+            </div>
 
         </div>
     </section>

@@ -2,14 +2,18 @@
 
 @section('content')
     <section>
-        <div class="container">
-            <div class="row row-cols-3">
+
+        <h1 class="title-c">Il tuo ristorante</h1>
+
+        {{-- <div class="container"> --}}
+            <div class="container-fluid">
+
                 @foreach ($restaurants as $restaurant)
-                    <div class="card">
+                    <div class="card text-center">
 
                         @if ($restaurant->immagine)
                             <div>
-                                <img src="{{ asset('storage/' . $restaurant->immagine) }}" alt="{{ $restaurant->nome_attivita }}">
+                                <img class="img-fluid w-25" src="{{ asset('storage/' . $restaurant->immagine) }}" alt="{{ $restaurant->nome_attivita }}">
                             </div>
                         @endif
 
@@ -25,6 +29,6 @@
                 @endforeach
             </div>
             
-        </div>
+        {{-- </div> --}}
     </section>
 @endsection

@@ -4,17 +4,6 @@
     <section>
         <h2>Modifica piatto</h2>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                            <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            
-        @endif
-
         <form action="{{route('admin.dishes.update', ['dish'=>$dish->id])}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -23,6 +12,10 @@
               <label for="nome" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" name="nome" value="{{old('nome',$dish->nome)}}">
             </div>
+
+            @error('nome')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             <div class="mb-3">
                 <label for="categories_id" class="form-label">Categoria</label>
@@ -36,25 +29,45 @@
                 </select>
             </div>
 
+            @error('categories_id')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
             <div class="mb-3">
                 <label for="prezzo" class="form-label">Prezzo</label>
                 <input type="text" class="form-control" id="prezzo" name="prezzo" value="{{old('prezzo',$dish->prezzo)}}" placeholder="Prezzo in euro">
             </div>
+
+            @error('prezzo')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             <div class="mb3">
                 <label for="ingredienti" class="form-label">Ingredienti</label>   
                 <textarea class="form-control" name="ingredienti" id="ingredienti" cols="30" rows="10">{{old('ingredienti', $dish->ingredienti)}}</textarea>
             </div>
 
+            @error('ingredienti')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
             <div class="mb3">
                 <label for="descrizione" class="form-label">Descrizione</label>   
                 <textarea class="form-control" name="descrizione" id="descrizione" cols="30" rows="10">{{old('descrizione', $dish->descrizione)}}</textarea>
             </div>
 
+            @error('descrizione')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
             <div class="mb-3">
                 <label for="immagine" class="form-label">Immagine</label>
                 <input type="file" id="immagine" name="immagine">
             </div>
+
+            @error('immagine')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             @if ($dish->immagine)
                 <div class="current-image">
@@ -73,5 +86,8 @@
             <button type="submit" class="btn btn_ms_primary_color">Modifica piatto</button>
 
           </form>
+
+          <a href="{{ route('admin.dishes.index') }}"><button class="btn btn_ms_primary_color">Annulla</button></a>
+          
     </section>
 @endsection

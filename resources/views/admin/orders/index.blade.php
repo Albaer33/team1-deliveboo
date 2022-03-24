@@ -2,6 +2,8 @@
 
 @section('content')
     <section>
+        <h1 class="title-c">Storico Ordini</h1>
+
         <div class="container">
             <div class="row row-cols-3">
                 @foreach ($orders as $order)
