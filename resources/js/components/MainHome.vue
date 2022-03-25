@@ -7,7 +7,7 @@
         <TagsSection />
         <NewsSection />
         <WorkSection />
-
+        
         <PageOverlay :overlay_status="overlay_conditions" class="position-absolute" />
     </section>
 </template>
@@ -39,6 +39,10 @@ export default {
     },
     data: function(){
         return {
+             restaurant : [],
+
+             datiNonTrovati: 'NON STATI TROVATI DATI',
+
             selected_items: [
                 {
                     title: 'Comfort food',
@@ -63,6 +67,25 @@ export default {
             ],
       
         };
+    },
+          methods: {
+
+         getRestaurant(){
+            //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+            // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+            axios.get('http://127.0.0.1:8000/api/restaurants/')
+            .then((response) => {
+                // console.log(response);
+                if(response.data.success) {
+                    this.restaurant = response.data.results;
+                } else {
+                    this.restaurant = this.datiNonTrovati;
+                }
+            });
+          }
+    },
+    created: function(){
+        this.getRestaurant();
     }
 }
 </script>

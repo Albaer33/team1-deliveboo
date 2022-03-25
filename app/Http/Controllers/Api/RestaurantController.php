@@ -20,10 +20,23 @@ class RestaurantController extends Controller
     
     // rimando i dati a json per vue, controllo tramite postman
     // return response()->json($restaurants);
+        // return response()->json([
+        //     'success' => true,
+        //     'results' => $restaurants
+        // ]);
+        if($restaurants) {
+            return response()->json([
+        'success' => true,
+        'results' => $restaurants
+    ]);
+    }else {
+        
         return response()->json([
-            'success' => true,
-            'results' => $restaurants
+            'success' => false,
+            'results' => []
+            
         ]);
+    }
     }
 
     // public function show($id)
@@ -31,19 +44,19 @@ class RestaurantController extends Controller
     //     $restaurants = Restaurant::findOrFail($id);
     
     
-    //     if($restaurants) {
-    //             return response()->json([
-    //         'success' => true,
-    //         'results' => $restaurants
-    //     ]);
-    //     }else {
+        // if($restaurants) {
+        //         return response()->json([
+        //     'success' => true,
+        //     'results' => $restaurants
+        // ]);
+        // }else {
             
-    //         return response()->json([
-    //             'success' => false,
-    //             'results' => []
+        //     return response()->json([
+        //         'success' => false,
+        //         'results' => []
                 
-    //         ]);
-    //     }
+        //     ]);
+        // }
 
     // }
 }

@@ -2337,6 +2337,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      restaurant: [],
+      datiNonTrovati: 'NON STATI TROVATI DATI',
       selected_items: [{
         title: 'Comfort food',
         thumb: 'https://f.roocdn.com/images/menu_tags/288/menu-tag-image.jpg?width=430&height=150&auto=webp&format=jpg&fit=crop&v=1611583226',
@@ -2355,6 +2357,25 @@ __webpack_require__.r(__webpack_exports__);
         description: 'I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.'
       }]
     };
+  },
+  methods: {
+    getRestaurant: function getRestaurant() {
+      var _this = this;
+
+      //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+      // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+      axios.get('http://127.0.0.1:8000/api/restaurants/').then(function (response) {
+        // console.log(response);
+        if (response.data.success) {
+          _this.restaurant = response.data.results;
+        } else {
+          _this.restaurant = _this.datiNonTrovati;
+        }
+      });
+    }
+  },
+  created: function created() {
+    this.getRestaurant();
   }
 });
 
