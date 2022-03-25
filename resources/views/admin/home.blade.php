@@ -3,7 +3,7 @@
 @section('content')
     <section>
         <div class="container">
-            <h1>{{$user->name}} benvenuto nell'area riservata </h1>
+            <h1 class="title-c">{{$user->name}} benvenuto nell'area riservata </h1>
         </div>
     </section>
 @endsection

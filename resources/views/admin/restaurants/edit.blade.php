@@ -85,7 +85,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-            <button type="submit" class="btn btn_ms_primary_color">Modifica Ristorante</button>
+            <button type="submit" class="btn btn_ms_primary_color">Salva</button>
 
           </form>
 

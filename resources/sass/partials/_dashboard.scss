@@ -41,7 +41,7 @@ body {
     }
 }
 // BUTTONS
-.nav-item {
+.nav-item.dashboard {
     color: #2e3333;
     .btn-ms {
         color: inherit;
@@ -61,6 +61,35 @@ body {
 
     .btn-ms:hover {
         color: $primary_color;
+    }
+
+}
+
+//
+body{
+
+    font-family: 'Delius Swash Caps', cursive;
+    
+    .btn_ms_primary_color{
+
+        background-color: rgba($color: $primary_color, $alpha: 0.8);
+    
+        color: white;
+    
+        &:hover{
+    
+            color: white;
+    
+            background-color: rgba($color: $primary_color, $alpha: 1);
+    
+        }
+    
+    }
+    
+    .primary_color{
+
+        background-color: $green;
+
     }
 
 }

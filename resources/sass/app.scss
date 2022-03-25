@@ -19,44 +19,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-body{
-
-    font-family: 'Delius Swash Caps', cursive;
-    
-    .btn_ms_primary_color{
-
-        background-color: rgba($color: $primary_color, $alpha: 0.8);
-    
-        color: white;
-    
-        &:hover{
-    
-            color: white;
-    
-            background-color: rgba($color: $primary_color, $alpha: 1);
-    
-        }
-    
-    }
-
-    .container{
-
-        h1{
-
-            text-align: center;
-
-        }
-
-    }
-    
-    .primary_color{
-
-        background-color: $green;
-
-    }
-
-}
-
 img {
     max-width: 100%;
 }
