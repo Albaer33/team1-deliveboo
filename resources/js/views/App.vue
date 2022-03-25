@@ -1,5 +1,5 @@
 <template>
-  <div class="page_content">
+  <div class="page_content w-100 vh-100">
     <Header />
     <main>
       <router-view></router-view>
@@ -35,5 +35,8 @@ export default {
     font-weight: bold;
     margin-bottom: 0;
   }
-  
+
+  main{
+    height: calc(100% - 80px);
+  }
 </style>

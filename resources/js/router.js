@@ -28,7 +28,7 @@ const router = new VueRouter({
             component: Dish
         },
         {
-            path: "/tipologies/:slug",
+            path: "/tipology/:slug",
             name: "tipology-details",
             component: Tipology
         },

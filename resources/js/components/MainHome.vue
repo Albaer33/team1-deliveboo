@@ -1,9 +1,9 @@
 <template>
-    <section class="position-relative">
+    <section class="main_home position-relative">
         <ShoppingCart />
         <BannerSection />
         <SelectionSection :selected_list="selected_items" :overlay_status="overlay_conditions" />
-        <SuggestionsSection />
+        <SuggestionsSection :restaurants_list="restaurants_data" />
         <TagsSection />
         <NewsSection />
         <WorkSection />
@@ -35,13 +35,11 @@ export default {
         PageOverlay
     },
     props: {
+        restaurants_data: Array,
         overlay_conditions: Object
     },
     data: function(){
         return {
-             restaurant : [],
-
-             datiNonTrovati: 'NON STATI TROVATI DATI',
 
             selected_items: [
                 {
@@ -67,25 +65,6 @@ export default {
             ],
       
         };
-    },
-          methods: {
-
-         getRestaurant(){
-            //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
-            // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-            axios.get('http://127.0.0.1:8000/api/restaurants/')
-            .then((response) => {
-                // console.log(response);
-                if(response.data.success) {
-                    this.restaurant = response.data.results;
-                } else {
-                    this.restaurant = this.datiNonTrovati;
-                }
-            });
-          }
-    },
-    created: function(){
-        this.getRestaurant();
     }
 }
 </script>
