@@ -1,13 +1,9 @@
 <template>
-<section>
-
   <div class="page_content">
     <Header />
     <Main />
-   
     <Footer />
   </div>
-</section>
 </template>
 
 <script>
@@ -32,5 +28,12 @@ export default {
 @import '../../sass/size-space.scss';
 @import '../../sass/utilities.scss';
 
+  /* Fonts */
+  h1,
+  h2{
+    color: $secondary_color;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
   
 </style>
