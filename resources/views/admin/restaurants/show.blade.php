@@ -26,7 +26,7 @@
 
                     <div>Indirizzo: {{$restaurants->indirizzo}}</div>
 
-                    <div>Indirizzo: {{$restaurants->descrizione}}</div>
+                    <div>Descrizione: {{$restaurants->descrizione}}</div>
                   
                     <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurants->id]) }}"><button class="btn btn_ms_primary_color">Modifica ristorante</button></a>
                 

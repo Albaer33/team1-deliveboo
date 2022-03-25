@@ -44,10 +44,10 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             
-            <div clDss="mb-3">
-                <label for="descrizione" class="form-label">DescriziDne</label>
+            <div class="mb-3">
+                <label for="descrizione" class="form-label">Descrizione</label>
                 <input type="text" class="form-control" id="descrizione" name="descrizione" value="{{old('descrizione',$restaurants->descrizione)}}">
-        D   </div>
+            </div>
 
             @error('descrizione')
                 <div class="alert alert-danger">{{ $message }}</div>
