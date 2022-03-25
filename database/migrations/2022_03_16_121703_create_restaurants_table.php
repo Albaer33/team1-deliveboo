@@ -21,6 +21,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('indirizzo', 50);
             $table->unsignedBigInteger('user_id')->nullable();
             $table->text('immagine');
+            $table->text('descrizione');
             $table->timestamps();
 
             $table->foreign('user_id')

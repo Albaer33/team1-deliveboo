@@ -2353,55 +2353,6 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Esclusiva Deliveroo',
         thumb: 'https://f.roocdn.com/images/menu_tags/293/menu-tag-image.jpg',
         description: 'I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.'
-      }],
-      suggested_items: [{
-        name: 'McDonald\'s',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/64574/header-image.jpg?width=706.0000210404396&height=354.0000105500221&auto=webp&format=jpg&fit=crop&v=1547634455'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Nima Sushi',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/213898/header-image.jpg?width=706.0000210404396&height=354.0000105500221&auto=webp&format=jpg&fit=crop&v=1573558821'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Pokèria by NIMA',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/71232/header-image.jpg?width=706.0000210404396&height=354.0000105500221&auto=webp&format=jpg&fit=crop&v=1615219760'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Daruma Kosher',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/14480/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1537967434'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Temakinho',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/67494/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1610355421'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Berberè Pizzeria',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/63776/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1556873766'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Old Wild West',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/225238/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1585830197'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: 'Il menù potrebbe temporaneamente subire alcune variazioni di ingredienti. Per maggiori informazioni contattare il punto vendita o consultare la sezione “lista ingredienti ed allergeni”'
-      }, {
-        name: 'Roadhouse',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/188980/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1588261235'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: 'Ordina il tuo piatto preferito a casa tua da Roadhouse grazie alla consegna a domicilio di Deliveroo.'
-      }, {
-        name: 'KFC',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/257876/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1586357552'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: 'Ordina il tuo piatto preferito a casa tua da KFC grazie alla consegna a domicilio di Deliveroo. Per maggiori informazioni sul libro ingredienti consulta la pagina: http://www.kfc.it/wp-content/uploads/2016/05/kfc_libro_ingredienti.pdf'
-      }, {
-        name: 'La piadineria',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/207109/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1602487666'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: 'Ordina la tua piadina preferita a casa tua da La Piadineria grazie alla consegna a domicilio di Deliveroo.'
-      }, {
-        name: 'Burger King',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/41027/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1598626967'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
-      }, {
-        name: 'Grom',
-        thumb: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'https://f.roocdn.com/images/menus/17074/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1505479292'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-        description: ''
       }]
     };
   }
@@ -21768,7 +21719,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\programmazione\repo\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\ALE\Desktop\Boolean corso\Presentazione finale\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

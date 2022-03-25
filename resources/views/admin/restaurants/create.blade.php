@@ -41,8 +41,16 @@
                 <label for="indirizzo" class="form-label">Indirizzo</label>
                 <input type="text" class="form-control" id="indirizzo" name="indirizzo" value="{{old('indirizzo')}}">
             </div>
-
+            
             @error('indirizzo')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="mb-3">
+                <label for="descrizione" class="form-label">Descrizione</label>
+                <input type="text" class="form-control" id="descrizione" name="descrizione" value="{{old('descrizione')}}">
+            </div>
+            @error('descrizione')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 

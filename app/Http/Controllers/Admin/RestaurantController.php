@@ -235,8 +235,9 @@ class RestaurantController extends Controller
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500|required',
             'user_id' => 'exists:user,id|nullable',
-            'tipologies' => 'exists:tipologies,id|required'
-        ];
+            'tipologies' => 'exists:tipologies,id|required',
+            'descrizione' => 'max:60000'
+           ];
     }
 
     protected function getValidationRulesEdit(){
@@ -247,7 +248,8 @@ class RestaurantController extends Controller
             'indirizzo'=>'required|max:50',
             'immagine'=>'image|max:3500',
             'user_id' => 'exists:user,id|nullable',
-            'tipologies' => 'exists:tipologies,id|required'
+            'tipologies' => 'exists:tipologies,id|required',
+            'descrizione' => 'max:60000'
         ];
     }
 
