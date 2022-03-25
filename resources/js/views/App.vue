@@ -1,22 +1,16 @@
 <template>
   <div class="page_content">
-    <Header />
-    <Main />
-    <Footer />
+    <Home />
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Main from "../components/Main.vue";
-import Footer from "../components/Footer.vue";
+import Home from '../pages/Home.vue';
 
 export default {
   name: "App",
   components: {
-    Header,
-    Main,
-    Footer
+    Home
   },
 };
 </script>
