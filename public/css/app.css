@@ -18323,6 +18323,60 @@ ul {
   }
 }
 
+.overlay_animation {
+  opacity: 0;
+  -webkit-animation: overlay_animation 0.3s linear 1;
+          animation: overlay_animation 0.3s linear 1;
+  opacity: 1;
+}
+
+.overlay_leaving {
+  opacity: 1;
+  -webkit-animation: overlay_leaving 0.3s linear 1;
+          animation: overlay_leaving 0.3s linear 1;
+  opacity: 0;
+}
+
+@-webkit-keyframes overlay_animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes overlay_animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes overlay_leaving {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes overlay_leaving {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Colore primario */
 
 /* Colore secondario */

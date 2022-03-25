@@ -7,8 +7,8 @@
                 </div>
                 <div class="col">
                     <div class="row row-cols-2 g-3">
-                        <div class="col-6" :class="{'col-md-4': index === 0 || index === 3, 'col-md-8': index === 1 || index === 2}" v-for="item,index in selected_list" :key="index">
-                            <a href="#" class="card_wrapper w-100 h-100">
+                        <div @click="showOverlay" class="col-6" :class="{'col-md-4': index === 0 || index === 3, 'col-md-8': index === 1 || index === 2}" v-for="item,index in selected_list" :key="index">
+                            <a href="#search_div" class="card_wrapper w-100 h-100">
                                 <div class="card border-0">
                                     <div class="card_image_box h_150p d-flex justify-content-center align-items-center" :style="`background: url(` + item.thumb + `)`">
                                         <h4 class="mb-0 text-white fw-bold">{{item.title}}</h4>
@@ -30,32 +30,16 @@
 <script>
 export default {
     name: 'SelectionSection',
-    data: function(){
-        return {
-            selected_list: [
-                {
-                    title: 'Comfort food',
-                    thumb: 'https://f.roocdn.com/images/menu_tags/288/menu-tag-image.jpg?width=430&height=150&auto=webp&format=jpg&fit=crop&v=1611583226',
-                    description: 'I grandi classici che scaldano il cuore, perfetti in ogni momento.'
-                },
-                {
-                    title: 'Dolci e dessert',
-                    thumb: 'https://f.roocdn.com/images/menu_tags/328/menu-tag-image.jpg',
-                    description: 'Dolci piaceri per rendere la giornata ancora più gustosa.'
-                },
-                {
-                    title: 'Perfetti da condividere',
-                    thumb: 'https://f.roocdn.com/images/menu_tags/291/menu-tag-image.jpg',
-                    description: 'Serve una scusa per stare insieme? Ordina dai ristoranti che trasformeranno la tua serata in un vera festa.'
-                },
-                {
-                    title: 'Esclusiva Deliveroo',
-                    thumb: 'https://f.roocdn.com/images/menu_tags/293/menu-tag-image.jpg',
-                    description: 'I più famosi, i più buoni, i preferiti. Quelli che trovi solo su Deliveroo.'
-                }
-            ]
-        };
-    }    
+    props: {
+        selected_list: Array,
+        overlay_status: Object
+    },
+    methods: {
+        showOverlay: function(){
+            this.overlay_status.status = true;
+            this.overlay_status.className = 'overlay_animation'
+        }
+    }
 }
 </script>
 

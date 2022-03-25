@@ -38,13 +38,20 @@ export default {
         transform: translateY(-50%);
         padding: 5px;
         background-color: $primary_color;
-        box-shadow: -2px 2px 2px 2px;
+        box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
         transition-duration: 1s;
 
         h5{
             color: white;
             writing-mode: vertical-lr; 
             text-orientation: upright;
+        }
+
+        &:hover{
+
+            cursor: pointer;
+            transform: translateY(-50%) scale(1.2);
+
         }
     }
 </style>

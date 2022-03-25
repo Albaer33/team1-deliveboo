@@ -1,6 +1,6 @@
 <template>
     <section class="home_page">
-        <MainHome />
+        <MainHome :overlay_conditions="overlay" />
     </section>
 </template>
 
@@ -11,7 +11,27 @@ export default {
     name: 'Home',
     components: {
         MainHome
-    }
+    },
+    data: function(){
+        return {
+            overlay: {
+                status: false,
+                className: '',
+                clock: null
+            }
+        };
+    },
+    methods: {
+        hideOverlay: function(){
+            this.overlay.className = 'overlay_leaving';
+            this.overlay.clock = setTimeout(() => {
+                this.overlay.status = false;
+            }, 300);
+        }
+    },
+    created: function(){
+        window.addEventListener('wheel', this.hideOverlay);
+    } 
     
 }
 </script>

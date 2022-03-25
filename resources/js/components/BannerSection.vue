@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
-                    <div class="banner_content d-flex flex-column">
+                    <div id="search_div" class="banner_content d-flex flex-column">
                         <h1 class="mb-4">I piatti che ami, a domicilio.</h1>
                         <SearchBox />
                     </div>
@@ -13,8 +13,8 @@
                         <div class="banner_img_wrapper w-100 d-flex justify-content-center align-items-center">
                             <img class="w-100" src="https://cwa.roocdn.com/_next/static/media/campaign.df080c2b8ecbb022c066558c655167a1.svg" alt="Immagine con riders di Deliveboo">
                         </div>
-                        <div class="banner_text_wrapper w-100 d-flex justify-content-center">
-                            <div class="banner_text_box text-white">
+                        <div class="banner_text_wrapper w-100 d-flex justify-content-center position-relative">
+                            <div class="banner_text_box text-white position-absolute">
                                 <h3 class="fw-bold mb-0 fs_25">#aCasaTuaConDeliveboo</h3>
                             </div>
                         </div>
@@ -43,6 +43,7 @@ export default {
         background: linear-gradient(-5deg, #d0eb99 80%, $primary_color 20%);
         padding-top: 20px;
         overflow: hidden;
+        max-height: 958px;
 
         img{
             max-width: 500px;
@@ -53,7 +54,14 @@ export default {
             padding: 35px 50px 25px 20px;
             transform: rotate(2deg);
             position: relative;
-            top: 10px;
+            bottom: -60px;
+            height: 150px;
+
+            @media screen and (min-width: 768px){
+                &{
+                    width: 100%;
+                }
+            }
 
             h3{
                 transform: rotate(-2deg);

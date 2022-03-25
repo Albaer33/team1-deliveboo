@@ -21,7 +21,7 @@ export default {
         max-width: 500px;
         padding: 30px 20px;
         border-radius: 5px;
-        box-shadow: 2px 2px 2px 1px;
+        box-shadow: 0px 1px 4px rgb(0 0 0 / 8%);
         height: 200px;
         z-index: 2000;
     }
