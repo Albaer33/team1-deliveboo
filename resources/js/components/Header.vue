@@ -1,7 +1,7 @@
 <template>
     <header class="d-flex justify-content-center align-items-center">
         <nav class="navbar w-100">
-            <div class="container-fluid">
+            <div class="container">
 
                 <!-- Loghi -->
                 <div class="header_logos d-flex align-items-center">
@@ -12,7 +12,7 @@
                 <!-- Bottoni -->
                 <div class="header_forms d-flex align-items-center">
                     <!-- Register -->
-                    <div class="register_box d-flex align-items-center">
+                    <div class="register_box d-flex align-items-center d-none d-md-block">
                         <i class="fa-solid fa-house me-2"></i>
                         <a href="#">Registrati o accedi</a>
                     </div>
