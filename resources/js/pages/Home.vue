@@ -1,9 +1,10 @@
 <template>
     <section class="home_page">
+        
         <Header />
         <Main />
         <Footer />
-        <router-view></router-view>
+        
     </section>
 </template>
 
