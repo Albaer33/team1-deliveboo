@@ -18374,11 +18374,13 @@ body ::-webkit-scrollbar-thumb:hover {
   background: rgba(170, 170, 170, 0.5);
 }
 
-.nav-item.dashboard {
+.nav-item.dashboard,
+.btn_ms_log {
   color: #2e3333;
 }
 
-.nav-item.dashboard .btn-ms {
+.nav-item.dashboard .btn-ms,
+.btn_ms_log .btn-ms {
   color: inherit;
   background: #fff;
   border: 2px solid #FFFFFF;
@@ -18394,7 +18396,8 @@ body ::-webkit-scrollbar-thumb:hover {
   appearance: none;
 }
 
-.nav-item.dashboard .btn-ms:hover {
+.nav-item.dashboard .btn-ms:hover,
+.btn_ms_log .btn-ms:hover {
   color: #00ccbc;
 }
 
@@ -30611,5 +30614,23 @@ img {
 
 a {
   text-decoration: none;
+}
+
+.card-header_ms {
+  color: white;
+  background-color: #007e8a;
+}
+
+div.form-group {
+  margin: 10px 0;
+}
+
+.btn_password {
+  color: #00ccbc;
+  text-decoration: none;
+}
+
+.btn_password:hover {
+  color: #007e8a;
 }
 

@@ -33,3 +33,30 @@ a{
 
 }
 
+.card-header_ms{
+
+    color: white;
+
+    background-color: $green;
+
+}
+
+div.form-group{
+
+    margin: 10px 0;
+
+}
+
+.btn_password{
+
+    color: $primary_color;
+
+    text-decoration: none;
+
+    &:hover{
+
+        color: $green;
+
+    }
+
+}
