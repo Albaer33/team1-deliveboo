@@ -6,7 +6,7 @@
                 <!-- Loghi -->
                 <div class="header_logos d-flex align-items-center">
                     <img class="w_30p" :src="img_logo" alt="logo deliveboo">
-                    <h4 class="mb-0">deliveboo test</h4>
+                    <h4 class="mb-0">deliveboo</h4>
                 </div>
 
                 <!-- Bottoni -->
