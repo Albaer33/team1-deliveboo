@@ -14,7 +14,7 @@
                     <!-- Register -->
                     <div class="register_box d-flex align-items-center d-none d-md-block">
                         <i class="fa-solid fa-house me-2"></i>
-                        <a href="#">Registrati o accedi</a>
+                        <a href="http://127.0.0.1:8000/admin">Registrati o accedi</a>
                     </div>
                     <!-- Menu -->
                     <div class="menu_box d-flex align-items-center">

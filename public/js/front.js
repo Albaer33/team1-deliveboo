@@ -4303,7 +4303,7 @@ var render = function () {
     { staticClass: "d-flex justify-content-center align-items-center" },
     [
       _c("nav", { staticClass: "navbar w-100" }, [
-        _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "header_logos d-flex align-items-center" }, [
             _c("img", {
               staticClass: "w_30p",
@@ -4328,11 +4328,20 @@ var staticRenderFns = [
       "div",
       { staticClass: "header_forms d-flex align-items-center" },
       [
-        _c("div", { staticClass: "register_box d-flex align-items-center" }, [
-          _c("i", { staticClass: "fa-solid fa-house me-2" }),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Registrati o accedi")]),
-        ]),
+        _c(
+          "div",
+          {
+            staticClass:
+              "register_box d-flex align-items-center d-none d-md-block",
+          },
+          [
+            _c("i", { staticClass: "fa-solid fa-house me-2" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "http://127.0.0.1:8000/admin" } }, [
+              _vm._v("Registrati o accedi"),
+            ]),
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "menu_box d-flex align-items-center" }, [
           _c("i", { staticClass: "fa-solid fa-bars me-2" }),
@@ -21446,7 +21455,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\programmazione\repo\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Classe48\Laravel\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
