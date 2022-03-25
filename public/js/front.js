@@ -4312,7 +4312,7 @@ var render = function () {
               attrs: { src: _vm.img_logo, alt: "logo deliveboo" },
             }),
             _vm._v(" "),
-            _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
+            _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo test")]),
           ]),
           _vm._v(" "),
           _vm._m(0),
