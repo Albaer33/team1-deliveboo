@@ -51,7 +51,7 @@ class RestaurantController extends Controller
         // risposta a json per vue questa soluzione è insufficiente se l'end url non è corretto e punta un elemento che non esiste nel database
         // return response()->json([
         //     'success' => true,
-        //     'results' => $post
+        //     'results' => $restaurant
         // ]);
         // creo un condizionale
         if($restaurant) {

@@ -5138,7 +5138,7 @@ var render = function () {
                     "router-link",
                     {
                       staticClass: "card border-0 bg-transparent",
-                      attrs: { to: "{restaurant.id}" },
+                      attrs: { to: "restaurants.slug" },
                     },
                     [
                       _c("div", { staticClass: "card_image_box w-100" }, [

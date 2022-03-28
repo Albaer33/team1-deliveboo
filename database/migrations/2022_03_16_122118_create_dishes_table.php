@@ -23,10 +23,10 @@ class CreateDishesTable extends Migration
             // NULLABLE AD RIMUOVERE
             $table->text('immagine')->nullable();
             $table->boolean('visibile')->nullable();
-            $table->unsignedBigInteger('restaurants_id')->nullable();
+            $table->unsignedBigInteger('restaurant_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('restaurants_id')
+            $table->foreign('restaurant_id')
                 ->references('id')
                 ->on('restaurants');
         });

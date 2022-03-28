@@ -211,7 +211,7 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::findOrFail($id);
 
-        $dishes = Dish::all()->where('restaurants_id', '=', $restaurant->id);
+        $dishes = Dish::all()->where('restaurant_id', '=', $restaurant->id);
 
         $user = Auth::user();
 
