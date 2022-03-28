@@ -10,7 +10,7 @@
             </h1>
             <h1>
                 
-                <router-link class="nav-link active" to="Home">Torna alla Home</router-link> 
+                <router-link class="nav-link active" to="home">Torna alla Home</router-link> 
             </h1>
         </div>
     </section>
