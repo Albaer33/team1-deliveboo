@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Restaurant;
 use Illuminate\Http\Request;
+use App\Tipology;
 
 class RestaurantController extends Controller
 {
@@ -27,36 +28,50 @@ class RestaurantController extends Controller
         if($restaurants) {
             return response()->json([
         'success' => true,
-        'results' => $restaurants
+        'results' => $restaurants,
     ]);
     }else {
         
         return response()->json([
             'success' => false,
-            'results' => []
+            'results' => [],
+
             
         ]);
     }
     }
 
-    // public function show($id)
-    // {
-    //     $restaurants = Restaurant::findOrFail($id);
-    
-    
-        // if($restaurants) {
-        //         return response()->json([
+    public function show($id) {
+        // test per vedere lo slug
+        // dd($slug);
+        // con with vado a selezionare gli attributi category e tags di post !!! CONTROLLARE LA CHIAMATA API CON POSTMAN
+        $restaurant = Restaurant::where('id', '=', $id)->with(['tipology_id'])->first();
+        
+        
+        // risposta a json per vue questa soluzione è insufficiente se l'end url non è corretto e punta un elemento che non esiste nel database
+        // return response()->json([
         //     'success' => true,
-        //     'results' => $restaurants
+        //     'results' => $post
         // ]);
-        // }else {
-            
-        //     return response()->json([
-        //         'success' => false,
-        //         'results' => []
-                
-        //     ]);
-        // }
-
-    // }
+        // creo un condizionale
+        if($restaurant) {
+                return response()->json([
+            'success' => true,
+            // modifico results per recuperare i dati delle tags e delle categorie ma posso inserire gli elementi direttamente quando chiamo il model
+            // 'results' => [
+            //    'restau$restaurant' => $restaurant,
+            //    'tags' => $restaurant->tags,
+            //    'category' => $restaurant->category
+            // ]
+            'results' => $restaurant
+        ]);
+        }else {
+            // nel caso non esista rimandiamo un array vuoto
+            return response()->json([
+                'success' => false,
+                'results' => []
+                // potremmo anche non mettere l'array
+            ]);
+        }
+    }
 }

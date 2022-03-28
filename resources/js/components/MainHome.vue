@@ -3,8 +3,9 @@
         <ShoppingCart />
         <BannerSection />
         <SelectionSection :selected_list="selected_items" :overlay_status="overlay_conditions" />
+
         <SuggestionsSection :restaurants_list="restaurants_data" />
-        <TagsSection />
+        <TipologiesSection />
         <NewsSection />
         <WorkSection />
         
@@ -17,7 +18,7 @@ import ShoppingCart from './ShoppingCart.vue';
 import BannerSection from './BannerSection.vue';
 import SelectionSection from './SelectionSection.vue';
 import SuggestionsSection from './SuggestionsSection.vue';
-import TagsSection from './TagsSection.vue';
+import TipologiesSection from './TipologiesSection.vue';
 import NewsSection from './NewsSection.vue';
 import WorkSection from './WorkSection.vue';
 import PageOverlay from './PageOverlay.vue';
@@ -29,7 +30,7 @@ export default {
         BannerSection,
         SelectionSection,
         SuggestionsSection,
-        TagsSection,
+        TipologiesSection,
         NewsSection,
         WorkSection,
         PageOverlay
