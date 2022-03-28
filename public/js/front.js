@@ -2834,8 +2834,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Restaurant'
+  name: 'Restaurant',
+  data: function data() {
+    return {
+      restaurant: [],
+      dishes: []
+    };
+  },
+  methods: {
+    getRestaurant: function getRestaurant() {
+      var _this = this;
+
+      //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+      // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+      axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.slug).then(function (response) {
+        // console.log(response);
+        _this.restaurant = response.data.results;
+        _this.dishes = response.data.results.dishes;
+      });
+    }
+  },
+  created: function created() {
+    this.getRestaurant();
+  }
 });
 
 /***/ }),
@@ -5138,7 +5178,12 @@ var render = function () {
                     "router-link",
                     {
                       staticClass: "card border-0 bg-transparent",
-                      attrs: { to: "restaurants.slug" },
+                      attrs: {
+                        to: {
+                          name: "restaurants",
+                          params: { slug: restaurant.slug },
+                        },
+                      },
                     },
                     [
                       _c("div", { staticClass: "card_image_box w-100" }, [
@@ -5393,18 +5438,37 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", [
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        [
+          _c("h1", [_vm._v(_vm._s(_vm.restaurant.nome_attivita))]),
+          _vm._v(" "),
+          _vm._l(_vm.dishes, function (dish, index) {
+            return _c("div", { key: index }, [
+              _vm._v(
+                "\n\n               " +
+                  _vm._s(dish["immagine"]) +
+                  "\n               " +
+                  _vm._s(dish["nome"]) +
+                  "\n               " +
+                  _vm._s(dish["prezzo"]) +
+                  "\n               " +
+                  _vm._s(dish["ingredienti"]) +
+                  "\n\n               " +
+                  _vm._s(dish["descrizione"]) +
+                  "\n\n           "
+              ),
+            ])
+          }),
+        ],
+        2
+      ),
+    ]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", [
-      _c("div", { staticClass: "container" }, [_c("h1", [_vm._v("Ciao")])]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -22261,8 +22325,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "home",
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: "/restaurant/:slug",
-    name: "restaurant",
+    path: "/restaurants/:slug",
+    name: "restaurants",
     component: _pages_Restaurant_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: "/dish/:slug",

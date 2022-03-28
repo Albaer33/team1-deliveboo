@@ -12,7 +12,7 @@
                         <div class="col" v-for="restaurant in restaurants_list" :key="restaurant.id">
                             <!-- Da mettere la card dentro tag router-link -->
 
-                                <router-link to="restaurants.slug" class="card border-0 bg-transparent">
+                                <router-link :to="{name:'restaurants', params:{slug:restaurant.slug}}" class="card border-0 bg-transparent">
                                     <div class="card_image_box w-100">
                                         <img :src="restaurant.immagine" :alt="'Immagine di ' + restaurant.nome_attivita">
                                     </div>
