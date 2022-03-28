@@ -1,10 +1,14 @@
 <template>
     <section class="tipologies_section">
+
         <div class="container d-flex flex-wrap">
+
             <div class="tipos_wrapper " v-for="typo, index in typos" :key="index">
-                <button  type="button" class="btn btn-light fw-bold">{{typo.nome}}</button>
+
+                <router-link to="" type="button" class="btn btn-light fw-bold">{{typo.nome}}</router-link>
 
             </div>
+
         </div>
 
     </section>
@@ -43,17 +47,20 @@ export default {
 
 <style lang="scss" scoped>
 .tipologies_section{
+
+    margin: 30px 0;
+
     .container{
-        // display: flex;
-        // flex-wrap: wrap;
-        // flex-direction: row;
-        // justify-content: space-around;
+
         .tipos_wrapper{
+
             margin-right: 20px;
             margin-bottom: 20px;
-                .button{
-                    // font-weight: bold;
-                }  
+
+            .button{
+                    
+            }  
+
         }
     }
 }

@@ -2334,6 +2334,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2588,6 +2589,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SuggestionsSection',
   props: {
@@ -2606,6 +2609,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -2661,6 +2668,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'WorkSection'
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Dish.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Dish.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Dish',
+  data: function data() {
+    return {
+      dishes: []
+    };
+  },
+  methods: {
+    getDishes: function getDishes() {
+      var _this = this;
+
+      axios.get('/api/dishes' + this.$route.params.slug).then(function (response) {
+        // console.log(response);
+        _this.dishes = response.data.results;
+        /* this.myposts = response.data.results.dishes; */
+        // console.log(response.data.results.dishes);
+      });
+    }
+  },
+  created: function created() {
+    this.getDishes();
+  }
 });
 
 /***/ }),
@@ -2765,6 +2814,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'NotFound'
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Restaurant.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Restaurant'
 });
 
 /***/ }),
@@ -3045,7 +3116,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".tipologies_section .container .tipos_wrapper[data-v-f555c47a] {\n  margin-right: 20px;\n  margin-bottom: 20px;\n}", ""]);
+exports.push([module.i, ".tipologies_section[data-v-f555c47a] {\n  margin: 30px 0;\n}\n.tipologies_section .container .tipos_wrapper[data-v-f555c47a] {\n  margin-right: 20px;\n  margin-bottom: 20px;\n}", ""]);
 
 // exports
 
@@ -4570,9 +4641,14 @@ var staticRenderFns = [
               "div",
               { staticClass: "banner_text_box text-white position-absolute" },
               [
-                _c("h3", { staticClass: "fw-bold mb-0 fs_25" }, [
-                  _vm._v("#aCasaTuaConDeliveboo"),
-                ]),
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "fw-bold mb-0 fs_25 d-flex justify-content-center",
+                  },
+                  [_vm._v("#aCasaTuaConDeliveboo")]
+                ),
               ]
             ),
           ]
@@ -5054,28 +5130,40 @@ var render = function () {
             "div",
             { staticClass: "row row-cols-1 row-cols-md-3 g-3" },
             _vm._l(_vm.restaurants_list, function (restaurant) {
-              return _c("div", { key: restaurant.id, staticClass: "col" }, [
-                _c("div", { staticClass: "card border-0 bg-transparent" }, [
-                  _c("div", { staticClass: "card_image_box w-100" }, [
-                    _c("img", {
-                      attrs: {
-                        src: restaurant.immagine,
-                        alt: "Immagine di " + restaurant.nome_attivita,
-                      },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body p-0" }, [
-                    _c("h4", { staticClass: "my-2 fw-bold" }, [
-                      _vm._v(_vm._s(restaurant.nome_attivita)),
-                    ]),
-                    _vm._v(" "),
-                    restaurant.description !== ""
-                      ? _c("p", [_vm._v(_vm._s(restaurant.descrizione))])
-                      : _vm._e(),
-                  ]),
-                ]),
-              ])
+              return _c(
+                "div",
+                { key: restaurant.id, staticClass: "col" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "card border-0 bg-transparent",
+                      attrs: { to: "{restaurant.id}" },
+                    },
+                    [
+                      _c("div", { staticClass: "card_image_box w-100" }, [
+                        _c("img", {
+                          attrs: {
+                            src: restaurant.immagine,
+                            alt: "Immagine di " + restaurant.nome_attivita,
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-body p-0" }, [
+                        _c("h4", { staticClass: "my-2 fw-bold" }, [
+                          _vm._v(_vm._s(restaurant.nome_attivita)),
+                        ]),
+                        _vm._v(" "),
+                        restaurant.description !== ""
+                          ? _c("p", [_vm._v(_vm._s(restaurant.descrizione))])
+                          : _vm._e(),
+                      ]),
+                    ]
+                  ),
+                ],
+                1
+              )
             }),
             0
           ),
@@ -5124,13 +5212,21 @@ var render = function () {
       "div",
       { staticClass: "container d-flex flex-wrap" },
       _vm._l(_vm.typos, function (typo, index) {
-        return _c("div", { key: index, staticClass: "tipos_wrapper " }, [
-          _c(
-            "button",
-            { staticClass: "btn btn-light fw-bold", attrs: { type: "button" } },
-            [_vm._v(_vm._s(typo.nome))]
-          ),
-        ])
+        return _c(
+          "div",
+          { key: index, staticClass: "tipos_wrapper " },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-light fw-bold",
+                attrs: { to: "", type: "button" },
+              },
+              [_vm._v(_vm._s(typo.nome))]
+            ),
+          ],
+          1
+        )
       }),
       0
     ),
@@ -5161,6 +5257,37 @@ var render = function () {
   return _c("section", { staticClass: "work_section" })
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Dish.vue?vue&type=template&id=58cb48ba&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Dish.vue?vue&type=template&id=58cb48ba& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", [_c("div", { staticClass: "container" })])
+  },
+]
 render._withStripped = true
 
 
@@ -5245,6 +5372,39 @@ var render = function () {
   ])
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", [
+      _c("div", { staticClass: "container" }, [_c("h1", [_vm._v("Ciao")])]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -21770,17 +21930,20 @@ var app = new Vue({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _Dish_vue_vue_type_template_id_58cb48ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dish.vue?vue&type=template&id=58cb48ba& */ "./resources/js/pages/Dish.vue?vue&type=template&id=58cb48ba&");
+/* harmony import */ var _Dish_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dish.vue?vue&type=script&lang=js& */ "./resources/js/pages/Dish.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Dish_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Dish_vue_vue_type_template_id_58cb48ba___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Dish_vue_vue_type_template_id_58cb48ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -21788,8 +21951,42 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/pages/Dish.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/Dish.vue?vue&type=script&lang=js&":
+/*!**************************************************************!*\
+  !*** ./resources/js/pages/Dish.vue?vue&type=script&lang=js& ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dish_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Dish.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Dish.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dish_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Dish.vue?vue&type=template&id=58cb48ba&":
+/*!********************************************************************!*\
+  !*** ./resources/js/pages/Dish.vue?vue&type=template&id=58cb48ba& ***!
+  \********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dish_vue_vue_type_template_id_58cb48ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Dish.vue?vue&type=template&id=58cb48ba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Dish.vue?vue&type=template&id=58cb48ba&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dish_vue_vue_type_template_id_58cb48ba___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dish_vue_vue_type_template_id_58cb48ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -21940,17 +22137,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _Restaurant_vue_vue_type_template_id_25de3706___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Restaurant.vue?vue&type=template&id=25de3706& */ "./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&");
+/* harmony import */ var _Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Restaurant.vue?vue&type=script&lang=js& */ "./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Restaurant_vue_vue_type_template_id_25de3706___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Restaurant_vue_vue_type_template_id_25de3706___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -21958,8 +22158,42 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/pages/Restaurant.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/pages/Restaurant.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Restaurant.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706& ***!
+  \**************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_template_id_25de3706___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Restaurant.vue?vue&type=template&id=25de3706& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_template_id_25de3706___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_template_id_25de3706___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -22026,24 +22260,20 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/",
     name: "home",
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-
+  }, {
+    path: "/restaurant/:slug",
+    name: "restaurant",
+    component: _pages_Restaurant_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: "/dish/:slug",
+    name: "dish",
+    component: _pages_Dish_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, // {
-  //     path: "/restaurant/:slug",
-  //     name: "restaurant-details",
-  //     component: Restaurant
-  // },
-  // {
-  //     path: "/dish/:slug",
-  //     name: "dish-details",
-  //     component: Dish
-  // },
-  // {
   //     path: "/tipologies/:slug",
-  //     name: "tipology-details",
+  //     name: "tipology",
   //     component: Tipology
   // },
   {
-
     path: "/*",
     name: "not-found",
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -22148,7 +22378,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\programmazione\repo\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Classe48\Laravel\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

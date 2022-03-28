@@ -22,16 +22,18 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111112',
                 'indirizzo' => 'Via Dei Fiaschi 1',
                 'immagine' => 'https://f.roocdn.com/images/menus/64574/header-image.jpg?width=706.0000210404396&height=354.0000105500221&auto=webp&format=jpg&fit=crop&v=1547634455',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x11'
             ],
             [
 
-                'nome_attivita' => 'Nima Sush',
+                'nome_attivita' => 'Nima Sushi',
                 'P_IVA' => '11111111112',
                 'telefono' => '11111111112',
                 'indirizzo' => 'Via Dei Fiaschi 2',
                 'immagine' => 'https://f.roocdn.com/images/menus/213898/header-image.jpg?width=706.0000210404396&height=354.0000105500221&auto=webp&format=jpg&fit=crop&v=1573558821',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x12'
     
             ],
             [
@@ -41,7 +43,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111113',
                 'indirizzo' => 'Via Dei Fiaschi 3',
                 'immagine' => 'https://f.roocdn.com/images/menus/71232/header-image.jpg?width=706.0000210404396&height=354.0000105500221&auto=webp&format=jpg&fit=crop&v=1615219760',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x1'
     
             ],
             [
@@ -51,7 +54,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111114',
                 'indirizzo' => 'Via Dei Fiaschi 4',
                 'immagine' => 'https://f.roocdn.com/images/menus/14480/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1537967434',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x2'
     
             ],
             [
@@ -61,7 +65,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111115',
                 'indirizzo' => 'Via Dei Fiaschi 5',
                 'immagine' => 'https://f.roocdn.com/images/menus/67494/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1610355421',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x3'
     
             ],
             [
@@ -71,7 +76,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111116',
                 'indirizzo' => 'Via Dei Fiaschi 6',
                 'immagine' => 'https://f.roocdn.com/images/menus/63776/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1556873766',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x4'
     
             ],
             [
@@ -81,7 +87,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111117',
                 'indirizzo' => 'Via Dei Fiaschi 7',
                 'immagine' => 'https://f.roocdn.com/images/menus/225238/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1585830197',
-                'descrizione' => 'Il menù potrebbe temporaneamente subire alcune variazioni di ingredienti. Per maggiori informazioni contattare il punto vendita o consultare la sezione “lista ingredienti ed allergeni'
+                'descrizione' => 'Il menù potrebbe temporaneamente subire alcune variazioni di ingredienti. Per maggiori informazioni contattare il punto vendita o consultare la sezione “lista ingredienti ed allergeni',
+                'slug' => 'x5'
     
             ],
             [
@@ -91,7 +98,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111118',
                 'indirizzo' => 'Via Dei Fiaschi 8',
                 'immagine' => 'https://f.roocdn.com/images/menus/188980/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1588261235',
-                'descrizione' => 'Ordina il tuo piatto preferito a casa tua da Roadhouse grazie alla consegna a domicilio di Deliveroo.'
+                'descrizione' => 'Ordina il tuo piatto preferito a casa tua da Roadhouse grazie alla consegna a domicilio di Deliveroo.',
+                'slug' => 'x6'
     
             ],
             [
@@ -101,7 +109,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111119',
                 'indirizzo' => 'Via Dei Fiaschi 9',
                 'immagine' => 'https://f.roocdn.com/images/menus/257876/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1586357552',
-                'descrizione' => 'Ordina il tuo piatto preferito a casa tua da KFC grazie alla consegna a domicilio di Deliveroo. Per maggiori informazioni sul libro ingredienti consulta la pagina: http://www.kfc.it/wp-content/uploads/2016/05/kfc_libro_ingredienti.pdf'
+                'descrizione' => 'Ordina il tuo piatto preferito a casa tua da KFC grazie alla consegna a domicilio di Deliveroo. Per maggiori informazioni sul libro ingredienti consulta la pagina: http://www.kfc.it/wp-content/uploads/2016/05/kfc_libro_ingredienti.pdf',
+                'slug' => 'x7'
     
             ],
             [
@@ -111,7 +120,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111120',
                 'indirizzo' => 'Via Dei Fiaschi 10',
                 'immagine' => 'https://f.roocdn.com/images/menus/207109/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1602487666',
-                'descrizione' => 'Ordina la tua piadina preferita a casa tua da La Piadineria grazie alla consegna a domicilio di Deliveroo.'
+                'descrizione' => 'Ordina la tua piadina preferita a casa tua da La Piadineria grazie alla consegna a domicilio di Deliveroo.',
+                'slug' => 'x8'
     
             ],
             [
@@ -121,7 +131,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111121',
                 'indirizzo' => 'Via Dei Fiaschi 11',
                 'immagine' => 'https://f.roocdn.com/images/menus/41027/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1598626967',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x9'
     
             ],
             [
@@ -131,7 +142,8 @@ class RestaurantsTableSeeder extends Seeder
                 'telefono' => '11111111122',
                 'indirizzo' => 'Via Dei Fiaschi 12',
                 'immagine' => 'https://f.roocdn.com/images/menus/17074/header-image.jpg?width=936.0000278949738&height=468.0000139474869&auto=webp&format=jpg&fit=crop&v=1505479292',
-                'descrizione' => ''
+                'descrizione' => '',
+                'slug' => 'x10'
     
             ]
 
@@ -146,6 +158,7 @@ class RestaurantsTableSeeder extends Seeder
             $new_restaurant->indirizzo = $restaurant['indirizzo'];
             $new_restaurant->immagine = $restaurant['immagine'];
             $new_restaurant->descrizione = $restaurant['descrizione'];
+            $new_restaurant->slug = $restaurant['slug'];
             $new_restaurant->save();
 
         }

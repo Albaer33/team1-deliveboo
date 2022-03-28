@@ -18,19 +18,19 @@ const router = new VueRouter({
             component: Home
         },
 
-        // {
-        //     path: "/restaurant/:slug",
-        //     name: "restaurant-details",
-        //     component: Restaurant
-        // },
-        // {
-        //     path: "/dish/:slug",
-        //     name: "dish-details",
-        //     component: Dish
-        // },
+         {
+            path: "/restaurant/:slug",
+            name: "restaurant",
+            component: Restaurant
+        },
+        {
+            path: "/dish/:slug",
+            name: "dish",
+            component: Dish
+        },
         // {
         //     path: "/tipologies/:slug",
-        //     name: "tipology-details",
+        //     name: "tipology",
         //     component: Tipology
         // },
 
