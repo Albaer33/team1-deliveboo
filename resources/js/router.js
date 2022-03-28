@@ -17,21 +17,21 @@ const router = new VueRouter({
             name: "home",
             component: Home
         },
-        {
-            path: "/restaurant/:slug",
-            name: "restaurant-details",
-            component: Restaurant
-        },
-        {
-            path: "/dish/:slug",
-            name: "dish-details",
-            component: Dish
-        },
-        {
-            path: "/tipologies/:slug",
-            name: "tipology-details",
-            component: Tipology
-        },
+        // {
+        //     path: "/restaurant/:slug",
+        //     name: "restaurant-details",
+        //     component: Restaurant
+        // },
+        // {
+        //     path: "/dish/:slug",
+        //     name: "dish-details",
+        //     component: Dish
+        // },
+        // {
+        //     path: "/tipologies/:slug",
+        //     name: "tipology-details",
+        //     component: Tipology
+        // },
         {
             path: "/*",
             name: "not-found",
