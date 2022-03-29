@@ -4,7 +4,7 @@
             
             <div class="row d-flex container_style_ms">
                 <div class="col img_risto">
-                    <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita">
+                    <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita" v-if="restaurant.immagine !== null">
                     
                 </div>
                 <div  class="col d-flex">
@@ -24,7 +24,7 @@
                             <div>{{ dish['prezzo'] }}</div>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
-                        <div class="col-3 d-flex justify-content-center align-items-center">
+                        <div class="col-3 d-flex justify-content-center align-items-center" v-if="dish.immagine !== null">
                             <img :src="require(`/storage/app/public/${dish.immagine}`)" alt="restaurant.nome_attivita">
                         </div>
                     </div>
@@ -48,9 +48,9 @@ export default {
          getRestaurant(){
             //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
             // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-            axios.get('http://127.0.0.1:8000/api/restaurants/'+this.$route.params.slug)
+            axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.slug)
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 
                 this.restaurant = response.data.results;
                 

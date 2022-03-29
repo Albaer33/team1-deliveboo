@@ -2,10 +2,11 @@
     <section class="main_home position-relative">
         <ShoppingCart />
         <BannerSection />
+        <TipologiesSection />
         <SelectionSection :selected_list="selected_items" :overlay_status="overlay_conditions" />
 
         <SuggestionsSection :restaurants_list="restaurants_data" />
-        <TipologiesSection />
+        
         <NewsSection />
         <WorkSection />
         

@@ -1,7 +1,7 @@
 <template>
     <section class="tipologies_section">
 
-        <div class="container mb-30">
+        <div class="container">
 
             <h2>Cerchi qualcos'altro?</h2>
 
