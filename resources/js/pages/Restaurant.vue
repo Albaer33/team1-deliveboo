@@ -3,9 +3,11 @@
         <div class="container">
             
             <div class="row d-flex container_style_ms">
-                <div class="col img_risto">
+                <div v-if="restaurant.immagine.includes('http')" class="col img_risto">
+                    <img :src="restaurant.immagine" class="rounded mx-auto" alt="restaurant.nome_attivita">
+                </div>
+                <div v-else class="col img_risto">
                     <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita">
-                    
                 </div>
                 <div  class="col d-flex">
                     <h1>{{ restaurant.nome_attivita }}</h1>
