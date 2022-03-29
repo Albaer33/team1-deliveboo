@@ -4,16 +4,20 @@
 
         <div v-for="(restaurant, index) in restaurants" :key="index">
 
-            <div class="row d-flex container_style_ms">
-                <div class="col img_risto">
-                    <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita" v-if="restaurant.immagine !== null">
-                    
-                </div>
-                <div  class="col d-flex">
-                    <h1>{{ restaurant.nome_attivita }}</h1>
+            <router-link :to="{name:'restaurants', params:{slug:restaurant.slug}}">
 
-                </div>
-            </div>    
+                <div class="row d-flex container_style_ms">
+                    <div class="col img_risto">
+                        <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita" v-if="restaurant.immagine !== null">
+                        
+                    </div>
+                    <div  class="col d-flex">
+                        <h1>{{ restaurant.nome_attivita }}</h1>
+
+                    </div>
+                </div>    
+
+            </router-link>
 
         </div>            
 
@@ -25,7 +29,8 @@ export default {
     name: 'Tipology',
     data: function(){
         return {
-             typos : []
+             tipologies : [],
+             restaurants: []
         }
     },
           methods: {
@@ -37,7 +42,9 @@ export default {
             .then((response) => {
                 // console.log(response);
                 
-                    this.typos = response.data.results;
+                    this.tipologies = response.data.results;
+
+                    this.restaurants = response.data.results.restaurants;
                 
             });
           }

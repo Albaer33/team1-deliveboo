@@ -24,3 +24,4 @@ Route::get('/restaurants', 'Api\RestaurantController@index');
 Route::get('/restaurants/{slug}', 'Api\RestaurantController@show');
 
 Route::get('/tipologies','Api\TipologyController@index');
+Route::get('/tipologies/{slug}','Api\TipologyController@show');

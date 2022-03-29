@@ -9,9 +9,9 @@
 
         <div class="container d-flex flex-wrap mt-30">
 
-            <div class="tipos_wrapper" v-for="typo, index in typos" :key="index">
+            <div class="tipos_wrapper" v-for="tipology, index in tipologies" :key="index">
 
-                <router-link to="" type="button" class="btn btn-light fw-bold">{{typo.nome}}</router-link>
+                <router-link :to="{name:'tipologies', params:{slug:tipology.slug}}" type="button" class="btn btn-light fw-bold">{{tipology.nome}}</router-link>
 
             </div>
 
@@ -27,7 +27,7 @@ export default {
 
     data: function(){
         return {
-             typos : []
+             tipologies : []
         }
     },
           methods: {
@@ -39,7 +39,7 @@ export default {
             .then((response) => {
                 // console.log(response);
                 
-                    this.typos = response.data.results;
+                    this.tipologies = response.data.results;
                 
             });
           }

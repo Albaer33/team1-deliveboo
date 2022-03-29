@@ -2746,7 +2746,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'TipologiesSection',
   data: function data() {
     return {
-      typos: []
+      tipologies: []
     };
   },
   methods: {
@@ -2757,7 +2757,7 @@ __webpack_require__.r(__webpack_exports__);
       // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
       axios.get('http://127.0.0.1:8000/api/tipologies/').then(function (response) {
         // console.log(response);
-        _this.typos = response.data.results;
+        _this.tipologies = response.data.results;
       });
     }
   },
@@ -3058,11 +3058,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Tipology',
   data: function data() {
     return {
-      typos: []
+      tipologies: [],
+      restaurants: []
     };
   },
   methods: {
@@ -3073,7 +3078,8 @@ __webpack_require__.r(__webpack_exports__);
       // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
       axios.get('http://127.0.0.1:8000/api/tipologies/' + this.$route.params.slug).then(function (response) {
         // console.log(response);
-        _this.typos = response.data.results;
+        _this.tipologies = response.data.results;
+        _this.restaurants = response.data.results.restaurants;
       });
     }
   },
@@ -5890,7 +5896,7 @@ var render = function () {
     _c(
       "div",
       { staticClass: "container d-flex flex-wrap mt-30" },
-      _vm._l(_vm.typos, function (typo, index) {
+      _vm._l(_vm.tipologies, function (tipology, index) {
         return _c(
           "div",
           { key: index, staticClass: "tipos_wrapper" },
@@ -5899,9 +5905,12 @@ var render = function () {
               "router-link",
               {
                 staticClass: "btn btn-light fw-bold",
-                attrs: { to: "", type: "button" },
+                attrs: {
+                  to: { name: "tipologies", params: { slug: tipology.slug } },
+                  type: "button",
+                },
               },
-              [_vm._v(_vm._s(typo.nome))]
+              [_vm._v(_vm._s(tipology.nome))]
             ),
           ],
           1
@@ -6220,26 +6229,44 @@ var render = function () {
       "div",
       { staticClass: "container" },
       _vm._l(_vm.restaurants, function (restaurant, index) {
-        return _c("div", { key: index }, [
-          _c("div", { staticClass: "row d-flex container_style_ms" }, [
-            _c("div", { staticClass: "col img_risto" }, [
-              restaurant.immagine !== null
-                ? _c("img", {
-                    staticClass: "rounded mx-auto",
-                    attrs: {
-                      src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
-                        restaurant.immagine),
-                      alt: "restaurant.nome_attivita",
-                    },
-                  })
-                : _vm._e(),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col d-flex" }, [
-              _c("h1", [_vm._v(_vm._s(restaurant.nome_attivita))]),
-            ]),
-          ]),
-        ])
+        return _c(
+          "div",
+          { key: index },
+          [
+            _c(
+              "router-link",
+              {
+                attrs: {
+                  to: {
+                    name: "restaurants",
+                    params: { slug: restaurant.slug },
+                  },
+                },
+              },
+              [
+                _c("div", { staticClass: "row d-flex container_style_ms" }, [
+                  _c("div", { staticClass: "col img_risto" }, [
+                    restaurant.immagine !== null
+                      ? _c("img", {
+                          staticClass: "rounded mx-auto",
+                          attrs: {
+                            src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
+                              restaurant.immagine),
+                            alt: "restaurant.nome_attivita",
+                          },
+                        })
+                      : _vm._e(),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col d-flex" }, [
+                    _c("h1", [_vm._v(_vm._s(restaurant.nome_attivita))]),
+                  ]),
+                ]),
+              ]
+            ),
+          ],
+          1
+        )
       }),
       0
     ),
@@ -23238,7 +23265,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _pages_Dish_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: "/tipologies/:slug",
-    name: "tipology",
+    name: "tipologies",
     component: _pages_Tipology_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: "/*",

@@ -29,7 +29,7 @@ const router = new VueRouter({
         },
         {
             path: "/tipologies/:slug",
-            name: "tipology",
+            name: "tipologies",
             component: Tipology
         },
         {
