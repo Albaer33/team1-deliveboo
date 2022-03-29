@@ -6,7 +6,7 @@
                 <!-- Loghi -->
                 <div class="header_logos d-flex align-items-center">
                     <img class="w_30p" :src="img_logo" alt="logo deliveboo">
-                    <h4 class="mb-0">deliveboo</h4>
+                    <a href="http://127.0.0.1:8000"><h4 class="mb-0">deliveboo</h4></a>
                 </div>
 
                 <!-- Bottoni -->
@@ -41,6 +41,13 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../sass/variables.scss';
+
+    a{
+
+        text-decoration: none;
+        color: inherit;
+
+    }
 
     header{
         height: 80px;

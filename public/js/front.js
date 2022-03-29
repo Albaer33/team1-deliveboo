@@ -3020,7 +3020,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\nheader[data-v-1f42fb90] {\n  height: 80px;\n  background-color: #00ccbc;\n}\nheader .header_logos[data-v-1f42fb90] {\n  gap: 5px;\n  color: white;\n}\nheader .header_logos img[data-v-1f42fb90] {\n  filter: invert(1);\n}\nheader .header_forms[data-v-1f42fb90] {\n  gap: 15px;\n}\nheader .header_forms [class*=_box][data-v-1f42fb90] {\n  height: 80%;\n  border-radius: 5px;\n  padding: 8px 16px;\n  background-color: white;\n}\nheader .header_forms [class*=_box] a[data-v-1f42fb90] {\n  color: #440063;\n  text-decoration: none;\n}\nheader .header_forms [class*=_box] i[data-v-1f42fb90] {\n  color: #00ccbc;\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\na[data-v-1f42fb90] {\n  text-decoration: none;\n  color: inherit;\n}\nheader[data-v-1f42fb90] {\n  height: 80px;\n  background-color: #00ccbc;\n}\nheader .header_logos[data-v-1f42fb90] {\n  gap: 5px;\n  color: white;\n}\nheader .header_logos img[data-v-1f42fb90] {\n  filter: invert(1);\n}\nheader .header_forms[data-v-1f42fb90] {\n  gap: 15px;\n}\nheader .header_forms [class*=_box][data-v-1f42fb90] {\n  height: 80%;\n  border-radius: 5px;\n  padding: 8px 16px;\n  background-color: white;\n}\nheader .header_forms [class*=_box] a[data-v-1f42fb90] {\n  color: #440063;\n  text-decoration: none;\n}\nheader .header_forms [class*=_box] i[data-v-1f42fb90] {\n  color: #00ccbc;\n}", ""]);
 
 // exports
 
@@ -4819,16 +4819,24 @@ var render = function () {
               attrs: { src: _vm.img_logo, alt: "logo deliveboo" },
             }),
             _vm._v(" "),
-            _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
+            _vm._m(0),
           ]),
           _vm._v(" "),
-          _vm._m(0),
+          _vm._m(1),
         ]),
       ]),
     ]
   )
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "http://127.0.0.1:8000" } }, [
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
