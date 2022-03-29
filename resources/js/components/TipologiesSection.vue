@@ -1,13 +1,13 @@
 <template>
     <section class="tipologies_section">
 
-        <div class="container">
+        <div class="container mb-30">
 
             <h2>Cerchi qualcos'altro?</h2>
 
         </div>
 
-        <div class="container d-flex flex-wrap">
+        <div class="container d-flex flex-wrap mt-30">
 
             <div class="tipos_wrapper" v-for="typo, index in typos" :key="index">
 
@@ -56,7 +56,13 @@ export default {
 
     margin: 30px 0;
 
-    .mb-30{
+    .mt-30{
+
+        margin-top: 30px;
+
+    }
+
+    .mn-30{
 
         margin-bottom: 30px;
 
