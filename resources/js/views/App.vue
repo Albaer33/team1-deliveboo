@@ -35,4 +35,8 @@ export default {
     font-weight: bold;
     margin-bottom: 0;
   }
+
+  main{
+    min-height: calc(100% - 80px);
+  }
 </style>

@@ -1,10 +1,13 @@
 <template>
-    <section>
-        <div class="container">
+    <section class="restaurant_content">
+
+        <Loader v-if="!apiLoaded" />
+
+        <div class="container" v-else>
             
             <div class="row d-flex container_style_ms">
                 <div class="col img_risto">
-                    <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita" v-if="restaurant.immagine !== null">
+                    <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" :alt="restaurant.nome_attivita" v-if="restaurant.immagine !== null">
                     
                 </div>
                 <div  class="col d-flex">
@@ -25,7 +28,7 @@
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
                         <div class="col-3 d-flex justify-content-center align-items-center" v-if="dish.immagine !== null">
-                            <img :src="require(`/storage/app/public/${dish.immagine}`)" alt="restaurant.nome_attivita">
+                            <img :src="require(`/storage/app/public/${dish.immagine}`)" :alt="restaurant.nome_attivita">
                         </div>
                     </div>
                 </div>
@@ -34,13 +37,18 @@
     </section>
 </template>
 <script>
+import Loader from '../components/Loader.vue';
+
 export default {
     name: 'Restaurant',
+    components: {
+        Loader
+    },
     data: function(){
         return {
             restaurant : [],
-            dishes: []
-            
+            dishes: [],
+            apiLoaded: false
         }
     },
           methods: {
@@ -55,12 +63,15 @@ export default {
                 this.restaurant = response.data.results;
                 
                 this.dishes = response.data.results.dishes;
+
+                this.apiLoaded = true;
                 
             });
           }
     },
     created: function(){
         this.getRestaurant();
+        window.scrollTo(0, 0);
     }
 
 }

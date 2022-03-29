@@ -1,5 +1,5 @@
 <template>
-    <section class="loader w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+    <section class="loader w-100 d-flex flex-column justify-content-center align-items-center">
         <h2 class="mb-3">Loading</h2>
         <div class="loading_icon w_50p h_50p rounded-circle mt-3"></div>
     </section>
@@ -17,6 +17,7 @@ export default {
     .loader{
         background-color: $primary_color;
         color: white;
+        height: calc(100vh - 80px);
 
         h2{
             color: white;
