@@ -37,6 +37,6 @@ export default {
   }
 
   main{
-    height: calc(100% - 80px);
+    min-height: calc(100% - 80px);
   }
 </style>
