@@ -6,7 +6,11 @@
                 <!-- Loghi -->
                 <div class="header_logos d-flex align-items-center">
                     <img class="w_30p" :src="img_logo" alt="logo deliveboo">
-                    <a href="http://127.0.0.1:8000"><h4 class="mb-0">deliveboo</h4></a>
+                    <router-link :to="{name: 'home'}">
+
+                        <h4 class="mb-0">deliveboo</h4>
+
+                    </router-link>
                 </div>
 
                 <!-- Bottoni -->

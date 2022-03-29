@@ -9,9 +9,24 @@
             <!-- Lista ordini -->
             <div class="cart_body w-100 h-100 d-flex flex-column" :class="cartBodyClass">
                 <h3 class="text-center my-5">I tuoi ordini</h3>
-                <div class="orders_box w-100 h-100 flex-grow-1 d-flex flex-column border border-3 border-white rounded p-2">
+                <div class="orders_box w-100 h-100 flex-grow-1 d-flex flex-column border border-3 border-white rounded p-2 space-padding-shopping-cart">
+                    <div class="d-flex justify-content-between space-shopping-cart">
+
+                        <div>Prodotti</div>
+
+                        <div>Quantità</div>
+
+                        <div>Totale</div>
+
+                        <div>Test</div>
+
+                    </div>
+
                     <div class="single_order justify-content-between d-flex align-items-center mb-3" v-for="order in orders" :key="order.id">
+                        
                         <span>{{order.name}}</span>
+                        <span>{{order.amount}}</span>
+                        <span>{{order.priceTot}}</span>
                         <i class="fa-solid fa-x fs-5 p-1 text-white" @click="removeOrder(order.id)"></i>
                     </div>
                 </div>
@@ -61,12 +76,28 @@ export default {
                 }
             });
         }
+    },
+    created: function(){
+
+
     }    
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../sass/variables.scss';
+
+    .space-shopping-cart{
+
+        font-size: 25px;
+
+    }
+
+    .space-padding-shopping-cart{
+
+        padding: 20px;
+
+    }
 
     .shopping_cart{
         position: fixed;
@@ -125,7 +156,8 @@ export default {
             left: 50%;
             transform: translateX(-50%);
             border-radius: 5px;
-            box-shadow: 0px 5px 20px 10px;
+            box-shadow: 0px 0px 20px 10px rgb(0 0 0 / 30%);
+
         }
 
         // Animazione comparsa/scomparsa

@@ -24,36 +24,40 @@ export default {
   data: function(){
     return {
       // Lista ordini (da cambiare con quelli della chiamata api, questa è un test)
-            cart_orders: [
-                {
-                    id: 1,
-                    name: 'Pizza Margherita'
-                },
-                {
-                    id: 2,
-                    name: 'Pasta alla Carbonara'
-                },
-                {
-                    id: 3,
-                    name: 'Kebab con patatine'
-                },
-                {
-                    id: 4,
-                    name: 'Gelato al pistacchio'
-                },
-                {
-                    id: 5,
-                    name: 'Crispy McBacon'
-                }
-            ]
+      cart_orders: []
     };
   },
   methods: {
     getOrder: function(orderToAdd){
-      this.cart_orders.push({
-        id: this.cart_orders.length + 1,
-        name: orderToAdd
+
+      let orderFound = false; 
+
+      this.cart_orders.forEach(( order ) => {
+
+        if( ( order.name === orderToAdd ) && ( this.cart_orders.length > 0 ) ){
+
+          order.amount++
+
+          order.priceTot += order.price
+
+          orderFound = true;
+
+        }
+        
       });
+
+      if(!orderFound){
+
+        this.cart_orders.push({
+          id: this.cart_orders.length + 1,
+          name: orderToAdd,
+          amount: 1,
+          price: 25,
+          priceTot: 25
+        });
+
+      }
+
     }
   }
 };

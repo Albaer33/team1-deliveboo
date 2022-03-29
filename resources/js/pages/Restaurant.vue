@@ -19,8 +19,8 @@
             <div  v-for="(dish, index) in dishes" :key="index" >
                 
                 <div v-if="dish.visibile === 1" class="p-5 card_style_ms overflow-hidden position-relative">
-                    <div class="buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
-                        <h4 @click="addToCart(dish.nome)" class="mb-0">{{addButtonText}}</h4>
+                    <div @click="addToCart(dish.nome)" class="buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
+                        <h4 class="mb-0">{{addButtonText}}</h4>
                     </div>
                     <div class="row ">
                         <div class="d-flex flex-column justify-content-center col-9">
@@ -53,17 +53,17 @@ export default {
             dishes: [],
             apiLoaded: false,
             orderAdded: false,
-            addButtonText: 'Aggiungi al carrello'
+            addButtonText: '+'
         }
     },
-          methods: {
+        methods: {
 
-         getRestaurant(){
+            getRestaurant(){
             //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
             // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
             axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.slug)
             .then((response) => {
-                console.log(response);
+                /* console.log(response); */
                 
                 this.restaurant = response.data.results;
                 
@@ -76,7 +76,7 @@ export default {
         // Funzione emit per aggiungere al carrello
         addToCart: function(order){
             this.$emit('sendOrder', order);
-            this.addButtonText = 'Aggiunto!';
+            
         }            
 
     },
