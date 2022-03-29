@@ -1,9 +1,17 @@
 <template>
     <section class="tipologies_section">
         <div class="container d-flex flex-wrap">
-            <div class="tipos_wrapper " v-for="typo, index in typos" :key="index">
-                <button  type="button" class="btn btn-light fw-bold">{{typo.nome}}</button>
-
+            <div class="row row-cols-1">
+                <div class="col">
+                    <div class="title_container">
+                        <h2 class="mt-5 mb-4">Cerchi qualcos'altro?</h2>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tipos_wrapper d-flex flex-wrap">
+                        <a href="#" class="tipology_link fw-bold" v-for="typo, index in typos" :key="index">{{typo.nome}}</a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -42,6 +50,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/variables.scss';
+
 .tipologies_section{
     .container{
         // display: flex;
@@ -49,11 +59,13 @@ export default {
         // flex-direction: row;
         // justify-content: space-around;
         .tipos_wrapper{
+            gap: 1rem;
             margin-right: 20px;
             margin-bottom: 20px;
-                .button{
-                    // font-weight: bold;
-                }  
+
+            .tipology_link{
+                color: $secondary_color;
+            }  
         }
     }
 }

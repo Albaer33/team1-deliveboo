@@ -2,7 +2,7 @@
     <div class="search_box d-flex flex-column justify-content-center align-items-start">
         <h4>Cerca un ristorante per nome:</h4>
         <input class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante">
-        <a href="#" class="green_button mt-3 fw-bold">Cerca</a>
+        <router-link :to="{ path: '/restaurant/:slug'}" class="green_button mt-3 fw-bold">Cerca</router-link>
     </div>
 </template>
 

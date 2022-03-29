@@ -2388,6 +2388,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2729,6 +2730,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TipologiesSection',
   data: function data() {
@@ -2877,6 +2886,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'NotFound'
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Restaurant.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -3175,7 +3201,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".tipologies_section .container .tipos_wrapper[data-v-f555c47a] {\n  margin-right: 20px;\n  margin-bottom: 20px;\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.tipologies_section .container .tipos_wrapper[data-v-f555c47a] {\n  gap: 1rem;\n  margin-right: 20px;\n  margin-bottom: 20px;\n}\n.tipologies_section .container .tipos_wrapper .tipology_link[data-v-f555c47a] {\n  color: #440063;\n}", ""]);
 
 // exports
 
@@ -3196,7 +3222,7 @@ exports.i(__webpack_require__(/*! -!../../../node_modules/css-loader!@fontsource
 exports.i(__webpack_require__(/*! -!../../../node_modules/css-loader!@fortawesome/fontawesome-free/css/all.css */ "./node_modules/css-loader/index.js!./node_modules/@fortawesome/fontawesome-free/css/all.css"), "");
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n/* Import delle installazioni npm */\nbody {\n  font-family: \"Roboto\", sans-serif;\n}\nul {\n  list-style-type: none;\n}\n.btn:focus {\n  box-shadow: none;\n}\n\n/* FLEX */\n.justify_content_evenly {\n  justify-content: space-evenly;\n}\n\n/* TEXT */\n.text_black {\n  color: black;\n}\n.text_red {\n  color: red;\n}\n.text_green {\n  color: green;\n}\n.text_yellow {\n  color: yellow;\n}\n.text_purple {\n  color: purple;\n}\n.text_blue {\n  color: blue;\n}\n.text_orange {\n  color: orange;\n}\n.text_salmon {\n  color: salmon;\n}\n.text_emerald {\n  color: #008c67;\n}\n.text_lime {\n  color: lime;\n}\n\n/* BACKGROUND */\n.bg_cover {\n  background-size: cover;\n}\n.bg_contain {\n  background-size: contain;\n}\n.bg_repeat {\n  background-repeat: repeat;\n}\n.bg_no_repeat {\n  background-repeat: no-repeat;\n}\n.bg_center {\n  background-position: center;\n}\n.bg_top {\n  background-position: top;\n}\n.bg_end {\n  background-position: right;\n}\n.bg_bottom {\n  background-position: bottom;\n}\n.bg_start {\n  background-position: left;\n}\n.bg_white {\n  background-color: white;\n}\n.bg_black {\n  background-color: black;\n}\n.bg_red {\n  background-color: red;\n}\n.bg_green {\n  background-color: green;\n}\n.bg_yellow {\n  background-color: yellow;\n}\n.bg_purple {\n  background-color: purple;\n}\n.bg_blue {\n  background-color: blue;\n}\n.bg_orange {\n  background-color: orange;\n}\n.bg_salmon {\n  background-color: salmon;\n}\n.bg_emerald {\n  background-color: #008c67;\n}\n.bg_lime {\n  background-color: lime;\n}\n\n/* BORDER */\n.border_radius_10p {\n  border-radius: 10px;\n}\n.border_radius_20p {\n  border-radius: 20px;\n}\n.border_radius_30p {\n  border-radius: 30px;\n}\n.border_radius_40p {\n  border-radius: 40px;\n}\n.border_radius_50p {\n  border-radius: 50px;\n}\n.border_white {\n  border-color: white;\n}\n.border_black {\n  border-color: black;\n}\n.border_red {\n  border-color: red;\n}\n.border_green {\n  border-color: green;\n}\n.border_yellow {\n  border-color: yellow;\n}\n.border_purple {\n  border-color: purple;\n}\n.border_blue {\n  border-color: blue;\n}\n.border_orange {\n  border-color: orange;\n}\n.border_salmon {\n  border-color: salmon;\n}\n.border_emerald {\n  border-color: #008c67;\n}\n.border_lime {\n  border-color: lime;\n}\n\n/* PADDING */\n.p_5 {\n  padding: 5px;\n}\n.p_10 {\n  padding: 10px;\n}\n.p_15 {\n  padding: 15px;\n}\n.p_20 {\n  padding: 20px;\n}\n.p_25 {\n  padding: 25px;\n}\n.p_30 {\n  padding: 30px;\n}\n.p_35 {\n  padding: 35px;\n}\n.p_40 {\n  padding: 40px;\n}\n.p_45 {\n  padding: 45px;\n}\n.p_50 {\n  padding: 50px;\n}\n.p_55 {\n  padding: 55px;\n}\n.p_60 {\n  padding: 60px;\n}\n.p_65 {\n  padding: 65px;\n}\n.p_70 {\n  padding: 70px;\n}\n.p_75 {\n  padding: 75px;\n}\n.p_80 {\n  padding: 80px;\n}\n.p_85 {\n  padding: 85px;\n}\n.p_90 {\n  padding: 90px;\n}\n.p_95 {\n  padding: 95px;\n}\n.p_100 {\n  padding: 100px;\n}\n.px_5 {\n  padding-left: 5px;\n  padding-right: 5px;\n}\n.px_10 {\n  padding-left: 10px;\n  padding-right: 10px;\n}\n.px_15 {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.px_20 {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.px_25 {\n  padding-left: 25px;\n  padding-right: 25px;\n}\n.px_30 {\n  padding-left: 30px;\n  padding-right: 30px;\n}\n.px_35 {\n  padding-left: 35px;\n  padding-right: 35px;\n}\n.px_40 {\n  padding-left: 40px;\n  padding-right: 40px;\n}\n.px_45 {\n  padding-left: 45px;\n  padding-right: 45px;\n}\n.px_50 {\n  padding-left: 50px;\n  padding-right: 50px;\n}\n.px_55 {\n  padding-left: 55px;\n  padding-right: 55px;\n}\n.px_60 {\n  padding-left: 60px;\n  padding-right: 60px;\n}\n.px_65 {\n  padding-left: 65px;\n  padding-right: 65px;\n}\n.px_70 {\n  padding-left: 70px;\n  padding-right: 70px;\n}\n.px_75 {\n  padding-left: 75px;\n  padding-right: 75px;\n}\n.px_80 {\n  padding-left: 80px;\n  padding-right: 80px;\n}\n.px_85 {\n  padding-left: 85px;\n  padding-right: 85px;\n}\n.px_90 {\n  padding-left: 90px;\n  padding-right: 90px;\n}\n.px_95 {\n  padding-left: 95px;\n  padding-right: 95px;\n}\n.px_100 {\n  padding-left: 100px;\n  padding-right: 100px;\n}\n.py_5 {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.py_10 {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.py_15 {\n  padding-top: 15px;\n  padding-bottom: 15px;\n}\n.py_20 {\n  padding-top: 20px;\n  padding-bottom: 20px;\n}\n.py_25 {\n  padding-top: 25px;\n  padding-bottom: 25px;\n}\n.py_30 {\n  padding-top: 30px;\n  padding-bottom: 30px;\n}\n.py_35 {\n  padding-top: 35px;\n  padding-bottom: 35px;\n}\n.py_40 {\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.py_45 {\n  padding-top: 45px;\n  padding-bottom: 45px;\n}\n.py_50 {\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n.py_55 {\n  padding-top: 55px;\n  padding-bottom: 55px;\n}\n.py_60 {\n  padding-top: 60px;\n  padding-bottom: 60px;\n}\n.py_65 {\n  padding-top: 65px;\n  padding-bottom: 65px;\n}\n.py_70 {\n  padding-top: 70px;\n  padding-bottom: 70px;\n}\n.py_75 {\n  padding-top: 75px;\n  padding-bottom: 75px;\n}\n.py_80 {\n  padding-top: 80px;\n  padding-bottom: 80px;\n}\n.py_85 {\n  padding-top: 85px;\n  padding-bottom: 85px;\n}\n.py_90 {\n  padding-top: 90px;\n  padding-bottom: 90px;\n}\n.py_95 {\n  padding-top: 95px;\n  padding-bottom: 95px;\n}\n.py_100 {\n  padding-top: 100px;\n  padding-bottom: 100px;\n}\n.pt_5 {\n  padding-top: 5px;\n}\n.pt_10 {\n  padding-top: 10px;\n}\n.pt_15 {\n  padding-top: 15px;\n}\n.pt_20 {\n  padding-top: 20px;\n}\n.pt_25 {\n  padding-top: 25px;\n}\n.pt_30 {\n  padding-top: 30px;\n}\n.pt_35 {\n  padding-top: 35px;\n}\n.pt_40 {\n  padding-top: 40px;\n}\n.pt_45 {\n  padding-top: 45px;\n}\n.pt_50 {\n  padding-top: 50px;\n}\n.pt_55 {\n  padding-top: 55px;\n}\n.pt_60 {\n  padding-top: 60px;\n}\n.pt_65 {\n  padding-top: 65px;\n}\n.pt_70 {\n  padding-top: 70px;\n}\n.pt_75 {\n  padding-top: 75px;\n}\n.pt_80 {\n  padding-top: 80px;\n}\n.pt_85 {\n  padding-top: 85px;\n}\n.pt_90 {\n  padding-top: 90px;\n}\n.pt_95 {\n  padding-top: 95px;\n}\n.pt_100 {\n  padding-top: 100px;\n}\n.pe_5 {\n  padding-right: 5px;\n}\n.pe_10 {\n  padding-right: 10px;\n}\n.pe_15 {\n  padding-right: 15px;\n}\n.pe_20 {\n  padding-right: 20px;\n}\n.pe_25 {\n  padding-right: 25px;\n}\n.pe_30 {\n  padding-right: 30px;\n}\n.pe_35 {\n  padding-right: 35px;\n}\n.pe_40 {\n  padding-right: 40px;\n}\n.pe_45 {\n  padding-right: 45px;\n}\n.pe_50 {\n  padding-right: 50px;\n}\n.pe_55 {\n  padding-right: 55px;\n}\n.pe_60 {\n  padding-right: 60px;\n}\n.pe_65 {\n  padding-right: 65px;\n}\n.pe_70 {\n  padding-right: 70px;\n}\n.pe_75 {\n  padding-right: 75px;\n}\n.pe_80 {\n  padding-right: 80px;\n}\n.pe_85 {\n  padding-right: 85px;\n}\n.pe_90 {\n  padding-right: 90px;\n}\n.pe_95 {\n  padding-right: 95px;\n}\n.pe_100 {\n  padding-right: 100px;\n}\n.pb_5 {\n  padding-bottom: 5px;\n}\n.pb_10 {\n  padding-bottom: 10px;\n}\n.pb_15 {\n  padding-bottom: 15px;\n}\n.pb_20 {\n  padding-bottom: 20px;\n}\n.pb_25 {\n  padding-bottom: 25px;\n}\n.pb_30 {\n  padding-bottom: 30px;\n}\n.pb_35 {\n  padding-bottom: 35px;\n}\n.pb_40 {\n  padding-bottom: 40px;\n}\n.pb_45 {\n  padding-bottom: 45px;\n}\n.pb_50 {\n  padding-bottom: 50px;\n}\n.pb_55 {\n  padding-bottom: 55px;\n}\n.pb_60 {\n  padding-bottom: 60px;\n}\n.pb_65 {\n  padding-bottom: 65px;\n}\n.pb_70 {\n  padding-bottom: 70px;\n}\n.pb_75 {\n  padding-bottom: 75px;\n}\n.pb_80 {\n  padding-bottom: 80px;\n}\n.pb_85 {\n  padding-bottom: 85px;\n}\n.pb_90 {\n  padding-bottom: 90px;\n}\n.pb_95 {\n  padding-bottom: 95px;\n}\n.pb_100 {\n  padding-bottom: 100px;\n}\n.ps_5 {\n  padding-left: 5px;\n}\n.ps_10 {\n  padding-left: 10px;\n}\n.ps_15 {\n  padding-left: 15px;\n}\n.ps_20 {\n  padding-left: 20px;\n}\n.ps_25 {\n  padding-left: 25px;\n}\n.ps_30 {\n  padding-left: 30px;\n}\n.ps_35 {\n  padding-left: 35px;\n}\n.ps_40 {\n  padding-left: 40px;\n}\n.ps_45 {\n  padding-left: 45px;\n}\n.ps_50 {\n  padding-left: 50px;\n}\n.ps_55 {\n  padding-left: 55px;\n}\n.ps_60 {\n  padding-left: 60px;\n}\n.ps_65 {\n  padding-left: 65px;\n}\n.ps_70 {\n  padding-left: 70px;\n}\n.ps_75 {\n  padding-left: 75px;\n}\n.ps_80 {\n  padding-left: 80px;\n}\n.ps_85 {\n  padding-left: 85px;\n}\n.ps_90 {\n  padding-left: 90px;\n}\n.ps_95 {\n  padding-left: 95px;\n}\n.ps_100 {\n  padding-left: 100px;\n}\n\n/* MARGIN */\n.m_5 {\n  margin: 5px;\n}\n.m_10 {\n  margin: 10px;\n}\n.m_15 {\n  margin: 15px;\n}\n.m_20 {\n  margin: 20px;\n}\n.m_25 {\n  margin: 25px;\n}\n.m_30 {\n  margin: 30px;\n}\n.m_35 {\n  margin: 35px;\n}\n.m_40 {\n  margin: 40px;\n}\n.m_45 {\n  margin: 45px;\n}\n.m_50 {\n  margin: 50px;\n}\n.m_55 {\n  margin: 55px;\n}\n.m_60 {\n  margin: 60px;\n}\n.m_65 {\n  margin: 65px;\n}\n.m_70 {\n  margin: 70px;\n}\n.m_75 {\n  margin: 75px;\n}\n.m_80 {\n  margin: 80px;\n}\n.m_85 {\n  margin: 85px;\n}\n.m_90 {\n  margin: 90px;\n}\n.m_95 {\n  margin: 95px;\n}\n.m_100 {\n  margin: 100px;\n}\n.mx_5 {\n  margin-left: 5px;\n  margin-right: 5px;\n}\n.mx_10 {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n.mx_15 {\n  margin-left: 15px;\n  margin-right: 15px;\n}\n.mx_20 {\n  margin-left: 20px;\n  margin-right: 20px;\n}\n.mx_25 {\n  margin-left: 25px;\n  margin-right: 25px;\n}\n.mx_30 {\n  margin-left: 30px;\n  margin-right: 30px;\n}\n.mx_35 {\n  margin-left: 35px;\n  margin-right: 35px;\n}\n.mx_40 {\n  margin-left: 40px;\n  margin-right: 40px;\n}\n.mx_45 {\n  margin-left: 45px;\n  margin-right: 45px;\n}\n.mx_50 {\n  margin-left: 50px;\n  margin-right: 50px;\n}\n.mx_55 {\n  margin-left: 55px;\n  margin-right: 55px;\n}\n.mx_60 {\n  margin-left: 60px;\n  margin-right: 60px;\n}\n.mx_65 {\n  margin-left: 65px;\n  margin-right: 65px;\n}\n.mx_70 {\n  margin-left: 70px;\n  margin-right: 70px;\n}\n.mx_75 {\n  margin-left: 75px;\n  margin-right: 75px;\n}\n.mx_80 {\n  margin-left: 80px;\n  margin-right: 80px;\n}\n.mx_85 {\n  margin-left: 85px;\n  margin-right: 85px;\n}\n.mx_90 {\n  margin-left: 90px;\n  margin-right: 90px;\n}\n.mx_95 {\n  margin-left: 95px;\n  margin-right: 95px;\n}\n.mx_100 {\n  margin-left: 100px;\n  margin-right: 100px;\n}\n.my_5 {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n.my_10 {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.my_15 {\n  margin-top: 15px;\n  margin-bottom: 15px;\n}\n.my_20 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.my_25 {\n  margin-top: 25px;\n  margin-bottom: 25px;\n}\n.my_30 {\n  margin-top: 30px;\n  margin-bottom: 30px;\n}\n.my_35 {\n  margin-top: 35px;\n  margin-bottom: 35px;\n}\n.my_40 {\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n.my_45 {\n  margin-top: 45px;\n  margin-bottom: 45px;\n}\n.my_50 {\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n.my_55 {\n  margin-top: 55px;\n  margin-bottom: 55px;\n}\n.my_60 {\n  margin-top: 60px;\n  margin-bottom: 60px;\n}\n.my_65 {\n  margin-top: 65px;\n  margin-bottom: 65px;\n}\n.my_70 {\n  margin-top: 70px;\n  margin-bottom: 70px;\n}\n.my_75 {\n  margin-top: 75px;\n  margin-bottom: 75px;\n}\n.my_80 {\n  margin-top: 80px;\n  margin-bottom: 80px;\n}\n.my_85 {\n  margin-top: 85px;\n  margin-bottom: 85px;\n}\n.my_90 {\n  margin-top: 90px;\n  margin-bottom: 90px;\n}\n.my_95 {\n  margin-top: 95px;\n  margin-bottom: 95px;\n}\n.my_100 {\n  margin-top: 100px;\n  margin-bottom: 100px;\n}\n.mt_5 {\n  margin-top: 5px;\n}\n.mt_10 {\n  margin-top: 10px;\n}\n.mt_15 {\n  margin-top: 15px;\n}\n.mt_20 {\n  margin-top: 20px;\n}\n.mt_25 {\n  margin-top: 25px;\n}\n.mt_30 {\n  margin-top: 30px;\n}\n.mt_35 {\n  margin-top: 35px;\n}\n.mt_40 {\n  margin-top: 40px;\n}\n.mt_45 {\n  margin-top: 45px;\n}\n.mt_50 {\n  margin-top: 50px;\n}\n.mt_55 {\n  margin-top: 55px;\n}\n.mt_60 {\n  margin-top: 60px;\n}\n.mt_65 {\n  margin-top: 65px;\n}\n.mt_70 {\n  margin-top: 70px;\n}\n.mt_75 {\n  margin-top: 75px;\n}\n.mt_80 {\n  margin-top: 80px;\n}\n.mt_85 {\n  margin-top: 85px;\n}\n.mt_90 {\n  margin-top: 90px;\n}\n.mt_95 {\n  margin-top: 95px;\n}\n.mt_100 {\n  margin-top: 100px;\n}\n.me_5 {\n  margin-right: 5px;\n}\n.me_10 {\n  margin-right: 10px;\n}\n.me_15 {\n  margin-right: 15px;\n}\n.me_20 {\n  margin-right: 20px;\n}\n.me_25 {\n  margin-right: 25px;\n}\n.me_30 {\n  margin-right: 30px;\n}\n.me_35 {\n  margin-right: 35px;\n}\n.me_40 {\n  margin-right: 40px;\n}\n.me_45 {\n  margin-right: 45px;\n}\n.me_50 {\n  margin-right: 50px;\n}\n.me_55 {\n  margin-right: 55px;\n}\n.me_60 {\n  margin-right: 60px;\n}\n.me_65 {\n  margin-right: 65px;\n}\n.me_70 {\n  margin-right: 70px;\n}\n.me_75 {\n  margin-right: 75px;\n}\n.me_80 {\n  margin-right: 80px;\n}\n.me_85 {\n  margin-right: 85px;\n}\n.me_90 {\n  margin-right: 90px;\n}\n.me_95 {\n  margin-right: 95px;\n}\n.me_100 {\n  margin-right: 100px;\n}\n.mb_5 {\n  margin-bottom: 5px;\n}\n.mb_10 {\n  margin-bottom: 10px;\n}\n.mb_15 {\n  margin-bottom: 15px;\n}\n.mb_20 {\n  margin-bottom: 20px;\n}\n.mb_25 {\n  margin-bottom: 25px;\n}\n.mb_30 {\n  margin-bottom: 30px;\n}\n.mb_35 {\n  margin-bottom: 35px;\n}\n.mb_40 {\n  margin-bottom: 40px;\n}\n.mb_45 {\n  margin-bottom: 45px;\n}\n.mb_50 {\n  margin-bottom: 50px;\n}\n.mb_55 {\n  margin-bottom: 55px;\n}\n.mb_60 {\n  margin-bottom: 60px;\n}\n.mb_65 {\n  margin-bottom: 65px;\n}\n.mb_70 {\n  margin-bottom: 70px;\n}\n.mb_75 {\n  margin-bottom: 75px;\n}\n.mb_80 {\n  margin-bottom: 80px;\n}\n.mb_85 {\n  margin-bottom: 85px;\n}\n.mb_90 {\n  margin-bottom: 90px;\n}\n.mb_95 {\n  margin-bottom: 95px;\n}\n.mb_100 {\n  margin-bottom: 100px;\n}\n.ms_5 {\n  margin-left: 5px;\n}\n.ms_10 {\n  margin-left: 10px;\n}\n.ms_15 {\n  margin-left: 15px;\n}\n.ms_20 {\n  margin-left: 20px;\n}\n.ms_25 {\n  margin-left: 25px;\n}\n.ms_30 {\n  margin-left: 30px;\n}\n.ms_35 {\n  margin-left: 35px;\n}\n.ms_40 {\n  margin-left: 40px;\n}\n.ms_45 {\n  margin-left: 45px;\n}\n.ms_50 {\n  margin-left: 50px;\n}\n.ms_55 {\n  margin-left: 55px;\n}\n.ms_60 {\n  margin-left: 60px;\n}\n.ms_65 {\n  margin-left: 65px;\n}\n.ms_70 {\n  margin-left: 70px;\n}\n.ms_75 {\n  margin-left: 75px;\n}\n.ms_80 {\n  margin-left: 80px;\n}\n.ms_85 {\n  margin-left: 85px;\n}\n.ms_90 {\n  margin-left: 90px;\n}\n.ms_95 {\n  margin-left: 95px;\n}\n.ms_100 {\n  margin-left: 100px;\n}\n\n/* WIDTH */\n.w_5 {\n  width: 5%;\n}\n.w_10 {\n  width: 10%;\n}\n.w_15 {\n  width: 15%;\n}\n.w_20 {\n  width: 20%;\n}\n.w_25 {\n  width: 25%;\n}\n.w_30 {\n  width: 30%;\n}\n.w_35 {\n  width: 35%;\n}\n.w_40 {\n  width: 40%;\n}\n.w_45 {\n  width: 45%;\n}\n.w_50 {\n  width: 50%;\n}\n.w_55 {\n  width: 55%;\n}\n.w_60 {\n  width: 60%;\n}\n.w_65 {\n  width: 65%;\n}\n.w_70 {\n  width: 70%;\n}\n.w_75 {\n  width: 75%;\n}\n.w_80 {\n  width: 80%;\n}\n.w_85 {\n  width: 85%;\n}\n.w_90 {\n  width: 90%;\n}\n.w_95 {\n  width: 95%;\n}\n.w_100 {\n  width: 100%;\n}\n.w_5p {\n  width: 5px;\n}\n.w_10p {\n  width: 10px;\n}\n.w_15p {\n  width: 15px;\n}\n.w_20p {\n  width: 20px;\n}\n.w_25p {\n  width: 25px;\n}\n.w_30p {\n  width: 30px;\n}\n.w_35p {\n  width: 35px;\n}\n.w_40p {\n  width: 40px;\n}\n.w_45p {\n  width: 45px;\n}\n.w_50p {\n  width: 50px;\n}\n.w_55p {\n  width: 55px;\n}\n.w_60p {\n  width: 60px;\n}\n.w_65p {\n  width: 65px;\n}\n.w_70p {\n  width: 70px;\n}\n.w_75p {\n  width: 75px;\n}\n.w_80p {\n  width: 80px;\n}\n.w_85p {\n  width: 85px;\n}\n.w_90p {\n  width: 90px;\n}\n.w_95p {\n  width: 95px;\n}\n.w_100p {\n  width: 100px;\n}\n.w_125p {\n  width: 125px;\n}\n.w_150p {\n  width: 150px;\n}\n.w_175p {\n  width: 175px;\n}\n.w_200p {\n  width: 200px;\n}\n.w_250p {\n  width: 250px;\n}\n.w_500p {\n  width: 500px;\n}\n.w_1000p {\n  width: 1000px;\n}\n\n/* HEIGHT */\n.h_5 {\n  height: 5%;\n}\n.h_10 {\n  height: 10%;\n}\n.h_15 {\n  height: 15%;\n}\n.h_20 {\n  height: 20%;\n}\n.h_25 {\n  height: 25%;\n}\n.h_30 {\n  height: 30%;\n}\n.h_35 {\n  height: 35%;\n}\n.h_40 {\n  height: 40%;\n}\n.h_45 {\n  height: 45%;\n}\n.h_50 {\n  height: 50%;\n}\n.h_55 {\n  height: 55%;\n}\n.h_60 {\n  height: 60%;\n}\n.h_65 {\n  height: 65%;\n}\n.h_70 {\n  height: 70%;\n}\n.h_75 {\n  height: 75%;\n}\n.h_80 {\n  height: 80%;\n}\n.h_85 {\n  height: 85%;\n}\n.h_90 {\n  height: 90%;\n}\n.h_95 {\n  height: 95%;\n}\n.h_100 {\n  height: 100%;\n}\n.h_5p {\n  height: 5px;\n}\n.h_10p {\n  height: 10px;\n}\n.h_15p {\n  height: 15px;\n}\n.h_20p {\n  height: 20px;\n}\n.h_25p {\n  height: 25px;\n}\n.h_30p {\n  height: 30px;\n}\n.h_35p {\n  height: 35px;\n}\n.h_40p {\n  height: 40px;\n}\n.h_45p {\n  height: 45px;\n}\n.h_50p {\n  height: 50px;\n}\n.h_55p {\n  height: 55px;\n}\n.h_60p {\n  height: 60px;\n}\n.h_65p {\n  height: 65px;\n}\n.h_70p {\n  height: 70px;\n}\n.h_75p {\n  height: 75px;\n}\n.h_80p {\n  height: 80px;\n}\n.h_85p {\n  height: 85px;\n}\n.h_90p {\n  height: 90px;\n}\n.h_95p {\n  height: 95px;\n}\n.h_100p {\n  height: 100px;\n}\n.h_125p {\n  height: 125px;\n}\n.h_150p {\n  height: 150px;\n}\n.h_175p {\n  height: 175px;\n}\n.h_200p {\n  height: 200px;\n}\n.h_250p {\n  height: 250px;\n}\n.h_500p {\n  height: 500px;\n}\n.h_1000p {\n  height: 1000px;\n}\n\n/* FONT */\n.fs_5 {\n  font-size: 5px;\n}\n.fs_10 {\n  font-size: 10px;\n}\n.fs_15 {\n  font-size: 15px;\n}\n.fs_20 {\n  font-size: 20px;\n}\n.fs_25 {\n  font-size: 25px;\n}\n.fs_30 {\n  font-size: 30px;\n}\n.fs_35 {\n  font-size: 35px;\n}\n.fs_40 {\n  font-size: 40px;\n}\n.fs_45 {\n  font-size: 45px;\n}\n.fs_50 {\n  font-size: 50px;\n}\n.cursor_pointer {\n  cursor: pointer;\n}\n.brightness_50 {\n  filter: brightness(0.5);\n}\n@-webkit-keyframes toxic_bg {\n0% {\n    background-color: lime;\n}\n25% {\n    background-color: #00d900;\n}\n50% {\n    background-color: #00b300;\n}\n75% {\n    background-color: #008c00;\n}\n100% {\n    background-color: #006600;\n}\n}\n@keyframes toxic_bg {\n0% {\n    background-color: lime;\n}\n25% {\n    background-color: #00d900;\n}\n50% {\n    background-color: #00b300;\n}\n75% {\n    background-color: #008c00;\n}\n100% {\n    background-color: #006600;\n}\n}\n@-webkit-keyframes rainbow_bg {\n0% {\n    background-color: #ff0000;\n}\n14.28% {\n    background-color: #ffa500;\n}\n28.56% {\n    background-color: #ffff00;\n}\n42.84% {\n    background-color: #008000;\n}\n57.12% {\n    background-color: #0000ff;\n}\n71.4% {\n    background-color: #4b0082;\n}\n85.68% {\n    background-color: #ee82ee;\n}\n100% {\n    background-color: #ff0000;\n}\n}\n@keyframes rainbow_bg {\n0% {\n    background-color: #ff0000;\n}\n14.28% {\n    background-color: #ffa500;\n}\n28.56% {\n    background-color: #ffff00;\n}\n42.84% {\n    background-color: #008000;\n}\n57.12% {\n    background-color: #0000ff;\n}\n71.4% {\n    background-color: #4b0082;\n}\n85.68% {\n    background-color: #ee82ee;\n}\n100% {\n    background-color: #ff0000;\n}\n}\n@-webkit-keyframes selected_item {\n0% {\n    bottom: 0.3rem;\n}\n25% {\n    bottom: 0.6rem;\n}\n50% {\n    bottom: 0.3rem;\n}\n75% {\n    bottom: 0.6rem;\n}\n100% {\n    bottom: 0.3rem;\n}\n}\n@keyframes selected_item {\n0% {\n    bottom: 0.3rem;\n}\n25% {\n    bottom: 0.6rem;\n}\n50% {\n    bottom: 0.3rem;\n}\n75% {\n    bottom: 0.6rem;\n}\n100% {\n    bottom: 0.3rem;\n}\n}\n.overlay_animation {\n  opacity: 0;\n  -webkit-animation: overlay_animation 0.3s linear 1;\n          animation: overlay_animation 0.3s linear 1;\n  opacity: 1;\n}\n.overlay_leaving {\n  opacity: 1;\n  -webkit-animation: overlay_leaving 0.3s linear 1;\n          animation: overlay_leaving 0.3s linear 1;\n  opacity: 0;\n}\n@-webkit-keyframes overlay_animation {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes overlay_animation {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes overlay_leaving {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes overlay_leaving {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n/* Fonts */\nh1,\nh2 {\n  color: #440063;\n  font-weight: bold;\n  margin-bottom: 0;\n}\nmain {\n  min-height: calc(100% - 80px);\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n/* Import delle installazioni npm */\nbody {\n  font-family: \"Roboto\", sans-serif;\n}\nul {\n  list-style-type: none;\n}\n.btn:focus {\n  box-shadow: none;\n}\n\n/* FLEX */\n.justify_content_evenly {\n  justify-content: space-evenly;\n}\n\n/* TEXT */\n.text_black {\n  color: black;\n}\n.text_red {\n  color: red;\n}\n.text_green {\n  color: green;\n}\n.text_yellow {\n  color: yellow;\n}\n.text_purple {\n  color: purple;\n}\n.text_blue {\n  color: blue;\n}\n.text_orange {\n  color: orange;\n}\n.text_salmon {\n  color: salmon;\n}\n.text_emerald {\n  color: #008c67;\n}\n.text_lime {\n  color: lime;\n}\n\n/* BACKGROUND */\n.bg_cover {\n  background-size: cover;\n}\n.bg_contain {\n  background-size: contain;\n}\n.bg_repeat {\n  background-repeat: repeat;\n}\n.bg_no_repeat {\n  background-repeat: no-repeat;\n}\n.bg_center {\n  background-position: center;\n}\n.bg_top {\n  background-position: top;\n}\n.bg_end {\n  background-position: right;\n}\n.bg_bottom {\n  background-position: bottom;\n}\n.bg_start {\n  background-position: left;\n}\n.bg_white {\n  background-color: white;\n}\n.bg_black {\n  background-color: black;\n}\n.bg_red {\n  background-color: red;\n}\n.bg_green {\n  background-color: green;\n}\n.bg_yellow {\n  background-color: yellow;\n}\n.bg_purple {\n  background-color: purple;\n}\n.bg_blue {\n  background-color: blue;\n}\n.bg_orange {\n  background-color: orange;\n}\n.bg_salmon {\n  background-color: salmon;\n}\n.bg_emerald {\n  background-color: #008c67;\n}\n.bg_lime {\n  background-color: lime;\n}\n\n/* BORDER */\n.border_radius_10p {\n  border-radius: 10px;\n}\n.border_radius_20p {\n  border-radius: 20px;\n}\n.border_radius_30p {\n  border-radius: 30px;\n}\n.border_radius_40p {\n  border-radius: 40px;\n}\n.border_radius_50p {\n  border-radius: 50px;\n}\n.border_white {\n  border-color: white;\n}\n.border_black {\n  border-color: black;\n}\n.border_red {\n  border-color: red;\n}\n.border_green {\n  border-color: green;\n}\n.border_yellow {\n  border-color: yellow;\n}\n.border_purple {\n  border-color: purple;\n}\n.border_blue {\n  border-color: blue;\n}\n.border_orange {\n  border-color: orange;\n}\n.border_salmon {\n  border-color: salmon;\n}\n.border_emerald {\n  border-color: #008c67;\n}\n.border_lime {\n  border-color: lime;\n}\n\n/* PADDING */\n.p_5 {\n  padding: 5px;\n}\n.p_10 {\n  padding: 10px;\n}\n.p_15 {\n  padding: 15px;\n}\n.p_20 {\n  padding: 20px;\n}\n.p_25 {\n  padding: 25px;\n}\n.p_30 {\n  padding: 30px;\n}\n.p_35 {\n  padding: 35px;\n}\n.p_40 {\n  padding: 40px;\n}\n.p_45 {\n  padding: 45px;\n}\n.p_50 {\n  padding: 50px;\n}\n.p_55 {\n  padding: 55px;\n}\n.p_60 {\n  padding: 60px;\n}\n.p_65 {\n  padding: 65px;\n}\n.p_70 {\n  padding: 70px;\n}\n.p_75 {\n  padding: 75px;\n}\n.p_80 {\n  padding: 80px;\n}\n.p_85 {\n  padding: 85px;\n}\n.p_90 {\n  padding: 90px;\n}\n.p_95 {\n  padding: 95px;\n}\n.p_100 {\n  padding: 100px;\n}\n.px_5 {\n  padding-left: 5px;\n  padding-right: 5px;\n}\n.px_10 {\n  padding-left: 10px;\n  padding-right: 10px;\n}\n.px_15 {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.px_20 {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.px_25 {\n  padding-left: 25px;\n  padding-right: 25px;\n}\n.px_30 {\n  padding-left: 30px;\n  padding-right: 30px;\n}\n.px_35 {\n  padding-left: 35px;\n  padding-right: 35px;\n}\n.px_40 {\n  padding-left: 40px;\n  padding-right: 40px;\n}\n.px_45 {\n  padding-left: 45px;\n  padding-right: 45px;\n}\n.px_50 {\n  padding-left: 50px;\n  padding-right: 50px;\n}\n.px_55 {\n  padding-left: 55px;\n  padding-right: 55px;\n}\n.px_60 {\n  padding-left: 60px;\n  padding-right: 60px;\n}\n.px_65 {\n  padding-left: 65px;\n  padding-right: 65px;\n}\n.px_70 {\n  padding-left: 70px;\n  padding-right: 70px;\n}\n.px_75 {\n  padding-left: 75px;\n  padding-right: 75px;\n}\n.px_80 {\n  padding-left: 80px;\n  padding-right: 80px;\n}\n.px_85 {\n  padding-left: 85px;\n  padding-right: 85px;\n}\n.px_90 {\n  padding-left: 90px;\n  padding-right: 90px;\n}\n.px_95 {\n  padding-left: 95px;\n  padding-right: 95px;\n}\n.px_100 {\n  padding-left: 100px;\n  padding-right: 100px;\n}\n.py_5 {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.py_10 {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.py_15 {\n  padding-top: 15px;\n  padding-bottom: 15px;\n}\n.py_20 {\n  padding-top: 20px;\n  padding-bottom: 20px;\n}\n.py_25 {\n  padding-top: 25px;\n  padding-bottom: 25px;\n}\n.py_30 {\n  padding-top: 30px;\n  padding-bottom: 30px;\n}\n.py_35 {\n  padding-top: 35px;\n  padding-bottom: 35px;\n}\n.py_40 {\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.py_45 {\n  padding-top: 45px;\n  padding-bottom: 45px;\n}\n.py_50 {\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n.py_55 {\n  padding-top: 55px;\n  padding-bottom: 55px;\n}\n.py_60 {\n  padding-top: 60px;\n  padding-bottom: 60px;\n}\n.py_65 {\n  padding-top: 65px;\n  padding-bottom: 65px;\n}\n.py_70 {\n  padding-top: 70px;\n  padding-bottom: 70px;\n}\n.py_75 {\n  padding-top: 75px;\n  padding-bottom: 75px;\n}\n.py_80 {\n  padding-top: 80px;\n  padding-bottom: 80px;\n}\n.py_85 {\n  padding-top: 85px;\n  padding-bottom: 85px;\n}\n.py_90 {\n  padding-top: 90px;\n  padding-bottom: 90px;\n}\n.py_95 {\n  padding-top: 95px;\n  padding-bottom: 95px;\n}\n.py_100 {\n  padding-top: 100px;\n  padding-bottom: 100px;\n}\n.pt_5 {\n  padding-top: 5px;\n}\n.pt_10 {\n  padding-top: 10px;\n}\n.pt_15 {\n  padding-top: 15px;\n}\n.pt_20 {\n  padding-top: 20px;\n}\n.pt_25 {\n  padding-top: 25px;\n}\n.pt_30 {\n  padding-top: 30px;\n}\n.pt_35 {\n  padding-top: 35px;\n}\n.pt_40 {\n  padding-top: 40px;\n}\n.pt_45 {\n  padding-top: 45px;\n}\n.pt_50 {\n  padding-top: 50px;\n}\n.pt_55 {\n  padding-top: 55px;\n}\n.pt_60 {\n  padding-top: 60px;\n}\n.pt_65 {\n  padding-top: 65px;\n}\n.pt_70 {\n  padding-top: 70px;\n}\n.pt_75 {\n  padding-top: 75px;\n}\n.pt_80 {\n  padding-top: 80px;\n}\n.pt_85 {\n  padding-top: 85px;\n}\n.pt_90 {\n  padding-top: 90px;\n}\n.pt_95 {\n  padding-top: 95px;\n}\n.pt_100 {\n  padding-top: 100px;\n}\n.pe_5 {\n  padding-right: 5px;\n}\n.pe_10 {\n  padding-right: 10px;\n}\n.pe_15 {\n  padding-right: 15px;\n}\n.pe_20 {\n  padding-right: 20px;\n}\n.pe_25 {\n  padding-right: 25px;\n}\n.pe_30 {\n  padding-right: 30px;\n}\n.pe_35 {\n  padding-right: 35px;\n}\n.pe_40 {\n  padding-right: 40px;\n}\n.pe_45 {\n  padding-right: 45px;\n}\n.pe_50 {\n  padding-right: 50px;\n}\n.pe_55 {\n  padding-right: 55px;\n}\n.pe_60 {\n  padding-right: 60px;\n}\n.pe_65 {\n  padding-right: 65px;\n}\n.pe_70 {\n  padding-right: 70px;\n}\n.pe_75 {\n  padding-right: 75px;\n}\n.pe_80 {\n  padding-right: 80px;\n}\n.pe_85 {\n  padding-right: 85px;\n}\n.pe_90 {\n  padding-right: 90px;\n}\n.pe_95 {\n  padding-right: 95px;\n}\n.pe_100 {\n  padding-right: 100px;\n}\n.pb_5 {\n  padding-bottom: 5px;\n}\n.pb_10 {\n  padding-bottom: 10px;\n}\n.pb_15 {\n  padding-bottom: 15px;\n}\n.pb_20 {\n  padding-bottom: 20px;\n}\n.pb_25 {\n  padding-bottom: 25px;\n}\n.pb_30 {\n  padding-bottom: 30px;\n}\n.pb_35 {\n  padding-bottom: 35px;\n}\n.pb_40 {\n  padding-bottom: 40px;\n}\n.pb_45 {\n  padding-bottom: 45px;\n}\n.pb_50 {\n  padding-bottom: 50px;\n}\n.pb_55 {\n  padding-bottom: 55px;\n}\n.pb_60 {\n  padding-bottom: 60px;\n}\n.pb_65 {\n  padding-bottom: 65px;\n}\n.pb_70 {\n  padding-bottom: 70px;\n}\n.pb_75 {\n  padding-bottom: 75px;\n}\n.pb_80 {\n  padding-bottom: 80px;\n}\n.pb_85 {\n  padding-bottom: 85px;\n}\n.pb_90 {\n  padding-bottom: 90px;\n}\n.pb_95 {\n  padding-bottom: 95px;\n}\n.pb_100 {\n  padding-bottom: 100px;\n}\n.ps_5 {\n  padding-left: 5px;\n}\n.ps_10 {\n  padding-left: 10px;\n}\n.ps_15 {\n  padding-left: 15px;\n}\n.ps_20 {\n  padding-left: 20px;\n}\n.ps_25 {\n  padding-left: 25px;\n}\n.ps_30 {\n  padding-left: 30px;\n}\n.ps_35 {\n  padding-left: 35px;\n}\n.ps_40 {\n  padding-left: 40px;\n}\n.ps_45 {\n  padding-left: 45px;\n}\n.ps_50 {\n  padding-left: 50px;\n}\n.ps_55 {\n  padding-left: 55px;\n}\n.ps_60 {\n  padding-left: 60px;\n}\n.ps_65 {\n  padding-left: 65px;\n}\n.ps_70 {\n  padding-left: 70px;\n}\n.ps_75 {\n  padding-left: 75px;\n}\n.ps_80 {\n  padding-left: 80px;\n}\n.ps_85 {\n  padding-left: 85px;\n}\n.ps_90 {\n  padding-left: 90px;\n}\n.ps_95 {\n  padding-left: 95px;\n}\n.ps_100 {\n  padding-left: 100px;\n}\n\n/* MARGIN */\n.m_5 {\n  margin: 5px;\n}\n.m_10 {\n  margin: 10px;\n}\n.m_15 {\n  margin: 15px;\n}\n.m_20 {\n  margin: 20px;\n}\n.m_25 {\n  margin: 25px;\n}\n.m_30 {\n  margin: 30px;\n}\n.m_35 {\n  margin: 35px;\n}\n.m_40 {\n  margin: 40px;\n}\n.m_45 {\n  margin: 45px;\n}\n.m_50 {\n  margin: 50px;\n}\n.m_55 {\n  margin: 55px;\n}\n.m_60 {\n  margin: 60px;\n}\n.m_65 {\n  margin: 65px;\n}\n.m_70 {\n  margin: 70px;\n}\n.m_75 {\n  margin: 75px;\n}\n.m_80 {\n  margin: 80px;\n}\n.m_85 {\n  margin: 85px;\n}\n.m_90 {\n  margin: 90px;\n}\n.m_95 {\n  margin: 95px;\n}\n.m_100 {\n  margin: 100px;\n}\n.mx_5 {\n  margin-left: 5px;\n  margin-right: 5px;\n}\n.mx_10 {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n.mx_15 {\n  margin-left: 15px;\n  margin-right: 15px;\n}\n.mx_20 {\n  margin-left: 20px;\n  margin-right: 20px;\n}\n.mx_25 {\n  margin-left: 25px;\n  margin-right: 25px;\n}\n.mx_30 {\n  margin-left: 30px;\n  margin-right: 30px;\n}\n.mx_35 {\n  margin-left: 35px;\n  margin-right: 35px;\n}\n.mx_40 {\n  margin-left: 40px;\n  margin-right: 40px;\n}\n.mx_45 {\n  margin-left: 45px;\n  margin-right: 45px;\n}\n.mx_50 {\n  margin-left: 50px;\n  margin-right: 50px;\n}\n.mx_55 {\n  margin-left: 55px;\n  margin-right: 55px;\n}\n.mx_60 {\n  margin-left: 60px;\n  margin-right: 60px;\n}\n.mx_65 {\n  margin-left: 65px;\n  margin-right: 65px;\n}\n.mx_70 {\n  margin-left: 70px;\n  margin-right: 70px;\n}\n.mx_75 {\n  margin-left: 75px;\n  margin-right: 75px;\n}\n.mx_80 {\n  margin-left: 80px;\n  margin-right: 80px;\n}\n.mx_85 {\n  margin-left: 85px;\n  margin-right: 85px;\n}\n.mx_90 {\n  margin-left: 90px;\n  margin-right: 90px;\n}\n.mx_95 {\n  margin-left: 95px;\n  margin-right: 95px;\n}\n.mx_100 {\n  margin-left: 100px;\n  margin-right: 100px;\n}\n.my_5 {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n.my_10 {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.my_15 {\n  margin-top: 15px;\n  margin-bottom: 15px;\n}\n.my_20 {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.my_25 {\n  margin-top: 25px;\n  margin-bottom: 25px;\n}\n.my_30 {\n  margin-top: 30px;\n  margin-bottom: 30px;\n}\n.my_35 {\n  margin-top: 35px;\n  margin-bottom: 35px;\n}\n.my_40 {\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n.my_45 {\n  margin-top: 45px;\n  margin-bottom: 45px;\n}\n.my_50 {\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n.my_55 {\n  margin-top: 55px;\n  margin-bottom: 55px;\n}\n.my_60 {\n  margin-top: 60px;\n  margin-bottom: 60px;\n}\n.my_65 {\n  margin-top: 65px;\n  margin-bottom: 65px;\n}\n.my_70 {\n  margin-top: 70px;\n  margin-bottom: 70px;\n}\n.my_75 {\n  margin-top: 75px;\n  margin-bottom: 75px;\n}\n.my_80 {\n  margin-top: 80px;\n  margin-bottom: 80px;\n}\n.my_85 {\n  margin-top: 85px;\n  margin-bottom: 85px;\n}\n.my_90 {\n  margin-top: 90px;\n  margin-bottom: 90px;\n}\n.my_95 {\n  margin-top: 95px;\n  margin-bottom: 95px;\n}\n.my_100 {\n  margin-top: 100px;\n  margin-bottom: 100px;\n}\n.mt_5 {\n  margin-top: 5px;\n}\n.mt_10 {\n  margin-top: 10px;\n}\n.mt_15 {\n  margin-top: 15px;\n}\n.mt_20 {\n  margin-top: 20px;\n}\n.mt_25 {\n  margin-top: 25px;\n}\n.mt_30 {\n  margin-top: 30px;\n}\n.mt_35 {\n  margin-top: 35px;\n}\n.mt_40 {\n  margin-top: 40px;\n}\n.mt_45 {\n  margin-top: 45px;\n}\n.mt_50 {\n  margin-top: 50px;\n}\n.mt_55 {\n  margin-top: 55px;\n}\n.mt_60 {\n  margin-top: 60px;\n}\n.mt_65 {\n  margin-top: 65px;\n}\n.mt_70 {\n  margin-top: 70px;\n}\n.mt_75 {\n  margin-top: 75px;\n}\n.mt_80 {\n  margin-top: 80px;\n}\n.mt_85 {\n  margin-top: 85px;\n}\n.mt_90 {\n  margin-top: 90px;\n}\n.mt_95 {\n  margin-top: 95px;\n}\n.mt_100 {\n  margin-top: 100px;\n}\n.me_5 {\n  margin-right: 5px;\n}\n.me_10 {\n  margin-right: 10px;\n}\n.me_15 {\n  margin-right: 15px;\n}\n.me_20 {\n  margin-right: 20px;\n}\n.me_25 {\n  margin-right: 25px;\n}\n.me_30 {\n  margin-right: 30px;\n}\n.me_35 {\n  margin-right: 35px;\n}\n.me_40 {\n  margin-right: 40px;\n}\n.me_45 {\n  margin-right: 45px;\n}\n.me_50 {\n  margin-right: 50px;\n}\n.me_55 {\n  margin-right: 55px;\n}\n.me_60 {\n  margin-right: 60px;\n}\n.me_65 {\n  margin-right: 65px;\n}\n.me_70 {\n  margin-right: 70px;\n}\n.me_75 {\n  margin-right: 75px;\n}\n.me_80 {\n  margin-right: 80px;\n}\n.me_85 {\n  margin-right: 85px;\n}\n.me_90 {\n  margin-right: 90px;\n}\n.me_95 {\n  margin-right: 95px;\n}\n.me_100 {\n  margin-right: 100px;\n}\n.mb_5 {\n  margin-bottom: 5px;\n}\n.mb_10 {\n  margin-bottom: 10px;\n}\n.mb_15 {\n  margin-bottom: 15px;\n}\n.mb_20 {\n  margin-bottom: 20px;\n}\n.mb_25 {\n  margin-bottom: 25px;\n}\n.mb_30 {\n  margin-bottom: 30px;\n}\n.mb_35 {\n  margin-bottom: 35px;\n}\n.mb_40 {\n  margin-bottom: 40px;\n}\n.mb_45 {\n  margin-bottom: 45px;\n}\n.mb_50 {\n  margin-bottom: 50px;\n}\n.mb_55 {\n  margin-bottom: 55px;\n}\n.mb_60 {\n  margin-bottom: 60px;\n}\n.mb_65 {\n  margin-bottom: 65px;\n}\n.mb_70 {\n  margin-bottom: 70px;\n}\n.mb_75 {\n  margin-bottom: 75px;\n}\n.mb_80 {\n  margin-bottom: 80px;\n}\n.mb_85 {\n  margin-bottom: 85px;\n}\n.mb_90 {\n  margin-bottom: 90px;\n}\n.mb_95 {\n  margin-bottom: 95px;\n}\n.mb_100 {\n  margin-bottom: 100px;\n}\n.ms_5 {\n  margin-left: 5px;\n}\n.ms_10 {\n  margin-left: 10px;\n}\n.ms_15 {\n  margin-left: 15px;\n}\n.ms_20 {\n  margin-left: 20px;\n}\n.ms_25 {\n  margin-left: 25px;\n}\n.ms_30 {\n  margin-left: 30px;\n}\n.ms_35 {\n  margin-left: 35px;\n}\n.ms_40 {\n  margin-left: 40px;\n}\n.ms_45 {\n  margin-left: 45px;\n}\n.ms_50 {\n  margin-left: 50px;\n}\n.ms_55 {\n  margin-left: 55px;\n}\n.ms_60 {\n  margin-left: 60px;\n}\n.ms_65 {\n  margin-left: 65px;\n}\n.ms_70 {\n  margin-left: 70px;\n}\n.ms_75 {\n  margin-left: 75px;\n}\n.ms_80 {\n  margin-left: 80px;\n}\n.ms_85 {\n  margin-left: 85px;\n}\n.ms_90 {\n  margin-left: 90px;\n}\n.ms_95 {\n  margin-left: 95px;\n}\n.ms_100 {\n  margin-left: 100px;\n}\n\n/* WIDTH */\n.w_5 {\n  width: 5%;\n}\n.w_10 {\n  width: 10%;\n}\n.w_15 {\n  width: 15%;\n}\n.w_20 {\n  width: 20%;\n}\n.w_25 {\n  width: 25%;\n}\n.w_30 {\n  width: 30%;\n}\n.w_35 {\n  width: 35%;\n}\n.w_40 {\n  width: 40%;\n}\n.w_45 {\n  width: 45%;\n}\n.w_50 {\n  width: 50%;\n}\n.w_55 {\n  width: 55%;\n}\n.w_60 {\n  width: 60%;\n}\n.w_65 {\n  width: 65%;\n}\n.w_70 {\n  width: 70%;\n}\n.w_75 {\n  width: 75%;\n}\n.w_80 {\n  width: 80%;\n}\n.w_85 {\n  width: 85%;\n}\n.w_90 {\n  width: 90%;\n}\n.w_95 {\n  width: 95%;\n}\n.w_100 {\n  width: 100%;\n}\n.w_5p {\n  width: 5px;\n}\n.w_10p {\n  width: 10px;\n}\n.w_15p {\n  width: 15px;\n}\n.w_20p {\n  width: 20px;\n}\n.w_25p {\n  width: 25px;\n}\n.w_30p {\n  width: 30px;\n}\n.w_35p {\n  width: 35px;\n}\n.w_40p {\n  width: 40px;\n}\n.w_45p {\n  width: 45px;\n}\n.w_50p {\n  width: 50px;\n}\n.w_55p {\n  width: 55px;\n}\n.w_60p {\n  width: 60px;\n}\n.w_65p {\n  width: 65px;\n}\n.w_70p {\n  width: 70px;\n}\n.w_75p {\n  width: 75px;\n}\n.w_80p {\n  width: 80px;\n}\n.w_85p {\n  width: 85px;\n}\n.w_90p {\n  width: 90px;\n}\n.w_95p {\n  width: 95px;\n}\n.w_100p {\n  width: 100px;\n}\n.w_125p {\n  width: 125px;\n}\n.w_150p {\n  width: 150px;\n}\n.w_175p {\n  width: 175px;\n}\n.w_200p {\n  width: 200px;\n}\n.w_250p {\n  width: 250px;\n}\n.w_500p {\n  width: 500px;\n}\n.w_1000p {\n  width: 1000px;\n}\n\n/* HEIGHT */\n.h_5 {\n  height: 5%;\n}\n.h_10 {\n  height: 10%;\n}\n.h_15 {\n  height: 15%;\n}\n.h_20 {\n  height: 20%;\n}\n.h_25 {\n  height: 25%;\n}\n.h_30 {\n  height: 30%;\n}\n.h_35 {\n  height: 35%;\n}\n.h_40 {\n  height: 40%;\n}\n.h_45 {\n  height: 45%;\n}\n.h_50 {\n  height: 50%;\n}\n.h_55 {\n  height: 55%;\n}\n.h_60 {\n  height: 60%;\n}\n.h_65 {\n  height: 65%;\n}\n.h_70 {\n  height: 70%;\n}\n.h_75 {\n  height: 75%;\n}\n.h_80 {\n  height: 80%;\n}\n.h_85 {\n  height: 85%;\n}\n.h_90 {\n  height: 90%;\n}\n.h_95 {\n  height: 95%;\n}\n.h_100 {\n  height: 100%;\n}\n.h_5p {\n  height: 5px;\n}\n.h_10p {\n  height: 10px;\n}\n.h_15p {\n  height: 15px;\n}\n.h_20p {\n  height: 20px;\n}\n.h_25p {\n  height: 25px;\n}\n.h_30p {\n  height: 30px;\n}\n.h_35p {\n  height: 35px;\n}\n.h_40p {\n  height: 40px;\n}\n.h_45p {\n  height: 45px;\n}\n.h_50p {\n  height: 50px;\n}\n.h_55p {\n  height: 55px;\n}\n.h_60p {\n  height: 60px;\n}\n.h_65p {\n  height: 65px;\n}\n.h_70p {\n  height: 70px;\n}\n.h_75p {\n  height: 75px;\n}\n.h_80p {\n  height: 80px;\n}\n.h_85p {\n  height: 85px;\n}\n.h_90p {\n  height: 90px;\n}\n.h_95p {\n  height: 95px;\n}\n.h_100p {\n  height: 100px;\n}\n.h_125p {\n  height: 125px;\n}\n.h_150p {\n  height: 150px;\n}\n.h_175p {\n  height: 175px;\n}\n.h_200p {\n  height: 200px;\n}\n.h_250p {\n  height: 250px;\n}\n.h_500p {\n  height: 500px;\n}\n.h_1000p {\n  height: 1000px;\n}\n\n/* FONT */\n.fs_5 {\n  font-size: 5px;\n}\n.fs_10 {\n  font-size: 10px;\n}\n.fs_15 {\n  font-size: 15px;\n}\n.fs_20 {\n  font-size: 20px;\n}\n.fs_25 {\n  font-size: 25px;\n}\n.fs_30 {\n  font-size: 30px;\n}\n.fs_35 {\n  font-size: 35px;\n}\n.fs_40 {\n  font-size: 40px;\n}\n.fs_45 {\n  font-size: 45px;\n}\n.fs_50 {\n  font-size: 50px;\n}\n.cursor_pointer {\n  cursor: pointer;\n}\n.brightness_50 {\n  filter: brightness(0.5);\n}\n@-webkit-keyframes toxic_bg {\n0% {\n    background-color: lime;\n}\n25% {\n    background-color: #00d900;\n}\n50% {\n    background-color: #00b300;\n}\n75% {\n    background-color: #008c00;\n}\n100% {\n    background-color: #006600;\n}\n}\n@keyframes toxic_bg {\n0% {\n    background-color: lime;\n}\n25% {\n    background-color: #00d900;\n}\n50% {\n    background-color: #00b300;\n}\n75% {\n    background-color: #008c00;\n}\n100% {\n    background-color: #006600;\n}\n}\n@-webkit-keyframes rainbow_bg {\n0% {\n    background-color: #ff0000;\n}\n14.28% {\n    background-color: #ffa500;\n}\n28.56% {\n    background-color: #ffff00;\n}\n42.84% {\n    background-color: #008000;\n}\n57.12% {\n    background-color: #0000ff;\n}\n71.4% {\n    background-color: #4b0082;\n}\n85.68% {\n    background-color: #ee82ee;\n}\n100% {\n    background-color: #ff0000;\n}\n}\n@keyframes rainbow_bg {\n0% {\n    background-color: #ff0000;\n}\n14.28% {\n    background-color: #ffa500;\n}\n28.56% {\n    background-color: #ffff00;\n}\n42.84% {\n    background-color: #008000;\n}\n57.12% {\n    background-color: #0000ff;\n}\n71.4% {\n    background-color: #4b0082;\n}\n85.68% {\n    background-color: #ee82ee;\n}\n100% {\n    background-color: #ff0000;\n}\n}\n@-webkit-keyframes selected_item {\n0% {\n    bottom: 0.3rem;\n}\n25% {\n    bottom: 0.6rem;\n}\n50% {\n    bottom: 0.3rem;\n}\n75% {\n    bottom: 0.6rem;\n}\n100% {\n    bottom: 0.3rem;\n}\n}\n@keyframes selected_item {\n0% {\n    bottom: 0.3rem;\n}\n25% {\n    bottom: 0.6rem;\n}\n50% {\n    bottom: 0.3rem;\n}\n75% {\n    bottom: 0.6rem;\n}\n100% {\n    bottom: 0.3rem;\n}\n}\n.overlay_animation {\n  opacity: 0;\n  -webkit-animation: overlay_animation 0.3s linear 1;\n          animation: overlay_animation 0.3s linear 1;\n  opacity: 1;\n}\n.overlay_leaving {\n  opacity: 1;\n  -webkit-animation: overlay_leaving 0.3s linear 1;\n          animation: overlay_leaving 0.3s linear 1;\n  opacity: 0;\n}\n@-webkit-keyframes overlay_animation {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes overlay_animation {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes overlay_leaving {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes overlay_leaving {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n/* Fonts */\nh1,\nh2 {\n  color: #440063;\n  font-weight: bold;\n  margin-bottom: 0;\n}", ""]);
 
 // exports
 
@@ -5024,6 +5050,8 @@ var render = function () {
       _vm._v(" "),
       _c("BannerSection"),
       _vm._v(" "),
+      _c("TipologiesSection"),
+      _vm._v(" "),
       _c("SelectionSection", {
         attrs: {
           selected_list: _vm.selected_items,
@@ -5034,8 +5062,6 @@ var render = function () {
       _c("SuggestionsSection", {
         attrs: { restaurants_list: _vm.restaurants_data },
       }),
-      _vm._v(" "),
-      _c("TipologiesSection"),
       _vm._v(" "),
       _c("NewsSection"),
       _vm._v(" "),
@@ -5125,36 +5151,33 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    {
+      staticClass:
+        "search_box d-flex flex-column justify-content-center align-items-start",
+    },
+    [
+      _c("h4", [_vm._v("Cerca un ristorante per nome:")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "w-100 form-control form-control-sm",
+        attrs: { type: "search", placeholder: "Inserisci qui il ristorante" },
+      }),
+      _vm._v(" "),
+      _c(
+        "router-link",
+        {
+          staticClass: "green_button mt-3 fw-bold",
+          attrs: { to: { path: "/restaurant/:slug" } },
+        },
+        [_vm._v("Cerca")]
+      ),
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "search_box d-flex flex-column justify-content-center align-items-start",
-      },
-      [
-        _c("h4", [_vm._v("Cerca un ristorante per nome:")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "w-100 form-control form-control-sm",
-          attrs: { type: "search", placeholder: "Inserisci qui il ristorante" },
-        }),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "green_button mt-3 fw-bold", attrs: { href: "#" } },
-          [_vm._v("Cerca")]
-        ),
-      ]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5486,23 +5509,46 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "tipologies_section" }, [
-    _c(
-      "div",
-      { staticClass: "container d-flex flex-wrap" },
-      _vm._l(_vm.typos, function (typo, index) {
-        return _c("div", { key: index, staticClass: "tipos_wrapper " }, [
+    _c("div", { staticClass: "container d-flex flex-wrap" }, [
+      _c("div", { staticClass: "row row-cols-1" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
           _c(
-            "button",
-            { staticClass: "btn btn-light fw-bold", attrs: { type: "button" } },
-            [_vm._v(_vm._s(typo.nome))]
+            "div",
+            { staticClass: "tipos_wrapper d-flex flex-wrap" },
+            _vm._l(_vm.typos, function (typo, index) {
+              return _c(
+                "a",
+                {
+                  key: index,
+                  staticClass: "tipology_link fw-bold",
+                  attrs: { href: "#" },
+                },
+                [_vm._v(_vm._s(typo.nome))]
+              )
+            }),
+            0
           ),
-        ])
-      }),
-      0
-    ),
+        ]),
+      ]),
+    ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "title_container" }, [
+        _c("h2", { staticClass: "mt-5 mb-4" }, [
+          _vm._v("Cerchi qualcos'altro?"),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -5609,6 +5655,30 @@ var render = function () {
       ),
     ]),
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("test")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22346,26 +22416,63 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _Restaurant_vue_vue_type_template_id_25de3706_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Restaurant.vue?vue&type=template&id=25de3706&scoped=true& */ "./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&scoped=true&");
+/* harmony import */ var _Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Restaurant.vue?vue&type=script&lang=js& */ "./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Restaurant_vue_vue_type_template_id_25de3706_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Restaurant_vue_vue_type_template_id_25de3706_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "25de3706",
   null
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/pages/Restaurant.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/pages/Restaurant.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Restaurant.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&scoped=true&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&scoped=true& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_template_id_25de3706_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Restaurant.vue?vue&type=template&id=25de3706&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=template&id=25de3706&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_template_id_25de3706_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restaurant_vue_vue_type_template_id_25de3706_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -22432,12 +22539,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/",
     name: "home",
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: "/restaurant/:slug",
+    name: "restaurant-details",
+    component: _pages_Restaurant_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, // {
-  //     path: "/restaurant/:slug",
-  //     name: "restaurant-details",
-  //     component: Restaurant
-  // },
-  // {
   //     path: "/dish/:slug",
   //     name: "dish-details",
   //     component: Dish
