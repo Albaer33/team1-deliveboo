@@ -1,6 +1,5 @@
 <template>
-    <section class="main_home position-relative">
-        <ShoppingCart />
+    <section class="main_home">
         <BannerSection />
         <TipologiesSection />
         <SelectionSection :selected_list="selected_items" :overlay_status="overlay_conditions" />
@@ -15,7 +14,6 @@
 </template>
 
 <script>
-import ShoppingCart from './ShoppingCart.vue';
 import BannerSection from './BannerSection.vue';
 import SelectionSection from './SelectionSection.vue';
 import SuggestionsSection from './SuggestionsSection.vue';
@@ -27,7 +25,6 @@ import PageOverlay from './PageOverlay.vue';
 export default {
     name: 'MainHome',
     components: {
-        ShoppingCart,
         BannerSection,
         SelectionSection,
         SuggestionsSection,

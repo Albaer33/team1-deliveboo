@@ -33,30 +33,10 @@ export default {
             cartClass: 'small',
             cartTitleClass: '',
             cartBodyClass: '',
-            // Lista ordini (da cambiare con quelli della chiamata api, questa è un test)
-            orders: [
-                {
-                    id: 1,
-                    name: 'Pizza Margherita'
-                },
-                {
-                    id: 2,
-                    name: 'Pasta alla Carbonara'
-                },
-                {
-                    id: 3,
-                    name: 'Kebab con patatine'
-                },
-                {
-                    id: 4,
-                    name: 'Gelato al pistacchio'
-                },
-                {
-                    id: 5,
-                    name: 'Crispy McBacon'
-                }
-            ]
         };
+    },
+    props: {
+        orders: Array
     },
     methods: {
         showCart: function(){
@@ -92,7 +72,6 @@ export default {
         position: fixed;
         z-index: 10000;
         background-color: $primary_color;
-        box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
         transition-duration: 1s;
 
         h5{
@@ -136,6 +115,7 @@ export default {
             transform: translateY(-50%);
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
+            box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
         }
         &.big{
             width: 90vw;
@@ -145,6 +125,7 @@ export default {
             left: 50%;
             transform: translateX(-50%);
             border-radius: 5px;
+            box-shadow: 0px 5px 20px 10px;
         }
 
         // Animazione comparsa/scomparsa

@@ -18,9 +18,12 @@
 
             <div  v-for="(dish, index) in dishes" :key="index" >
                 
-                <div v-if="dish.visibile === 1" class="p-5 card_style_ms">
+                <div v-if="dish.visibile === 1" class="p-5 card_style_ms overflow-hidden position-relative">
+                    <div class="buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
+                        <h4 @click="addToCart(dish.nome)" class="mb-0">{{addButtonText}}</h4>
+                    </div>
                     <div class="row ">
-                        <div class="d-flex flex-column col-9">
+                        <div class="d-flex flex-column justify-content-center col-9">
                             <h5 class="card-title">{{ dish['nome'] }}</h5>
                             <p class="card-text">{{ dish['descrizione'] }}</p>
                             <p class="card-text">{{ dish['ingredienti'] }}</p>
@@ -48,7 +51,9 @@ export default {
         return {
             restaurant : [],
             dishes: [],
-            apiLoaded: false
+            apiLoaded: false,
+            orderAdded: false,
+            addButtonText: 'Aggiungi al carrello'
         }
     },
           methods: {
@@ -67,7 +72,13 @@ export default {
                 this.apiLoaded = true;
                 
             });
-          }
+          },
+        // Funzione emit per aggiungere al carrello
+        addToCart: function(order){
+            this.$emit('sendOrder', order);
+            this.addButtonText = 'Aggiunto!';
+        }            
+
     },
     created: function(){
         this.getRestaurant();
@@ -78,6 +89,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/variables.scss';
 
 .container{
 
@@ -87,13 +99,12 @@ export default {
         box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
         margin-top: 20px;
         margin-bottom: 50px;
-
     }
 
     .card_style_ms{
 
         border-radius: 10px;
-
+        border: 3px solid $primary_color;
     }
 
     .card_style_ms:hover{
@@ -110,6 +121,20 @@ export default {
             }
 
         }
+    }
+
+    .buttons_wrapper{
+        width: 250px;
+        top: -4px;
+        left: -7px;
+        padding: 5px;
+        color: $primary_color;
+        background-color: white;
+        border: 3px solid $primary_color;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
     }
 }
 
