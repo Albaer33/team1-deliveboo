@@ -2,28 +2,29 @@
     <section>
         <div class="container">
             
-            <div class="row d-flex h-150 ">
-                <div class="col sm-12 md-6 lg-4 xl-4 img_risto">
-                    <img :src="require(`/storage/app/public/${restaurant.immagine}`) " class="rounded mx-auto" alt="restaurant.nome_attivita">
+            <div class="row d-flex container_style_ms">
+                <div class="col img_risto">
+                    <img :src="require(`/storage/app/public/${restaurant.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita">
                     
                 </div>
-                <div  class="col sm-12 md-6 lg-4 xl-4 d-flex">
+                <div  class="col d-flex">
                     <h1>{{ restaurant.nome_attivita }}</h1>
 
                 </div>
             </div>
+
             <div  v-for="(dish, index) in dishes" :key="index" >
                 
-                <div v-if="dish.visibile === 1" class="card p-5">
+                <div v-if="dish.visibile === 1" class="p-5 card_style_ms">
                     <div class="row ">
-                        <div class="d-flex flex-column col sm-10">
+                        <div class="d-flex flex-column col-9">
                             <h5 class="card-title">{{ dish['nome'] }}</h5>
                             <p class="card-text">{{ dish['descrizione'] }}</p>
                             <p class="card-text">{{ dish['ingredienti'] }}</p>
                             <div>{{ dish['prezzo'] }}</div>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
-                        <div class="col sm-2">
+                        <div class="col-3 d-flex justify-content-center align-items-center">
                             <img :src="require(`/storage/app/public/${dish.immagine}`)" alt="restaurant.nome_attivita">
                         </div>
                     </div>
@@ -64,11 +65,33 @@ export default {
 
 }
 </script>
+
 <style lang="scss" scoped>
-img{
-    width:150px;
-}
+
 .container{
+
+    .container_style_ms{
+
+        padding: 30px;
+        box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
+        margin-top: 20px;
+        margin-bottom: 50px;
+
+    }
+
+    .card_style_ms{
+
+        border-radius: 10px;
+
+    }
+
+    .card_style_ms:hover{
+
+        transition: .5s;
+        box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
+
+    }
+
     .row{
         .img_risto{
             img{
@@ -78,4 +101,5 @@ img{
         }
     }
 }
+
 </style>

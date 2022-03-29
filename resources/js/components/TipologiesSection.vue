@@ -1,9 +1,15 @@
 <template>
     <section class="tipologies_section">
 
+        <div class="container mb-30">
+
+            <h2>Cerchi qualcos'altro?</h2>
+
+        </div>
+
         <div class="container d-flex flex-wrap">
 
-            <div class="tipos_wrapper " v-for="typo, index in typos" :key="index">
+            <div class="tipos_wrapper" v-for="typo, index in typos" :key="index">
 
                 <router-link to="" type="button" class="btn btn-light fw-bold">{{typo.nome}}</router-link>
 
@@ -49,6 +55,12 @@ export default {
 .tipologies_section{
 
     margin: 30px 0;
+
+    .mb-30{
+
+        margin-bottom: 30px;
+
+    }
 
     .container{
 
