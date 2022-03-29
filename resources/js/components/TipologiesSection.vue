@@ -1,10 +1,20 @@
 <template>
     <section class="tipologies_section">
+
+        <div class="container mb-30">
+
+            <h2>Cerchi qualcos'altro?</h2>
+
+        </div>
+
         <div class="container d-flex flex-wrap">
-            <div class="tipos_wrapper " v-for="typo, index in typos" :key="index">
-                <button  type="button" class="btn btn-light fw-bold">{{typo.nome}}</button>
+
+            <div class="tipos_wrapper" v-for="typo, index in typos" :key="index">
+
+                <router-link to="" type="button" class="btn btn-light fw-bold">{{typo.nome}}</router-link>
 
             </div>
+
         </div>
 
     </section>
@@ -18,7 +28,7 @@ export default {
     data: function(){
         return {
              typos : []
-    }
+        }
     },
           methods: {
 
@@ -43,17 +53,26 @@ export default {
 
 <style lang="scss" scoped>
 .tipologies_section{
+
+    margin: 30px 0;
+
+    .mb-30{
+
+        margin-bottom: 30px;
+
+    }
+
     .container{
-        // display: flex;
-        // flex-wrap: wrap;
-        // flex-direction: row;
-        // justify-content: space-around;
+
         .tipos_wrapper{
+
             margin-right: 20px;
             margin-bottom: 20px;
-                .button{
-                    // font-weight: bold;
-                }  
+
+            .button{
+                    
+            }  
+
         }
     }
 }

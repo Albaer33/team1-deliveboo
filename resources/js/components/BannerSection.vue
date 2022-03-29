@@ -15,7 +15,7 @@
                         </div>
                         <div class="banner_text_wrapper w-100 d-flex justify-content-center position-relative">
                             <div class="banner_text_box text-white position-absolute">
-                                <h3 class="fw-bold mb-0 fs_25">#aCasaTuaConDeliveboo</h3>
+                                <h3 class="fw-bold mb-0 fs_25 d-flex justify-content-center">#aCasaTuaConDeliveboo</h3>
                             </div>
                         </div>
                     </div>

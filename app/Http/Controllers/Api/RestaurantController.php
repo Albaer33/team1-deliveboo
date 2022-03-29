@@ -41,17 +41,17 @@ class RestaurantController extends Controller
     }
     }
 
-    public function show($id) {
+    public function show($slug) {
         // test per vedere lo slug
         // dd($slug);
         // con with vado a selezionare gli attributi category e tags di post !!! CONTROLLARE LA CHIAMATA API CON POSTMAN
-        $restaurant = Restaurant::where('id', '=', $id)->with(['tipology_id'])->first();
+        $restaurant = Restaurant::where('slug', '=', $slug)->with(['dishes', 'tipologies'])->first();
         
         
         // risposta a json per vue questa soluzione è insufficiente se l'end url non è corretto e punta un elemento che non esiste nel database
         // return response()->json([
         //     'success' => true,
-        //     'results' => $post
+        //     'results' => $restaurant
         // ]);
         // creo un condizionale
         if($restaurant) {
