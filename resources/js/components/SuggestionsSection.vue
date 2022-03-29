@@ -19,8 +19,8 @@
                                         <img :src="require(`/storage/app/public/${restaurant.immagine}`)" :alt="'Immagine di ' + restaurant.nome_attivita">
                                     </div>
                                     <div class="card-body p-0">
-                                        <h4 class="my-2 fw-bold">{{restaurant.nome_attivita}}</h4>
-                                        <p v-if="restaurant.description !== ''">{{restaurant.descrizione}}</p>
+                                        <h4 class="my-2 fw-bold color-black">{{restaurant.nome_attivita}}</h4>
+                                        <p class="color-black" v-if="restaurant.description !== ''">{{restaurant.descrizione}}</p>
                                     </div>      
                                 </router-link>
 
@@ -46,6 +46,12 @@ export default {
 
     .suggestions_section{
         background-color: #ffeae4;
+
+    }
+
+    .color-black{
+
+        color: black;
 
     }
 </style>

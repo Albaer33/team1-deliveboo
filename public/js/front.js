@@ -3402,7 +3402,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.suggestions_section[data-v-1cb178be] {\n  background-color: #ffeae4;\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.suggestions_section[data-v-1cb178be] {\n  background-color: #ffeae4;\n}\n.color-black[data-v-1cb178be] {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -5834,12 +5834,14 @@ var render = function () {
                           ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body p-0" }, [
-                        _c("h4", { staticClass: "my-2 fw-bold" }, [
+                        _c("h4", { staticClass: "my-2 fw-bold color-black" }, [
                           _vm._v(_vm._s(restaurant.nome_attivita)),
                         ]),
                         _vm._v(" "),
                         restaurant.description !== ""
-                          ? _c("p", [_vm._v(_vm._s(restaurant.descrizione))])
+                          ? _c("p", { staticClass: "color-black" }, [
+                              _vm._v(_vm._s(restaurant.descrizione)),
+                            ])
                           : _vm._e(),
                       ]),
                     ]
