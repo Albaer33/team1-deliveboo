@@ -2323,10 +2323,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Header',
   data: function data() {
@@ -3066,23 +3062,23 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Tipology',
   data: function data() {
     return {
-      restaurants: []
+      typos: []
     };
   },
   methods: {
-    getRestaurant: function getRestaurant() {
+    getTipology: function getTipology() {
       var _this = this;
 
       //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
       // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-      axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.slug).then(function (response) {
-        console.log(response);
-        _this.restaurant = response.data.results;
+      axios.get('http://127.0.0.1:8000/api/tipologies/' + this.$route.params.slug).then(function (response) {
+        // console.log(response);
+        _this.typos = response.data.results;
       });
     }
   },
   created: function created() {
-    this.getRestaurant();
+    this.getTipology();
   }
 });
 
@@ -3128,13 +3124,15 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    getOrder: function getOrder(orderToAdd) {
+    getOrder: function getOrder(dish) {
       var _this = this;
 
       var orderFound = false;
       this.cart_orders.forEach(function (order) {
-        if (order.name === orderToAdd && _this.cart_orders.length > 0) {
+        if (order.name === dish.nome && _this.cart_orders.length > 0) {
           order.amount++;
+          order.priceTot = parseFloat(order.priceTot);
+          order.price = parseFloat(order.price);
           order.priceTot += order.price;
           orderFound = true;
         }
@@ -3143,10 +3141,10 @@ __webpack_require__.r(__webpack_exports__);
       if (!orderFound) {
         this.cart_orders.push({
           id: this.cart_orders.length + 1,
-          name: orderToAdd,
+          name: dish.nome,
           amount: 1,
-          price: 25,
-          priceTot: 25
+          price: dish.prezzo,
+          priceTot: dish.prezzo
         });
       }
     }
@@ -5248,29 +5246,30 @@ var render = function () {
     [
       _c("nav", { staticClass: "navbar w-100" }, [
         _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            { staticClass: "header_logos d-flex align-items-center" },
-            [
-              _c("img", {
-                staticClass: "w_30p",
-                attrs: { src: _vm.img_logo, alt: "logo deliveboo" },
-              }),
-              _vm._v(" "),
-              _c("router-link", { attrs: { to: { name: "home" } } }, [
-                _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
-              ]),
-            ],
-            1
-          ),
+          _c("div", { staticClass: "header_logos d-flex align-items-center" }, [
+            _c("img", {
+              staticClass: "w_30p",
+              attrs: { src: _vm.img_logo, alt: "logo deliveboo" },
+            }),
+            _vm._v(" "),
+            _vm._m(0),
+          ]),
           _vm._v(" "),
-          _vm._m(0),
+          _vm._m(1),
         ]),
       ]),
     ]
   )
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/" } }, [
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -6128,7 +6127,7 @@ var render = function () {
                                 "buttons_wrapper position-absolute d-flex justify-content-center align-items-center",
                               on: {
                                 click: function ($event) {
-                                  return _vm.addToCart(dish.nome)
+                                  return _vm.addToCart(dish)
                                 },
                               },
                             },
@@ -23237,12 +23236,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/dish/:slug",
     name: "dish",
     component: _pages_Dish_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }, // {
-  //     path: "/tipologies/:slug",
-  //     name: "tipology",
-  //     component: Tipology
-  // },
-  {
+  }, {
+    path: "/tipologies/:slug",
+    name: "tipology",
+    component: _pages_Tipology_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }, {
     path: "/*",
     name: "not-found",
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_6__["default"]

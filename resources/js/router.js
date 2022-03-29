@@ -27,12 +27,11 @@ const router = new VueRouter({
             name: "dish",
             component: Dish
         },
-        // {
-        //     path: "/tipologies/:slug",
-        //     name: "tipology",
-        //     component: Tipology
-        // },
-
+        {
+            path: "/tipologies/:slug",
+            name: "tipology",
+            component: Tipology
+        },
         {
             path: "/*",
             name: "not-found",

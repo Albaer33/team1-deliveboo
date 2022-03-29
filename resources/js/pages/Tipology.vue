@@ -25,26 +25,25 @@ export default {
     name: 'Tipology',
     data: function(){
         return {
-            restaurants : [],
-            
+             typos : []
         }
     },
           methods: {
 
-         getRestaurant(){
+         getTipology(){
             //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
             // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-            axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.slug)
+            axios.get('http://127.0.0.1:8000/api/tipologies/'+this.$route.params.slug)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 
-                this.restaurant = response.data.results;
+                    this.typos = response.data.results;
                 
             });
           }
     },
     created: function(){
-        this.getRestaurant();
+        this.getTipology();
     }
 
 }

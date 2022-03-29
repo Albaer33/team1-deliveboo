@@ -19,7 +19,7 @@
             <div  v-for="(dish, index) in dishes" :key="index" >
                 
                 <div v-if="dish.visibile === 1" class="p-5 card_style_ms overflow-hidden position-relative">
-                    <div @click="addToCart(dish.nome)" class="buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
+                    <div @click="addToCart(dish)" class="buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
                         <h4 class="mb-0">{{addButtonText}}</h4>
                     </div>
                     <div class="row ">
@@ -71,6 +71,7 @@ export default {
 
                 this.apiLoaded = true;
                 
+
             });
           },
         // Funzione emit per aggiungere al carrello

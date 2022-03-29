@@ -28,15 +28,20 @@ export default {
     };
   },
   methods: {
-    getOrder: function(orderToAdd){
+
+    getOrder: function(dish){
 
       let orderFound = false; 
 
       this.cart_orders.forEach(( order ) => {
 
-        if( ( order.name === orderToAdd ) && ( this.cart_orders.length > 0 ) ){
+        if( ( order.name === dish.nome ) && ( this.cart_orders.length > 0 ) ){
 
           order.amount++
+
+          order.priceTot = parseFloat(order.priceTot)
+
+          order.price= parseFloat(order.price)
 
           order.priceTot += order.price
 
@@ -50,10 +55,10 @@ export default {
 
         this.cart_orders.push({
           id: this.cart_orders.length + 1,
-          name: orderToAdd,
+          name: dish.nome,
           amount: 1,
-          price: 25,
-          priceTot: 25
+          price: dish.prezzo,
+          priceTot: dish.prezzo
         });
 
       }
