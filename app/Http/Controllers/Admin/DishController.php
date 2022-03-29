@@ -24,7 +24,7 @@ class DishController extends Controller
 
         $restaurants = Restaurant::all()->where('user_id', '=', $user->id);
 
-        $dishes = Dish::all()->where('restaurants_id', '=', $user->createdRestaurants);
+        $dishes = Dish::all()->where('restaurant_id', '=', $user->createdRestaurants);
 
         $data = [
             'dishes' => $dishes,
@@ -96,7 +96,7 @@ class DishController extends Controller
 
         $user = Auth::user();
         
-        $new_dish->restaurants_id = $user->createdRestaurants;
+        $new_dish->restaurant_id = $user->createdRestaurants;
 
         $new_dish->save();
 

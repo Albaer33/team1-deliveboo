@@ -71,6 +71,9 @@ class RestaurantController extends Controller
         $restaurant = new Restaurant();
 
         $restaurant->fill($form_data);
+
+        $restaurant->slug = $this->getUniqueSlug($form_data['nome_attivita']);
+
         $restaurant->user_id = $user->id;
 
         if(isset($form_data['immagine'])) {
@@ -168,6 +171,10 @@ class RestaurantController extends Controller
         
         $restaurants = Restaurant::findOrFail($id);
 
+        if($form_data['nome_attivita'] != $restaurants->nome_attivita){
+            $form_data['slug'] = $this->getUniqueSlug($form_data['nome_attivita']);
+        }
+
         if(isset($form_data['immagine'])) {
             // Cancello il file vecchio
             if($restaurants->immagine) {
@@ -204,7 +211,7 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::findOrFail($id);
 
-        $dishes = Dish::all()->where('restaurants_id', '=', $restaurant->id);
+        $dishes = Dish::all()->where('restaurant_id', '=', $restaurant->id);
 
         $user = Auth::user();
 
@@ -251,6 +258,23 @@ class RestaurantController extends Controller
             'tipologies' => 'exists:tipologies,id|required',
             'descrizione' => 'max:60000'
         ];
+    }
+
+    protected function getUniqueSlug($nome){
+        //controllo se esiste un ristorante con lo stesso slug
+        //se si aggiungo un numero incrementale fino a non avere duplicati
+        $slug = Str::slug($nome);
+        $slug_base = $slug;
+        $restaurant_found = Restaurant::where('slug','=',$slug)->first();
+
+        $counter= 1;
+        while($restaurant_found){
+
+            $slug = $slug_base .'-'. $counter;
+            $restaurant_found = Restaurant::where('slug','=',$slug)->first();
+            $counter++;
+        }
+        return $slug;
     }
 
 }
