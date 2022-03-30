@@ -25,6 +25,7 @@ class DishesTableSeeder extends Seeder
                 'immagine' => 'https://rs-menus-api.roocdn.com/images/58e5a37c-964d-49a0-bc80-699b11b26834/image.jpeg?width=817.5&height=460.5&auto=webp&format=jpg&fit=crop',
                 'visibile' => '1',
                 'ingredienti' => 'bacon',
+                'restaurant_id' => '1'
 
             ],
 
@@ -36,7 +37,7 @@ class DishesTableSeeder extends Seeder
                 'immagine' => 'https://rs-menus-api.roocdn.com/images/cdf67042-dcee-459a-b6fc-9e10adb87c6f/image.jpeg?width=817.5&height=460.5&auto=webp&format=jpg&fit=crop',
                 'visibile' => '1',
                 'ingredienti' => 'burger',
-
+                'restaurant_id' => '1'
             ]
 
         ];
@@ -53,7 +54,7 @@ class DishesTableSeeder extends Seeder
             $new_dish->immagine = $dish['immagine'];
             $new_dish->visibile = $dish['visibile'];
             $new_dish->ingredienti = $dish['ingredienti'];
-            // $new_dish->restaurant_id = rand(1000, 3000);
+            $new_dish->restaurant_id = $dish['restaurant_id'];
             $new_dish->save();
 
         }
