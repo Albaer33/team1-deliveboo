@@ -1,7 +1,7 @@
 <template>
     <div class="search_box d-flex flex-column justify-content-center align-items-start">
         <h4>Cerca un ristorante per nome:</h4>
-        <input v-model="searchedRestaurant" class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante" @keyup.enter="searchRestaurant">
+        <input v-model="searchedRestaurant" class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante">
         <router-link @click="searchRestaurant" :to="{name:'restaurants', params:{slug:searchRestaurant()}}" class="green_button mt-3 fw-bold">Cerca</router-link>
     </div>
 </template>
