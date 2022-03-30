@@ -3068,6 +3068,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Restaurant',
@@ -6390,7 +6396,7 @@ var render = function () {
                               ]
                             ),
                             _vm._v(" "),
-                            dish.immagine !== null
+                            dish.immagine.includes("http")
                               ? _c(
                                   "div",
                                   {
@@ -6399,15 +6405,31 @@ var render = function () {
                                   },
                                   [
                                     _c("img", {
+                                      staticClass: "rounded mx-auto",
                                       attrs: {
-                                        src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
-                                          dish.immagine),
-                                        alt: _vm.restaurant.nome_attivita,
+                                        src: dish.immagine,
+                                        alt: "restaurant.nome_attivita",
                                       },
                                     }),
                                   ]
                                 )
-                              : _vm._e(),
+                              : _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "col-3 d-flex justify-content-center align-items-center",
+                                  },
+                                  [
+                                    _c("img", {
+                                      staticClass: "rounded mx-auto",
+                                      attrs: {
+                                        src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
+                                          dish.immagine),
+                                        alt: "restaurant.nome_attivita",
+                                      },
+                                    }),
+                                  ]
+                                ),
                           ]),
                         ]
                       )

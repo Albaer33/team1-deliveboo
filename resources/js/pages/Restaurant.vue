@@ -38,8 +38,14 @@
                             <div>{{ dish['prezzo'] }}</div>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
-                        <div class="col-3 d-flex justify-content-center align-items-center" v-if="dish.immagine !== null">
-                            <img :src="require(`/storage/app/public/${dish.immagine}`)" :alt="restaurant.nome_attivita">
+                        
+                            <div v-if="dish.immagine.includes('http')" class="col-3 d-flex justify-content-center align-items-center">
+                                    <img :src="dish.immagine" class="rounded mx-auto" alt="restaurant.nome_attivita">
+                            </div>
+                            <div v-else class="col-3 d-flex justify-content-center align-items-center">
+                                <img :src="require(`/storage/app/public/${dish.immagine}`)" class="rounded mx-auto" alt="restaurant.nome_attivita">
+                            </div>
+
                         </div>
                     </div>
                 </div>
