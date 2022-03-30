@@ -22,8 +22,8 @@ class RestaurantTipologyTableSeeder extends Seeder
             array('restaurant_id' => 8, 'tipology_id' => 1),
             array('restaurant_id' => 9, 'tipology_id' => 1),
             array('restaurant_id' => 10, 'tipology_id' => 3),
-            array('restaurant_id' => 11, 'tipology_id' => 12),
-            array('restaurant_id' => 12, 'tipology_id' => 13),
+            array('restaurant_id' => 11, 'tipology_id' => 1),
+            array('restaurant_id' => 12, 'tipology_id' => 11),
             
         ));
        

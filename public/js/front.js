@@ -3074,6 +3074,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Restaurant',
@@ -6413,7 +6415,8 @@ var render = function () {
                                     }),
                                   ]
                                 )
-                              : _c(
+                              : dish.immagine
+                              ? _c(
                                   "div",
                                   {
                                     staticClass:
@@ -6429,7 +6432,11 @@ var render = function () {
                                       },
                                     }),
                                   ]
-                                ),
+                                )
+                              : _c("div", {
+                                  staticClass:
+                                    "col-3 d-flex justify-content-center align-items-center",
+                                }),
                           ]),
                         ]
                       )
