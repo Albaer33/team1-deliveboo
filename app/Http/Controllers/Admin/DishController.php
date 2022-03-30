@@ -216,7 +216,7 @@ class DishController extends Controller
             'descrizione'=>'max:60000',
             'prezzo'=>'required|numeric|min:0.01|max:999.99',
             'ingredienti'=>'max:60000',
-            'immagine'=>'image|max:3500',
+            'immagine'=>'image|max:3500|required',
             'categories_id' => 'exists:categories,id|nullable',
         ];
     }

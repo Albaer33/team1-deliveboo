@@ -162,11 +162,6 @@ return [
         'tipologies' => [
             'required' => 'La tipologia del ristorante è obbligatoria',
         ],
-        'immagine' => [
-            'required' => 'L\'immagine del ristorante è obbligatoria',
-            'max' => 'Puoi inserire massimo :max kilobyte',
-            'image' => 'Il file deve essere un\'immagine',
-        ],
         'nome' => [
             'required' => 'Il nome del piatto è obbligatorio',
             'max' => 'Puoi inserire massimo :max caratteri',
@@ -189,8 +184,8 @@ return [
         ],
         'immagine' => [
             'image' => 'Il file deve essere un\'immagine',
-            'max' => 'Puoi inserire massimo :max caratteri',
-            
+            'max' => 'Puoi inserire massimo :max kilobyte',
+            'required' => 'L\'immagine è obbligatoria',
         ],
         
         
