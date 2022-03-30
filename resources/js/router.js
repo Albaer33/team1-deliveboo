@@ -6,7 +6,8 @@ Vue.use(VueRouter);
 import Home from './pages/Home.vue';
 import Restaurant from './pages/Restaurant.vue';
 import Dish from './pages/Dish.vue';
-import Tipology from './pages/Tipology.vue';    
+import Tipology from './pages/Tipology.vue';
+import Checkout from './pages/Checkout.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = new VueRouter({
@@ -31,6 +32,11 @@ const router = new VueRouter({
             path: "/tipologies/:slug",
             name: "tipologies",
             component: Tipology
+        },
+        {
+            path: "/checkout",
+            name: "checkout",
+            component: Checkout
         },
         {
             path: "/*",
