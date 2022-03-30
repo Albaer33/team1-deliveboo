@@ -5,7 +5,7 @@
                 <div class="col">
                     <div id="search_div" class="banner_content d-flex flex-column">
                         <h1 class="mb-4">I piatti che ami, a domicilio.</h1>
-                        <SearchBox :restaurants_list="restaurants_data" />
+                        <SearchBox :restaurants="restaurants_list" />
                     </div>
                 </div>
                 <div class="col">

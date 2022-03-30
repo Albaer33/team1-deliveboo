@@ -1,8 +1,8 @@
 <template>
     <div class="search_box d-flex flex-column justify-content-center align-items-start">
         <h4>Cerca un ristorante per nome:</h4>
-        <input class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante" :value="message">
-        <router-link :to="{path: '/restaurants/{{message}}'}" class="green_button mt-3 fw-bold">Cerca</router-link>
+        <input v-model="searchedRestaurant" class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante">
+        <router-link @click="searchRestaurant" :to="{name:'restaurants', params:{slug:searchRestaurant()}}" class="green_button mt-3 fw-bold">Cerca</router-link>
     </div>
 </template>
 
@@ -10,8 +10,72 @@
 export default {
     name: 'SearchBox',
     props: {
-        restaurants_list: Array
-    }        
+        
+        restaurants: Array,
+        /* tipologies: Array */
+
+    },
+    data: function(){
+        return {
+            searchedRestaurant: '',
+            slugToSearch: '',
+            /* myValue: null */
+        };
+    },
+    methods: {
+
+/*         getTipology(){
+            //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+            // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+            axios.get('http://127.0.0.1:8000/api/tipologies/')
+            .then((response) => {
+                // console.log(response);
+                
+                    this.tipologies = response.data.results;
+                
+            });
+          }, */
+        // Funzione ricerca ristorante (filtro)
+        searchRestaurant: function(){
+
+            // forEach sull'array dei ristoranti
+            this.restaurants.forEach((thisRestaurant) => {
+
+                // Comparazione dei nomi entrambi in trim e toLowerCase
+                if( this.searchedRestaurant.toLowerCase().trim() === (thisRestaurant.nome_attivita.toLowerCase().trim()) /* || thisRestaurant.slug */ ){
+                    this.slugToSearch = thisRestaurant.slug;
+                    /* this.myValue = 1; */
+                    /* return this.myValue; */
+
+                }
+            //    else{
+
+            //        this.tipologies.forEach((thisTipologies) => {
+
+             //           if( this.searchedRestaurant.toLowerCase().trim() === (thisTipologies.nome.toLowerCase().trim()) /* || thisTipologies.slug */ ){
+            //                this.slugToSearch = thisTipologies.slug;
+             //               this.myValue = 2;
+                            /* return this.myValue; */
+                            
+
+             //           }
+
+              //      });
+
+             //   }
+
+
+            });
+            //  console.log(this.searchedRestaurant)
+
+            return this.slugToSearch;
+
+
+        }
+    },
+    created: function(){
+        /* this.getTipology(); */
+    }
 }
 </script>
 

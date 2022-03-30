@@ -2425,6 +2425,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     restaurants_data: Array,
+    tipologies_data: Array,
     overlay_conditions: Object
   },
   data: function data() {
@@ -2527,7 +2528,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchBox',
   props: {
-    restaurants_list: Array
+    restaurants: Array
+    /* tipologies: Array */
+
+  },
+  data: function data() {
+    return {
+      searchedRestaurant: '',
+      slugToSearch: ''
+      /* myValue: null */
+
+    };
+  },
+  methods: {
+    /*         getTipology(){
+                //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+                // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+                axios.get('http://127.0.0.1:8000/api/tipologies/')
+                .then((response) => {
+                    // console.log(response);
+                    
+                        this.tipologies = response.data.results;
+                    
+                });
+              }, */
+    // Funzione ricerca ristorante (filtro)
+    searchRestaurant: function searchRestaurant() {
+      var _this = this;
+
+      // forEach sull'array dei ristoranti
+      this.restaurants.forEach(function (thisRestaurant) {
+        // Comparazione dei nomi entrambi in trim e toLowerCase
+        if (_this.searchedRestaurant.toLowerCase().trim() === thisRestaurant.nome_attivita.toLowerCase().trim()
+        /* || thisRestaurant.slug */
+        ) {
+          _this.slugToSearch = thisRestaurant.slug;
+          /* this.myValue = 1; */
+
+          /* return this.myValue; */
+        } //    else{
+        //        this.tipologies.forEach((thisTipologies) => {
+        //           if( this.searchedRestaurant.toLowerCase().trim() === (thisTipologies.nome.toLowerCase().trim()) /* || thisTipologies.slug */ ){
+        //                this.slugToSearch = thisTipologies.slug;
+        //               this.myValue = 2;
+
+        /* return this.myValue; */
+        //           }
+        //      });
+        //   }
+
+      }); //  console.log(this.searchedRestaurant)
+
+      return this.slugToSearch;
+    }
+  },
+  created: function created() {
+    /* this.getTipology(); */
   }
 });
 
@@ -5136,9 +5192,7 @@ var render = function () {
                 _vm._v("I piatti che ami, a domicilio."),
               ]),
               _vm._v(" "),
-              _c("SearchBox", {
-                attrs: { restaurants_list: _vm.restaurants_data },
-              }),
+              _c("SearchBox", { attrs: { restaurants: _vm.restaurants_list } }),
             ],
             1
           ),
@@ -5602,16 +5656,38 @@ var render = function () {
       _c("h4", [_vm._v("Cerca un ristorante per nome:")]),
       _vm._v(" "),
       _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.searchedRestaurant,
+            expression: "searchedRestaurant",
+          },
+        ],
         staticClass: "w-100 form-control form-control-sm",
         attrs: { type: "search", placeholder: "Inserisci qui il ristorante" },
-        domProps: { value: _vm.message },
+        domProps: { value: _vm.searchedRestaurant },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.searchedRestaurant = $event.target.value
+          },
+        },
       }),
       _vm._v(" "),
       _c(
         "router-link",
         {
           staticClass: "green_button mt-3 fw-bold",
-          attrs: { to: { path: "/restaurants/{{message}}" } },
+          attrs: {
+            to: {
+              name: "restaurants",
+              params: { slug: _vm.searchRestaurant() },
+            },
+          },
+          on: { click: _vm.searchRestaurant },
         },
         [_vm._v("Cerca")]
       ),
@@ -23535,8 +23611,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./dish_images/oovioiXSfFCse6RfjYEUyBUTKAgvMMSlwUSzXTql.png": "./storage/app/public/dish_images/oovioiXSfFCse6RfjYEUyBUTKAgvMMSlwUSzXTql.png",
-	"./restaurant_images/UpPEk2zjC4Wyhz2eL5Qt3M6A8hhaUoPXNs9Yxo6g.png": "./storage/app/public/restaurant_images/UpPEk2zjC4Wyhz2eL5Qt3M6A8hhaUoPXNs9Yxo6g.png"
+	"./dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif": "./storage/app/public/dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif",
+	"./dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png": "./storage/app/public/dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png",
+	"./dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png": "./storage/app/public/dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png",
+	"./dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif": "./storage/app/public/dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif",
+	"./restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png": "./storage/app/public/restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png",
+	"./restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif": "./storage/app/public/restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif",
+	"./restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif": "./storage/app/public/restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif",
+	"./restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png": "./storage/app/public/restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png",
+	"./restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png": "./storage/app/public/restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png",
+	"./restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif": "./storage/app/public/restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif",
+	"./restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png": "./storage/app/public/restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png"
 };
 
 
@@ -23561,25 +23646,124 @@ webpackContext.id = "./storage/app/public sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./storage/app/public/dish_images/oovioiXSfFCse6RfjYEUyBUTKAgvMMSlwUSzXTql.png":
+/***/ "./storage/app/public/dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif":
 /*!*************************************************************************************!*\
-  !*** ./storage/app/public/dish_images/oovioiXSfFCse6RfjYEUyBUTKAgvMMSlwUSzXTql.png ***!
+  !*** ./storage/app/public/dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/oovioiXSfFCse6RfjYEUyBUTKAgvMMSlwUSzXTql.png?aa9c15a7ab89a39f298453b81ba17394";
+module.exports = "/images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif?e2d1fd8828d4afe2629150f978a0f8a0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/UpPEk2zjC4Wyhz2eL5Qt3M6A8hhaUoPXNs9Yxo6g.png":
+/***/ "./storage/app/public/dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png":
+/*!*************************************************************************************!*\
+  !*** ./storage/app/public/dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png?b0404e2cc9cca3822706e21558e68f93";
+
+/***/ }),
+
+/***/ "./storage/app/public/dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png":
+/*!*************************************************************************************!*\
+  !*** ./storage/app/public/dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png?b0404e2cc9cca3822706e21558e68f93";
+
+/***/ }),
+
+/***/ "./storage/app/public/dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif":
+/*!*************************************************************************************!*\
+  !*** ./storage/app/public/dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/UpPEk2zjC4Wyhz2eL5Qt3M6A8hhaUoPXNs9Yxo6g.png ***!
+  !*** ./storage/app/public/restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/UpPEk2zjC4Wyhz2eL5Qt3M6A8hhaUoPXNs9Yxo6g.png?2abfbef51b462b26d03ccffa9dd86fac";
+module.exports = "/images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png?b0404e2cc9cca3822706e21558e68f93";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png?b0404e2cc9cca3822706e21558e68f93";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png?b0404e2cc9cca3822706e21558e68f93";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png?b0404e2cc9cca3822706e21558e68f93";
 
 /***/ }),
 
@@ -23590,7 +23774,7 @@ module.exports = "/images/UpPEk2zjC4Wyhz2eL5Qt3M6A8hhaUoPXNs9Yxo6g.png?2abfbef51
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alberto\repositories\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\ALE\Desktop\Boolean corso\Presentazione finale\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
