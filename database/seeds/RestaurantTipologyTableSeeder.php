@@ -11,7 +11,7 @@ class RestaurantTipologyTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('role_user')->insert(array(
+        DB::table('restaurant_tipology')->insert(array(
             array('restaurant_id' => 1, 'tipology_id' => 1),
             array('restaurant_id' => 2, 'tipology_id' => 4),
             array('restaurant_id' => 3, 'tipology_id' => 6),
