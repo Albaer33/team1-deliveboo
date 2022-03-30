@@ -85,13 +85,12 @@ export default {
           },
         // Funzione emit per aggiungere al carrello
         addToCart: function(order){
-            this.$emit('sendOrder', order);
+            this.$emit('sendOrder', {orderToSend: order, type: 'add'});
         },
         // rimozione di un elemento dal carrello
-        removeFromCart: function () {
-            this.$emit('sendOrder', order);
-        }         
-
+        removeFromCart: function (order) {
+            this.$emit('removeOneDish',  {orderToSend: order, type: 'remove'});
+        }
     },
     created: function(){
         this.getRestaurant();
@@ -151,7 +150,7 @@ export default {
         cursor: pointer;
     }
     .remove_buttons_wrapper{
-        width: 150px;
+        width: 100px;
         height: 45px;
         top: -4px;
         left: 200px;

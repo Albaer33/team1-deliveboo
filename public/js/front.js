@@ -3043,11 +3043,17 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Funzione emit per aggiungere al carrello
     addToCart: function addToCart(order) {
-      this.$emit('sendOrder', order);
+      this.$emit('sendOrder', {
+        orderToSend: order,
+        type: 'add'
+      });
     },
     // rimozione di un elemento dal carrello
-    removeFromCart: function removeFromCart() {
-      this.$emit('sendOrder', order);
+    removeFromCart: function removeFromCart(order) {
+      this.$emit('removeOneDish', {
+        orderToSend: order,
+        type: 'remove'
+      });
     }
   },
   created: function created() {
@@ -3156,7 +3162,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      // Lista ordini (da cambiare con quelli della chiamata api, questa è un test)
       cart_orders: []
     };
   },
@@ -3165,23 +3170,46 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var orderFound = false;
-      this.cart_orders.forEach(function (order) {
-        if (order.name === dish.nome && _this.cart_orders.length > 0) {
-          order.amount++;
-          order.priceTot = parseFloat(order.priceTot);
-          order.price = parseFloat(order.price);
-          order.priceTot += order.price;
-          orderFound = true;
-        }
-      });
 
-      if (!orderFound) {
-        this.cart_orders.push({
-          id: this.cart_orders.length + 1,
-          name: dish.nome,
-          amount: 1,
-          price: dish.prezzo,
-          priceTot: dish.prezzo
+      if (dish.type === 'add') {
+        this.cart_orders.forEach(function (order) {
+          // se la lunghezza dell' carrello è zero fa solo il push dell'elemento
+          if (order.name === dish.orderToSend.nome && _this.cart_orders.length > 0) {
+            order.amount++;
+            order.priceTot = parseFloat(order.priceTot);
+            order.price = parseFloat(order.price);
+            order.priceTot += order.price;
+            orderFound = true;
+          }
+        });
+
+        if (!orderFound) {
+          this.cart_orders.push({
+            id: this.cart_orders.length + 1,
+            name: dish.orderToSend.nome,
+            amount: 1,
+            price: dish.orderToSend.prezzo,
+            priceTot: dish.orderToSend.prezzo
+          });
+        }
+      } // nel caso volessimo rimuovere un elemento
+      else {
+        this.cart_orders.forEach(function (order, index) {
+          // se trova la corrispondenza tra order.name e il nome del piatto dal DB e c'è almeno un elemento
+          if (order.name === dish.orderToSend.nome && _this.cart_orders.length > 0) {
+            // se l' ammontare è maggiore di 1
+            if (order.amount > 1) {
+              // diminuisci di un elemento
+              order.amount--;
+            } else {
+              // altrimenti rimuovi il piatto (per non avere un piatto di QTY. 0)
+              _this.cart_orders.splice(index, 1);
+            }
+
+            order.priceTot = parseFloat(order.priceTot);
+            order.price = parseFloat(order.price);
+            order.priceTot -= order.price;
+          }
         });
       }
     }
@@ -3490,7 +3518,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.container .container_style_ms[data-v-25de3706] {\n  padding: 30px;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n  margin-top: 20px;\n  margin-bottom: 50px;\n}\n.container .card_style_ms[data-v-25de3706] {\n  border-radius: 10px;\n  border: 3px solid #00ccbc;\n}\n.container .card_style_ms[data-v-25de3706]:hover {\n  transition: 0.5s;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n}\n.container .row .img_risto img[data-v-25de3706] {\n  width: 300px;\n}\n.container .add_buttons_wrapper[data-v-25de3706] {\n  width: 200px;\n  height: 45px;\n  top: -4px;\n  left: -7px;\n  padding: 5px;\n  color: #00ccbc;\n  background-color: white;\n  border: 3px solid #00ccbc;\n  border-top-color: transparent;\n  border-left-color: transparent;\n  border-bottom-right-radius: 5px;\n  cursor: pointer;\n}\n.container .remove_buttons_wrapper[data-v-25de3706] {\n  width: 150px;\n  height: 45px;\n  top: -4px;\n  left: 200px;\n  padding: 5px;\n  color: rgba(255, 0, 0, 0.8);\n  background-color: white;\n  border: 3px solid #00ccbc;\n  border-top-color: transparent;\n  border-radius: 5px;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.container .container_style_ms[data-v-25de3706] {\n  padding: 30px;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n  margin-top: 20px;\n  margin-bottom: 50px;\n}\n.container .card_style_ms[data-v-25de3706] {\n  border-radius: 10px;\n  border: 3px solid #00ccbc;\n}\n.container .card_style_ms[data-v-25de3706]:hover {\n  transition: 0.5s;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n}\n.container .row .img_risto img[data-v-25de3706] {\n  width: 300px;\n}\n.container .add_buttons_wrapper[data-v-25de3706] {\n  width: 200px;\n  height: 45px;\n  top: -4px;\n  left: -7px;\n  padding: 5px;\n  color: #00ccbc;\n  background-color: white;\n  border: 3px solid #00ccbc;\n  border-top-color: transparent;\n  border-left-color: transparent;\n  border-bottom-right-radius: 5px;\n  cursor: pointer;\n}\n.container .remove_buttons_wrapper[data-v-25de3706] {\n  width: 100px;\n  height: 45px;\n  top: -4px;\n  left: 200px;\n  padding: 5px;\n  color: rgba(255, 0, 0, 0.8);\n  background-color: white;\n  border: 3px solid #00ccbc;\n  border-top-color: transparent;\n  border-radius: 5px;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -6421,6 +6449,9 @@ var render = function () {
           _c("router-view", {
             on: {
               sendOrder: function ($event) {
+                return _vm.getOrder($event)
+              },
+              removeOneDish: function ($event) {
                 return _vm.getOrder($event)
               },
             },
