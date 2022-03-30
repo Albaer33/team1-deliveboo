@@ -27,7 +27,7 @@
                 </div>
                 <div class="col">
                     <div class="right_section w-100 h-100 d-flex justify-content-end align-items-center my-3">
-                        <span>© 2022 Deliveroo</span>
+                        <span>© 2022 Deliveboo</span>
                     </div>
                 </div>
             </div>
