@@ -3,7 +3,7 @@
     <ShoppingCart :orders="cart_orders" />
     <Header />
     <main>
-      <router-view @sendOrder="getOrder($event)"></router-view>
+      <router-view @sendOrder="getOrder($event)" @removeOneDish="getOrder($event)"></router-view>
     </main>
     <Footer />
   </div>
@@ -23,7 +23,6 @@ export default {
   },
   data: function(){
     return {
-      // Lista ordini (da cambiare con quelli della chiamata api, questa è un test)
       cart_orders: []
     };
   },
@@ -33,36 +32,62 @@ export default {
 
       let orderFound = false; 
 
-      this.cart_orders.forEach(( order ) => {
+      if (dish.type === 'add') {
 
-        if( ( order.name === dish.nome ) && ( this.cart_orders.length > 0 ) ){
+        this.cart_orders.forEach(( order ) => {
+          // se la lunghezza dell' carrello è zero fa solo il push dell'elemento
+          if( ( order.name === dish.orderToSend.nome ) && ( this.cart_orders.length > 0 ) ){
 
-          order.amount++
+            order.amount++
 
-          order.priceTot = parseFloat(order.priceTot)
+            order.priceTot = parseFloat(order.priceTot)
 
-          order.price= parseFloat(order.price)
+            order.price= parseFloat(order.price)
 
-          order.priceTot += order.price
+            order.priceTot += order.price
 
-          orderFound = true;
+            orderFound = true;
+
+          }
+        
+        });
+
+        if(!orderFound){
+
+          this.cart_orders.push({
+            id: this.cart_orders.length + 1,
+            name: dish.orderToSend.nome,
+            amount: 1,
+            price: dish.orderToSend.prezzo,
+            priceTot: dish.orderToSend.prezzo
+          });
 
         }
-        
-      });
+      }
 
-      if(!orderFound){
+      // nel caso volessimo rimuovere un elemento
+      else {
+        this.cart_orders.forEach(( order, index ) => {
+          // se trova la corrispondenza tra order.name e il nome del piatto dal DB e c'è almeno un elemento
+          if( ( order.name === dish.orderToSend.nome ) && ( this.cart_orders.length > 0 ) ) {
+            // se l' ammontare è maggiore di 1
+            if(order.amount > 1) {
+              // diminuisci di un elemento
+              order.amount--
+            }
+            else {
+              // altrimenti rimuovi il piatto (per non avere un piatto di QTY. 0)
+              this.cart_orders.splice(index, 1)
+            }
+            order.priceTot = parseFloat(order.priceTot)
 
-        this.cart_orders.push({
-          id: this.cart_orders.length + 1,
-          name: dish.nome,
-          amount: 1,
-          price: dish.prezzo,
-          priceTot: dish.prezzo
+            order.price= parseFloat(order.price)
+
+            order.priceTot -= order.price
+          }
         });
 
       }
-
     }
   }
 };
