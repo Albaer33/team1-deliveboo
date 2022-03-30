@@ -243,6 +243,213 @@ class DishesTableSeeder extends Seeder
                 'restaurant_id' => '5'
             ],
             [
+                'nome' => "CAMARÃO EMPANADO ROLL",
+                'descrizione' => "Mazzancolla* tropicale impanata, tenkasu, salsa maionese piccante, salsa teriyaki",
+                'prezzo' => '15',
+                'immagine' => '',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '5'
+            ],
+            [
+                'nome' => "SALMÃO ABACATE ROLL",
+                'descrizione' => "Tartare di salmone, erba cipollina, avocado, sesamo, teriyaki, uova di pesce volante e maionese piccante",
+                'prezzo' => '18',
+                'immagine' => '',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '5'
+            ],
+            [
+                'nome' => "SALMÃO GOSTOSO ROLL",
+                'descrizione' => "Salmone, avocado, philadelphia, erba cipollina, uova di pesce volante, maionese piccante, salsa teriyaki e scaglie di mandorla",
+                'prezzo' => '20',
+                'immagine' => '',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '5'
+            ],
+            [
+                'nome' => "SALMÃO COM CAMARÃO ROLL",
+                'descrizione' => "Salmone, mazzancolla tropicale impanata, maionese piccante, teriyaki e sesamo",
+                'prezzo' => '18.50',
+                'immagine' => '',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '5'
+            ],
+            [
+                'nome' => "COPACABANA",
+                'descrizione' => "CAMARÃO BAIANINHO; PASTEL DE QUEIJO; SUSHI JOE PAIXÃO DE SALMÃO; FOZ DO IGUAÇU ROLL; SALMÃO GOSTOSO ROLL; CAMARÃO EMPANADO ROLL; CAMARÃO AMARELO ROLL: Mazzancolla* tropicale impanata, pomodori secchi, mango, uova di pesce volante*; ​NIGIRI DE SALMÃO: Fettina di salmone* scottata, riso, erba cipollina. Per l'indicazione degli ingredienti e dei prodotti decongelati, fare riferimento al singolo piatto nella famiglia dedicata",
+                'prezzo' => '40',
+                'immagine' => '',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '5'
+            ],
+            [
+                'nome' => "PIZZA MARGHERITA",
+                'descrizione' => "",
+                'prezzo' => '6.24',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/f74dad4b-70a7-453a-aa6b-2733e3d1db90/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Fiordilatte, pomodoro, basilico e olio',
+                'restaurant_id' => '6'
+            ],
+            [
+                'nome' => "PIZZA MARINARA",
+                'descrizione' => "",
+                'prezzo' => '6.24',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/88deef4e-9d06-4725-bb56-51dc6a7021c0/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Aglio, pomodoro, prezzemolo e olio',
+                'restaurant_id' => '6'
+            ],
+            [
+                'nome' => "PIZZA MEDITERRANEA",
+                'descrizione' => "",
+                'prezzo' => '5.60',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/61008da3-c704-48cf-90fa-3c659819cd78/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Olive nere, cipolla rossa saltata, pomodoro e origano',
+                'restaurant_id' => '6'
+            ],
+            [
+                'nome' => "PIZZA NAPOLI",
+                'descrizione' => "",
+                'prezzo' => '8',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/d8c36634-e5bb-4bc6-9dd7-39aaabab1e9f/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Acciughe, capperi, fiordilatte, pomodoro e origano',
+                'restaurant_id' => '6'
+            ],
+            [
+                'nome' => "PIZZA SALSICCIA E PARMIGIANO",
+                'descrizione' => "",
+                'prezzo' => '8',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/a4a87535-1903-4950-90e5-bc79664dc06d/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Prosciutto crudo di Norcia, burrata, rucola, fiordilatte e olio di arancia',
+                'restaurant_id' => '6'
+            ],
+            [
+                'nome' => "PIZZA CRUDO E BURRATA",
+                'descrizione' => "",
+                'prezzo' => '10.40',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/60c09aaa-3d04-45df-ad0a-8df647340192/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Salsiccia di Mora Romagnola, pomodoro, parmigiano reggiano 24 mesi, semi di finocchio',
+                'restaurant_id' => '6'
+            ],
+            [
+                'nome' => "Billy bbq",
+                'descrizione' => "",
+                'prezzo' => '6.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/885928816/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648555981&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Pane, hamburger, formaggio cheddar, bacon grigliato, lattuga e salsa barbecue',
+                'restaurant_id' => '7'
+            ],
+            [
+                'nome' => "Ranchero wrap",
+                'descrizione' => "",
+                'prezzo' => '6.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/885929616/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648555981&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Tortilla* di grano farcita con cotoletta di pollo* panata, crema di pomodori secchi, scaglie di parmigiano reggiano DOP, lattuga e salsa Old Wild West',
+                'restaurant_id' => '7'
+            ],
+            [
+                'nome' => "Santa Cruz wrap",
+                'descrizione' => "",
+                'prezzo' => '6.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/885929951/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648555981&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Tortilla* di grano farcita con petto di pollo* marinato e grigliato, lattuga, formaggio fuso e salsa peri cheddar',
+                'restaurant_id' => '7'
+            ],
+            [
+                'nome' => "Geronimo burger",
+                'descrizione' => "",
+                'prezzo' => '6.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/885930182/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648555981&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Pane*, hamburger*, doppio bacon grigliato, lattuga e salsa Old Wild West',
+                'restaurant_id' => '7'
+            ],
+            [
+                'nome' => "Apache",
+                'descrizione' => "",
+                'prezzo' => '9.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/261396498/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648555981&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Pane, hamburger, cipolla bianca, pomodoro e cetriolini - servito con patate french fries',
+                'restaurant_id' => '7'
+            ],
+            [
+                'nome' => "Navajo",
+                'descrizione' => "",
+                'prezzo' => '9.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/261396499/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648555981&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Pane, hamburger e formaggio cheddar - servito con patate french fries',
+                'restaurant_id' => '7'
+            ],
+            [
+                'nome' => "Maxxxi Combo",
+                'descrizione' => "Maxxxi burger, guarnito con semi di sesamo, con Coca-Cola o Coca-Cola Zero, servito con patatine fritte",
+                'prezzo' => '11.97',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/103305788/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648539126&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '8'
+            ],
+            [
+                'nome' => "Bacon Swiss Classic Combo",
+                'descrizione' => "Bacon Swiss Classic con Coca-Cola o Coca-Cola Zero, servito con patatine fritte",
+                'prezzo' => '10.57',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/103305790/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648539126&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '8'
+            ],
+            [
+                'nome' => "R special Classic Combo",
+                'descrizione' => "R Special Classic con Coca-Cola o Coca-Cola Zero, servito con patatine fritte",
+                'prezzo' => '10.57',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/103305791/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648539126&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '8'
+            ],
+            [
+                'nome' => "Fried Chicken Burger Combo",
+                'descrizione' => "Fried Chicken Burger con Coca-Cola o Coca-Cola Zero, servito con patatine fritte",
+                'prezzo' => '11.27',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/1044617604/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648539126&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '8'
+            ],
+            [
+                'nome' => "Grill chicken wrap",
+                'descrizione' => "Tortillas con pollo grigliato, insalata, pomodoro e salsa alle erbette",
+                'prezzo' => '6.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/90928847/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648539126&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '8'
+            ],
+            [
+                'nome' => "Crispy chicken wrap",
+                'descrizione' => "Tortillas con filetti di pollo fritto, insalata e salsa honey",
+                'prezzo' => '6.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/90928853/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648539126&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '8'
+            ],
+            [
                 'nome' => "Box Meal Colonel's Burger",
                 'descrizione' => "Così buono che il Colonnello ci ha messo la firma. Il Box Meal contiene un Colonel's Burger, una porzione di Pop Corn Chicken, un contorno speciale, patatine e bibita a scelta.",
                 'prezzo' => '11',
@@ -259,6 +466,204 @@ class DishesTableSeeder extends Seeder
                 'visibile' => '1',
                 'ingredienti' => 'burger',
                 'restaurant_id' => '9'
+            ],
+            [
+                'nome' => "Menu Tender OR",
+                'descrizione' => "Menu con un contorno a scelta, una bibita e 4 Tender OR, teneri filetti preparati seguendo la ricetta originale del Colonnello Sanders, infarinati e fritti al momento per ottenere una panatura uniforme, croccante e gustosissima!",
+                'prezzo' => '10.90',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/e406f65d-d866-4d66-a4bf-b502c6442abb/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'pollo',
+                'restaurant_id' => '9'
+            ],
+            [
+                'nome' => "Menu Tender Crispy",
+                'descrizione' => "Menu con un contorno a scelta, una bibita e 4 Tender Crispy, filetti di pollo, croccanti fuori e tenerissimi dentro, serviti con una salsa a scelta.",
+                'prezzo' => '10.90',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/e07d5597-e326-47bf-826a-47a9b1fe5c16/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'pollo',
+                'restaurant_id' => '9'
+            ],
+            [
+                'nome' => "Menu COB OR",
+                'descrizione' => "Menu con un contorno a scelta, una bibita e 2 pezzi di irresistibile pollo con osso - Chicken On the Bones - cucinato secondo la ricetta segreta del Colonnello Sanders, con le 11 erbe e spezie.",
+                'prezzo' => '9.50',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/9608be19-0428-4d81-bc7c-cb88779c9cd9/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'pollo',
+                'restaurant_id' => '9'
+            ],
+            [
+                'nome' => "Menu Hot Wings",
+                'descrizione' => "Menu con un contorno a scelta, una bibita e 5 alette piccanti di KFC! Le Hot Wings sono marinate e speziate con peperoncino piccante e altre deliziose spezie. Poi infarinate e fritte alla perfezione per ottenere una dorata croccantezza.",
+                'prezzo' => '9.50',
+                'immagine' => 'https://rs-menus-api.roocdn.com/images/b271803c-8ae3-4c69-9c5a-671c730dce6b/image.jpeg?width=545&height=307&auto=webp&format=jpg&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'pollo',
+                'restaurant_id' => '9'
+            ],
+            [
+                'nome' => "L'intensa",
+                'descrizione' => "",
+                'prezzo' => '7.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/957332605/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648200982&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Spianata, brie, zucchine grigliate, peperoni grigliati, maionese',
+                'restaurant_id' => '10'
+            ],
+            [
+                'nome' => "La regina con crema pistacchio salato",
+                'descrizione' => "",
+                'prezzo' => '7.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/957332605/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648200982&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Mortadella cuor di paese, bufala, crema pistacchio salato, lattuga',
+                'restaurant_id' => '10'
+            ],
+            [
+                'nome' => "La regina con crema tartufo",
+                'descrizione' => "",
+                'prezzo' => '7.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/1061068286/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648200982&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Mortadella cuor di paese, bufala, crema tartufo, lattuga',
+                'restaurant_id' => '10'
+            ],
+            [
+                'nome' => "La squisita",
+                'descrizione' => "",
+                'prezzo' => '8.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/966181722/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648200982&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Tacchino, alpigiana, avocado, pomodoro',
+                'restaurant_id' => '10'
+            ],
+            [
+                'nome' => "La prelibata",
+                'descrizione' => "",
+                'prezzo' => '8.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/198823450/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648200982&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Speck, mozzarella, provola, funghi, zucchine grigliate e salsa boscaiola',
+                'restaurant_id' => '10'
+            ],
+            [
+                'nome' => "Pollorollo con patate",
+                'descrizione' => "",
+                'prezzo' => '8.40',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/954072745/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648200982&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => 'Rotolo, pollo grigliato, patate al forno, lattuga, pomodoro, maionese',
+                'restaurant_id' => '10'
+            ],
+            [
+                'nome' => "Big King Menù Medio + King Fusion Oreo",
+                'descrizione' => "",
+                'prezzo' => '8.70',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/1043967031/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648454815&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '11'
+            ],
+            [
+                'nome' => "Crispy Chicken Menù Medio + King Fusion Oreo",
+                'descrizione' => "",
+                'prezzo' => '7.80',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/1043967032/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648454815&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '11'
+            ],
+            [
+                'nome' => "Pecorino & scamorza burger - menù",
+                'descrizione' => "Italian Kings - 150gr di carne grigliata, salsa al pecorino Romano DOP, pomodori semi secchi, scamorza e soncino",
+                'prezzo' => '12.10',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/254551347/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648454815&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '11'
+            ],
+            [
+                'nome' => "Bacon King - menù",
+                'descrizione' => "Inimitabile. Due hamburger di manzo alla griglia con 8 fette di bacon, cheddar, ketchup e maionese",
+                'prezzo' => '12.10',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/19526412/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648454815&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '11'
+            ],
+            [
+                'nome' => "Double whopper® - menù",
+                'descrizione' => "Classico…doppio! L’impareggiabile gusto del whopper® moltiplicato per due. ..Null'altro da aggiungere.",
+                'prezzo' => '12.10',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/19526432/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648454815&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '11'
+            ],
+            [
+                'nome' => "Chicken royale bacon cheese - menù",
+                'descrizione' => "Leggerezza golosa! Panino al sesamo extralungo, petto di pollo dorato, maionese, bacon, formaggio, lattuga e pomodoro.",
+                'prezzo' => '12.10',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/19526436/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1648454815&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '11'
+            ],
+            [
+                'nome' => "Crea il tuo gelato - per 3/4 persone",
+                'descrizione' => "I tuoi gusti di gelato preferiti in una vaschetta da 500gr, 300gr di panna montata, granelle croccanti, coni gelato classici e il grembiule marchiato grom - il kit perfetto per trasformare in una festa la tua pausa gelato",
+                'prezzo' => '22',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/97674239/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1646745736&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '12'
+            ],
+            [
+                'nome' => "Gelato fai da te - grande",
+                'descrizione' => "Servi il gelato come un vero professionista! Hai a disposizione 1 vaschetta di gelato da 1kg, 1 vaschetta di panna montata da 300gr e come asso nella manica avrai lo scooper d'acciaio marchiato Grom!",
+                'prezzo' => '33',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/774288958/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1646745736&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '12'
+            ],
+            [
+                'nome' => "Vaschetta di gelato da 500gr - per 3-4 persone",
+                'descrizione' => "Scegli i tuoi 3 gusti di gelato preferiti. Senza glutine, senza aromi, senza coloranti e senza emulsionanti",
+                'prezzo' => '11',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/973740757/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1646745736&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '12'
+            ],
+            [
+                'nome' => "Vaschetta panna montata 600gr",
+                'descrizione' => "Montata delicatamente, poco dolce e tipica per la sua consitenza soffice e compatta",
+                'prezzo' => '12',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/97674228/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1646745736&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '12'
+            ],
+            [
+                'nome' => "Biscotti cioccolato fondente 200gr",
+                'descrizione' => "Prodotti con farina macinata a pietra e cioccolato fondente ecuador in pezzi, i nostri biscotti al cioccolato fondente sono golosi, croccanti e senza glutine",
+                'prezzo' => '6',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/97674206/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1646745736&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '12'
+            ],
+            [
+                'nome' => "Crema spalmabile al pistacchio",
+                'descrizione' => "Prodotta con oltre il 30% di pistacchio, è vellutata e leggermente salata. Perfetta per accompagnare spuntini dolci o salati e caffè golosi",
+                'prezzo' => '7.50',
+                'immagine' => 'https://f.roocdn.com/images/menu_items/97674210/item-image.jpg?width=545&height=307&auto=webp&format=jpg&v=1646745736&fit=crop',
+                'visibile' => '1',
+                'ingredienti' => '',
+                'restaurant_id' => '12'
             ],
 
         ];
