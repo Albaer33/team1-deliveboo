@@ -6,18 +6,17 @@
         <p>Benvenuto su Deliveboo</p>
 
         <div id="dropin-wrapper">
-        <div id="checkout-message"></div>
+            <div id="checkout-message"></div>
 
-        <form id="payment-form" action="/admin/on/your/server" method="post">
-            <!-- Putting the empty container you plan to pass to
-            `braintree.dropin.create` inside a form will make layout and flow
-            easier to manage -->
-            <div id="dropin-container"></div>
-            <input type="submit" />
-            <input type="hidden" id="nonce" name="payment_method_nonce"/>
-        </form>
+            <form id="payment-form" action="/on/your/server" method="post">
+                <!-- Putting the empty container you plan to pass to
+                `braintree.dropin.create` inside a form will make layout and flow
+                easier to manage -->
+                <div id="dropin-container"></div>
+                <input type="submit" />
+                <input type="hidden" id="nonce" name="payment_method_nonce"/>
+            </form>
 
-            <button id="submit-button">Sgancia il denaro</button>
         </div>
 
         <!-- <script type="text/javascript"> -->
