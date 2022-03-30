@@ -2425,6 +2425,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     restaurants_data: Array,
+    tipologies_data: Array,
     overlay_conditions: Object
   },
   data: function data() {
@@ -2527,7 +2528,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchBox',
   props: {
-    restaurants_list: Array
+    restaurants: Array,
+    tipologies: Array
+  },
+  data: function data() {
+    return {
+      searchedRestaurant: '',
+      slugToSearch: '',
+      myValue: null
+    };
+  },
+  methods: {
+    getTipology: function getTipology() {
+      var _this = this;
+
+      //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+      // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+      axios.get('http://127.0.0.1:8000/api/tipologies/').then(function (response) {
+        // console.log(response);
+        _this.tipologies = response.data.results;
+      });
+    },
+    // Funzione ricerca ristorante (filtro)
+    searchRestaurant: function searchRestaurant() {
+      var _this2 = this;
+
+      // forEach sull'array dei ristoranti
+      this.restaurants.forEach(function (thisRestaurant) {
+        // Comparazione dei nomi entrambi in trim e toLowerCase
+        if (_this2.searchedRestaurant.toLowerCase().trim() === thisRestaurant.nome_attivita.toLowerCase().trim()
+        /* || thisRestaurant.slug */
+        ) {
+          _this2.slugToSearch = thisRestaurant.slug;
+          /* this.myValue = 1; */
+
+          /* return this.myValue; */
+        } //    else{
+        //        this.tipologies.forEach((thisTipologies) => {
+        //           if( this.searchedRestaurant.toLowerCase().trim() === (thisTipologies.nome.toLowerCase().trim()) /* || thisTipologies.slug */ ){
+        //                this.slugToSearch = thisTipologies.slug;
+        //               this.myValue = 2;
+
+        /* return this.myValue; */
+        //           }
+        //      });
+        //   }
+
+
+        return _this2.slugToSearch;
+      }); //  console.log(this.searchedRestaurant)
+    }
+  },
+  created: function created() {
+    this.getTipology();
   }
 });
 
@@ -5097,9 +5150,7 @@ var render = function () {
                 _vm._v("I piatti che ami, a domicilio."),
               ]),
               _vm._v(" "),
-              _c("SearchBox", {
-                attrs: { restaurants_list: _vm.restaurants_data },
-              }),
+              _c("SearchBox", { attrs: { restaurants: _vm.restaurants_list } }),
             ],
             1
           ),
@@ -5449,7 +5500,10 @@ var render = function () {
     { staticClass: "main_home" },
     [
       _c("BannerSection", {
-        attrs: { restaurants_list: _vm.restaurants_data },
+        attrs: {
+          restaurants_list: _vm.restaurants_data,
+          tipologies_list: _vm.tipologies_data,
+        },
       }),
       _vm._v(" "),
       _c("TipologiesSection"),
@@ -5563,16 +5617,47 @@ var render = function () {
       _c("h4", [_vm._v("Cerca un ristorante per nome:")]),
       _vm._v(" "),
       _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.searchedRestaurant,
+            expression: "searchedRestaurant",
+          },
+        ],
         staticClass: "w-100 form-control form-control-sm",
         attrs: { type: "search", placeholder: "Inserisci qui il ristorante" },
-        domProps: { value: _vm.message },
+        domProps: { value: _vm.searchedRestaurant },
+        on: {
+          keyup: function ($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.searchRestaurant.apply(null, arguments)
+          },
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.searchedRestaurant = $event.target.value
+          },
+        },
       }),
       _vm._v(" "),
       _c(
         "router-link",
         {
           staticClass: "green_button mt-3 fw-bold",
-          attrs: { to: { path: "/restaurants/{{message}}" } },
+          attrs: {
+            to: {
+              name: "restaurants",
+              params: { slug: _vm.searchRestaurant() },
+            },
+          },
+          on: { click: _vm.searchRestaurant },
         },
         [_vm._v("Cerca")]
       ),
