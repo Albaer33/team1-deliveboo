@@ -12,19 +12,19 @@ export default {
     props: {
         
         restaurants: Array,
-        tipologies: Array
+        /* tipologies: Array */
 
     },
     data: function(){
         return {
             searchedRestaurant: '',
             slugToSearch: '',
-            myValue: null
+            /* myValue: null */
         };
     },
     methods: {
 
-        getTipology(){
+/*         getTipology(){
             //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
             // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
             axios.get('http://127.0.0.1:8000/api/tipologies/')
@@ -34,7 +34,7 @@ export default {
                     this.tipologies = response.data.results;
                 
             });
-          },
+          }, */
         // Funzione ricerca ristorante (filtro)
         searchRestaurant: function(){
 
@@ -64,15 +64,17 @@ export default {
 
              //   }
 
-                return this.slugToSearch;
 
             });
             //  console.log(this.searchedRestaurant)
 
+            return this.slugToSearch;
+
+
         }
     },
     created: function(){
-        this.getTipology();
+        /* this.getTipology(); */
     }
 }
 </script>

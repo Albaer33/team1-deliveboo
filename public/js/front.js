@@ -2528,38 +2528,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchBox',
   props: {
-    restaurants: Array,
-    tipologies: Array
+    restaurants: Array
+    /* tipologies: Array */
+
   },
   data: function data() {
     return {
       searchedRestaurant: '',
-      slugToSearch: '',
-      myValue: null
+      slugToSearch: ''
+      /* myValue: null */
+
     };
   },
   methods: {
-    getTipology: function getTipology() {
-      var _this = this;
-
-      //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
-      // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-      axios.get('http://127.0.0.1:8000/api/tipologies/').then(function (response) {
-        // console.log(response);
-        _this.tipologies = response.data.results;
-      });
-    },
+    /*         getTipology(){
+                //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
+                // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
+                axios.get('http://127.0.0.1:8000/api/tipologies/')
+                .then((response) => {
+                    // console.log(response);
+                    
+                        this.tipologies = response.data.results;
+                    
+                });
+              }, */
     // Funzione ricerca ristorante (filtro)
     searchRestaurant: function searchRestaurant() {
-      var _this2 = this;
+      var _this = this;
 
       // forEach sull'array dei ristoranti
       this.restaurants.forEach(function (thisRestaurant) {
         // Comparazione dei nomi entrambi in trim e toLowerCase
-        if (_this2.searchedRestaurant.toLowerCase().trim() === thisRestaurant.nome_attivita.toLowerCase().trim()
+        if (_this.searchedRestaurant.toLowerCase().trim() === thisRestaurant.nome_attivita.toLowerCase().trim()
         /* || thisRestaurant.slug */
         ) {
-          _this2.slugToSearch = thisRestaurant.slug;
+          _this.slugToSearch = thisRestaurant.slug;
           /* this.myValue = 1; */
 
           /* return this.myValue; */
@@ -2574,13 +2577,13 @@ __webpack_require__.r(__webpack_exports__);
         //      });
         //   }
 
-
-        return _this2.slugToSearch;
       }); //  console.log(this.searchedRestaurant)
+
+      return this.slugToSearch;
     }
   },
   created: function created() {
-    this.getTipology();
+    /* this.getTipology(); */
   }
 });
 
@@ -5500,10 +5503,7 @@ var render = function () {
     { staticClass: "main_home" },
     [
       _c("BannerSection", {
-        attrs: {
-          restaurants_list: _vm.restaurants_data,
-          tipologies_list: _vm.tipologies_data,
-        },
+        attrs: { restaurants_list: _vm.restaurants_data },
       }),
       _vm._v(" "),
       _c("TipologiesSection"),
