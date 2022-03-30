@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row row-cols-1">
                 <div class="col">
-                    <h2 class="mt-5 mb-4">La selezione di Deliveboo</h2>
+                    <h2 class="mb-4">La selezione di Deliveboo</h2>
                 </div>
                 <div class="col">
                     <div class="row row-cols-2 g-3">

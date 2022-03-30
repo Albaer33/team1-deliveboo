@@ -2205,6 +2205,9 @@ __webpack_require__.r(__webpack_exports__);
   name: 'BannerSection',
   components: {
     SearchBox: _SearchBox_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    restaurants_list: Array
   }
 });
 
@@ -2293,6 +2296,21 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2507,7 +2525,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SearchBox'
+  name: 'SearchBox',
+  props: {
+    restaurants_list: Array
+  }
 });
 
 /***/ }),
@@ -2912,9 +2933,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -3424,6 +3442,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".tipologies_section[data-v-f555c47a] {\n  margin: 30px 0;\n}\n.tipologies_section .mt-30[data-v-f555c47a] {\n  margin-top: 30px;\n}\n.tipologies_section .mn-30[data-v-f555c47a] {\n  margin-bottom: 30px;\n}\n.tipologies_section .container .tipos_wrapper[data-v-f555c47a] {\n  margin-right: 20px;\n  margin-bottom: 20px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container .link-home[data-v-a26bf910] {\n  display: inline-block;\n  font-size: 40px;\n}\n.container .link-home .btn-primary_color[data-v-a26bf910] {\n  background-color: #00ccbc;\n  border-color: #00ccbc;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -4326,6 +4363,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Restaurant.vue?vue&type=style&index=0&id=25de3706&lang=scss&scoped=true&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Restaurant.vue?vue&type=style&index=0&id=25de3706&lang=scss&scoped=true& ***!
@@ -5030,7 +5097,9 @@ var render = function () {
                 _vm._v("I piatti che ami, a domicilio."),
               ]),
               _vm._v(" "),
-              _c("SearchBox"),
+              _c("SearchBox", {
+                attrs: { restaurants_list: _vm.restaurants_data },
+              }),
             ],
             1
           ),
@@ -5254,16 +5323,22 @@ var render = function () {
     [
       _c("nav", { staticClass: "navbar w-100" }, [
         _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "header_logos d-flex align-items-center" }, [
-            _c("img", {
-              staticClass: "w_30p",
-              attrs: { src: _vm.img_logo, alt: "logo deliveboo" },
-            }),
-            _vm._v(" "),
-            _vm._m(0),
+          _c("a", { attrs: { href: "/" } }, [
+            _c(
+              "div",
+              { staticClass: "header_logos d-flex align-items-center" },
+              [
+                _c("img", {
+                  staticClass: "w_30p",
+                  attrs: { src: _vm.img_logo, alt: "logo deliveboo" },
+                }),
+                _vm._v(" "),
+                _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
+              ]
+            ),
           ]),
           _vm._v(" "),
-          _vm._m(1),
+          _vm._m(0),
         ]),
       ]),
     ]
@@ -5274,37 +5349,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/" } }, [
-      _c("h4", { staticClass: "mb-0" }, [_vm._v("deliveboo")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
       { staticClass: "header_forms d-flex align-items-center" },
       [
-        _c(
-          "div",
-          {
-            staticClass:
-              "register_box d-flex align-items-center d-none d-md-block",
-          },
-          [
-            _c("i", { staticClass: "fa-solid fa-house me-2" }),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "http://127.0.0.1:8000/admin" } }, [
-              _vm._v("Registrati o accedi"),
-            ]),
-          ]
-        ),
+        _c("a", { attrs: { href: "http://127.0.0.1:8000/admin" } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "register_box d-flex align-items-center d-none d-md-block",
+            },
+            [
+              _c("i", { staticClass: "fa-solid fa-house me-2" }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Registrati o accedi")]),
+            ]
+          ),
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "menu_box d-flex align-items-center" }, [
-          _c("i", { staticClass: "fa-solid fa-bars me-2" }),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [_vm._v("Menu")]),
+        _c("a", { attrs: { href: "" } }, [
+          _c("div", { staticClass: "menu_box d-flex align-items-center" }, [
+            _c("i", { staticClass: "fa-solid fa-bars me-2" }),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "#" } }, [_vm._v("Menu")]),
+          ]),
         ]),
       ]
     )
@@ -5379,7 +5448,9 @@ var render = function () {
     "section",
     { staticClass: "main_home" },
     [
-      _c("BannerSection"),
+      _c("BannerSection", {
+        attrs: { restaurants_list: _vm.restaurants_data },
+      }),
       _vm._v(" "),
       _c("TipologiesSection"),
       _vm._v(" "),
@@ -5494,13 +5565,14 @@ var render = function () {
       _c("input", {
         staticClass: "w-100 form-control form-control-sm",
         attrs: { type: "search", placeholder: "Inserisci qui il ristorante" },
+        domProps: { value: _vm.message },
       }),
       _vm._v(" "),
       _c(
         "router-link",
         {
           staticClass: "green_button mt-3 fw-bold",
-          attrs: { to: { path: "/restaurants/:slug" } },
+          attrs: { to: { path: "/restaurants/{{message}}" } },
         },
         [_vm._v("Cerca")]
       ),
@@ -5604,9 +5676,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col" }, [
-      _c("h2", { staticClass: "mt-5 mb-4" }, [
-        _vm._v("La selezione di Deliveboo"),
-      ]),
+      _c("h2", { staticClass: "mb-4" }, [_vm._v("La selezione di Deliveboo")]),
     ])
   },
 ]
@@ -5790,7 +5860,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "suggestions_section mt_100" }, [
+  return _c("section", { staticClass: "suggestions_section mt_30" }, [
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row row-cols-1" }, [
         _vm._m(0),
@@ -5866,7 +5936,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col" }, [
       _c("div", { staticClass: "title_container" }, [
-        _c("h2", { staticClass: "mt-5 mb-4" }, [
+        _c("h2", { staticClass: "mt-4 mb-4" }, [
           _vm._v("I tuoi piatti preferiti, consegnati da noi."),
         ]),
       ]),
@@ -5930,7 +6000,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container mb-30" }, [
-      _c("h2", [_vm._v("Cerchi qualcos'altro?")]),
+      _c("h2", [_vm._v("Scegli per tipologie di ristorante")]),
     ])
   },
 ]
@@ -6033,10 +6103,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910& ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6052,18 +6122,20 @@ var render = function () {
     _c("div", { staticClass: "container" }, [
       _c("h1", [
         _vm._v(
-          "\n            Pagina non esistente            \n            \n        "
+          "\n            Ops pagina non esistente            \n            \n        "
         ),
       ]),
       _vm._v(" "),
-      _c("h1", [_vm._v("\n            ERRORE 404\n        ")]),
-      _vm._v(" "),
       _c(
-        "h1",
+        "div",
+        { staticClass: "link-home" },
         [
           _c(
             "router-link",
-            { staticClass: "nav-link active", attrs: { to: "Home" } },
+            {
+              staticClass: "nav-link active btn btn-primary_color",
+              attrs: { to: "/" },
+            },
             [_vm._v("Torna alla Home")]
           ),
         ],
@@ -23002,9 +23074,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NotFound_vue_vue_type_template_id_a26bf910___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NotFound.vue?vue&type=template&id=a26bf910& */ "./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&");
+/* harmony import */ var _NotFound_vue_vue_type_template_id_a26bf910_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NotFound.vue?vue&type=template&id=a26bf910&scoped=true& */ "./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&scoped=true&");
 /* harmony import */ var _NotFound_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NotFound.vue?vue&type=script&lang=js& */ "./resources/js/pages/NotFound.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _NotFound_vue_vue_type_style_index_0_id_a26bf910_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true& */ "./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -23012,13 +23086,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _NotFound_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NotFound_vue_vue_type_template_id_a26bf910___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NotFound_vue_vue_type_template_id_a26bf910___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _NotFound_vue_vue_type_template_id_a26bf910_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _NotFound_vue_vue_type_template_id_a26bf910_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "a26bf910",
   null
   
 )
@@ -23044,19 +23118,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&":
-/*!************************************************************************!*\
-  !*** ./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910& ***!
-  \************************************************************************/
+/***/ "./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true& ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_style_index_0_id_a26bf910_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=style&index=0&id=a26bf910&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_style_index_0_id_a26bf910_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_style_index_0_id_a26bf910_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_style_index_0_id_a26bf910_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_style_index_0_id_a26bf910_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&scoped=true&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&scoped=true& ***!
+  \************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_template_id_a26bf910___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./NotFound.vue?vue&type=template&id=a26bf910& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_template_id_a26bf910___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_template_id_a26bf910_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./NotFound.vue?vue&type=template&id=a26bf910&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NotFound.vue?vue&type=template&id=a26bf910&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_template_id_a26bf910_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_template_id_a26bf910___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound_vue_vue_type_template_id_a26bf910_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -23385,17 +23475,38 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif": "./storage/app/public/dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif",
-	"./dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png": "./storage/app/public/dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png",
-	"./dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png": "./storage/app/public/dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png",
-	"./dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif": "./storage/app/public/dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif",
-	"./restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png": "./storage/app/public/restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png",
-	"./restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif": "./storage/app/public/restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif",
-	"./restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif": "./storage/app/public/restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif",
-	"./restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png": "./storage/app/public/restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png",
-	"./restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png": "./storage/app/public/restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png",
-	"./restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif": "./storage/app/public/restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif",
-	"./restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png": "./storage/app/public/restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png"
+	"./dish_images/1nNDsKidVeXHHH3Ldbz4HZ7udRvBtdpSKFXxNATi.png": "./storage/app/public/dish_images/1nNDsKidVeXHHH3Ldbz4HZ7udRvBtdpSKFXxNATi.png",
+	"./dish_images/6lYqy5uQkdw1xGoebViFDtZvHUGQHp0lBRCjJeMP.png": "./storage/app/public/dish_images/6lYqy5uQkdw1xGoebViFDtZvHUGQHp0lBRCjJeMP.png",
+	"./dish_images/LtWt3gNnX18ZNjrcpmtNCEgzCEyV64DR1T4c9BqR.jpg": "./storage/app/public/dish_images/LtWt3gNnX18ZNjrcpmtNCEgzCEyV64DR1T4c9BqR.jpg",
+	"./dish_images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png": "./storage/app/public/dish_images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png",
+	"./dish_images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png": "./storage/app/public/dish_images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png",
+	"./restaurant_images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png": "./storage/app/public/restaurant_images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png",
+	"./restaurant_images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png": "./storage/app/public/restaurant_images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png",
+	"./restaurant_images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png": "./storage/app/public/restaurant_images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png",
+	"./restaurant_images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png": "./storage/app/public/restaurant_images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png",
+	"./restaurant_images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png": "./storage/app/public/restaurant_images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png",
+	"./restaurant_images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png": "./storage/app/public/restaurant_images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png",
+	"./restaurant_images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png": "./storage/app/public/restaurant_images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png",
+	"./restaurant_images/MaTOESHDALZbPdhfwT6BMNWXRCvC3J4WchwwvReF.png": "./storage/app/public/restaurant_images/MaTOESHDALZbPdhfwT6BMNWXRCvC3J4WchwwvReF.png",
+	"./restaurant_images/NBUM9Dkrlp4hhsl75cIoyYvES8BYxtOZWDiEwaL6.png": "./storage/app/public/restaurant_images/NBUM9Dkrlp4hhsl75cIoyYvES8BYxtOZWDiEwaL6.png",
+	"./restaurant_images/Qcy4iemhQSMNwSIy24RcYQbZMswwKBcTvH9Qvboi.png": "./storage/app/public/restaurant_images/Qcy4iemhQSMNwSIy24RcYQbZMswwKBcTvH9Qvboi.png",
+	"./restaurant_images/Tlxh2kfF3Fr9aSLpJN24b1SMITWcgSMgoYPfwTyO.png": "./storage/app/public/restaurant_images/Tlxh2kfF3Fr9aSLpJN24b1SMITWcgSMgoYPfwTyO.png",
+	"./restaurant_images/WCHB2ut1LWCsfBUkk1MaSsBrAx0yhmJtVX5JkRql.png": "./storage/app/public/restaurant_images/WCHB2ut1LWCsfBUkk1MaSsBrAx0yhmJtVX5JkRql.png",
+	"./restaurant_images/YHMIawuz0lvLe9kSsnrxLeG4wLpe3SPhWyKqGgJ4.png": "./storage/app/public/restaurant_images/YHMIawuz0lvLe9kSsnrxLeG4wLpe3SPhWyKqGgJ4.png",
+	"./restaurant_images/ZPJAgRXbLpU35TQlhR1X6tVm9wUQDHGAnYaM4uk2.png": "./storage/app/public/restaurant_images/ZPJAgRXbLpU35TQlhR1X6tVm9wUQDHGAnYaM4uk2.png",
+	"./restaurant_images/aJcbyvsDRwzsvY8DbcyPq8KRf4v11WD9boInOfG9.png": "./storage/app/public/restaurant_images/aJcbyvsDRwzsvY8DbcyPq8KRf4v11WD9boInOfG9.png",
+	"./restaurant_images/fKLTAzvphsxUY13hwohVWLKF6S8m9Zk6eNzyf2mC.png": "./storage/app/public/restaurant_images/fKLTAzvphsxUY13hwohVWLKF6S8m9Zk6eNzyf2mC.png",
+	"./restaurant_images/faUKSkA2lJlMfrojJTjKAh9qnhw8jm1xYiGJL6hH.png": "./storage/app/public/restaurant_images/faUKSkA2lJlMfrojJTjKAh9qnhw8jm1xYiGJL6hH.png",
+	"./restaurant_images/ilwIK3eOetfWWaShcd4TyWWCPvz0ZaEUjjPifkHl.png": "./storage/app/public/restaurant_images/ilwIK3eOetfWWaShcd4TyWWCPvz0ZaEUjjPifkHl.png",
+	"./restaurant_images/iqOaAaDeUoCyKpoBBB7wZEROvZVq9ZInuLJJE3rS.png": "./storage/app/public/restaurant_images/iqOaAaDeUoCyKpoBBB7wZEROvZVq9ZInuLJJE3rS.png",
+	"./restaurant_images/jQVxc8Gy3l3z7kVy2fwja9xxm57oNUBFczPRkWaf.png": "./storage/app/public/restaurant_images/jQVxc8Gy3l3z7kVy2fwja9xxm57oNUBFczPRkWaf.png",
+	"./restaurant_images/qOeNV4gllhyW0GZT78VvzZzUgcBLFFbpfcvRUMnp.png": "./storage/app/public/restaurant_images/qOeNV4gllhyW0GZT78VvzZzUgcBLFFbpfcvRUMnp.png",
+	"./restaurant_images/sfeNI5f2SEWNTYf5PIZFlwMYyc11kzF0fEq3xWlH.png": "./storage/app/public/restaurant_images/sfeNI5f2SEWNTYf5PIZFlwMYyc11kzF0fEq3xWlH.png",
+	"./restaurant_images/vI1aXyR8I4AOaxgpKmg7t84YPSG1XqMNBYzOnSmR.png": "./storage/app/public/restaurant_images/vI1aXyR8I4AOaxgpKmg7t84YPSG1XqMNBYzOnSmR.png",
+	"./restaurant_images/xFyQHJ6z3PxjEoNskHkKp6LmepUgNhXElaxsnTYT.png": "./storage/app/public/restaurant_images/xFyQHJ6z3PxjEoNskHkKp6LmepUgNhXElaxsnTYT.png",
+	"./restaurant_images/xw8mOc2yQG3jNCaT7dcYeWZiMG5iPhDcR4qwUwDG.png": "./storage/app/public/restaurant_images/xw8mOc2yQG3jNCaT7dcYeWZiMG5iPhDcR4qwUwDG.png",
+	"./restaurant_images/y6q9dKPm1voQidC6W4oXVyniwZjeRQlItI1bgsst.png": "./storage/app/public/restaurant_images/y6q9dKPm1voQidC6W4oXVyniwZjeRQlItI1bgsst.png",
+	"./restaurant_images/zDU1fj3ArnVonDv8tMTpdQsuyVH1lQvTES74zvaK.png": "./storage/app/public/restaurant_images/zDU1fj3ArnVonDv8tMTpdQsuyVH1lQvTES74zvaK.png"
 };
 
 
@@ -23420,124 +23531,355 @@ webpackContext.id = "./storage/app/public sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./storage/app/public/dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif":
+/***/ "./storage/app/public/dish_images/1nNDsKidVeXHHH3Ldbz4HZ7udRvBtdpSKFXxNATi.png":
 /*!*************************************************************************************!*\
-  !*** ./storage/app/public/dish_images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif ***!
+  !*** ./storage/app/public/dish_images/1nNDsKidVeXHHH3Ldbz4HZ7udRvBtdpSKFXxNATi.png ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/BhkWyFJUSSQsAEsMbeMyVEERQz1cu8oNSJ2xflDe.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+module.exports = "/images/1nNDsKidVeXHHH3Ldbz4HZ7udRvBtdpSKFXxNATi.png?5d73d8b3ca04350a4560d0fda680c531";
 
 /***/ }),
 
-/***/ "./storage/app/public/dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png":
+/***/ "./storage/app/public/dish_images/6lYqy5uQkdw1xGoebViFDtZvHUGQHp0lBRCjJeMP.png":
 /*!*************************************************************************************!*\
-  !*** ./storage/app/public/dish_images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png ***!
+  !*** ./storage/app/public/dish_images/6lYqy5uQkdw1xGoebViFDtZvHUGQHp0lBRCjJeMP.png ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/HpfAwn0tueeCdBVMIbNLoEJXKdySp3VShrc4yXPC.png?b0404e2cc9cca3822706e21558e68f93";
+module.exports = "/images/6lYqy5uQkdw1xGoebViFDtZvHUGQHp0lBRCjJeMP.png?4f38714a674435b9967a52a48895d7fc";
 
 /***/ }),
 
-/***/ "./storage/app/public/dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png":
+/***/ "./storage/app/public/dish_images/LtWt3gNnX18ZNjrcpmtNCEgzCEyV64DR1T4c9BqR.jpg":
 /*!*************************************************************************************!*\
-  !*** ./storage/app/public/dish_images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png ***!
+  !*** ./storage/app/public/dish_images/LtWt3gNnX18ZNjrcpmtNCEgzCEyV64DR1T4c9BqR.jpg ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/dP7wACUIOhTt6hOPtRzYeOn4ICtfOk4y0tN8mtDR.png?b0404e2cc9cca3822706e21558e68f93";
+module.exports = "/images/LtWt3gNnX18ZNjrcpmtNCEgzCEyV64DR1T4c9BqR.jpg?9dc6ec4e851465a71e6ffd163e3ec4db";
 
 /***/ }),
 
-/***/ "./storage/app/public/dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif":
+/***/ "./storage/app/public/dish_images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png":
 /*!*************************************************************************************!*\
-  !*** ./storage/app/public/dish_images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif ***!
+  !*** ./storage/app/public/dish_images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/yzv5Ap87PGs1DWtN7QsoFrfd9hWlpm3irkd4XbhO.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+module.exports = "/images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png?4f38714a674435b9967a52a48895d7fc";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png":
+/***/ "./storage/app/public/dish_images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png":
+/*!*************************************************************************************!*\
+  !*** ./storage/app/public/dish_images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png ***!
+  !*** ./storage/app/public/restaurant_images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/2EzZaCkfIuI4OWSczUa0Sb3D5xLArWc4ajHvKAni.png?b0404e2cc9cca3822706e21558e68f93";
+module.exports = "/images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif":
+/***/ "./storage/app/public/restaurant_images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif ***!
+  !*** ./storage/app/public/restaurant_images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/2g0kfSCvshk7x2veoRi3oMGogfQ1COWO7AQhvDcl.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+module.exports = "/images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif":
+/***/ "./storage/app/public/restaurant_images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif ***!
+  !*** ./storage/app/public/restaurant_images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/3NnonGa391OdoBMoTvuoBD7TvqPYC9usT0kh0LQT.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+module.exports = "/images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png":
+/***/ "./storage/app/public/restaurant_images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png ***!
+  !*** ./storage/app/public/restaurant_images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/ODASEBOGrKzjZw9k04bSkMJSt5Bpm4G2YSlquJD7.png?b0404e2cc9cca3822706e21558e68f93";
+module.exports = "/images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png":
+/***/ "./storage/app/public/restaurant_images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png ***!
+  !*** ./storage/app/public/restaurant_images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/UjwyZeTwMHRc4geWiPkZPazZSiAZ97qIZxfti8Wu.png?b0404e2cc9cca3822706e21558e68f93";
+module.exports = "/images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif":
+/***/ "./storage/app/public/restaurant_images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif ***!
+  !*** ./storage/app/public/restaurant_images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/fqVb17htCQ0rXzuAZdGgdstXCetb1Gtx6tXGRr5c.gif?e2d1fd8828d4afe2629150f978a0f8a0";
+module.exports = "/images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
-/***/ "./storage/app/public/restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png":
+/***/ "./storage/app/public/restaurant_images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png":
 /*!*******************************************************************************************!*\
-  !*** ./storage/app/public/restaurant_images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png ***!
+  !*** ./storage/app/public/restaurant_images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png?b0404e2cc9cca3822706e21558e68f93";
+module.exports = "/images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/MaTOESHDALZbPdhfwT6BMNWXRCvC3J4WchwwvReF.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/MaTOESHDALZbPdhfwT6BMNWXRCvC3J4WchwwvReF.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/MaTOESHDALZbPdhfwT6BMNWXRCvC3J4WchwwvReF.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/NBUM9Dkrlp4hhsl75cIoyYvES8BYxtOZWDiEwaL6.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/NBUM9Dkrlp4hhsl75cIoyYvES8BYxtOZWDiEwaL6.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/NBUM9Dkrlp4hhsl75cIoyYvES8BYxtOZWDiEwaL6.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/Qcy4iemhQSMNwSIy24RcYQbZMswwKBcTvH9Qvboi.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/Qcy4iemhQSMNwSIy24RcYQbZMswwKBcTvH9Qvboi.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Qcy4iemhQSMNwSIy24RcYQbZMswwKBcTvH9Qvboi.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/Tlxh2kfF3Fr9aSLpJN24b1SMITWcgSMgoYPfwTyO.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/Tlxh2kfF3Fr9aSLpJN24b1SMITWcgSMgoYPfwTyO.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Tlxh2kfF3Fr9aSLpJN24b1SMITWcgSMgoYPfwTyO.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/WCHB2ut1LWCsfBUkk1MaSsBrAx0yhmJtVX5JkRql.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/WCHB2ut1LWCsfBUkk1MaSsBrAx0yhmJtVX5JkRql.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/WCHB2ut1LWCsfBUkk1MaSsBrAx0yhmJtVX5JkRql.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/YHMIawuz0lvLe9kSsnrxLeG4wLpe3SPhWyKqGgJ4.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/YHMIawuz0lvLe9kSsnrxLeG4wLpe3SPhWyKqGgJ4.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/YHMIawuz0lvLe9kSsnrxLeG4wLpe3SPhWyKqGgJ4.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/ZPJAgRXbLpU35TQlhR1X6tVm9wUQDHGAnYaM4uk2.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/ZPJAgRXbLpU35TQlhR1X6tVm9wUQDHGAnYaM4uk2.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ZPJAgRXbLpU35TQlhR1X6tVm9wUQDHGAnYaM4uk2.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/aJcbyvsDRwzsvY8DbcyPq8KRf4v11WD9boInOfG9.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/aJcbyvsDRwzsvY8DbcyPq8KRf4v11WD9boInOfG9.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/aJcbyvsDRwzsvY8DbcyPq8KRf4v11WD9boInOfG9.png?4f38714a674435b9967a52a48895d7fc";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/fKLTAzvphsxUY13hwohVWLKF6S8m9Zk6eNzyf2mC.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/fKLTAzvphsxUY13hwohVWLKF6S8m9Zk6eNzyf2mC.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/fKLTAzvphsxUY13hwohVWLKF6S8m9Zk6eNzyf2mC.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/faUKSkA2lJlMfrojJTjKAh9qnhw8jm1xYiGJL6hH.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/faUKSkA2lJlMfrojJTjKAh9qnhw8jm1xYiGJL6hH.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/faUKSkA2lJlMfrojJTjKAh9qnhw8jm1xYiGJL6hH.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/ilwIK3eOetfWWaShcd4TyWWCPvz0ZaEUjjPifkHl.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/ilwIK3eOetfWWaShcd4TyWWCPvz0ZaEUjjPifkHl.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ilwIK3eOetfWWaShcd4TyWWCPvz0ZaEUjjPifkHl.png?4f38714a674435b9967a52a48895d7fc";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/iqOaAaDeUoCyKpoBBB7wZEROvZVq9ZInuLJJE3rS.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/iqOaAaDeUoCyKpoBBB7wZEROvZVq9ZInuLJJE3rS.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/iqOaAaDeUoCyKpoBBB7wZEROvZVq9ZInuLJJE3rS.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/jQVxc8Gy3l3z7kVy2fwja9xxm57oNUBFczPRkWaf.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/jQVxc8Gy3l3z7kVy2fwja9xxm57oNUBFczPRkWaf.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/jQVxc8Gy3l3z7kVy2fwja9xxm57oNUBFczPRkWaf.png?4f38714a674435b9967a52a48895d7fc";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/qOeNV4gllhyW0GZT78VvzZzUgcBLFFbpfcvRUMnp.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/qOeNV4gllhyW0GZT78VvzZzUgcBLFFbpfcvRUMnp.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/qOeNV4gllhyW0GZT78VvzZzUgcBLFFbpfcvRUMnp.png?5d73d8b3ca04350a4560d0fda680c531";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/sfeNI5f2SEWNTYf5PIZFlwMYyc11kzF0fEq3xWlH.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/sfeNI5f2SEWNTYf5PIZFlwMYyc11kzF0fEq3xWlH.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/sfeNI5f2SEWNTYf5PIZFlwMYyc11kzF0fEq3xWlH.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/vI1aXyR8I4AOaxgpKmg7t84YPSG1XqMNBYzOnSmR.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/vI1aXyR8I4AOaxgpKmg7t84YPSG1XqMNBYzOnSmR.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/vI1aXyR8I4AOaxgpKmg7t84YPSG1XqMNBYzOnSmR.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/xFyQHJ6z3PxjEoNskHkKp6LmepUgNhXElaxsnTYT.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/xFyQHJ6z3PxjEoNskHkKp6LmepUgNhXElaxsnTYT.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/xFyQHJ6z3PxjEoNskHkKp6LmepUgNhXElaxsnTYT.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/xw8mOc2yQG3jNCaT7dcYeWZiMG5iPhDcR4qwUwDG.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/xw8mOc2yQG3jNCaT7dcYeWZiMG5iPhDcR4qwUwDG.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/xw8mOc2yQG3jNCaT7dcYeWZiMG5iPhDcR4qwUwDG.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/y6q9dKPm1voQidC6W4oXVyniwZjeRQlItI1bgsst.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/y6q9dKPm1voQidC6W4oXVyniwZjeRQlItI1bgsst.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/y6q9dKPm1voQidC6W4oXVyniwZjeRQlItI1bgsst.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/zDU1fj3ArnVonDv8tMTpdQsuyVH1lQvTES74zvaK.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/zDU1fj3ArnVonDv8tMTpdQsuyVH1lQvTES74zvaK.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/zDU1fj3ArnVonDv8tMTpdQsuyVH1lQvTES74zvaK.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
@@ -23548,7 +23890,7 @@ module.exports = "/images/lnUkohLP49a7LYm7uDvmtvEWKRUBmZsA76ZZZ5Jp.png?b0404e2cc
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ALE\Desktop\Boolean corso\Presentazione finale\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Classe48\Laravel\team1-deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

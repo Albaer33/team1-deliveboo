@@ -1,14 +1,17 @@
 <template>
     <div class="search_box d-flex flex-column justify-content-center align-items-start">
         <h4>Cerca un ristorante per nome:</h4>
-        <input class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante">
-        <router-link :to="{ path: '/restaurants/:slug'}" class="green_button mt-3 fw-bold">Cerca</router-link>
+        <input class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante" :value="message">
+        <router-link :to="{path: '/restaurants/{{message}}'}" class="green_button mt-3 fw-bold">Cerca</router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'SearchBox'    
+    name: 'SearchBox',
+    props: {
+        restaurants_list: Array
+    }        
 }
 </script>
 

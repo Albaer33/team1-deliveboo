@@ -4,23 +4,38 @@
             <div class="container">
 
                 <!-- Loghi -->
-                <div class="header_logos d-flex align-items-center">
+                <a href="/">
+
+                    <div class="header_logos d-flex align-items-center">
                     <img class="w_30p" :src="img_logo" alt="logo deliveboo">
-                    <a href="/"><h4 class="mb-0">deliveboo</h4></a>
+                    <h4 class="mb-0">deliveboo</h4>
+
                 </div>
+
+                </a>
 
                 <!-- Bottoni -->
                 <div class="header_forms d-flex align-items-center">
                     <!-- Register -->
-                    <div class="register_box d-flex align-items-center d-none d-md-block">
-                        <i class="fa-solid fa-house me-2"></i>
-                        <a href="http://127.0.0.1:8000/admin">Registrati o accedi</a>
-                    </div>
+                    <a href="http://127.0.0.1:8000/admin">
+
+                            <div class="register_box d-flex align-items-center d-none d-md-block">
+                            <i class="fa-solid fa-house me-2"></i>
+                            <span>Registrati o accedi</span>
+                    
+                        </div>
+
+                    </a>
                     <!-- Menu -->
-                    <div class="menu_box d-flex align-items-center">
-                        <i class="fa-solid fa-bars me-2"></i>
-                        <a href="#">Menu</a>
-                    </div>
+                    <a href="">
+
+                            <div class="menu_box d-flex align-items-center">
+                            <i class="fa-solid fa-bars me-2"></i>
+                            <a href="#">Menu</a>
+                        
+                        </div>
+
+                    </a>
                 </div>
 
             </div>

@@ -1,10 +1,10 @@
 <template>
-    <section class="suggestions_section mt_100">
+    <section class="suggestions_section mt_30">
         <div class="container">
             <div class="row row-cols-1">
                 <div class="col">
                     <div class="title_container">
-                        <h2 class="mt-5 mb-4">I tuoi piatti preferiti, consegnati da noi.</h2>
+                        <h2 class="mt-4 mb-4">I tuoi piatti preferiti, consegnati da noi.</h2>
                     </div>
                 </div>
                 <div class="col">

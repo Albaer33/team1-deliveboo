@@ -1,6 +1,6 @@
 <template>
     <section class="main_home">
-        <BannerSection />
+        <BannerSection :restaurants_list="restaurants_data" />
         <TipologiesSection />
         <SelectionSection :selected_list="selected_items" :overlay_status="overlay_conditions" />
 

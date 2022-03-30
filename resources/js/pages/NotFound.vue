@@ -2,16 +2,13 @@
     <section>
         <div class="container">
             <h1>
-                Pagina non esistente            
+                Ops pagina non esistente            
                 
             </h1>
-            <h1>
-                ERRORE 404
-            </h1>
-            <h1>
+            <div class="link-home">
                 
-                <router-link class="nav-link active" to="Home">Torna alla Home</router-link> 
-            </h1>
+                <router-link class="nav-link active btn btn-primary_color" to="/">Torna alla Home</router-link> 
+            </div>
         </div>
     </section>
 </template>
@@ -21,3 +18,26 @@ export default {
     
 }
 </script>
+
+<style lang="scss" scoped>
+
+    .container{
+
+        .link-home{
+
+            display: inline-block;
+            font-size: 40px;
+
+            .btn-primary_color{
+
+                background-color: #00ccbc;
+                border-color: #00ccbc;
+                color: white;
+
+            }
+
+        }
+
+    }
+
+</style>

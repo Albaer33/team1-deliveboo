@@ -5,7 +5,7 @@
                 <div class="col">
                     <div id="search_div" class="banner_content d-flex flex-column">
                         <h1 class="mb-4">I piatti che ami, a domicilio.</h1>
-                        <SearchBox />
+                        <SearchBox :restaurants_list="restaurants_data" />
                     </div>
                 </div>
                 <div class="col">
@@ -32,6 +32,9 @@ export default {
     name: 'BannerSection',
     components: {
         SearchBox
+    },
+    props: {
+        restaurants_list: Array
     }    
 }
 </script>

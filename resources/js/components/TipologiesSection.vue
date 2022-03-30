@@ -3,7 +3,7 @@
 
         <div class="container mb-30">
 
-            <h2>Cerchi qualcos'altro?</h2>
+            <h2>Scegli per tipologie di ristorante</h2>
 
         </div>
 
