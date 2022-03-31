@@ -2572,7 +2572,11 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Payment',
   data: function data() {
     return {
-      error: ''
+      error: '',
+      form: {
+        token: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+        product: this.ordini[0]['id']
+      }
     };
   },
   props: {
@@ -2592,23 +2596,23 @@ __webpack_require__.r(__webpack_exports__);
       return price;
     },
     PagamentoFinaleDelDestino: function PagamentoFinaleDelDestino() {
+      var product = 0;
+      var ordiniID = this.ordini[0]['id'];
+      console.log(this.ordini[0]['id']);
+      /* console.log(this.ordini[0]['prezzo']); */
+
       var axiosConfig = {
         headers: {
           'Content-Type': 'application/json',
           "Accept": "application/json"
         }
       };
-      axios.post('http://127.0.0.1:8000/api/orders/make/payment', axiosConfig).then(function (response) {
-        dispatch({
-          token: "fake-valid-nonce",
-          product: 8
-        });
+      axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig).then(function (response) {
+        token = "fake-valid-nonce", product = ordiniID;
       });
-      console.log('eccomi qua');
     },
     onLoad: function onLoad() {
       this.$emit('loading');
-      /* alert('loading'); */
     },
     onSuccess: function onSuccess(payload) {
       var token = payload.nonce;
@@ -3552,7 +3556,7 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!orderFound) {
           this.cart_orders.push({
-            id: this.cart_orders.length + 1,
+            id: dish.orderToSend.id,
             name: dish.orderToSend.nome,
             amount: 1,
             price: dish.orderToSend.prezzo,
@@ -30160,42 +30164,39 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("div", { attrs: { id: "dropin" } }),
-      _vm._v(" "),
-      _c("v-braintree", {
-        attrs: {
-          authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-          locale: "it_IT",
-          btnText: "Paga",
-        },
-        on: { success: _vm.onSuccess, error: _vm.onError, load: _vm.onLoad },
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          on: {
-            click: function ($event) {
-              return _vm.PagamentoFinaleDelDestino()
-            },
+  return _c("div", [
+    _c("div", { attrs: { id: "dropin" } }),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        on: {
+          click: function ($event) {
+            return _vm.PagamentoFinaleDelDestino()
           },
         },
-        [_vm._v("OHHHHHHHHHHHHHHH")]
-      ),
-      _vm._v(" "),
-      _c("div", [
-        _vm.error
-          ? _c("p", { staticClass: "text-red-500 mb-4" }, [
-              _vm._v("\n\n            " + _vm._s(_vm.error) + "\n\n        "),
-            ])
-          : _vm._e(),
-      ]),
-    ],
-    1
-  )
+      },
+      [
+        _c("v-braintree", {
+          attrs: {
+            authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+            locale: "it_IT",
+            btnText: "Paga",
+          },
+          on: { success: _vm.onSuccess, error: _vm.onError, load: _vm.onLoad },
+        }),
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", [
+      _vm.error
+        ? _c("p", { staticClass: "text-red-500 mb-4" }, [
+            _vm._v("\n\n            " + _vm._s(_vm.error) + "\n\n        "),
+          ])
+        : _vm._e(),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

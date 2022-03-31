@@ -6,19 +6,19 @@
 
     <!-- authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c"  -->
 
-        <v-braintree 
-            authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
-            locale="it_IT" 
-            btnText="Paga"
-            @success="onSuccess" 
-            @error="onError" 
-            @load="onLoad"
-            
-            
-            
-        />
+        <button @click="PagamentoFinaleDelDestino()">
 
-        <button @click="PagamentoFinaleDelDestino()">OHHHHHHHHHHHHHHH</button>
+            <v-braintree 
+                authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                locale="it_IT" 
+                btnText="Paga"
+                @success="onSuccess" 
+                @error="onError" 
+                @load="onLoad"
+            
+            />
+
+        </button>
 
         <div>
 
@@ -42,7 +42,11 @@ export default {
     name: 'Payment',
     data: function(){
         return {
-            error: ''
+            error: '',
+            form : {
+                token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                product: this.ordini[0]['id']
+            },
         };
     },
     props: {
@@ -75,6 +79,13 @@ export default {
         },
         PagamentoFinaleDelDestino: function(){
 
+            let product = 0;
+            let ordiniID = this.ordini[0]['id'];
+
+            console.log(this.ordini[0]['id']);
+            /* console.log(this.ordini[0]['prezzo']); */
+
+
             let axiosConfig = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,21 +93,13 @@ export default {
                 }
             };
 
-            axios.post('http://127.0.0.1:8000/api/orders/make/payment', axiosConfig)
+            axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig)
             .then((response) => {
                 
-                dispatch({
-
-                    token : "fake-valid-nonce",
-                    product : 8
-
-                })
-
-                
+                token = "fake-valid-nonce",
+                product = ordiniID;
 
             });
-
-            console.log('eccomi qua');
 
         }, 
 
@@ -104,7 +107,6 @@ export default {
 
             this.$emit('loading')
 
-            /* alert('loading'); */
 
         },
         

@@ -55,7 +55,7 @@ export default {
         if(!orderFound){
 
           this.cart_orders.push({
-            id: this.cart_orders.length + 1,
+            id: dish.orderToSend.id,
             name: dish.orderToSend.nome,
             amount: 1,
             price: dish.orderToSend.prezzo,
