@@ -1,42 +1,48 @@
 <template>
-    <div class="shopping_cart d-flex justify-content-center align-items-center" :class="cartClass">
-        <h5 v-if="!animationStarted" class="cart_title w-100 h-100 mb-0 text-uppercase fw-bold" :class="cartTitleClass" @click="showCart">Carrello</h5>
-        <div class="shopping_cart_content w-100 h-100 d-flex flex-column justify-content-stretch p-3 text-white" v-else>
-            <!-- Sezione con la X -->
-            <div class="close_section w-100 d-flex justify-content-end" :class="cartBodyClass">
-                <i class="fa-solid fa-x fs-5 p-2 border border-2 border-white rounded-circle" @click="closeCart"></i>
-            </div>
-            <!-- Lista ordini -->
-            <div class="cart_body w-100 h-100 d-flex flex-column" :class="cartBodyClass">
-                <h3 class="text-center my-5">I tuoi ordini</h3>
-                <div class="orders_box w-100 h-100 flex-grow-1 d-flex flex-column border border-3 border-white rounded p-2 space-padding-shopping-cart">
-                    <div class="d-flex justify-content-between space-shopping-cart">
 
-                        <div>Prodotti</div>
+    <div>
 
-                        <div>Quantità</div>
+        <div class="shopping_cart d-flex justify-content-center align-items-center" :class="cartClass">
+            <h5 v-if="!animationStarted" class="cart_title w-100 h-100 mb-0 text-uppercase fw-bold" :class="cartTitleClass" @click="showCart">Carrello</h5>
+            <div class="shopping_cart_content w-100 h-100 d-flex flex-column justify-content-stretch p-3 text-white" v-else>
+                <!-- Sezione con la X -->
+                <div class="close_section w-100 d-flex justify-content-end" :class="cartBodyClass">
+                    <i class="fa-solid fa-x fs-5 p-2 border border-2 border-white rounded-circle" @click="closeCart"></i>
+                </div>
+                <!-- Lista ordini -->
+                <div class="cart_body w-100 h-100 d-flex flex-column" :class="cartBodyClass">
+                    <h3 class="text-center my-5">I tuoi ordini</h3>
+                    <div class="orders_box w-100 h-100 flex-grow-1 d-flex flex-column border border-3 border-white rounded p-2 space-padding-shopping-cart">
+                        <div class="d-flex justify-content-between space-shopping-cart">
 
-                        <div>Totale</div>
+                            <div>Prodotti</div>
 
-                        <div>Test</div>
+                            <div>Quantità</div>
 
-                    </div>
+                            <div>Totale</div>
 
-                    <div class="single_order justify-content-between d-flex align-items-center mb-3" v-for="order in orders" :key="order.id">
-                        
-                        <span>{{order.name}}</span>
-                        <span>{{order.amount}}</span>
-                        <span>{{order.priceTot}}</span>
-                        <i class="fa-solid fa-x fs-5 p-1 text-white" @click="removeOrder(order.id)"></i>
+                            <div>Test</div>
+
+                        </div>
+
+                        <div class="single_order justify-content-between d-flex align-items-center mb-3" v-for="order in orders" :key="order.id">
+                            
+                            <span>{{order.name}}</span>
+                            <span>{{order.amount}}</span>
+                            <span>{{order.priceTot}}</span>
+                            <i class="fa-solid fa-x fs-5 p-1 text-white" @click="removeOrder(order.id)"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Sezione Conferma -->
-            <div class="confirm_section w-100 d-flex justify-content-center">
-                <a href="#" class="confirm_button p-3 border border-2 border-white rounded text-white mt-5">Conferma</a>
+                <!-- Sezione Conferma -->
+                <div class="confirm_section w-100 d-flex justify-content-center">
+                    <router-link :to="`/checkout`" class="confirm_button p-3 border border-2 border-white rounded text-white mt-5" >Vai al pagamento</router-link>
+                </div>
             </div>
         </div>
+
     </div>
+
 </template>
 
 <script>
@@ -51,7 +57,8 @@ export default {
         };
     },
     props: {
-        orders: Array
+        orders: Array,
+
     },
     methods: {
         showCart: function(){
@@ -75,7 +82,8 @@ export default {
                     this.orders.splice(index, 1);
                 }
             });
-        }
+        },
+
     },
     created: function(){
 
@@ -104,6 +112,12 @@ export default {
         z-index: 10000;
         background-color: $primary_color;
         transition-duration: 1s;
+        
+        i{
+
+            cursor: pointer;
+
+        }
 
         h5{
             color: white;
@@ -113,7 +127,7 @@ export default {
 
         &:hover{
 
-            cursor: pointer;
+            /* cursor: pointer; */
             transform: translateY(-50%) scale(1.2);
 
         }
@@ -147,6 +161,7 @@ export default {
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
             box-shadow: -11px 8px 20px 3px rgb(0 0 0 / 8%);
+            cursor: pointer;
         }
         &.big{
             width: 90vw;

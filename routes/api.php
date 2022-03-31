@@ -18,10 +18,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::resource('restaurants', 'RestaurantController');
-
+//Rotte Ristorante
 Route::get('/restaurants', 'Api\RestaurantController@index');
 Route::get('/restaurants/{slug}', 'Api\RestaurantController@show');
 
+//Rotte Tipologie di Ristorante
 Route::get('/tipologies','Api\TipologyController@index');
 Route::get('/tipologies/{slug}','Api\TipologyController@show');
+
+//Rotte Ordini
+Route::get('orders/generate','Api\OrderController@generate');
+Route::post('orders/make/payment','Api\OrderController@makePayment');
+
+//Rotte Prodotti
+Route::get('products','Api\ProductController@index');
+

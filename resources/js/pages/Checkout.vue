@@ -1,74 +1,143 @@
 <template>
     <section>
-        <!-- Step one: add an empty container to your page -->
 
-        <h1>Deliveboo</h1>
-        <p>Benvenuto su Deliveboo</p>
+        <div v-if="orders.length > 0">
 
-        <div id="dropin-wrapper">
-            <div id="checkout-message"></div>
+                <!-- Step one: add an empty container to your page -->
 
-            <form id="payment-form" action="/on/your/server" method="post">
-                <!-- Putting the empty container you plan to pass to
-                `braintree.dropin.create` inside a form will make layout and flow
-                easier to manage -->
-                <div id="dropin-container"></div>
-                <input type="submit" />
-                <input type="hidden" id="nonce" name="payment_method_nonce"/>
-            </form>
+            <h1>Benvenuto su Deliveboo</h1>
+
+            {{token}}
+
+            {{form}}
+
+            <Payment :authorization="tokenApi" @loading="handleLoading" @onSuccess="paymentOnSuccess" @onError="paymentOnError"/>
+
+            <button
+            
+                v-if="!disableBuyButton"
+                class="w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white"
+                @click.prevent="beforeBuy"
+
+            >
+
+                Procedi con l'acquisto
+
+            </button>
+            <button
+            
+                v-else
+                class="w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white"
+
+
+            >
+
+                {{
+
+                    loadingPayment ? 'Loading...' : 'Procedi con l\'acquisto'
+
+                }}
+
+        </button>
 
         </div>
+        <div v-else class="d-flex justify-content-center">
+            
+            <div class="container">
 
-        <!-- <script type="text/javascript"> -->
-            <!-- call `braintree.dropin.create` code here -->
-        <!-- </script> -->
+                <div class="row p-5">
+
+                    <div class="col d-flex align-items-center flex-column">
+
+                        <h2>Carrello vuoto</h2>
+
+                        <img src="https://www.carrelli.it/media/catalog/product/cache/1/image/800x800/7eb2a521811c6209dcb9d23dcd38ce9d/c/a/carrelli_spesa_1.jpg" alt="carrello">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+       
     </section>
 </template>
 <script>
 
+import Payment from '../components/Payment.vue';
+
 export default {
     name: 'Checkout',
-    data: () => ({
-      
-    }),
-    mounted() {
-        let myCheckoutScript = document.createElement('script')
-        myCheckoutScript.setAttribute('src', 'https://js.braintreegateway.com/web/dropin/1.33.0/js/dropin.min.js')
-        document.head.appendChild(myCheckoutScript);
-        let jQueryScript = document.createElement('script')
-        jQueryScript.setAttribute('src', 'http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous')
-        document.head.appendChild(jQueryScript);
-        braintree.dropin.create({
-        container: document.getElementById('dropin-container'),
-            authorization: 'sandbox_csryh9w7_jcvymfwrf26rzh7c',
-            container: '#dropin-container'
-        }, (error, dropinInstance) => {
-            
-            if (error) console.error(error);
-                form.addEventListener('submit', event => {
-                event.preventDefault();
-                dropinInstance.requestPaymentMethod((error, payload) => {
-                if (error) console.error(error);
-                    // Step four: when the user is ready to complete their
-                    //   transaction, use the dropinInstance to get a payment
-                    //   method nonce for the user's selected payment method, then add
-                    //   it a the hidden field before submitting the complete form to
-                    //   a server-side integration
-                    document.getElementById('nonce').value = payload.nonce;
-                    form.submit();
-                });
-            });
+    components: {
 
-            // Methods documented at https://braintree.github.io/braintree-web-drop-in/docs/current/Dropin.html
-        });
+        Payment
+
     },
-    methods: {
+    data: function(){
+
+        return {
+
+            tokenApi : '',
+            disableBuyButton: true,
+            loadingPayment: true,
+            form : {
+                token : "",
+                product: ""
+            }
+
+        }
+    },
+    async mounted() {
+
         
 
+    },
+    props: {
+
+        orders: Array
+
+    },
+    methods: {
+
+        handleLoading(){
+
+            this.disableBuyButton = false;
+
+        },
+        paymentOnSuccess(nonce){
+
+            this.form.token = nonce
+            this.buy()
+
+        },
+        paymentOnError(error){
+
+
+
+        },
+        getToken(){
+
+            axios.get('http://127.0.0.1:8000/api/orders/generate')
+            .then((response) => {
+                
+                return this.tokenApi = response.data.token;
+
+            });
+
+            
+
+        } 
+             
     },
 
     created: function(){
         window.scrollTo(0, 0);
+        let tokenApi = null;
+        this.getToken();
+        this.loadingPayment = false;
+        this.form.product = this.$route.params.id
+        /* this.handleLoading(); */
     }
 
 }

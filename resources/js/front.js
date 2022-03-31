@@ -14,6 +14,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import App from './views/App.vue';
 
+import vueBraintree from '../../node_modules/vue-braintree';
+
+Vue.use(vueBraintree);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

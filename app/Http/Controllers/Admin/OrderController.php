@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Braintree\Gateway;
 use App\Order;
 
 class OrderController extends Controller
@@ -16,6 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
+
         $user = Auth::user();
         $orders = Order::all()/* ->where('user_id', '=', $user->id) */;
 

@@ -3,7 +3,7 @@
     <ShoppingCart :orders="cart_orders" />
     <Header />
     <main>
-      <router-view @sendOrder="getOrder($event)" @removeOneDish="getOrder($event)"></router-view>
+      <router-view @sendOrder="getOrder($event)" @removeOneDish="getOrder($event)" :orders="cart_orders"></router-view>
     </main>
     <Footer />
   </div>
