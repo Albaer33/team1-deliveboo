@@ -2563,6 +2563,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
@@ -2572,12 +2592,36 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
+    ordini: Array,
     authorization: {
       required: true,
       type: String
     }
   },
   methods: {
+    amountShop: function amountShop() {
+      var price = 0;
+      var partialPrice = 0;
+      this.orders.forEach(function (element) {
+        price += parseFloat(element['priceTot']);
+      });
+      return price;
+    },
+    PagamentoFinaleDelDestino: function PagamentoFinaleDelDestino() {
+      var axiosConfig = {
+        headers: {
+          'Content-Type': 'application/json',
+          "Accept": "application/json"
+        }
+      };
+      axios.post('http://127.0.0.1:8000/api/orders/make/payment', axiosConfig).then(function (response) {
+        dispatch({
+          token: "fake-valid-nonce",
+          product: 8
+        });
+      });
+      console.log('eccomi qua');
+    },
     onLoad: function onLoad() {
       this.$emit('loading');
       /* alert('loading'); */
@@ -3052,6 +3096,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Checkout',
@@ -3065,7 +3123,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       loadingPayment: true,
       form: {
         token: "",
-        product: ""
+        product: 10
       }
     };
   },
@@ -3086,6 +3144,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     orders: Array
   },
   methods: {
+    amountShop: function amountShop() {
+      var price = 0;
+      var partialPrice = 0;
+      this.orders.forEach(function (element) {
+        price += parseFloat(element['priceTot']);
+      });
+      return price;
+    },
     handleLoading: function handleLoading() {
       this.disableBuyButton = false;
     },
@@ -3094,6 +3160,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.buy();
     },
     paymentOnError: function paymentOnError(error) {},
+    beforeBuy: function beforeBuy() {
+      this.$refs.paymentRef.$refs.paymentBtnRef.click();
+    },
+    buy: function buy() {},
     getToken: function getToken() {
       var _this = this;
 
@@ -30116,9 +30186,37 @@ var render = function () {
           authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
           locale: "it_IT",
           btnText: "Paga",
+          "three-d-secure": false,
+          "three-d-secure-parameters": {
+            amount: 100,
+            email: "francois@witify.io",
+            billingAddress: {
+              givenName: "John",
+              surname: "Doe",
+              phoneNumber: "515 515 1234",
+              streetAddress: "485 boul. dagenais E",
+              extendedAddress: "1",
+              locality: "Laval",
+              region: "QC",
+              postalCode: "h7m5z5",
+              countryCodeAlpha2: "CA",
+            },
+          },
         },
         on: { success: _vm.onSuccess, error: _vm.onError, load: _vm.onLoad },
       }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function ($event) {
+              return _vm.PagamentoFinaleDelDestino()
+            },
+          },
+        },
+        [_vm._v("OHHHHHHHHHHHHHHH")]
+      ),
       _vm._v(" "),
       _c("div", [
         _vm.error
@@ -30459,7 +30557,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", [_vm._v("Totale")]),
         _vm._v(" "),
-        _c("div", [_vm._v("Test")]),
+        _c("div", [_vm._v("Cancella")]),
       ]
     )
   },
@@ -30680,55 +30778,43 @@ var render = function () {
           "div",
           [
             _c("h1", [_vm._v("Benvenuto su Deliveboo")]),
-            _vm._v(
-              "\n\n        " +
-                _vm._s(_vm.token) +
-                "\n\n        " +
-                _vm._s(_vm.form) +
-                "\n\n        "
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _vm._v(
+                  "\n\n                Stai comprando:\n\n                "
+                ),
+                _vm._l(_vm.orders, function (order) {
+                  return _c("div", { key: order.id }, [
+                    _c("div", [
+                      _vm._v(
+                        "Nome:" +
+                          _vm._s(order.name) +
+                          " Quantità: " +
+                          _vm._s(order.amount)
+                      ),
+                    ]),
+                  ])
+                }),
+                _vm._v(
+                  "\n\n                Totale: " +
+                    _vm._s(_vm.amountShop()) +
+                    "\n\n            "
+                ),
+              ],
+              2
             ),
+            _vm._v(" "),
             _c("Payment", {
-              attrs: { authorization: _vm.tokenApi },
+              ref: "paymentRef",
+              attrs: { authorization: _vm.tokenApi, ordini: _vm.orders },
               on: {
                 loading: _vm.handleLoading,
                 onSuccess: _vm.paymentOnSuccess,
                 onError: _vm.paymentOnError,
               },
             }),
-            _vm._v(" "),
-            !_vm.disableBuyButton
-              ? _c(
-                  "button",
-                  {
-                    staticClass:
-                      "w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white",
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        return _vm.beforeBuy.apply(null, arguments)
-                      },
-                    },
-                  },
-                  [_vm._v("\n\n            Procedi con l'acquisto\n\n        ")]
-                )
-              : _c(
-                  "button",
-                  {
-                    staticClass:
-                      "w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white",
-                  },
-                  [
-                    _vm._v(
-                      "\n\n            " +
-                        _vm._s(
-                          _vm.loadingPayment
-                            ? "Loading..."
-                            : "Procedi con l'acquisto"
-                        ) +
-                        "\n\n    "
-                    ),
-                  ]
-                ),
           ],
           1
         )

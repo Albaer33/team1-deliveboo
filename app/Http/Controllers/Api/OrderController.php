@@ -20,7 +20,9 @@ class OrderController extends Controller
 
     public function generate(Request $request,Gateway $gateway){
 
-        $token = $gateway->clientToken()->generate();
+        /* $token = $gateway->clientToken()->generate(); */
+
+        $token = 'sandbox_csryh9w7_jcvymfwrf26rzh7c';
 
         $data = [
 
@@ -35,6 +37,7 @@ class OrderController extends Controller
     public function makePayment(OrderRequest $request,Gateway $gateway){
         
         $product = Dish::find($request->product);
+
 
         $result = $gateway->transaction()->sale([
 

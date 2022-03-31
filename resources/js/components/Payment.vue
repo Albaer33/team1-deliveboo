@@ -10,11 +10,31 @@
             authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
             locale="it_IT" 
             btnText="Paga"
+            :three-d-secure="false"
+            :three-d-secure-parameters="{
+                amount: 100, 
+                email: 'francois@witify.io', 
+                billingAddress: {
+                    givenName: 'John',
+                    surname: 'Doe',
+                    phoneNumber: '515 515 1234',
+                    streetAddress: '485 boul. dagenais E',
+                    extendedAddress: '1',
+                    locality: 'Laval',
+                    region: 'QC',
+                    postalCode: 'h7m5z5',
+                    countryCodeAlpha2: 'CA'
+                }
+            }"
             @success="onSuccess" 
             @error="onError" 
             @load="onLoad"
             
+            
+            
         />
+
+        <button @click="PagamentoFinaleDelDestino()">OHHHHHHHHHHHHHHH</button>
 
         <div>
 
@@ -43,6 +63,8 @@ export default {
     },
     props: {
         
+        ordini: Array,
+
         authorization : {
 
             required: true,
@@ -52,6 +74,47 @@ export default {
 
     },
     methods: {
+        
+        amountShop: function(){
+
+            let price = 0;
+            let partialPrice = 0;
+
+            this.orders.forEach(element => { 
+
+                price += parseFloat(element['priceTot']);
+
+            });
+
+            return price;
+
+        },
+        PagamentoFinaleDelDestino: function(){
+
+            let axiosConfig = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Accept": "application/json",
+                }
+            };
+
+            axios.post('http://127.0.0.1:8000/api/orders/make/payment', axiosConfig)
+            .then((response) => {
+                
+                dispatch({
+
+                    token : "fake-valid-nonce",
+                    product : 8
+
+                })
+
+                
+
+            });
+
+            console.log('eccomi qua');
+
+        }, 
 
         onLoad: function(){
 

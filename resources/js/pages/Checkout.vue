@@ -7,13 +7,27 @@
 
             <h1>Benvenuto su Deliveboo</h1>
 
-            {{token}}
+<!--             {{token}}
 
-            {{form}}
+            {{form}} -->
 
-            <Payment :authorization="tokenApi" @loading="handleLoading" @onSuccess="paymentOnSuccess" @onError="paymentOnError"/>
+            <div>
 
-            <button
+                Stai comprando:
+
+                <div v-for="order in orders" :key="order.id" class="">
+
+                    <div>Nome:{{ order.name }} Quantità: {{ order.amount }}</div>
+
+                </div>
+
+                Totale: {{ amountShop() }}
+
+            </div>
+
+            <Payment ref="paymentRef" :authorization="tokenApi" @loading="handleLoading" @onSuccess="paymentOnSuccess" @onError="paymentOnError" :ordini="orders"/>
+
+<!--             <button
             
                 v-if="!disableBuyButton"
                 class="w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white"
@@ -38,7 +52,7 @@
 
                 }}
 
-        </button>
+        </button> -->
 
         </div>
         <div v-else class="d-flex justify-content-center">
@@ -83,8 +97,8 @@ export default {
             loadingPayment: true,
             form : {
                 token : "",
-                product: ""
-            }
+                product: 10
+            },
 
         }
     },
@@ -99,13 +113,26 @@ export default {
 
     },
     methods: {
+        amountShop: function(){
 
-        handleLoading(){
+            let price = 0;
+            let partialPrice = 0;
+
+            this.orders.forEach(element => {
+
+                price += parseFloat(element['priceTot']);
+
+            });
+
+            return price;
+
+        },
+        handleLoading: function(){
 
             this.disableBuyButton = false;
 
         },
-        paymentOnSuccess(nonce){
+        paymentOnSuccess: function(nonce){
 
             this.form.token = nonce
             this.buy()
@@ -116,7 +143,17 @@ export default {
 
 
         },
-        getToken(){
+        beforeBuy: function(){
+
+            this.$refs.paymentRef.$refs.paymentBtnRef.click()
+
+        },
+        buy: function(){
+
+
+
+        },
+        getToken: function(){
 
             axios.get('http://127.0.0.1:8000/api/orders/generate')
             .then((response) => {

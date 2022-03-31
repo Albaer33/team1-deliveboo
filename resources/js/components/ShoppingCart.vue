@@ -21,7 +21,7 @@
 
                             <div>Totale</div>
 
-                            <div>Test</div>
+                            <div>Cancella</div>
 
                         </div>
 
