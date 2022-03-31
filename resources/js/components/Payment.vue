@@ -10,22 +10,6 @@
             authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
             locale="it_IT" 
             btnText="Paga"
-            :three-d-secure="false"
-            :three-d-secure-parameters="{
-                amount: 100, 
-                email: 'francois@witify.io', 
-                billingAddress: {
-                    givenName: 'John',
-                    surname: 'Doe',
-                    phoneNumber: '515 515 1234',
-                    streetAddress: '485 boul. dagenais E',
-                    extendedAddress: '1',
-                    locality: 'Laval',
-                    region: 'QC',
-                    postalCode: 'h7m5z5',
-                    countryCodeAlpha2: 'CA'
-                }
-            }"
             @success="onSuccess" 
             @error="onError" 
             @load="onLoad"

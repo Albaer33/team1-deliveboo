@@ -2567,22 +2567,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
@@ -30186,22 +30170,6 @@ var render = function () {
           authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
           locale: "it_IT",
           btnText: "Paga",
-          "three-d-secure": false,
-          "three-d-secure-parameters": {
-            amount: 100,
-            email: "francois@witify.io",
-            billingAddress: {
-              givenName: "John",
-              surname: "Doe",
-              phoneNumber: "515 515 1234",
-              streetAddress: "485 boul. dagenais E",
-              extendedAddress: "1",
-              locality: "Laval",
-              region: "QC",
-              postalCode: "h7m5z5",
-              countryCodeAlpha2: "CA",
-            },
-          },
         },
         on: { success: _vm.onSuccess, error: _vm.onError, load: _vm.onLoad },
       }),
