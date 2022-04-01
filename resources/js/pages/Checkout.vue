@@ -1,27 +1,28 @@
 <template>
     <section>
 
-        <div v-if="orders.length > 0">
+                <h1 >CARRELLO</h1>
+        <div v-if="orders.length > 0" class="container row justify-content-center">
 
                 <!-- Step one: add an empty container to your page -->
 
-            <h1>Benvenuto su Deliveboo</h1>
 
 <!--             {{token}}
 
             {{form}} -->
+           
 
-            <div>
+            <div class="container col-sm-12 col-md-12 col-lg-6 col-xl-4">
 
-                Stai comprando:
+                <h2>Stai comprando:</h2>
 
                 <div v-for="order in orders" :key="order.id" class="">
 
-                    <div>Nome:{{ order.name }} Quantità: {{ order.amount }}</div>
+                    <span>{{ order.name }} Quantità: {{ order.amount }}</span>
 
                 </div>
 
-                Totale: {{ amountShop() }}
+               <h3>Totale: {{ amountShop() }}</h3> 
 
             </div>
 
@@ -180,3 +181,8 @@ export default {
 }
 
 </script>
+<style lang="scss">
+h1{
+    text-align: center;
+}
+</style>

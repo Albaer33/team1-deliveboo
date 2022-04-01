@@ -1,25 +1,26 @@
 <template>
 
-    <div>
+    <div class="container row justify-content-center">
 
-        <div id="dropin" />
+        <!-- <div id="dropin" /> -->
 
     <!-- authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c"  -->
+        <div class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
+            <button @click="PagamentoFinaleDelDestino()">
 
-        <button @click="PagamentoFinaleDelDestino()">
+                <v-braintree 
+                    authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                    locale="it_IT" 
+                    btnText="Paga"
+                    @success="onSuccess" 
+                    @error="onError" 
+                    @load="onLoad"
+                    
+                />
 
-            <v-braintree 
-                authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
-                locale="it_IT" 
-                btnText="Paga"
-                @success="onSuccess" 
-                @error="onError" 
-                @load="onLoad"
-            
-            />
-
-        </button>
-
+            </button>
+        </div>
+        
         <div>
 
             <p v-if="error" class="text-red-500 mb-4">
@@ -29,7 +30,28 @@
             </p>
 
         </div>
+        <div class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
+            <form>
+                        <div class="mb-3">
+                            <label for="clientEmail" class="form-label">Inserisci email</label>
+                                <input type="email" class="form-control" id="clientEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientAdress" class="form-label">Inserisci indirizzo di consegna</label>
+                                <input type="text" class="form-control" id="clientAdress">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
+        </div>
     </div>
 
 </template>
