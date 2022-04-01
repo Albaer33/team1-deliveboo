@@ -5,7 +5,7 @@
                 <div class="col">
                     <div id="search_div" class="banner_content d-flex flex-column">
                         <h1 class="mb-4">I piatti che ami, a domicilio.</h1>
-                        <SearchBox :restaurants="restaurants_list" />
+                        <SearchBox :restaurants="restaurants_list" :restaurantFilter="userFilter" />
                     </div>
                 </div>
                 <div class="col">
@@ -34,7 +34,11 @@ export default {
         SearchBox
     },
     props: {
-        restaurants_list: Array
+        restaurants_list: Array,
+        userFilter: Object
+    },
+    created: function(){
+        
     }    
 }
 </script>

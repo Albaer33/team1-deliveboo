@@ -1,6 +1,6 @@
 <template>
     <section class="main_home">
-        <BannerSection :restaurants_list="restaurants_data"/>
+        <BannerSection :restaurants_list="restaurants_data" :userFilter="filterByUser"/>
         <TipologiesSection />
         <SelectionSection :selected_list="selected_items" :overlay_status="overlay_conditions" />
 
@@ -36,7 +36,8 @@ export default {
     props: {
         restaurants_data: Array,
         tipologies_data: Array,
-        overlay_conditions: Object
+        overlay_conditions: Object,
+        filterByUser: Object
     },
     data: function(){
         return {

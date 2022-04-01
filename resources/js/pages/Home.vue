@@ -1,6 +1,6 @@
 <template>
     <section class="home_page h-100">
-        <MainHome v-if="apiLoaded" :restaurants_data="restaurants" :overlay_conditions="overlay" />
+        <MainHome v-if="apiLoaded" :restaurants_data="restaurants" :filterByUser="restaurantFilter" :overlay_conditions="overlay" />
         <Loader v-else />
     </section>
 </template>
@@ -14,6 +14,9 @@ export default {
     components: {
         MainHome,
         Loader
+    },
+    props: {
+        restaurantFilter: Object
     },
     data: function(){
         return {
