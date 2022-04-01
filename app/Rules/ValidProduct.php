@@ -24,22 +24,22 @@ class ValidProduct implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
-    {
+    // public function passes($attribute, $value)
+    // {
 
-        $product = Dish::find($value);
+    //     $product = Dish::find($value);
 
-        if(Dish::find($value)){
+    //     if(Dish::find($value)){
 
-            return true;
+    //         return true;
 
-        }
-        else{
+    //     }
+    //     else{
 
-            return false;
+    //         return false;
 
-        }
-    }
+    //     }
+    // }
 
     /**
      * Get the validation error message.

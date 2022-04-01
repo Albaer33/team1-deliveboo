@@ -27,12 +27,8 @@ class OrderRequest extends FormRequest
         return [
             
             'token' => 'required',
-            'product' => [
-                
-                'required',
-                new ValidProduct()
-            
-            ],
+            'product' => 'required'
+           
  
         ];
     }

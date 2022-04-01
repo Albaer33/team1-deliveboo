@@ -9,7 +9,7 @@
         <button @click="PagamentoFinaleDelDestino()">
 
             <v-braintree 
-                authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                authorization="sandbox_w3v679kp_bmnnm2m955yyp2wx" 
                 locale="it_IT" 
                 btnText="Paga"
                 @success="onSuccess" 
@@ -45,7 +45,7 @@ export default {
             error: '',
             form : {
                 token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                product: this.ordini[0]['id']
+                product: prezzoTot,
             },
         };
     },
@@ -65,16 +65,16 @@ export default {
         
         amountShop: function(){
 
-            let price = 0;
+            let prezzoTot = 0;
             let partialPrice = 0;
 
             this.orders.forEach(element => { 
 
-                price += parseFloat(element['priceTot']);
+                prezzoTot += parseFloat(element['priceTot']);
 
             });
 
-            return price;
+            return prezzoTot;
 
         },
         PagamentoFinaleDelDestino: function(){
@@ -95,9 +95,6 @@ export default {
 
             axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig)
             .then((response) => {
-                
-                token = "fake-valid-nonce",
-                product = ordiniID;
 
             });
 
@@ -111,7 +108,7 @@ export default {
         },
         
         onSuccess: function (payload) {
-            let token = payload.nonce;
+            let token = payload;
             
             this.$emit('onSuccess', token)
 

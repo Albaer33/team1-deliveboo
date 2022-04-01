@@ -36,12 +36,12 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request,Gateway $gateway){
         
-        $product = Dish::find($request->product);
+        $product = prendiTot();
 
 
         $result = $gateway->transaction()->sale([
 
-            'amount' => $product->prezzo,
+            'amount' => $product,
             'paymentMethodNonce' => "fake-valid-nonce",
             'options' => [
 
@@ -74,7 +74,11 @@ class OrderController extends Controller
             return response()->json($data,200);
 
         }
-
+        
     }
+    public function prendiTot(Request $request){
 
+        return [$request->prezzoTot];
+    }
+    
 }

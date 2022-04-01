@@ -29,6 +29,7 @@ Route::get('/tipologies/{slug}','Api\TipologyController@show');
 //Rotte Ordini
 Route::get('orders/generate','Api\OrderController@generate');
 Route::post('orders/make/payment','Api\OrderController@makePayment');
+Route::post('orders/make/payment','Api\OrderControlle@prendiTot');
 
 //Rotte Prodotti
 Route::get('products','Api\ProductController@index');
