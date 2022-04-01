@@ -26963,7 +26963,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.suggestions_section[data-v-1cb178be] {\n  background-color: #ffeae4;\n}\n.color-black[data-v-1cb178be] {\n  color: black;\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.image-restaurant[data-v-1cb178be] {\n  text-align: center;\n}\n.image-restaurant img[data-v-1cb178be] {\n  max-height: 211px;\n  max-width: 422px;\n}\n.suggestions_section[data-v-1cb178be] {\n  background-color: #ffeae4;\n}\n.color-black[data-v-1cb178be] {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -30565,15 +30565,23 @@ var render = function () {
                               },
                             }),
                           ])
-                        : _c("div", { staticClass: "card_image_box w-100" }, [
-                            _c("img", {
-                              attrs: {
-                                src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
-                                  restaurant.immagine),
-                                alt: "Immagine di " + restaurant.nome_attivita,
-                              },
-                            }),
-                          ]),
+                        : _c(
+                            "div",
+                            {
+                              staticClass:
+                                "card_image_box w-100 image-restaurant",
+                            },
+                            [
+                              _c("img", {
+                                attrs: {
+                                  src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
+                                    restaurant.immagine),
+                                  alt:
+                                    "Immagine di " + restaurant.nome_attivita,
+                                },
+                              }),
+                            ]
+                          ),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body p-0" }, [
                         _c("h4", { staticClass: "my-2 fw-bold color-black" }, [
