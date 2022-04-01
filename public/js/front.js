@@ -29958,25 +29958,10 @@ var staticRenderFns = [
       { staticClass: "header_forms d-flex align-items-center" },
       [
         _c("a", { attrs: { href: "http://127.0.0.1:8000/admin" } }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "register_box d-flex align-items-center d-none d-md-block",
-            },
-            [
-              _c("i", { staticClass: "fa-solid fa-house me-2" }),
-              _vm._v(" "),
-              _c("span", [_vm._v("Registrati o accedi")]),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "" } }, [
-          _c("div", { staticClass: "menu_box d-flex align-items-center" }, [
-            _c("i", { staticClass: "fa-solid fa-bars me-2" }),
+          _c("div", { staticClass: "register_box d-flex align-items-center" }, [
+            _c("i", { staticClass: "fa-solid fa-house me-2" }),
             _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Menu")]),
+            _c("span", [_vm._v("Registrati o accedi")]),
           ]),
         ]),
       ]

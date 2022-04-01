@@ -19,7 +19,7 @@
                     <!-- Register -->
                     <a href="http://127.0.0.1:8000/admin">
 
-                            <div class="register_box d-flex align-items-center d-none d-md-block">
+                            <div class="register_box d-flex align-items-center">
                             <i class="fa-solid fa-house me-2"></i>
                             <span>Registrati o accedi</span>
                     
@@ -27,7 +27,7 @@
 
                     </a>
                     <!-- Menu -->
-                    <a href="">
+<!--                     <a href="">
 
                             <div class="menu_box d-flex align-items-center">
                             <i class="fa-solid fa-bars me-2"></i>
@@ -35,7 +35,7 @@
                         
                         </div>
 
-                    </a>
+                    </a> -->
                 </div>
 
             </div>
