@@ -9,73 +9,32 @@
 <script>
 export default {
     name: 'SearchBox',
-    props: {
-        
-        restaurants: Array,
-        /* tipologies: Array */
 
+    props: {
+        restaurants: Array,
     },
+
     data: function(){
         return {
             searchedRestaurant: '',
             slugToSearch: '',
-            /* myValue: null */
         };
     },
-    methods: {
 
-/*         getTipology(){
-            //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
-            // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-            axios.get('http://127.0.0.1:8000/api/tipologies/')
-            .then((response) => {
-                // console.log(response);
-                
-                    this.tipologies = response.data.results;
-                
-            });
-          }, */
+    methods: {
         // Funzione ricerca ristorante (filtro)
         searchRestaurant: function(){
-
             // forEach sull'array dei ristoranti
             this.restaurants.forEach((thisRestaurant) => {
-
-                // Comparazione dei nomi entrambi in trim e toLowerCase
-                if( this.searchedRestaurant.toLowerCase().trim() === (thisRestaurant.nome_attivita.toLowerCase().trim()) /* || thisRestaurant.slug */ ){
+                // Comparazione stringhe
+                if(thisRestaurant.nome_attivita.toLowerCase().trim().includes(this.searchedRestaurant.toLowerCase().trim()))   {
                     this.slugToSearch = thisRestaurant.slug;
-                    /* this.myValue = 1; */
-                    /* return this.myValue; */
-
                 }
-            //    else{
-
-            //        this.tipologies.forEach((thisTipologies) => {
-
-             //           if( this.searchedRestaurant.toLowerCase().trim() === (thisTipologies.nome.toLowerCase().trim()) /* || thisTipologies.slug */ ){
-            //                this.slugToSearch = thisTipologies.slug;
-             //               this.myValue = 2;
-                            /* return this.myValue; */
-                            
-
-             //           }
-
-              //      });
-
-             //   }
-
-
             });
-            //  console.log(this.searchedRestaurant)
 
             return this.slugToSearch;
-
-
         }
     },
-    created: function(){
-        /* this.getTipology(); */
-    }
 }
 </script>
 
