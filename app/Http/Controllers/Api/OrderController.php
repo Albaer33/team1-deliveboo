@@ -36,12 +36,11 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request,Gateway $gateway){
         
-        $product = prendiTot();
-
+        $prezzoTot = $request->prezzoTot;
 
         $result = $gateway->transaction()->sale([
 
-            'amount' => $product,
+            'amount' => $prezzoTot,
             'paymentMethodNonce' => "fake-valid-nonce",
             'options' => [
 
@@ -54,6 +53,7 @@ class OrderController extends Controller
 
             $data = [
 
+                'prezzoTot'=> $prezzoTot,
                 'success' => true,
                 'message' => 'Transazione eseguita con Successo!',
 
@@ -76,9 +76,5 @@ class OrderController extends Controller
         }
         
     }
-    public function prendiTot(Request $request){
 
-        return [$request->prezzoTot];
-    }
-    
 }

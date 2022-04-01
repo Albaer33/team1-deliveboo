@@ -9,7 +9,7 @@
         <button @click="PagamentoFinaleDelDestino()">
 
             <v-braintree 
-                authorization="sandbox_w3v679kp_bmnnm2m955yyp2wx" 
+                authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
                 locale="it_IT" 
                 btnText="Paga"
                 @success="onSuccess" 
@@ -44,9 +44,11 @@ export default {
         return {
             error: '',
             form : {
+            
                 token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                product: prezzoTot,
-            },
+                prezzoTot: this.amountShop()
+                
+            }
         };
     },
     props: {
@@ -66,11 +68,10 @@ export default {
         amountShop: function(){
 
             let prezzoTot = 0;
-            let partialPrice = 0;
 
-            this.orders.forEach(element => { 
+            this.ordini.forEach(element => { 
 
-                prezzoTot += parseFloat(element['priceTot']);
+                prezzoTot += parseFloat(element.priceTot);
 
             });
 
@@ -78,13 +79,6 @@ export default {
 
         },
         PagamentoFinaleDelDestino: function(){
-
-            let product = 0;
-            let ordiniID = this.ordini[0]['id'];
-
-            console.log(this.ordini[0]['id']);
-            /* console.log(this.ordini[0]['prezzo']); */
-
 
             let axiosConfig = {
                 headers: {
@@ -95,6 +89,7 @@ export default {
 
             axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig)
             .then((response) => {
+
 
             });
 
@@ -130,10 +125,11 @@ export default {
     },
     created: function(){
 
-        this.onSuccess();
+/*         this.onSuccess();
         this.onError();
-        this.onLoad();
+        this.onLoad(); */
 
+        this.amountShop();
 
     }    
 }

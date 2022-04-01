@@ -96,8 +96,8 @@ export default {
             disableBuyButton: true,
             loadingPayment: true,
             form : {
-                token : "",
-                product: 10
+                token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                dataPrezzo: this.prezzoFinale,
             },
 
         }

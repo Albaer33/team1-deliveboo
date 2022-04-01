@@ -26,8 +26,8 @@ class OrderRequest extends FormRequest
     {
         return [
             
-            'token' => 'required',
-            'product' => 'required'
+            'token' => 'required' ,
+            'prezzoTot' => 'required'
            
  
         ];

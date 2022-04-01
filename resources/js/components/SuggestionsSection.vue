@@ -43,6 +43,18 @@ export default {
 <style lang="scss" scoped>
 @import '../../sass/variables.scss';
 
+    .image-restaurant{ 
+        
+        text-align: center;
+
+        img{
+
+            max-height: 211px;
+            max-width: 422px;
+
+        }
+
+    }
     .suggestions_section{
         background-color: #ffeae4;
 
