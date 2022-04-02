@@ -33,6 +33,14 @@
         <div class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
             <form>
                         <div class="mb-3">
+                            <label for="clientName" class="form-label">Inserisci Nome</label>
+                                <input type="text" class="form-control" id="clientName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientPhone" class="form-label">N° telefono</label>
+                                <input type="text" class="form-control" id="clientPhone">
+                        </div>
+                        <div class="mb-3">
                             <label for="clientEmail" class="form-label">Inserisci email</label>
                                 <input type="email" class="form-control" id="clientEmail">
                         </div>
@@ -41,15 +49,15 @@
                                 <input type="text" class="form-control" id="clientAdress">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="clientDetails" class="form-label">Inserisci informazioni</label>
+                                <input type="text" class="form-control" id="clientDetails">
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                            <button  class="btn btn-primary" @click="InviaDatiForm()">Submit</button>
 
         </div>
     </div>
@@ -65,7 +73,15 @@ export default {
     data: function(){
         return {
             error: '',
-            form : {
+            form:{
+                clientName:"Gigi",
+                clientPhone:"01121236",
+                clientEmail:"gigi@mail",
+                clientAdress:"via tal dei tali",
+                clientDetails:"carnivoro",
+                prezzoTot: 90,
+            },
+            price : {
             
                 token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
                 prezzoTot: this.amountShop()
@@ -109,14 +125,27 @@ export default {
                 }
             };
 
-            axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig)
+            axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig)
             .then((response) => {
 
 
             });
 
         }, 
+        InviaDatiForm: function(){
+            
+            let axiosConfig = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Accept": "application/json",
+                }
+            };
+                        axios.post('http://127.0.0.1:8000/api/orders/save', this.form, axiosConfig)
+            .then((response) => {
 
+                    console.log(response)
+            });
+        },
         onLoad: function(){
 
             this.$emit('loading')

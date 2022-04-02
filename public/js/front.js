@@ -2589,6 +2589,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
@@ -2596,6 +2604,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       error: '',
       form: {
+        clientName: "Gigi",
+        clientPhone: "01121236",
+        clientEmail: "gigi@mail",
+        clientAdress: "via tal dei tali",
+        clientDetails: "carnivoro",
+        prezzoTot: 90
+      },
+      price: {
         token: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
         prezzoTot: this.amountShop()
       }
@@ -2623,7 +2639,18 @@ __webpack_require__.r(__webpack_exports__);
           "Accept": "application/json"
         }
       };
-      axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig).then(function (response) {});
+      axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig).then(function (response) {});
+    },
+    InviaDatiForm: function InviaDatiForm() {
+      var axiosConfig = {
+        headers: {
+          'Content-Type': 'application/json',
+          "Accept": "application/json"
+        }
+      };
+      axios.post('http://127.0.0.1:8000/api/orders/save', this.form, axiosConfig).then(function (response) {
+        console.log(response);
+      });
     },
     onLoad: function onLoad() {
       this.$emit('loading');
@@ -2673,61 +2700,27 @@ __webpack_require__.r(__webpack_exports__);
   name: 'SearchBox',
   props: {
     restaurants: Array
-    /* tipologies: Array */
-
   },
   data: function data() {
     return {
       searchedRestaurant: '',
       slugToSearch: ''
-      /* myValue: null */
-
     };
   },
   methods: {
-    /*         getTipology(){
-                //  correzione da rivedere immettendo l'url completo ho finalmente i data corretti
-                // ATTENZIONE ALLA GESTIONE ROTTE DA PARTE DI LARAVEL USARE URL COMPLETA NEL CASO
-                axios.get('http://127.0.0.1:8000/api/tipologies/')
-                .then((response) => {
-                    // console.log(response);
-                    
-                        this.tipologies = response.data.results;
-                    
-                });
-              }, */
     // Funzione ricerca ristorante (filtro)
     searchRestaurant: function searchRestaurant() {
       var _this = this;
 
       // forEach sull'array dei ristoranti
       this.restaurants.forEach(function (thisRestaurant) {
-        // Comparazione dei nomi entrambi in trim e toLowerCase
-        if (_this.searchedRestaurant.toLowerCase().trim() === thisRestaurant.nome_attivita.toLowerCase().trim()
-        /* || thisRestaurant.slug */
-        ) {
+        // Comparazione stringhe
+        if (thisRestaurant.nome_attivita.toLowerCase().trim().includes(_this.searchedRestaurant.toLowerCase().trim())) {
           _this.slugToSearch = thisRestaurant.slug;
-          /* this.myValue = 1; */
-
-          /* return this.myValue; */
-        } //    else{
-        //        this.tipologies.forEach((thisTipologies) => {
-        //           if( this.searchedRestaurant.toLowerCase().trim() === (thisTipologies.nome.toLowerCase().trim()) /* || thisTipologies.slug */ ){
-        //                this.slugToSearch = thisTipologies.slug;
-        //               this.myValue = 2;
-
-        /* return this.myValue; */
-        //           }
-        //      });
-        //   }
-
-      }); //  console.log(this.searchedRestaurant)
-
+        }
+      });
       return this.slugToSearch;
     }
-  },
-  created: function created() {
-    /* this.getTipology(); */
   }
 });
 
@@ -2895,7 +2888,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -30257,7 +30249,28 @@ var render = function () {
         : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _c(
+      "div",
+      {
+        staticClass: "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function ($event) {
+                return _vm.InviaDatiForm()
+              },
+            },
+          },
+          [_vm._v("Submit")]
+        ),
+      ]
+    ),
   ])
 }
 var staticRenderFns = [
@@ -30265,79 +30278,85 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
-      },
-      [
-        _c("form", [
-          _c("div", { staticClass: "mb-3" }, [
-            _c(
-              "label",
-              { staticClass: "form-label", attrs: { for: "clientEmail" } },
-              [_vm._v("Inserisci email")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "email", id: "clientEmail" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c(
-              "label",
-              { staticClass: "form-label", attrs: { for: "clientAdress" } },
-              [_vm._v("Inserisci indirizzo di consegna")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "text", id: "clientAdress" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c(
-              "label",
-              {
-                staticClass: "form-label",
-                attrs: { for: "exampleInputPassword1" },
-              },
-              [_vm._v("Password")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "password", id: "exampleInputPassword1" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3 form-check" }, [
-            _c("input", {
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox", id: "exampleCheck1" },
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "form-check-label",
-                attrs: { for: "exampleCheck1" },
-              },
-              [_vm._v("Check me out")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
-          ),
-        ]),
-      ]
-    )
+    return _c("form", [
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "clientName" } },
+          [_vm._v("Inserisci Nome")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "text", id: "clientName" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "clientPhone" } },
+          [_vm._v("N° telefono")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "text", id: "clientPhone" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "clientEmail" } },
+          [_vm._v("Inserisci email")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "email", id: "clientEmail" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "clientAdress" } },
+          [_vm._v("Inserisci indirizzo di consegna")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "text", id: "clientAdress" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }, [
+        _c(
+          "label",
+          { staticClass: "form-label", attrs: { for: "clientDetails" } },
+          [_vm._v("Inserisci informazioni")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "text", id: "clientDetails" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3 form-check" }, [
+        _c("input", {
+          staticClass: "form-check-input",
+          attrs: { type: "checkbox", id: "exampleCheck1" },
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "form-check-label", attrs: { for: "exampleCheck1" } },
+          [_vm._v("Check me out")]
+        ),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -30728,23 +30747,15 @@ var render = function () {
                               },
                             }),
                           ])
-                        : _c(
-                            "div",
-                            {
-                              staticClass:
-                                "card_image_box w-100 image-restaurant",
-                            },
-                            [
-                              _c("img", {
-                                attrs: {
-                                  src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
-                                    restaurant.immagine),
-                                  alt:
-                                    "Immagine di " + restaurant.nome_attivita,
-                                },
-                              }),
-                            ]
-                          ),
+                        : _c("div", { staticClass: "card_image_box w-100" }, [
+                            _c("img", {
+                              attrs: {
+                                src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
+                                  restaurant.immagine),
+                                alt: "Immagine di " + restaurant.nome_attivita,
+                              },
+                            }),
+                          ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body p-0" }, [
                         _c("h4", { staticClass: "my-2 fw-bold color-black" }, [

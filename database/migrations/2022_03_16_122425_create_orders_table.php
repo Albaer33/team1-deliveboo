@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('nome', 25);
             $table->string('indirizzo', 50);
             $table->text('dettaglio');
-            $table->string('codice_transazione', 30);
+            $table->string('codice_transazione', 30)->nullable();
             $table->decimal('totale', 5, 2);
             $table->string('email', 30);
             $table->string('telefono', 15);
