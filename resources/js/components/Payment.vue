@@ -15,6 +15,7 @@
                         authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
                         locale="it_IT" 
                         btnText="Paga"
+                        btnClass="btn btn_ms_primary_color"
                         @success="onSuccess" 
                         @error="onError" 
                         @load="onLoad"
@@ -74,7 +75,7 @@
 
             </form>
 
-            <button type="submit" class="btn btn-primary" @click="confermaDati()" >Prosegui al pagamento</button>
+            <button type="submit" class="btn btn_ms_primary_color" @click="confermaDati()" >Prosegui al pagamento</button>
 
         </div>
     </div>
@@ -250,3 +251,24 @@ export default {
     }    
 }
 </script>
+
+<style lang="scss">
+
+    $primary_color: #00ccbc;
+
+    .btn_ms_primary_color{
+
+        background-color: rgba($color: $primary_color, $alpha: 0.8);
+    
+        color: white;
+    
+        &:hover{
+    
+            color: white;
+    
+            background-color: rgba($color: $primary_color, $alpha: 1);
+    
+        }
+    
+    }
+</style>

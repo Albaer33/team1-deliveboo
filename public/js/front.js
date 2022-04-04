@@ -2617,6 +2617,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
@@ -3715,6 +3716,13 @@ __webpack_require__.r(__webpack_exports__);
     Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Footer: _components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     ShoppingCart: _components_ShoppingCart_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  watch: {
+    $route: function $route(to) {
+      document.title = "".concat(to.meta.title);
+      var link = document.querySelector("[rel='icon']");
+      link.setAttribute('href', to.meta.icon);
+    }
   },
   data: function data() {
     return {
@@ -27097,6 +27105,25 @@ exports.push([module.i, ".page_overlay[data-v-1a9bfd26] {\n  z-index: 1500;\n  b
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".btn_ms_primary_color {\n  background-color: rgba(0, 204, 188, 0.8);\n  color: white;\n}\n.btn_ms_primary_color:hover {\n  color: white;\n  background-color: #00ccbc;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchBox.vue?vue&type=style&index=0&id=fefb60b0&lang=scss&scoped=true&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchBox.vue?vue&type=style&index=0&id=fefb60b0&lang=scss&scoped=true& ***!
@@ -27147,7 +27174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.space-shopping-cart[data-v-c86466da] {\n  font-size: 25px;\n}\n.space-padding-shopping-cart[data-v-c86466da] {\n  padding: 20px;\n}\n.shopping_cart[data-v-c86466da] {\n  position: fixed;\n  z-index: 10000;\n  background-color: #00ccbc;\n  transition-duration: 1s;\n}\n.shopping_cart .close_cart[data-v-c86466da] {\n  border: 2px solid white;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n}\n.shopping_cart .orders_container h4[data-v-c86466da],\n.shopping_cart .orders_container h5[data-v-c86466da],\n.shopping_cart .orders_container .remove_button[data-v-c86466da] {\n  margin-bottom: 20px;\n}\n.shopping_cart .orders_container h5[data-v-c86466da] {\n  text-align: center;\n}\n.shopping_cart i[data-v-c86466da] {\n  cursor: pointer;\n}\n.shopping_cart .cart_title[data-v-c86466da] {\n  color: white;\n  -ms-writing-mode: tb-lr;\n      writing-mode: vertical-lr;\n  text-orientation: upright;\n}\n.shopping_cart[data-v-c86466da]:hover {\n  /* cursor: pointer; */\n  transform: translateY(-50%) scale(1.2);\n}\n.shopping_cart .cart_body[data-v-c86466da] {\n  overflow-y: auto;\n}\n.shopping_cart .cart_title.appearing[data-v-c86466da],\n.shopping_cart .cart_body.appearing[data-v-c86466da],\n.shopping_cart .close_section.appearing[data-v-c86466da] {\n  -webkit-animation: cart_appear-data-v-c86466da 1s linear 1;\n          animation: cart_appear-data-v-c86466da 1s linear 1;\n}\n.shopping_cart .cart_title.disappearing[data-v-c86466da],\n.shopping_cart .cart_body.disappearing[data-v-c86466da],\n.shopping_cart .close_section.disappearing[data-v-c86466da] {\n  -webkit-animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n          animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n}\n.shopping_cart.small[data-v-c86466da] {\n  width: 50px;\n  height: 210px;\n  padding: 5px;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n  cursor: pointer;\n}\n.shopping_cart.big[data-v-c86466da] {\n  width: 90vw;\n  height: 90vh;\n  padding: 10px;\n  top: 5vh;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 5px;\n  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);\n}\n@-webkit-keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.space-shopping-cart[data-v-c86466da] {\n  font-size: 25px;\n}\n.space-padding-shopping-cart[data-v-c86466da] {\n  padding: 20px;\n}\n.shopping_cart[data-v-c86466da] {\n  position: fixed;\n  z-index: 10000;\n  background-color: #00ccbc;\n  transition-duration: 1s;\n}\n.shopping_cart .close_cart[data-v-c86466da] {\n  border: 2px solid white;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  cursor: pointer;\n}\n.shopping_cart .orders_container h4[data-v-c86466da],\n.shopping_cart .orders_container h5[data-v-c86466da],\n.shopping_cart .orders_container .remove_button[data-v-c86466da] {\n  margin-bottom: 20px;\n}\n.shopping_cart .orders_container h5[data-v-c86466da] {\n  text-align: center;\n}\n.shopping_cart i[data-v-c86466da] {\n  cursor: pointer;\n}\n.shopping_cart .cart_title[data-v-c86466da] {\n  color: white;\n  -ms-writing-mode: tb-lr;\n      writing-mode: vertical-lr;\n  text-orientation: upright;\n}\n.shopping_cart[data-v-c86466da]:hover {\n  /* cursor: pointer; */\n  transform: translateY(-50%) scale(1.2);\n}\n.shopping_cart .cart_body[data-v-c86466da] {\n  overflow-y: auto;\n}\n.shopping_cart .cart_title.appearing[data-v-c86466da],\n.shopping_cart .cart_body.appearing[data-v-c86466da],\n.shopping_cart .close_section.appearing[data-v-c86466da] {\n  -webkit-animation: cart_appear-data-v-c86466da 1s linear 1;\n          animation: cart_appear-data-v-c86466da 1s linear 1;\n}\n.shopping_cart .cart_title.disappearing[data-v-c86466da],\n.shopping_cart .cart_body.disappearing[data-v-c86466da],\n.shopping_cart .close_section.disappearing[data-v-c86466da] {\n  -webkit-animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n          animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n}\n.shopping_cart.small[data-v-c86466da] {\n  width: 50px;\n  height: 210px;\n  padding: 5px;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n  cursor: pointer;\n}\n.shopping_cart.big[data-v-c86466da] {\n  width: 90vw;\n  height: 90vh;\n  padding: 10px;\n  top: 5vh;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 5px;\n  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);\n}\n@-webkit-keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}", ""]);
 
 // exports
 
@@ -28739,6 +28766,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./PageOverlay.vue?vue&type=style&index=0&id=1a9bfd26&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PageOverlay.vue?vue&type=style&index=0&id=1a9bfd26&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Payment.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -30470,6 +30527,7 @@ var render = function () {
                           authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
                           locale: "it_IT",
                           btnText: "Paga",
+                          btnClass: "btn btn_ms_primary_color",
                         },
                         on: {
                           success: _vm.onSuccess,
@@ -30702,7 +30760,7 @@ var render = function () {
             _c(
               "button",
               {
-                staticClass: "btn btn-primary",
+                staticClass: "btn btn_ms_primary_color",
                 attrs: { type: "submit" },
                 on: {
                   click: function ($event) {
@@ -30943,13 +31001,9 @@ var render = function () {
                       {
                         staticClass:
                           "close_cart d-flex justify-content-center align-items-center mb-5",
+                        on: { click: _vm.closeCart },
                       },
-                      [
-                        _c("i", {
-                          staticClass: "me-0 fa-solid fa-x fs-6",
-                          on: { click: _vm.closeCart },
-                        }),
-                      ]
+                      [_c("i", { staticClass: "me-0 fa-solid fa-x fs-6" })]
                     ),
                   ]
                 ),
@@ -31039,6 +31093,11 @@ var render = function () {
                             staticClass:
                               "confirm_button p-3 border border-2 border-white rounded text-white mt-5",
                             attrs: { to: "/checkout" },
+                            nativeOn: {
+                              click: function ($event) {
+                                return _vm.closeCart.apply(null, arguments)
+                              },
+                            },
                           },
                           [_vm._v("Vai al pagamento")]
                         )
@@ -31160,15 +31219,23 @@ var render = function () {
                               },
                             }),
                           ])
-                        : _c("div", { staticClass: "card_image_box w-100" }, [
-                            _c("img", {
-                              attrs: {
-                                src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
-                                  restaurant.immagine),
-                                alt: "Immagine di " + restaurant.nome_attivita,
-                              },
-                            }),
-                          ]),
+                        : _c(
+                            "div",
+                            {
+                              staticClass:
+                                "card_image_box w-100 image-restaurant",
+                            },
+                            [
+                              _c("img", {
+                                attrs: {
+                                  src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
+                                    restaurant.immagine),
+                                  alt:
+                                    "Immagine di " + restaurant.nome_attivita,
+                                },
+                              }),
+                            ]
+                          ),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body p-0" }, [
                         _c("h4", { staticClass: "my-2 fw-bold color-black" }, [
@@ -47909,7 +47976,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Payment_vue_vue_type_template_id_7bace86b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Payment.vue?vue&type=template&id=7bace86b& */ "./resources/js/components/Payment.vue?vue&type=template&id=7bace86b&");
 /* harmony import */ var _Payment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Payment.vue?vue&type=script&lang=js& */ "./resources/js/components/Payment.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Payment_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Payment.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -47917,7 +47986,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Payment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Payment_vue_vue_type_template_id_7bace86b___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Payment_vue_vue_type_template_id_7bace86b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -47946,6 +48015,22 @@ component.options.__file = "resources/js/components/Payment.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Payment.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payment.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss& ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Payment.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payment.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Payment_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -49125,31 +49210,59 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: "/",
     name: "home",
-    component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    meta: {
+      title: "Home",
+      icon: "../images/favicon.png"
+    }
   }, {
     path: "/restaurants/:slug",
     name: "restaurants",
-    component: _pages_Restaurant_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _pages_Restaurant_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    meta: {
+      title: "Ristorante",
+      icon: "../images/favicon.png"
+    }
   }, {
     path: "/filtered-restaurant",
     name: "filtered-restaurant",
-    component: _pages_FilteredRestaurant_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _pages_FilteredRestaurant_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    meta: {
+      title: "Ristoranti",
+      icon: "../images/favicon.png"
+    }
   }, {
     path: "/dish/:slug",
     name: "dish",
-    component: _pages_Dish_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _pages_Dish_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    meta: {
+      title: "Piatti",
+      icon: "../images/favicon.png"
+    }
   }, {
     path: "/tipologies/:slug",
     name: "tipologies",
-    component: _pages_Tipology_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _pages_Tipology_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    meta: {
+      title: "Ristoranti",
+      icon: "../images/favicon.png"
+    }
   }, {
     path: "/checkout",
     name: "checkout",
-    component: _pages_Checkout_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _pages_Checkout_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    meta: {
+      title: "Checkout",
+      icon: "../images/favicon.png"
+    }
   }, {
     path: "/*",
     name: "not-found",
-    component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+    meta: {
+      title: "Pagina non trovata",
+      icon: "../images/favicon.png"
+    }
   }]
 }); // non si trova nella documentazione
 
@@ -49261,13 +49374,16 @@ var map = {
 	"./dish_images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png": "./storage/app/public/dish_images/NR4zogWxqNmdhpzMeJfzqqex8HqzTluxb45TShgr.png",
 	"./dish_images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png": "./storage/app/public/dish_images/XgS3rQUYlEdR9psRUBdS69GnOTnt5KSAz9CE7uQV.png",
 	"./dish_images/bMA3pGquuLvmHpUqR3xdhXm0wb0DiATwk4zvyn29.png": "./storage/app/public/dish_images/bMA3pGquuLvmHpUqR3xdhXm0wb0DiATwk4zvyn29.png",
+	"./dish_images/i6oUpWVGay363I3Lc04VjNA7ZNdNxfO2XLCaOYGF.png": "./storage/app/public/dish_images/i6oUpWVGay363I3Lc04VjNA7ZNdNxfO2XLCaOYGF.png",
 	"./dish_images/yLlFpi6Kp2hQ20Tu6PTR1KiBDus7tU5D38SnDhrI.png": "./storage/app/public/dish_images/yLlFpi6Kp2hQ20Tu6PTR1KiBDus7tU5D38SnDhrI.png",
+	"./dish_images/z2stCU0kdJzrOZ0q8KKbD9rAu4n79fnH7wkq8Ufc.png": "./storage/app/public/dish_images/z2stCU0kdJzrOZ0q8KKbD9rAu4n79fnH7wkq8Ufc.png",
 	"./restaurant_images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png": "./storage/app/public/restaurant_images/3HRnsnXbFr9hw2pLLtUH4USZBUMnfWnw0yU9zb8u.png",
 	"./restaurant_images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png": "./storage/app/public/restaurant_images/4Ts3TADnWXsPNTG3Vvweo1Cc5jvF2V9AdMFWjJEW.png",
 	"./restaurant_images/6KGBBE9xr44Ti7BDWXg9YF4DOSHNeNSfhFFmSdHH.png": "./storage/app/public/restaurant_images/6KGBBE9xr44Ti7BDWXg9YF4DOSHNeNSfhFFmSdHH.png",
 	"./restaurant_images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png": "./storage/app/public/restaurant_images/6k2uzeH96tUTlM53ZjOdlfXhGtPRFf4tlK1AJaPq.png",
 	"./restaurant_images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png": "./storage/app/public/restaurant_images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png",
 	"./restaurant_images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png": "./storage/app/public/restaurant_images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png",
+	"./restaurant_images/Cd41VH8jBpAIyL50Q2fR3KLAt4mnGZOmw8R31f6d.png": "./storage/app/public/restaurant_images/Cd41VH8jBpAIyL50Q2fR3KLAt4mnGZOmw8R31f6d.png",
 	"./restaurant_images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png": "./storage/app/public/restaurant_images/DiUMv9n2vycnTB2sYQxY6QZWVXnOBtxnoAo06N9s.png",
 	"./restaurant_images/EkQL9GhOtEugFXC9oR3tRXkw77XEVcimT6Q3s2OK.png": "./storage/app/public/restaurant_images/EkQL9GhOtEugFXC9oR3tRXkw77XEVcimT6Q3s2OK.png",
 	"./restaurant_images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png": "./storage/app/public/restaurant_images/JieWZvB7Cr1TuaUvs5s7ElvrvLFRPc01kNindlVd.png",
@@ -49418,6 +49534,17 @@ module.exports = "/images/bMA3pGquuLvmHpUqR3xdhXm0wb0DiATwk4zvyn29.png?4f06acbe7
 
 /***/ }),
 
+/***/ "./storage/app/public/dish_images/i6oUpWVGay363I3Lc04VjNA7ZNdNxfO2XLCaOYGF.png":
+/*!*************************************************************************************!*\
+  !*** ./storage/app/public/dish_images/i6oUpWVGay363I3Lc04VjNA7ZNdNxfO2XLCaOYGF.png ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/i6oUpWVGay363I3Lc04VjNA7ZNdNxfO2XLCaOYGF.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
 /***/ "./storage/app/public/dish_images/yLlFpi6Kp2hQ20Tu6PTR1KiBDus7tU5D38SnDhrI.png":
 /*!*************************************************************************************!*\
   !*** ./storage/app/public/dish_images/yLlFpi6Kp2hQ20Tu6PTR1KiBDus7tU5D38SnDhrI.png ***!
@@ -49426,6 +49553,17 @@ module.exports = "/images/bMA3pGquuLvmHpUqR3xdhXm0wb0DiATwk4zvyn29.png?4f06acbe7
 /***/ (function(module, exports) {
 
 module.exports = "/images/yLlFpi6Kp2hQ20Tu6PTR1KiBDus7tU5D38SnDhrI.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/dish_images/z2stCU0kdJzrOZ0q8KKbD9rAu4n79fnH7wkq8Ufc.png":
+/*!*************************************************************************************!*\
+  !*** ./storage/app/public/dish_images/z2stCU0kdJzrOZ0q8KKbD9rAu4n79fnH7wkq8Ufc.png ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/z2stCU0kdJzrOZ0q8KKbD9rAu4n79fnH7wkq8Ufc.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 
@@ -49492,6 +49630,17 @@ module.exports = "/images/9IpPJSajp0VwOvcrFa6shpb6lsxkpPtA7oqVP3Ip.png?4f06acbe7
 /***/ (function(module, exports) {
 
 module.exports = "/images/B7qwdwldK9inQHXppvbk5vx5OrtTl7MUqdGp4Qkq.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
+
+/***/ }),
+
+/***/ "./storage/app/public/restaurant_images/Cd41VH8jBpAIyL50Q2fR3KLAt4mnGZOmw8R31f6d.png":
+/*!*******************************************************************************************!*\
+  !*** ./storage/app/public/restaurant_images/Cd41VH8jBpAIyL50Q2fR3KLAt4mnGZOmw8R31f6d.png ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Cd41VH8jBpAIyL50Q2fR3KLAt4mnGZOmw8R31f6d.png?4f06acbe78ddfd3b6a2bc364e37c90e0";
 
 /***/ }),
 

@@ -21,6 +21,15 @@ export default {
     Footer,
     ShoppingCart
   },
+  watch: {
+
+    $route(to) {
+      document.title = `${to.meta.title}`;
+      const link = document.querySelector("[rel='icon']")
+      link.setAttribute('href',to.meta.icon)
+    }
+
+  },
   data: function(){
     return {
       cart_orders: [],

@@ -17,37 +17,79 @@ const router = new VueRouter({
         {
             path: "/",
             name: "home",
-            component: Home
+            component: Home,
+            meta: {
+
+                title: "Home",
+                icon: "../images/favicon.png"
+
+            }
         },
         {
             path: "/restaurants/:slug",
             name: "restaurants",
-            component: Restaurant
+            component: Restaurant,
+            meta: {
+
+                title: "Ristorante",
+                icon: "../images/favicon.png"
+
+            }
         },
         {
             path: "/filtered-restaurant",
             name: "filtered-restaurant",
-            component: FilteredRestaurant
+            component: FilteredRestaurant,
+            meta: {
+
+                title: "Ristoranti",
+                icon: "../images/favicon.png"
+
+            }
         },
         {
             path: "/dish/:slug",
             name: "dish",
-            component: Dish
+            component: Dish,
+            meta: {
+
+                title: "Piatti",
+                icon: "../images/favicon.png"
+
+            }
         },
         {
             path: "/tipologies/:slug",
             name: "tipologies",
-            component: Tipology
+            component: Tipology,
+            meta: {
+
+                title: "Ristoranti",
+                icon: "../images/favicon.png"
+
+            }
         },
         {
             path: "/checkout",
             name: "checkout",
-            component: Checkout
+            component: Checkout,
+            meta: {
+
+                title: "Checkout",
+                icon: "../images/favicon.png"
+
+            }
         },
         {
             path: "/*",
             name: "not-found",
-            component: NotFound
+            component: NotFound,
+            meta: {
+
+                title: "Pagina non trovata",
+                icon: "../images/favicon.png"
+
+            }
         }
     ]
 });

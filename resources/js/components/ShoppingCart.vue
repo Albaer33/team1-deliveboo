@@ -7,8 +7,8 @@
             <div class="shopping_cart_content w-100 h-100 d-flex flex-column justify-content-stretch p-3 text-white" v-else>
                 <!-- Sezione con la X -->
                 <div class="close_section w-100 d-flex justify-content-end" :class="cartBodyClass">
-                    <div class="close_cart d-flex justify-content-center align-items-center mb-5">
-                        <i class="me-0 fa-solid fa-x fs-6" @click="closeCart"></i>
+                    <div class="close_cart d-flex justify-content-center align-items-center mb-5" @click="closeCart">
+                        <i class="me-0 fa-solid fa-x fs-6"></i>
                     </div>
                 </div>
                 <!-- Lista ordini -->
@@ -60,7 +60,7 @@
                 </div>
                 <!-- Sezione Conferma -->
                 <div class="confirm_section w-100 d-flex justify-content-center">
-                    <router-link :to="`/checkout`" v-if="orders.length > 0" class="confirm_button p-3 border border-2 border-white rounded text-white mt-5" >Vai al pagamento</router-link>
+                    <router-link :to="`/checkout`" @click.native="closeCart" v-if="orders.length > 0" class="confirm_button p-3 border border-2 border-white rounded text-white mt-5">Vai al pagamento</router-link>
                 </div>
             </div>
         </div>
@@ -142,6 +142,8 @@ export default {
             width: 35px;
             height: 35px;
             border-radius: 50%;
+
+            cursor: pointer;
         }
 
         .orders_container{
@@ -155,6 +157,7 @@ export default {
             h5{
                 text-align: center;
             }
+
         }
         
         i{

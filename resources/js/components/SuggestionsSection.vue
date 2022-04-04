@@ -15,7 +15,7 @@
                                 <div class="card_image_box w-100" v-if="restaurant.immagine.includes('https')">
                                     <img :src="restaurant.immagine" :alt="'Immagine di ' + restaurant.nome_attivita">
                                 </div>
-                                <div class="card_image_box w-100" v-else>
+                                <div class="card_image_box w-100 image-restaurant" v-else>
                                     <img :src="require(`/storage/app/public/${restaurant.immagine}`)" :alt="'Immagine di ' + restaurant.nome_attivita">
                                 </div>
                                 <div class="card-body p-0">
@@ -55,7 +55,9 @@ export default {
         }
 
     }
+
     .suggestions_section{
+        
         background-color: #ffeae4;
 
     }
