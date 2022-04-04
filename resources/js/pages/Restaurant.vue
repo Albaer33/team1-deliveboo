@@ -18,16 +18,18 @@
                 </div>
             </div>
 
-            <div  v-for="(dish, index) in dishes" :key="index" >
+            <div  v-for="(dish, index) in dishes" :key="index"  class="my_20">
                 
                 <div v-if="dish.visibile === 1" class="p-5 card_style_ms overflow-hidden position-relative">
                     
                     <div @click="addToCart(dish)" class="add_buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
-                        <h4 class="mb-0">{{addButtonText}}</h4>
+                        <h4 class="mb-0" v-if="!plusClicked || (plusClicked && clickedID !== dish.id)">{{addButtonText}}</h4>
+                        <i class="fa-solid fa-check" v-else-if="plusClicked && clickedID === dish.id"></i>
                     </div>
 
                     <div @click="removeFromCart(dish)" class="remove_buttons_wrapper position-absolute d-flex justify-content-center align-items-center">
-                        <h4 class="mb-0">{{removeButtonText}}</h4>
+                        <h4 class="mb-0" v-if="!lessClicked || (lessClicked && clickedID !== dish.id)">{{removeButtonText}}</h4>
+                        <i class="fa-solid fa-check" v-else-if="lessClicked && clickedID === dish.id"></i>
                     </div>
 
                     <div class="row ">
@@ -69,7 +71,12 @@ export default {
             apiLoaded: false,
             orderAdded: false,
             addButtonText: '+',
-            removeButtonText: '-'
+            removeButtonText: '-',
+            plusClicked: false,
+            plusClock: null,
+            lessClicked: false,
+            lessClock: null,
+            clickedID: null
         }
     },
         methods: {
@@ -93,10 +100,20 @@ export default {
         // Funzione emit per aggiungere al carrello
         addToCart: function(order){
             this.$emit('sendOrder', {orderToSend: order, type: 'add'});
+            this.plusClicked = true;
+            this.clickedID = order.id;
+            this.plusClock = setTimeout(() => {
+                this.plusClicked = false;
+            }, 200);
         },
         // rimozione di un elemento dal carrello
         removeFromCart: function (order) {
             this.$emit('removeOneDish',  {orderToSend: order, type: 'remove'});
+            this.lessClicked = true;
+            this.clickedID = order.id;
+            this.lessClock = setTimeout(() => {
+                this.lessClicked = false;
+            }, 200);
         }
     },
     created: function(){

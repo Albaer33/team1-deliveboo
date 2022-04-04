@@ -4,11 +4,13 @@
         <div class="container">
             <div class="row row-cols-1 g-3">
                 <div class="col" v-for="restaurant in filteredRestaurants" :key="restaurant.id">
-                    <div class="filtered_restaurant_wrapper w-100 d-flex justify-content-between align-items-center">
-                        <img class="w-50 h_100p" :src="restaurant.immagine" :alt="'Immagine di ' + restaurant.nome_attivita" v-if="restaurant.immagine.includes('https')">
-                        <img class="w-50 h_100p" :src="require(`/storage/app/public/${restaurant.immagine}`)" :alt="'Immagine di ' + restaurant.nome_attivita" v-else>
-                        <h3 class="mb-0 text-uppercase text-end">{{restaurant.nome_attivita}}</h3>
-                    </div>
+                    <router-link :to="{name:'restaurants', params:{slug:restaurant.slug}}">
+                        <div class="filtered_restaurant_wrapper w-100 d-flex justify-content-between align-items-center">
+                            <img class="restaurant_thumb" :src="restaurant.immagine" :alt="'Immagine di ' + restaurant.nome_attivita" v-if="restaurant.immagine.includes('https')">
+                            <img class="restaurant_thumb" :src="require(`/storage/app/public/${restaurant.immagine}`)" :alt="'Immagine di ' + restaurant.nome_attivita" v-else>
+                            <h3 class="mb-0 text-uppercase text-end">{{restaurant.nome_attivita}}</h3>
+                        </div>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -69,6 +71,26 @@ export default {
         border: 5px solid $primary_color;
         border-radius: 20px;
         overflow: hidden;
-        padding-right: 5px;
+        padding-right: 20px;
+
+        h3{
+            color: $secondary_color;
+        }
+
+        .restaurant_thumb{
+
+            height: 100px;
+
+            @media screen and (min-width: 768px){
+                &{
+                    height: 150px;
+                }
+            }
+            @media screen and (min-width: 992px){
+                &{
+                    height: 200px;
+                }
+            }
+        }
     }
 </style>
