@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+Home
+@endsection
+
 @section('content')
     <section>
         <div class="container">

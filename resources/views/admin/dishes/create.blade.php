@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+Creazione Piatto
+@endsection
+
 @section('content')
     <section>
         <h2>Crea un nuovo piatto</h2>

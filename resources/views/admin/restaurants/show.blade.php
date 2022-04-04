@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+Il tuo Ristorante
+@endsection
+
 @section('content')
     <section>
 

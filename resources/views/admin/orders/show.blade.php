@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+Un ordine specifico
+@endsection
+
 @section('content')
     <section>
         <div class="container">

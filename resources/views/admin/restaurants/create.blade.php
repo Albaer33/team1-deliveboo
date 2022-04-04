@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+Creazione Ristorante
+@endsection
+
 @section('content')
 
 @if ( ( !isset($user->createdRestaurants ) ) && ( $user->createdRestaurants ) === null )

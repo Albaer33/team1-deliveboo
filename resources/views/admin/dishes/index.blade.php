@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+Tutti i tuoi Piatti
+@endsection
+
 @section('content')
     <section>
 

@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+I tuoi ordini
+@endsection
+
 @section('content')
     <section>
         <h1 class="title-c">Storico Ordini</h1>
