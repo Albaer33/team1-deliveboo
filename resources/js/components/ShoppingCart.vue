@@ -7,36 +7,60 @@
             <div class="shopping_cart_content w-100 h-100 d-flex flex-column justify-content-stretch p-3 text-white" v-else>
                 <!-- Sezione con la X -->
                 <div class="close_section w-100 d-flex justify-content-end" :class="cartBodyClass">
-                    <i class="fa-solid fa-x fs-5 p-2 border border-2 border-white rounded-circle" @click="closeCart"></i>
+                    <div class="close_cart d-flex justify-content-center align-items-center mb-5">
+                        <i class="me-0 fa-solid fa-x fs-6" @click="closeCart"></i>
+                    </div>
                 </div>
                 <!-- Lista ordini -->
-                <div class="cart_body w-100 h-100 d-flex flex-column" :class="cartBodyClass">
-                    <h3 class="text-center my-5">I tuoi ordini</h3>
-                    <div class="orders_box w-100 h-100 flex-grow-1 d-flex flex-column border border-3 border-white rounded p-2 space-padding-shopping-cart">
-                        <div class="d-flex justify-content-between space-shopping-cart">
-
-                            <div>Prodotti</div>
-
-                            <div>Quantità</div>
-
-                            <div>Totale</div>
-
-                            <div>Cancella</div>
-
+                <div class="container-fluid orders_container">
+                    <div class="row row-cols-4">
+                        <div class="col">
+                            <div class="title_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h4 class="fw-bold">Prodotti</h4>
+                            </div>
                         </div>
-
-                        <div class="single_order justify-content-between d-flex align-items-center mb-3" v-for="order in orders" :key="order.id">
-                            
-                            <span>{{order.name}}</span>
-                            <span>{{order.amount}}</span>
-                            <span>{{order.priceTot}}</span>
-                            <i class="fa-solid fa-x fs-5 p-1 text-white" @click="removeOrder(order.id)"></i>
+                        <div class="col">
+                            <div class="title_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h4 class="fw-bold">Quantità</h4>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="title_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h4 class="fw-bold">Totale</h4>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="title_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h4 class="fw-bold">Cancella</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-4" v-for="order in orders" :key="order.id">
+                        <div class="col">
+                            <div class="info_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h5>{{order.name}}</h5>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h5>{{order.amount}}</h5>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <h5>{{order.priceTot}}</h5>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid remove_button fa-x fs-5 p-1 text-white" @click="removeOrder(order.id)"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Sezione Conferma -->
                 <div class="confirm_section w-100 d-flex justify-content-center">
-                    <router-link :to="`/checkout`" class="confirm_button p-3 border border-2 border-white rounded text-white mt-5" >Vai al pagamento</router-link>
+                    <router-link :to="`/checkout`" v-if="orders.length > 0" class="confirm_button p-3 border border-2 border-white rounded text-white mt-5" >Vai al pagamento</router-link>
                 </div>
             </div>
         </div>
@@ -112,6 +136,26 @@ export default {
         z-index: 10000;
         background-color: $primary_color;
         transition-duration: 1s;
+
+        .close_cart{
+            border: 2px solid white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .orders_container{
+
+            h4,
+            h5,
+            .remove_button{
+                margin-bottom: 20px;
+            }
+
+            h5{
+                text-align: center;
+            }
+        }
         
         i{
 
@@ -119,7 +163,7 @@ export default {
 
         }
 
-        h5{
+        .cart_title{
             color: white;
             writing-mode: vertical-lr; 
             text-orientation: upright;

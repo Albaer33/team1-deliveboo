@@ -2907,6 +2907,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ShoppingCart',
   data: function data() {
@@ -3308,6 +3332,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'FilteredRestaurant',
@@ -3519,6 +3545,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Restaurant',
@@ -3532,7 +3560,12 @@ __webpack_require__.r(__webpack_exports__);
       apiLoaded: false,
       orderAdded: false,
       addButtonText: '+',
-      removeButtonText: '-'
+      removeButtonText: '-',
+      plusClicked: false,
+      plusClock: null,
+      lessClicked: false,
+      lessClock: null,
+      clickedID: null
     };
   },
   methods: {
@@ -3550,17 +3583,31 @@ __webpack_require__.r(__webpack_exports__);
     },
     // Funzione emit per aggiungere al carrello
     addToCart: function addToCart(order) {
+      var _this2 = this;
+
       this.$emit('sendOrder', {
         orderToSend: order,
         type: 'add'
       });
+      this.plusClicked = true;
+      this.clickedID = order.id;
+      this.plusClock = setTimeout(function () {
+        _this2.plusClicked = false;
+      }, 200);
     },
     // rimozione di un elemento dal carrello
     removeFromCart: function removeFromCart(order) {
+      var _this3 = this;
+
       this.$emit('removeOneDish', {
         orderToSend: order,
         type: 'remove'
       });
+      this.lessClicked = true;
+      this.clickedID = order.id;
+      this.lessClock = setTimeout(function () {
+        _this3.lessClicked = false;
+      }, 200);
     }
   },
   created: function created() {
@@ -27100,7 +27147,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.space-shopping-cart[data-v-c86466da] {\n  font-size: 25px;\n}\n.space-padding-shopping-cart[data-v-c86466da] {\n  padding: 20px;\n}\n.shopping_cart[data-v-c86466da] {\n  position: fixed;\n  z-index: 10000;\n  background-color: #00ccbc;\n  transition-duration: 1s;\n}\n.shopping_cart i[data-v-c86466da] {\n  cursor: pointer;\n}\n.shopping_cart h5[data-v-c86466da] {\n  color: white;\n  -ms-writing-mode: tb-lr;\n      writing-mode: vertical-lr;\n  text-orientation: upright;\n}\n.shopping_cart[data-v-c86466da]:hover {\n  /* cursor: pointer; */\n  transform: translateY(-50%) scale(1.2);\n}\n.shopping_cart .cart_body[data-v-c86466da] {\n  overflow-y: auto;\n}\n.shopping_cart .cart_title.appearing[data-v-c86466da],\n.shopping_cart .cart_body.appearing[data-v-c86466da],\n.shopping_cart .close_section.appearing[data-v-c86466da] {\n  -webkit-animation: cart_appear-data-v-c86466da 1s linear 1;\n          animation: cart_appear-data-v-c86466da 1s linear 1;\n}\n.shopping_cart .cart_title.disappearing[data-v-c86466da],\n.shopping_cart .cart_body.disappearing[data-v-c86466da],\n.shopping_cart .close_section.disappearing[data-v-c86466da] {\n  -webkit-animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n          animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n}\n.shopping_cart.small[data-v-c86466da] {\n  width: 50px;\n  height: 210px;\n  padding: 5px;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n  cursor: pointer;\n}\n.shopping_cart.big[data-v-c86466da] {\n  width: 90vw;\n  height: 90vh;\n  padding: 10px;\n  top: 5vh;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 5px;\n  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);\n}\n@-webkit-keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.space-shopping-cart[data-v-c86466da] {\n  font-size: 25px;\n}\n.space-padding-shopping-cart[data-v-c86466da] {\n  padding: 20px;\n}\n.shopping_cart[data-v-c86466da] {\n  position: fixed;\n  z-index: 10000;\n  background-color: #00ccbc;\n  transition-duration: 1s;\n}\n.shopping_cart .close_cart[data-v-c86466da] {\n  border: 2px solid white;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n}\n.shopping_cart .orders_container h4[data-v-c86466da],\n.shopping_cart .orders_container h5[data-v-c86466da],\n.shopping_cart .orders_container .remove_button[data-v-c86466da] {\n  margin-bottom: 20px;\n}\n.shopping_cart .orders_container h5[data-v-c86466da] {\n  text-align: center;\n}\n.shopping_cart i[data-v-c86466da] {\n  cursor: pointer;\n}\n.shopping_cart .cart_title[data-v-c86466da] {\n  color: white;\n  -ms-writing-mode: tb-lr;\n      writing-mode: vertical-lr;\n  text-orientation: upright;\n}\n.shopping_cart[data-v-c86466da]:hover {\n  /* cursor: pointer; */\n  transform: translateY(-50%) scale(1.2);\n}\n.shopping_cart .cart_body[data-v-c86466da] {\n  overflow-y: auto;\n}\n.shopping_cart .cart_title.appearing[data-v-c86466da],\n.shopping_cart .cart_body.appearing[data-v-c86466da],\n.shopping_cart .close_section.appearing[data-v-c86466da] {\n  -webkit-animation: cart_appear-data-v-c86466da 1s linear 1;\n          animation: cart_appear-data-v-c86466da 1s linear 1;\n}\n.shopping_cart .cart_title.disappearing[data-v-c86466da],\n.shopping_cart .cart_body.disappearing[data-v-c86466da],\n.shopping_cart .close_section.disappearing[data-v-c86466da] {\n  -webkit-animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n          animation: cart_disappear-data-v-c86466da 0.2s linear 1;\n}\n.shopping_cart.small[data-v-c86466da] {\n  width: 50px;\n  height: 210px;\n  padding: 5px;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n  box-shadow: -11px 8px 20px 3px rgba(0, 0, 0, 0.08);\n  cursor: pointer;\n}\n.shopping_cart.big[data-v-c86466da] {\n  width: 90vw;\n  height: 90vh;\n  padding: 10px;\n  top: 5vh;\n  left: 50%;\n  transform: translateX(-50%);\n  border-radius: 5px;\n  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);\n}\n@-webkit-keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes cart_appear-data-v-c86466da {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes cart_disappear-data-v-c86466da {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}", ""]);
 
 // exports
 
@@ -27176,7 +27223,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.filtered_restaurant_wrapper[data-v-56dba7fd] {\n  border: 5px solid #00ccbc;\n  border-radius: 20px;\n  overflow: hidden;\n  padding-right: 5px;\n}", ""]);
+exports.push([module.i, "/* Colore primario */\n/* Colore secondario */\n/* Colore  */\n.filtered_restaurant_wrapper[data-v-56dba7fd] {\n  border: 5px solid #00ccbc;\n  border-radius: 20px;\n  overflow: hidden;\n  padding-right: 20px;\n}\n.filtered_restaurant_wrapper h3[data-v-56dba7fd] {\n  color: #440063;\n}\n.filtered_restaurant_wrapper .restaurant_thumb[data-v-56dba7fd] {\n  height: 100px;\n}\n@media screen and (min-width: 768px) {\n.filtered_restaurant_wrapper .restaurant_thumb[data-v-56dba7fd] {\n    height: 150px;\n}\n}\n@media screen and (min-width: 992px) {\n.filtered_restaurant_wrapper .restaurant_thumb[data-v-56dba7fd] {\n    height: 200px;\n}\n}", ""]);
 
 // exports
 
@@ -29953,7 +30000,7 @@ var render = function () {
               attrs: { id: "search_div" },
             },
             [
-              _c("h1", { staticClass: "mb-4" }, [
+              _c("h1", { staticClass: "mb-4 text-start" }, [
                 _vm._v("I piatti che ami, a domicilio."),
               ]),
               _vm._v(" "),
@@ -30891,65 +30938,91 @@ var render = function () {
                     class: _vm.cartBodyClass,
                   },
                   [
-                    _c("i", {
-                      staticClass:
-                        "fa-solid fa-x fs-5 p-2 border border-2 border-white rounded-circle",
-                      on: { click: _vm.closeCart },
-                    }),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "close_cart d-flex justify-content-center align-items-center mb-5",
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "me-0 fa-solid fa-x fs-6",
+                          on: { click: _vm.closeCart },
+                        }),
+                      ]
+                    ),
                   ]
                 ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: "cart_body w-100 h-100 d-flex flex-column",
-                    class: _vm.cartBodyClass,
-                  },
+                  { staticClass: "container-fluid orders_container" },
                   [
-                    _c("h3", { staticClass: "text-center my-5" }, [
-                      _vm._v("I tuoi ordini"),
-                    ]),
+                    _vm._m(0),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "orders_box w-100 h-100 flex-grow-1 d-flex flex-column border border-3 border-white rounded p-2 space-padding-shopping-cart",
-                      },
-                      [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _vm._l(_vm.orders, function (order) {
-                          return _c(
-                            "div",
-                            {
-                              key: order.id,
-                              staticClass:
-                                "single_order justify-content-between d-flex align-items-center mb-3",
-                            },
-                            [
-                              _c("span", [_vm._v(_vm._s(order.name))]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v(_vm._s(order.amount))]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v(_vm._s(order.priceTot))]),
-                              _vm._v(" "),
-                              _c("i", {
+                    _vm._l(_vm.orders, function (order) {
+                      return _c(
+                        "div",
+                        { key: order.id, staticClass: "row row-cols-4" },
+                        [
+                          _c("div", { staticClass: "col" }, [
+                            _c(
+                              "div",
+                              {
                                 staticClass:
-                                  "fa-solid fa-x fs-5 p-1 text-white",
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.removeOrder(order.id)
+                                  "info_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+                              },
+                              [_c("h5", [_vm._v(_vm._s(order.name))])]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "info_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+                              },
+                              [_c("h5", [_vm._v(_vm._s(order.amount))])]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "info_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+                              },
+                              [_c("h5", [_vm._v(_vm._s(order.priceTot))])]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "info_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+                              },
+                              [
+                                _c("i", {
+                                  staticClass:
+                                    "fa-solid remove_button fa-x fs-5 p-1 text-white",
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.removeOrder(order.id)
+                                    },
                                   },
-                                },
-                              }),
-                            ]
-                          )
-                        }),
-                      ],
-                      2
-                    ),
-                  ]
+                                }),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      )
+                    }),
+                  ],
+                  2
                 ),
                 _vm._v(" "),
                 _c(
@@ -30959,15 +31032,17 @@ var render = function () {
                       "confirm_section w-100 d-flex justify-content-center",
                   },
                   [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass:
-                          "confirm_button p-3 border border-2 border-white rounded text-white mt-5",
-                        attrs: { to: "/checkout" },
-                      },
-                      [_vm._v("Vai al pagamento")]
-                    ),
+                    _vm.orders.length > 0
+                      ? _c(
+                          "router-link",
+                          {
+                            staticClass:
+                              "confirm_button p-3 border border-2 border-white rounded text-white mt-5",
+                            attrs: { to: "/checkout" },
+                          },
+                          [_vm._v("Vai al pagamento")]
+                        )
+                      : _vm._e(),
                   ],
                   1
                 ),
@@ -30982,19 +31057,51 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "d-flex justify-content-between space-shopping-cart" },
-      [
-        _c("div", [_vm._v("Prodotti")]),
-        _vm._v(" "),
-        _c("div", [_vm._v("Quantità")]),
-        _vm._v(" "),
-        _c("div", [_vm._v("Totale")]),
-        _vm._v(" "),
-        _c("div", [_vm._v("Cancella")]),
-      ]
-    )
+    return _c("div", { staticClass: "row row-cols-4" }, [
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "title_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+          },
+          [_c("h4", { staticClass: "fw-bold" }, [_vm._v("Prodotti")])]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "title_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+          },
+          [_c("h4", { staticClass: "fw-bold" }, [_vm._v("Quantità")])]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "title_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+          },
+          [_c("h4", { staticClass: "fw-bold" }, [_vm._v("Totale")])]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "title_wrapper w-100 h-100 d-flex justify-content-center align-items-center",
+          },
+          [_c("h4", { staticClass: "fw-bold" }, [_vm._v("Cancella")])]
+        ),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -31018,7 +31125,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "suggestions_section mt_30" }, [
+  return _c("section", { staticClass: "suggestions_section mt_30 py_70" }, [
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row row-cols-1" }, [
         _vm._m(0),
@@ -31345,37 +31452,59 @@ var render = function () {
             "div",
             { staticClass: "row row-cols-1 g-3" },
             _vm._l(_vm.filteredRestaurants, function (restaurant) {
-              return _c("div", { key: restaurant.id, staticClass: "col" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "filtered_restaurant_wrapper w-100 d-flex justify-content-between align-items-center",
-                  },
-                  [
-                    restaurant.immagine.includes("https")
-                      ? _c("img", {
-                          staticClass: "w-50 h_100p",
-                          attrs: {
-                            src: restaurant.immagine,
-                            alt: "Immagine di " + restaurant.nome_attivita,
-                          },
-                        })
-                      : _c("img", {
-                          staticClass: "w-50 h_100p",
-                          attrs: {
-                            src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
-                              restaurant.immagine),
-                            alt: "Immagine di " + restaurant.nome_attivita,
-                          },
-                        }),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "mb-0 text-uppercase text-end" }, [
-                      _vm._v(_vm._s(restaurant.nome_attivita)),
-                    ]),
-                  ]
-                ),
-              ])
+              return _c(
+                "div",
+                { key: restaurant.id, staticClass: "col" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "restaurants",
+                          params: { slug: restaurant.slug },
+                        },
+                      },
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "filtered_restaurant_wrapper w-100 d-flex justify-content-between align-items-center",
+                        },
+                        [
+                          restaurant.immagine.includes("https")
+                            ? _c("img", {
+                                staticClass: "restaurant_thumb",
+                                attrs: {
+                                  src: restaurant.immagine,
+                                  alt:
+                                    "Immagine di " + restaurant.nome_attivita,
+                                },
+                              })
+                            : _c("img", {
+                                staticClass: "restaurant_thumb",
+                                attrs: {
+                                  src: __webpack_require__("./storage/app/public sync recursive ^\\.\\/.*$")("./" +
+                                    restaurant.immagine),
+                                  alt:
+                                    "Immagine di " + restaurant.nome_attivita,
+                                },
+                              }),
+                          _vm._v(" "),
+                          _c(
+                            "h3",
+                            { staticClass: "mb-0 text-uppercase text-end" },
+                            [_vm._v(_vm._s(restaurant.nome_attivita))]
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              )
             }),
             0
           ),
@@ -31530,7 +31659,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _vm._l(_vm.dishes, function (dish, index) {
-                return _c("div", { key: index }, [
+                return _c("div", { key: index, staticClass: "my_20" }, [
                   dish.visibile === 1
                     ? _c(
                         "div",
@@ -31551,9 +31680,14 @@ var render = function () {
                               },
                             },
                             [
-                              _c("h4", { staticClass: "mb-0" }, [
-                                _vm._v(_vm._s(_vm.addButtonText)),
-                              ]),
+                              !_vm.plusClicked ||
+                              (_vm.plusClicked && _vm.clickedID !== dish.id)
+                                ? _c("h4", { staticClass: "mb-0" }, [
+                                    _vm._v(_vm._s(_vm.addButtonText)),
+                                  ])
+                                : _vm.plusClicked && _vm.clickedID === dish.id
+                                ? _c("i", { staticClass: "fa-solid fa-check" })
+                                : _vm._e(),
                             ]
                           ),
                           _vm._v(" "),
@@ -31569,9 +31703,14 @@ var render = function () {
                               },
                             },
                             [
-                              _c("h4", { staticClass: "mb-0" }, [
-                                _vm._v(_vm._s(_vm.removeButtonText)),
-                              ]),
+                              !_vm.lessClicked ||
+                              (_vm.lessClicked && _vm.clickedID !== dish.id)
+                                ? _c("h4", { staticClass: "mb-0" }, [
+                                    _vm._v(_vm._s(_vm.removeButtonText)),
+                                  ])
+                                : _vm.lessClicked && _vm.clickedID === dish.id
+                                ? _c("i", { staticClass: "fa-solid fa-check" })
+                                : _vm._e(),
                             ]
                           ),
                           _vm._v(" "),
