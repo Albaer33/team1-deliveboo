@@ -20,8 +20,8 @@
                     </tr>
                 </thead>
                             <tbody>
+                            @foreach ($orders as $order)
                                 <tr>
-                        @foreach ($orders as $order)
                                     <th scope="row">{{$order->id}}</th>
                                     <td>{{$order->nome}}</td>
                                     <td>{{$order->indirizzo}}</td>
@@ -36,8 +36,8 @@
                                         <td class="non-pagato">No</td>
                                     @endif
                                     <td><a href="{{route('admin.orders.show',['order' => $order->id])}}" class="btn btn_ms_primary_color">Dettagli</a></td>
-                        @endforeach
-                                  </tr>
+                                </tr>
+                            @endforeach
                                 </tbody>
                 </table>
         </div>
