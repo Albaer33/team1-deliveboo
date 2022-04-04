@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Home from './pages/Home.vue';
 import Restaurant from './pages/Restaurant.vue';
+import FilteredRestaurant from './pages/FilteredRestaurant.vue';
 import Dish from './pages/Dish.vue';
 import Tipology from './pages/Tipology.vue';
 import Checkout from './pages/Checkout.vue';
@@ -22,6 +23,11 @@ const router = new VueRouter({
             path: "/restaurants/:slug",
             name: "restaurants",
             component: Restaurant
+        },
+        {
+            path: "/filtered-restaurant",
+            name: "filtered-restaurant",
+            component: FilteredRestaurant
         },
         {
             path: "/dish/:slug",

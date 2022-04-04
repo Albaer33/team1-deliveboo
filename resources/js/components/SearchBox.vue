@@ -1,8 +1,8 @@
 <template>
     <div class="search_box d-flex flex-column justify-content-center align-items-start">
         <h4>Cerca un ristorante per nome:</h4>
-        <input v-model="searchedRestaurant" class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante">
-        <router-link @click="searchRestaurant" :to="{name:'restaurants', params:{slug:searchRestaurant()}}" class="green_button mt-3 fw-bold">Cerca</router-link>
+        <input v-model="restaurantFilter.word" class="w-100 form-control form-control-sm" type="search" placeholder="Inserisci qui il ristorante">
+        <router-link :to="{name:'filtered-restaurant'}" class="green_button mt-3 fw-bold">Cerca</router-link>
     </div>
 </template>
 
@@ -12,29 +12,60 @@ export default {
 
     props: {
         restaurants: Array,
+        /* tipologies: Array */
+        restaurantFilter: Object
+
     },
 
     data: function(){
         return {
             searchedRestaurant: '',
-            slugToSearch: '',
+            // slugToSearch: '',
+            /* myValue: null */
         };
     },
 
     methods: {
         // Funzione ricerca ristorante (filtro)
-        searchRestaurant: function(){
-            // forEach sull'array dei ristoranti
-            this.restaurants.forEach((thisRestaurant) => {
-                // Comparazione stringhe
-                if(thisRestaurant.nome_attivita.toLowerCase().trim().includes(this.searchedRestaurant.toLowerCase().trim()))   {
-                    this.slugToSearch = thisRestaurant.slug;
-                }
-            });
+        // sendRestaurant: function(){
 
-            return this.slugToSearch;
-        }
-    },
+        //     this.searchedRestaurant = this.searchedRestaurant.toLowerCase().trim();
+        //     this.$emit('filterString', this.searchedRestaurant);
+
+            // forEach sull'array dei ristoranti
+            // this.restaurants.forEach((thisRestaurant) => {
+
+                // Comparazione dei nomi entrambi in trim e toLowerCase
+                // if( this.searchedRestaurant.toLowerCase().trim() === (thisRestaurant.nome_attivita.toLowerCase().trim()) /* || thisRestaurant.slug */ ){
+                //     this.slugToSearch = thisRestaurant.slug;
+                    /* this.myValue = 1; */
+                    /* return this.myValue; */
+
+                }
+            //    else{
+
+            //        this.tipologies.forEach((thisTipologies) => {
+
+             //           if( this.searchedRestaurant.toLowerCase().trim() === (thisTipologies.nome.toLowerCase().trim()) /* || thisTipologies.slug */ ){
+            //                this.slugToSearch = thisTipologies.slug;
+             //               this.myValue = 2;
+                            /* return this.myValue; */
+                            
+
+             //           }
+
+              //      });
+
+             //   }
+
+
+            // });
+            //  console.log(this.searchedRestaurant)
+
+            // return this.slugToSearch;
+
+
+        // }
 }
 </script>
 
