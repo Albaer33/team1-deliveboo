@@ -2592,24 +2592,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
+  props: {
+    ordini: Array
+  },
   data: function data() {
     return {
+      sendSuccess: false,
+      sendSuccessPost: false,
       error: '',
-      form: {
+      formData: {
+        clientName: "",
+        clientPhone: "",
+        clientEmail: "",
+        clientAdress: "",
+        clientDetails: "",
+        prezzoTot: this.amountShop(),
+        codice_transazione: '',
+        pagato: true
+      },
+      price: {
         token: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
         prezzoTot: this.amountShop()
       }
     };
-  },
-  props: {
-    ordini: Array,
-    authorization: {
-      required: true,
-      type: String
-    }
   },
   methods: {
     amountShop: function amountShop() {
@@ -2620,13 +2668,32 @@ __webpack_require__.r(__webpack_exports__);
       return prezzoTot;
     },
     PagamentoFinaleDelDestino: function PagamentoFinaleDelDestino() {
+      var _this = this;
+
       var axiosConfig = {
         headers: {
           'Content-Type': 'application/json',
           "Accept": "application/json"
         }
       };
-      axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig).then(function (response) {});
+      axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig).then(function (response) {
+        return _this.sendSuccessPost = true;
+      });
+    },
+    InviaDatiForm: function InviaDatiForm() {
+      var method = "post";
+      var axiosConfig = {
+        headers: {
+          'Content-Type': 'application/json',
+          "Accept": "application/json"
+        }
+      };
+      axios.post('http://127.0.0.1:8000/api/orders/save', this.formData, axiosConfig).then(function (response) {
+        console.log(response.data);
+      });
+    },
+    confermaDati: function confermaDati() {
+      this.sendSuccess = true;
     },
     onLoad: function onLoad() {
       this.$emit('loading');
@@ -2643,12 +2710,20 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.$emit('onError', message);
       }
+    },
+    getToken: function getToken() {
+      var _this2 = this;
+
+      axios.get('http://127.0.0.1:8000/api/orders/generate').then(function (response) {
+        return _this2.formData.codice_transazione = response.data.token;
+      });
     }
   },
   created: function created() {
     /*         this.onSuccess();
             this.onError();
             this.onLoad(); */
+    this.getToken();
     this.amountShop();
   }
 });
@@ -3100,6 +3175,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Checkout',
@@ -3108,13 +3184,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      tokenApi: '',
       disableBuyButton: true,
-      loadingPayment: true,
-      form: {
-        token: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-        dataPrezzo: this.prezzoFinale
-      }
+      loadingPayment: true
     };
   },
   mounted: function mounted() {
@@ -3153,21 +3224,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     beforeBuy: function beforeBuy() {
       this.$refs.paymentRef.$refs.paymentBtnRef.click();
     },
-    buy: function buy() {},
-    getToken: function getToken() {
-      var _this = this;
-
-      axios.get('http://127.0.0.1:8000/api/orders/generate').then(function (response) {
-        return _this.tokenApi = response.data.token;
-      });
-    }
+    buy: function buy() {}
   },
   created: function created() {
     window.scrollTo(0, 0);
-    var tokenApi = null;
-    this.getToken();
     this.loadingPayment = false;
-    this.form.product = this.$route.params.id;
     /* this.handleLoading(); */
   }
 });
@@ -30339,39 +30400,72 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container row justify-content-center" }, [
-    _c(
-      "div",
-      {
-        staticClass: "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
-      },
-      [
-        _c(
-          "button",
+    this.sendSuccess
+      ? _c(
+          "div",
           {
-            on: {
-              click: function ($event) {
-                return _vm.PagamentoFinaleDelDestino()
-              },
-            },
+            staticClass:
+              "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
           },
           [
-            _c("v-braintree", {
-              attrs: {
-                authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                locale: "it_IT",
-                btnText: "Paga",
-              },
-              on: {
-                success: _vm.onSuccess,
-                error: _vm.onError,
-                load: _vm.onLoad,
-              },
-            }),
-          ],
-          1
-        ),
-      ]
-    ),
+            !this.sendSuccessPost
+              ? _c("div", [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function ($event) {
+                          return _vm.PagamentoFinaleDelDestino()
+                        },
+                      },
+                    },
+                    [
+                      _c("v-braintree", {
+                        attrs: {
+                          authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                          locale: "it_IT",
+                          btnText: "Paga",
+                        },
+                        on: {
+                          success: _vm.onSuccess,
+                          error: _vm.onError,
+                          load: _vm.onLoad,
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ])
+              : _c("div", [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.PagamentoFinaleDelDestino(), _vm.InviaDatiForm()
+                        },
+                      },
+                    },
+                    [
+                      _c("v-braintree", {
+                        attrs: {
+                          authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                          locale: "it_IT",
+                          btnText: "Paga",
+                        },
+                        on: {
+                          success: _vm.onSuccess,
+                          error: _vm.onError,
+                          load: _vm.onLoad,
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ]),
+          ]
+        )
+      : _vm._e(),
     _vm._v(" "),
     _c("div", [
       _vm.error
@@ -30381,89 +30475,222 @@ var render = function () {
         : _vm._e(),
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    !this.sendSuccess
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
+          },
+          [
+            _c("form", { attrs: { id: "formData" } }, [
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "clientName" } },
+                  [_vm._v("Inserisci Nome")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.clientName,
+                      expression: "formData.clientName",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    minlength: "1",
+                    maxlength: "25",
+                    id: "clientName",
+                    name: "clientName",
+                  },
+                  domProps: { value: _vm.formData.clientName },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "clientName", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "clientPhone" } },
+                  [_vm._v("N° telefono")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.clientPhone,
+                      expression: "formData.clientPhone",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    minlength: "10",
+                    maxlength: "15",
+                    id: "clientPhone",
+                  },
+                  domProps: { value: _vm.formData.clientPhone },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "clientPhone", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "clientEmail" } },
+                  [_vm._v("Inserisci email")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.clientEmail,
+                      expression: "formData.clientEmail",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "email",
+                    minlength: "1",
+                    maxlength: "50",
+                    id: "clientEmail",
+                  },
+                  domProps: { value: _vm.formData.clientEmail },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "clientEmail", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "label",
+                  { staticClass: "form-label", attrs: { for: "clientAdress" } },
+                  [_vm._v("Inserisci indirizzo di consegna")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.clientAdress,
+                      expression: "formData.clientAdress",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    minlength: "5",
+                    maxlength: "50",
+                    id: "clientAdress",
+                  },
+                  domProps: { value: _vm.formData.clientAdress },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.formData,
+                        "clientAdress",
+                        $event.target.value
+                      )
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "form-label",
+                    attrs: { for: "clientDetails" },
+                  },
+                  [_vm._v("Inserisci informazioni")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.clientDetails,
+                      expression: "formData.clientDetails",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    minlength: "1",
+                    maxlength: "60000",
+                    id: "clientDetails",
+                  },
+                  domProps: { value: _vm.formData.clientDetails },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.formData,
+                        "clientDetails",
+                        $event.target.value
+                      )
+                    },
+                  },
+                }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { type: "submit" },
+                on: {
+                  click: function ($event) {
+                    return _vm.confermaDati()
+                  },
+                },
+              },
+              [_vm._v("Prosegui al pagamento")]
+            ),
+          ]
+        )
+      : _vm._e(),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
-      },
-      [
-        _c("form", [
-          _c("div", { staticClass: "mb-3" }, [
-            _c(
-              "label",
-              { staticClass: "form-label", attrs: { for: "clientEmail" } },
-              [_vm._v("Inserisci email")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "email", id: "clientEmail" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c(
-              "label",
-              { staticClass: "form-label", attrs: { for: "clientAdress" } },
-              [_vm._v("Inserisci indirizzo di consegna")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "text", id: "clientAdress" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c(
-              "label",
-              {
-                staticClass: "form-label",
-                attrs: { for: "exampleInputPassword1" },
-              },
-              [_vm._v("Password")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "password", id: "exampleInputPassword1" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3 form-check" }, [
-            _c("input", {
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox", id: "exampleCheck1" },
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "form-check-label",
-                attrs: { for: "exampleCheck1" },
-              },
-              [_vm._v("Check me out")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
-          ),
-        ]),
-      ]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -31035,7 +31262,7 @@ var render = function () {
             _vm._v(" "),
             _c("Payment", {
               ref: "paymentRef",
-              attrs: { authorization: _vm.tokenApi, ordini: _vm.orders },
+              attrs: { ordini: _vm.orders },
               on: {
                 loading: _vm.handleLoading,
                 onSuccess: _vm.paymentOnSuccess,

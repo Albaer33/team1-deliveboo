@@ -33,3 +33,8 @@ Route::post('orders/make/payment','Api\OrderController@makePayment');
 //Rotte Prodotti
 Route::get('products','Api\ProductController@index');
 
+
+
+// Rotta salva ordine
+Route::post('orders/save','Api\OrderController@saveOrder');
+

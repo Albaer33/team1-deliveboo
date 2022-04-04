@@ -1,15 +1,16 @@
 <template>
     <section>
 
-                <h1 >CARRELLO</h1>
+        <h1 >CARRELLO</h1>
+
         <div v-if="orders.length > 0" class="container row justify-content-center">
 
                 <!-- Step one: add an empty container to your page -->
 
 
-<!--             {{token}}
+<!--             {{token}} -->
 
-            {{form}} -->
+            <!-- {{form}} -->
            
 
             <div class="container col-sm-12 col-md-12 col-lg-6 col-xl-4">
@@ -26,7 +27,7 @@
 
             </div>
 
-            <Payment ref="paymentRef" :authorization="tokenApi" @loading="handleLoading" @onSuccess="paymentOnSuccess" @onError="paymentOnError" :ordini="orders"/>
+            <Payment ref="paymentRef" @loading="handleLoading" @onSuccess="paymentOnSuccess" @onError="paymentOnError" :ordini="orders"/>
 
 <!--             <button
             
@@ -93,13 +94,8 @@ export default {
 
         return {
 
-            tokenApi : '',
             disableBuyButton: true,
             loadingPayment: true,
-            form : {
-                token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                dataPrezzo: this.prezzoFinale,
-            },
 
         }
     },
@@ -154,27 +150,12 @@ export default {
 
 
         },
-        getToken: function(){
-
-            axios.get('http://127.0.0.1:8000/api/orders/generate')
-            .then((response) => {
-                
-                return this.tokenApi = response.data.token;
-
-            });
-
-            
-
-        } 
              
     },
 
     created: function(){
         window.scrollTo(0, 0);
-        let tokenApi = null;
-        this.getToken();
         this.loadingPayment = false;
-        this.form.product = this.$route.params.id
         /* this.handleLoading(); */
     }
 

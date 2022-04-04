@@ -5,20 +5,53 @@
         <!-- <div id="dropin" /> -->
 
     <!-- authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c"  -->
-        <div class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
-            <button @click="PagamentoFinaleDelDestino()">
+        <div v-if="this.sendSuccess" class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
+            <div v-if="!this.sendSuccessPost">
 
-                <v-braintree 
-                    authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
-                    locale="it_IT" 
-                    btnText="Paga"
-                    @success="onSuccess" 
-                    @error="onError" 
-                    @load="onLoad"
-                    
-                />
+                <button  @click="PagamentoFinaleDelDestino()">
 
-            </button>
+                    <v-braintree 
+                        authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                        locale="it_IT" 
+                        btnText="Paga"
+                        @success="onSuccess" 
+                        @error="onError" 
+                        @load="onLoad"
+                        
+                    >
+
+    <!--                 <template v-slot:button="slotProps">
+                        <v-btn @click="slotProps.submit" color="success"></v-btn>
+                    </template> -->
+
+                    </v-braintree>
+
+                </button>
+
+            </div>
+            <div v-else>
+
+                <button  @click="PagamentoFinaleDelDestino(), InviaDatiForm()">
+
+                    <v-braintree 
+                        authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                        locale="it_IT" 
+                        btnText="Paga"
+                        @success="onSuccess" 
+                        @error="onError" 
+                        @load="onLoad"
+                        
+                    >
+
+    <!--                 <template v-slot:button="slotProps">
+                        <v-btn @click="slotProps.submit" color="success"></v-btn>
+                    </template> -->
+
+                    </v-braintree>
+
+                </button>
+
+            </div>
         </div>
         
         <div>
@@ -30,26 +63,33 @@
             </p>
 
         </div>
-        <div class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
-            <form>
-                        <div class="mb-3">
-                            <label for="clientEmail" class="form-label">Inserisci email</label>
-                                <input type="email" class="form-control" id="clientEmail">
-                        </div>
-                        <div class="mb-3">
-                            <label for="clientAdress" class="form-label">Inserisci indirizzo di consegna</label>
-                                <input type="text" class="form-control" id="clientAdress">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+        <div v-if="!this.sendSuccess" class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
+            <form id="formData">
+
+                <div class="mb-3">
+                    <label for="clientName" class="form-label">Inserisci Nome</label>
+                    <input type="text" minlength="1" maxlength="25" v-model="formData.clientName" class="form-control" id="clientName" name="clientName">
+                </div>
+                <div class="mb-3">
+                    <label for="clientPhone" class="form-label">N° telefono</label>
+                    <input type="text" minlength="10" maxlength="15" v-model="formData.clientPhone" class="form-control" id="clientPhone">
+                </div>
+                <div class="mb-3">
+                    <label for="clientEmail" class="form-label">Inserisci email</label>
+                    <input type="email" minlength="1" maxlength="50" v-model="formData.clientEmail" class="form-control" id="clientEmail">
+                </div>
+                <div class="mb-3">
+                    <label for="clientAdress" class="form-label">Inserisci indirizzo di consegna</label>
+                    <input type="text" minlength="5" maxlength="50" v-model="formData.clientAdress" class="form-control" id="clientAdress">
+                </div>
+                <div class="mb-3">
+                    <label for="clientDetails" class="form-label">Inserisci informazioni</label>
+                    <input type="text" minlength="1" maxlength="60000" v-model="formData.clientDetails" class="form-control" id="clientDetails">
+                </div>
+
+            </form>
+
+            <button type="submit" class="btn btn-primary" @click="confermaDati()" >Prosegui al pagamento</button>
 
         </div>
     </div>
@@ -62,28 +102,35 @@ import dropIn from "braintree-web-drop-in";
 
 export default {
     name: 'Payment',
+    props: {
+        
+        ordini: Array
+
+    },
     data: function(){
         return {
+            sendSuccess: false,
+            sendSuccessPost: false,
             error: '',
-            form : {
+            formData: {
+
+                clientName:"",
+                clientPhone:"",
+                clientEmail:"",
+                clientAdress:"",
+                clientDetails:"",
+                prezzoTot: this.amountShop(),
+                codice_transazione: '',
+                pagato: true
+
+            },
+            price : {
             
                 token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                prezzoTot: this.amountShop()
+                prezzoTot: this.amountShop(),
                 
             }
         };
-    },
-    props: {
-        
-        ordini: Array,
-
-        authorization : {
-
-            required: true,
-            type: String
-
-        }
-
     },
     methods: {
         
@@ -109,14 +156,40 @@ export default {
                 }
             };
 
-            axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.form, axiosConfig)
+            axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig)
             .then((response) => {
 
+                return this.sendSuccessPost = true;
 
             });
 
         }, 
+        InviaDatiForm: function(){
 
+            const method = "post";
+
+            let axiosConfig = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Accept": "application/json",
+                }
+            };
+
+            axios.post('http://127.0.0.1:8000/api/orders/save', this.formData, axiosConfig)
+            .then((response) => {
+
+                console.log(response.data)
+                    
+            });
+
+            
+        
+        },
+        confermaDati: function(){
+
+            this.sendSuccess = true;
+
+        },
         onLoad: function(){
 
             this.$emit('loading')
@@ -142,7 +215,17 @@ export default {
                 this.$emit('onError', message)
 
             }
-        }
+        },
+        getToken: function(){
+
+            axios.get('http://127.0.0.1:8000/api/orders/generate')
+            .then((response) => {
+                
+                return this.formData.codice_transazione = response.data.token;
+
+            });   
+
+        } 
 
     },
     created: function(){
@@ -150,7 +233,7 @@ export default {
 /*         this.onSuccess();
         this.onError();
         this.onLoad(); */
-
+        this.getToken();
         this.amountShop();
 
     }    
