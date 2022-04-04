@@ -87,6 +87,7 @@ class OrderController extends Controller
         $prezzoTot = $request->prezzoTot;
         $codice_transazione = $request->codice_transazione;
         $pagato = $request->pagato;
+        $restaurantId = $request->restaurantId;
 
         $data = [
 
@@ -97,7 +98,8 @@ class OrderController extends Controller
         'clientDetails' => $clientDetails,
         'prezzoTot' => $prezzoTot,
         'codice_transazione' => $codice_transazione,
-        'pagato' => $pagato
+        'pagato' => $pagato,
+        'restaurantId' => $restaurantId
 
         ];
         //     DB::table('orders')->insert(array(
@@ -124,7 +126,7 @@ class OrderController extends Controller
             $new_order->indirizzo = $clientAdress;
             $new_order->dettaglio = $clientDetails;
             $new_order->totale = $prezzoTot;
-            
+            $new_order->restaurant_id = $restaurantId;
             $new_order->codice_transazione = $codice_transazione;
             $new_order->pagato = $pagato;
 

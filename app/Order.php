@@ -15,7 +15,8 @@ class Order extends Model
         'totale',
         'email',
         'telefono',
-        'pagato'
+        'pagato',
+        'restaurant_id'
     ];
 
     public function dishes() {

@@ -107,8 +107,8 @@ export default {
                 clientDetails:"",
                 prezzoTot: this.amountShop(),
                 codice_transazione: '',
+                restaurantId:this.getRestaurantId(),
                 pagato: true
-
             },
             price : {
             
@@ -127,11 +127,20 @@ export default {
             this.ordini.forEach(element => { 
 
                 prezzoTot += parseFloat(element.priceTot);
-
+                
             });
 
             return prezzoTot;
+        },
+        getRestaurantId: function(){
+            let restaurant = "";
 
+            this.ordini.forEach(element => { 
+
+                restaurant = element.idRestaurant;
+            });
+
+            return restaurant;
         },
         PagamentoFinaleDelDestino: function(){
 

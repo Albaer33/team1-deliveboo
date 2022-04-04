@@ -18,10 +18,10 @@
                 <h2>Dettaglio acquisto:</h2>
 
                 <div v-for="order in orders" :key="order.id" class="">
+                    
 
                     <span>{{ order.name }} Quantità: {{ order.amount }}</span>
 
-                    <h1>{{ order.idRestaurant }}</h1>
 
                 </div>
 
