@@ -2602,6 +2602,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
@@ -30222,31 +30249,61 @@ var render = function () {
               "form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2",
           },
           [
-            _c(
-              "button",
-              {
-                on: {
-                  click: function ($event) {
-                    _vm.InviaDatiForm(), _vm.PagamentoFinaleDelDestino()
-                  },
-                },
-              },
-              [
-                _c("v-braintree", {
-                  attrs: {
-                    authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                    locale: "it_IT",
-                    btnText: "Paga",
-                  },
-                  on: {
-                    success: _vm.onSuccess,
-                    error: _vm.onError,
-                    load: _vm.onLoad,
-                  },
-                }),
-              ],
-              1
-            ),
+            !this.sendSuccessPost
+              ? _c("div", [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function ($event) {
+                          return _vm.PagamentoFinaleDelDestino()
+                        },
+                      },
+                    },
+                    [
+                      _c("v-braintree", {
+                        attrs: {
+                          authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                          locale: "it_IT",
+                          btnText: "Paga",
+                        },
+                        on: {
+                          success: _vm.onSuccess,
+                          error: _vm.onError,
+                          load: _vm.onLoad,
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ])
+              : _c("div", [
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.PagamentoFinaleDelDestino(), _vm.InviaDatiForm()
+                        },
+                      },
+                    },
+                    [
+                      _c("v-braintree", {
+                        attrs: {
+                          authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                          locale: "it_IT",
+                          btnText: "Paga",
+                        },
+                        on: {
+                          success: _vm.onSuccess,
+                          error: _vm.onError,
+                          load: _vm.onLoad,
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ]),
           ]
         )
       : _vm._e(),
@@ -30254,9 +30311,7 @@ var render = function () {
     _c("div", [
       _vm.error
         ? _c("p", { staticClass: "text-red-500 mb-4" }, [
-            _vm._v(
-              "\n\n                " + _vm._s(_vm.error) + "\n\n            "
-            ),
+            _vm._v("\n\n            " + _vm._s(_vm.error) + "\n\n        "),
           ])
         : _vm._e(),
     ]),

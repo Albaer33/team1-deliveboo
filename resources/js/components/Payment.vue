@@ -6,25 +6,52 @@
 
     <!-- authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c"  -->
         <div v-if="this.sendSuccess" class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
-            <button @click="InviaDatiForm(), PagamentoFinaleDelDestino()">
+            <div v-if="!this.sendSuccessPost">
 
-                <v-braintree 
-                    authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
-                    locale="it_IT" 
-                    btnText="Paga"
-                    @success="onSuccess" 
-                    @error="onError" 
-                    @load="onLoad"
-                    
-                >
+                <button  @click="PagamentoFinaleDelDestino()">
 
-<!--                 <template v-slot:button="slotProps">
-                    <v-btn @click="slotProps.submit" color="success"></v-btn>
-                </template> -->
+                    <v-braintree 
+                        authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                        locale="it_IT" 
+                        btnText="Paga"
+                        @success="onSuccess" 
+                        @error="onError" 
+                        @load="onLoad"
+                        
+                    >
 
-                </v-braintree>
+    <!--                 <template v-slot:button="slotProps">
+                        <v-btn @click="slotProps.submit" color="success"></v-btn>
+                    </template> -->
 
-            </button>
+                    </v-braintree>
+
+                </button>
+
+            </div>
+            <div v-else>
+
+                <button  @click="PagamentoFinaleDelDestino(), InviaDatiForm()">
+
+                    <v-braintree 
+                        authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
+                        locale="it_IT" 
+                        btnText="Paga"
+                        @success="onSuccess" 
+                        @error="onError" 
+                        @load="onLoad"
+                        
+                    >
+
+    <!--                 <template v-slot:button="slotProps">
+                        <v-btn @click="slotProps.submit" color="success"></v-btn>
+                    </template> -->
+
+                    </v-braintree>
+
+                </button>
+
+            </div>
         </div>
         
         <div>
