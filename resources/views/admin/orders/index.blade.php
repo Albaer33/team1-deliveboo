@@ -25,7 +25,7 @@ I tuoi ordini
                     </tr>
                 </thead>
                             <tbody>
-                            @foreach ($orders as $order)
+                            @foreach ($orders->reverse() as $order)
                                 <tr>
                                     <th scope="row">{{$order->id}}</th>
                                     <td>{{$order->updated_at->format('d-m-Y')}}</td>
