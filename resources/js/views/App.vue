@@ -3,7 +3,7 @@
     <ShoppingCart :orders="cart_orders" />
     <Header />
     <main>
-      <router-view @sendOrder="getOrder($event)" @removeOneDish="getOrder($event)" :orders="cart_orders"></router-view>
+      <router-view @sendOrder="getOrder($event)" @removeOneDish="getOrder($event)" :orders="cart_orders" :restaurantFilter="filterToCheck"></router-view>
     </main>
     <Footer />
   </div>
@@ -23,7 +23,11 @@ export default {
   },
   data: function(){
     return {
-      cart_orders: []
+      cart_orders: [],
+      filterToCheck: {
+        word: ''
+      },
+      test: 'ciao'
     };
   },
   methods: {
@@ -88,7 +92,13 @@ export default {
         });
 
       }
+    },
+    getFilter: function(thisFilter){
+      this.filterToCheck = thisFilter;
     }
+  },
+  created: function(){
+    console.log(this.filterToCheck);
   }
 };
 </script>
