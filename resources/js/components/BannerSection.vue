@@ -4,7 +4,7 @@
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
                     <div id="search_div" class="banner_content d-flex flex-column">
-                        <h1 class="mb-4">I piatti che ami, a domicilio.</h1>
+                        <h1 class="mb-4 text-start">I piatti che ami, a domicilio.</h1>
                         <SearchBox :restaurants="restaurants_list" :restaurantFilter="userFilter" />
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <template>
-    <section class="suggestions_section mt_30">
+    <section class="suggestions_section mt_30 py_70">
         <div class="container">
             <div class="row row-cols-1">
                 <div class="col">
