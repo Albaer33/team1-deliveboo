@@ -3170,6 +3170,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Checkout',
@@ -3689,6 +3691,7 @@ __webpack_require__.r(__webpack_exports__);
         if (!orderFound) {
           this.cart_orders.push({
             id: dish.orderToSend.id,
+            idRestaurant: dish.orderToSend.restaurant_id,
             name: dish.orderToSend.nome,
             amount: 1,
             price: dish.orderToSend.prezzo,
@@ -31221,6 +31224,8 @@ var render = function () {
                           _vm._s(order.amount)
                       ),
                     ]),
+                    _vm._v(" "),
+                    _c("h1", [_vm._v(_vm._s(order.idRestaurant))]),
                   ])
                 }),
                 _vm._v(" "),

@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 25);
+            $table->string('restaurant_id');
             $table->string('indirizzo', 50);
             $table->text('dettaglio');
             $table->text('codice_transazione')->nullable();

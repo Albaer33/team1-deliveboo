@@ -21,6 +21,8 @@
 
                     <span>{{ order.name }} Quantità: {{ order.amount }}</span>
 
+                    <h1>{{ order.idRestaurant }}</h1>
+
                 </div>
 
                <h3>Totale: {{ amountShop() }}</h3> 
