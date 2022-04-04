@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Braintree\Gateway;
 use App\Order;
+use App\Restaurant;
 
 class OrderController extends Controller
 {
@@ -19,7 +20,8 @@ class OrderController extends Controller
     {
 
         $user = Auth::user();
-        $orders = Order::all()/* ->where('user_id', '=', $user->id) */;
+        // $restaurant = Restaurant::all();
+        $orders = Order::all()->where('restaurant_id', '=', $user->createdRestaurants) ;
 
         return view('admin.orders.index', compact('user', 'orders'));
     }
