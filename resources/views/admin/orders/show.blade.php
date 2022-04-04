@@ -3,35 +3,38 @@
 @section('content')
     <section>
         <div class="container">
-            <h1>{{$order->nome}}</h1>
+            <div class=" ">
 
-            <div class="indirizzo">Indirizzo: {{$order->indirizzo}}</div>
-
-            <div class="dettaglio">Dettagli: {{$order->dettaglio}}</div>
-
-            <div class="codice_transazione">Codice Transazione: {{$order->codice_transazione}}</div>
-                            
-            <div class="totale">Totale: €{{$order->totale}}</div>
-
-            <div class="email">Email: {{$order->email}}</div>
-
-            <div class="telefono">Telefono: {{$order->telefono}}</div>
-
-            @if ($order->pagato === 1)
-
-                <div class="pagato">Status: Pagato</div>
+                <h1>{{$order->nome}}</h1>
+    
+                <h2 class="indirizzo">Indirizzo: {{$order->indirizzo}}</h2>
+    
+                <h2 class="dettaglio">Dettagli: {{$order->dettaglio}}</h2>
+                <h2>Codice Transazione:</h2>
+                <p class="codice_transazione w-50 h-150 overflow-auto">{{$order->codice_transazione}}</p>
                                 
-            @else
-
-                <div class="non-pagato">Status: Non pagato</div>
-                                
-            @endif
-        
-{{--             <form action="{{route('admin.dishes.destroy',['order'=>$order->id])}}" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger">Cancella</button>
-            </form> --}}
+                <h2 class="totale">Totale: €{{$order->totale}}</h2>
+    
+                <h2 class="email">Email: {{$order->email}}</h2>
+    
+                <h2 class="telefono">Telefono: {{$order->telefono}}</h2>
+    
+                @if ($order->pagato === 1)
+    
+                    <h2 class="pagato">Status: Pagato</h2>
+                                    
+                @else
+    
+                    <h2 class="non-pagato">Status: Non pagato</h2>
+                                    
+                @endif
+            
+    {{--             <form action="{{route('admin.dishes.destroy',['order'=>$order->id])}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger">Cancella</button>
+                </form> --}}
+            </div>
 
         </div>
     </section>

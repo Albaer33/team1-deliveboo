@@ -9,35 +9,46 @@
                 @foreach ($orders as $order)
                     <div class="card">
 
-                        <div class="card-body">
-
-                            <h5 class="card-title">Nome: {{$order->nome}}</h5>
-
-                            <div class="indirizzo">Indirizzo: {{$order->indirizzo}}</div>
-
-                            <div class="dettaglio">Dettagli: {{$order->dettaglio}}</div>
-
-                            <div class="codice_transazione">Codice Transazione: {{$order->codice_transazione}}</div>
+                        
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Nome:</th>
+                                    <th scope="col">Indirizzo:</th>
+                                    <th scope="col">Dettagli:</th>
+                                    <th scope="col">Codice Transazione:</th>
+                                    <th scope="col">Totale: €</th>
+                                    <th scope="col">Email:</th>
+                                    <th scope="col">Telefono:</th>
+                                    <th scope="col">Pagato:</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">{{$order->id}}</th>
+                                    <td>{{$order->nome}}</td>
+                                    <td>{{$order->indirizzo}}</td>
+                                    <td>{{$order->dettaglio}}</td>
+                                    <td>{{Str::substr($order->codice_transazione, 0 , 20)}}...</td>
+                                    <td>{{$order->totale}}</td>
+                                    <td>{{$order->email}}</td>
+                                    <td>{{$order->telefono}}</td>
+                                    @if ($order->pagato === 1)
+                                        <td class="pagato">Si</td>
+                                    @else
+                                        <td class="non-pagato">No</td>
+                                    @endif
+                                    <td><a href="{{route('admin.orders.show',['order' => $order->id])}}" class="btn btn_ms_primary_color">Dettagli</a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
                             
-                            <div class="totale">Totale: €{{$order->totale}}</div>
 
-                            <div class="email">Email: {{$order->email}}</div>
+                            
 
-                            <div class="telefono">Telefono: {{$order->telefono}}</div>
+                            
 
-                            @if ($order->pagato === 1)
-
-                                <div class="pagato">Status: Pagato</div>
-                                
-                            @else
-
-                            <div class="non-pagato">Status: Non pagato</div>
-                                
-                            @endif
-
-                            <a href="{{route('admin.orders.show',['order' => $order->id])}}" class="btn btn_ms_primary_color">Dettagli</a>
-
-                        </div>
+                        
                     </div>
                 @endforeach
             </div>
