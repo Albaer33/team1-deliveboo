@@ -21,9 +21,9 @@ class OrderController extends Controller
 
     public function generate(Request $request,Gateway $gateway){
 
-        /* $token = $gateway->clientToken()->generate(); */
+        $token = $gateway->clientToken()->generate();
 
-        $token = 'sandbox_csryh9w7_jcvymfwrf26rzh7c';
+       /*  $token = 'sandbox_csryh9w7_jcvymfwrf26rzh7c'; */
 
         $data = [
 
@@ -42,7 +42,7 @@ class OrderController extends Controller
         $result = $gateway->transaction()->sale([
 
             'amount' => $prezzoTot,
-            'paymentMethodNonce' => "fake-valid-nonce",
+            'paymentMethodNonce' => $request->token,
             'options' => [
 
                 'submitForSettlement' => true
@@ -85,6 +85,8 @@ class OrderController extends Controller
         $clientAdress = $request->clientAdress;
         $clientDetails = $request->clientDetails;
         $prezzoTot = $request->prezzoTot;
+        $codice_transazione = $request->codice_transazione;
+        $pagato = $request->pagato;
 
         $data = [
 
@@ -94,6 +96,8 @@ class OrderController extends Controller
         'clientAdress' => $clientAdress,
         'clientDetails' => $clientDetails,
         'prezzoTot' => $prezzoTot,
+        'codice_transazione' => $codice_transazione,
+        'pagato' => $pagato
 
         ];
         //     DB::table('orders')->insert(array(
@@ -120,9 +124,12 @@ class OrderController extends Controller
             $new_order->indirizzo = $clientAdress;
             $new_order->dettaglio = $clientDetails;
             $new_order->totale = $prezzoTot;
-            // $new_order->codice_transazione = $order['codice_transazione'];
-            // $new_order->pagato = $order['pagato'];
+            
+            $new_order->codice_transazione = $codice_transazione;
+            $new_order->pagato = $pagato;
+
             $new_order->save();
+            
         return response()->json($data,200);
  
 
