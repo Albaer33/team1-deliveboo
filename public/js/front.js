@@ -2610,6 +2610,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Payment',
@@ -2656,8 +2663,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
       axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig).then(function (response) {
-        console.log(response.data.success);
-
+        /* console.log(response.data.success) */
         if (response.data.success) {
           _this.InviaDatiForm();
         }
@@ -2672,11 +2678,14 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
       axios.post('http://127.0.0.1:8000/api/orders/save', this.formData, axiosConfig).then(function (response) {
-        console.log(response.data);
+        /* console.log(response.data) */
       });
     },
     confermaDati: function confermaDati() {
       this.sendSuccess = true;
+    },
+    pagamentoRiuscito: function pagamentoRiuscito() {
+      this.sendSuccessPost = true;
     },
     onLoad: function onLoad() {
       this.$emit('loading');
@@ -2685,6 +2694,7 @@ __webpack_require__.r(__webpack_exports__);
       var token = payload;
       this.$emit('onSuccess', token);
       this.PagamentoFinaleDelDestino();
+      this.pagamentoRiuscito();
     },
     onError: function onError(error) {
       var message = error.message;
@@ -30393,24 +30403,32 @@ var render = function () {
           },
           [
             _c("div", [
-              _c(
-                "button",
-                [
-                  _c("v-braintree", {
-                    attrs: {
-                      authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
-                      locale: "it_IT",
-                      btnText: "Paga",
-                    },
-                    on: {
-                      success: _vm.onSuccess,
-                      error: _vm.onError,
-                      load: _vm.onLoad,
-                    },
-                  }),
-                ],
-                1
-              ),
+              _vm.sendSuccessPost === false
+                ? _c(
+                    "div",
+                    [
+                      _c("v-braintree", {
+                        attrs: {
+                          authorization: "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                          locale: "it_IT",
+                          btnText: "Paga",
+                        },
+                        on: {
+                          success: _vm.onSuccess,
+                          error: _vm.onError,
+                          load: _vm.onLoad,
+                        },
+                      }),
+                    ],
+                    1
+                  )
+                : _c("div", [
+                    _c("h2", [_vm._v("Grazie per aver acquistato")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "/" } }, [
+                      _vm._v("Torna alla Home"),
+                    ]),
+                  ]),
             ]),
           ]
         )
@@ -31192,7 +31210,7 @@ var render = function () {
                 staticClass: "container col-sm-12 col-md-12 col-lg-6 col-xl-4",
               },
               [
-                _c("h2", [_vm._v("Stai comprando:")]),
+                _c("h2", [_vm._v("Dettaglio acquisto:")]),
                 _vm._v(" "),
                 _vm._l(_vm.orders, function (order) {
                   return _c("div", { key: order.id }, [

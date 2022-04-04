@@ -8,9 +8,10 @@
         <div v-if="this.sendSuccess" class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
             <div>
 
-                <button >
+                <div v-if="sendSuccessPost === false">
 
-                    <v-braintree 
+                    <v-braintree
+                    
                         authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
                         locale="it_IT" 
                         btnText="Paga"
@@ -26,7 +27,13 @@
 
                     </v-braintree>
 
-                </button>
+                </div>
+                <div v-else>
+
+                    <h2>Grazie per aver acquistato</h2>
+                    <a href="/">Torna alla Home</a>
+
+                </div>
 
             </div>
 
@@ -138,7 +145,7 @@ export default {
             axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig)
             .then((response) => {
 
-                console.log(response.data.success)
+                /* console.log(response.data.success) */
 
                 if(response.data.success){
 
@@ -164,7 +171,7 @@ export default {
             axios.post('http://127.0.0.1:8000/api/orders/save', this.formData, axiosConfig)
             .then((response) => {
 
-                console.log(response.data)
+                /* console.log(response.data) */
                     
             });
 
@@ -174,6 +181,11 @@ export default {
         confermaDati: function(){
 
             this.sendSuccess = true;
+
+        },
+        pagamentoRiuscito: function(){
+
+            this.sendSuccessPost = true;
 
         },
         onLoad: function(){
@@ -189,6 +201,8 @@ export default {
             this.$emit('onSuccess', token)
 
             this.PagamentoFinaleDelDestino()
+
+            this.pagamentoRiuscito()
 
         },
         onError: function (error) {

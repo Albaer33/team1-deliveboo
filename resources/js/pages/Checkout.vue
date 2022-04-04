@@ -15,7 +15,7 @@
 
             <div class="container col-sm-12 col-md-12 col-lg-6 col-xl-4">
 
-                <h2>Stai comprando:</h2>
+                <h2>Dettaglio acquisto:</h2>
 
                 <div v-for="order in orders" :key="order.id" class="">
 
