@@ -3,12 +3,13 @@
 @section('content')
     <section>
         <h1 class="title-c">Storico Ordini</h1>
-
+        {{-- {{dd($orders)}} --}}
         <div class="container">
             <table class="table">
                 <thead class="table-primary table table-striped">
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Nome:</th>
                         <th scope="col">Indirizzo:</th>
                         <th scope="col">Dettagli:</th>
@@ -23,6 +24,7 @@
                             @foreach ($orders as $order)
                                 <tr>
                                     <th scope="row">{{$order->id}}</th>
+                                    <td>{{$order->updated_at->format('d-m-Y')}}</td>
                                     <td>{{$order->nome}}</td>
                                     <td>{{$order->indirizzo}}</td>
                                     <td>{{$order->dettaglio}}</td>
