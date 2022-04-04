@@ -60,6 +60,7 @@ export default {
 
           this.cart_orders.push({
             id: dish.orderToSend.id,
+            idRestaurant: dish.orderToSend.restaurant_id,
             name: dish.orderToSend.nome,
             amount: 1,
             price: dish.orderToSend.prezzo,

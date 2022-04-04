@@ -6,11 +6,12 @@
 
     <!-- authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c"  -->
         <div v-if="this.sendSuccess" class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
-            <div v-if="!this.sendSuccessPost">
+            <div>
 
-                <button  @click="PagamentoFinaleDelDestino()">
+                <div v-if="sendSuccessPost === false">
 
-                    <v-braintree 
+                    <v-braintree
+                    
                         authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
                         locale="it_IT" 
                         btnText="Paga"
@@ -20,38 +21,22 @@
                         
                     >
 
-    <!--                 <template v-slot:button="slotProps">
+<!--                     <template v-slot:button="slotProps">
                         <v-btn @click="slotProps.submit" color="success"></v-btn>
                     </template> -->
 
                     </v-braintree>
 
-                </button>
+                </div>
+                <div v-else>
+
+                    <h2>Grazie per aver acquistato</h2>
+                    <a href="/">Torna alla Home</a>
+
+                </div>
 
             </div>
-            <div v-else>
 
-                <button  @click="PagamentoFinaleDelDestino(), InviaDatiForm()">
-
-                    <v-braintree 
-                        authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c" 
-                        locale="it_IT" 
-                        btnText="Paga"
-                        @success="onSuccess" 
-                        @error="onError" 
-                        @load="onLoad"
-                        
-                    >
-
-    <!--                 <template v-slot:button="slotProps">
-                        <v-btn @click="slotProps.submit" color="success"></v-btn>
-                    </template> -->
-
-                    </v-braintree>
-
-                </button>
-
-            </div>
         </div>
         
         <div>
@@ -109,6 +94,7 @@ export default {
     },
     data: function(){
         return {
+            clock: null,
             sendSuccess: false,
             sendSuccessPost: false,
             error: '',
@@ -126,7 +112,7 @@ export default {
             },
             price : {
             
-                token : "sandbox_csryh9w7_jcvymfwrf26rzh7c",
+                token : "fake-valid-nonce",
                 prezzoTot: this.amountShop(),
                 
             }
@@ -159,7 +145,14 @@ export default {
             axios.post('http://127.0.0.1:8000/api/orders/make/payment', this.price, axiosConfig)
             .then((response) => {
 
-                return this.sendSuccessPost = true;
+                /* console.log(response.data.success) */
+
+                if(response.data.success){
+
+                    this.InviaDatiForm();
+
+                }
+
 
             });
 
@@ -178,7 +171,7 @@ export default {
             axios.post('http://127.0.0.1:8000/api/orders/save', this.formData, axiosConfig)
             .then((response) => {
 
-                console.log(response.data)
+                /* console.log(response.data) */
                     
             });
 
@@ -188,6 +181,11 @@ export default {
         confermaDati: function(){
 
             this.sendSuccess = true;
+
+        },
+        pagamentoRiuscito: function(){
+
+            this.sendSuccessPost = true;
 
         },
         onLoad: function(){
@@ -201,6 +199,10 @@ export default {
             let token = payload;
             
             this.$emit('onSuccess', token)
+
+            this.PagamentoFinaleDelDestino()
+
+            this.pagamentoRiuscito()
 
         },
         onError: function (error) {
@@ -220,10 +222,10 @@ export default {
 
             axios.get('http://127.0.0.1:8000/api/orders/generate')
             .then((response) => {
-                
-                return this.formData.codice_transazione = response.data.token;
 
-            });   
+                this.formData.codice_transazione = response.data.token;
+
+            });
 
         } 
 
@@ -233,8 +235,8 @@ export default {
 /*         this.onSuccess();
         this.onError();
         this.onLoad(); */
-        this.getToken();
         this.amountShop();
+        this.getToken();
 
     }    
 }
