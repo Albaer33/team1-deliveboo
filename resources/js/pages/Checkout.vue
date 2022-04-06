@@ -25,7 +25,7 @@
 
                 </div>
 
-               <h3>Totale: {{ amountShop() }}</h3> 
+               <h3>Totale: {{ amountShop() }}€</h3> 
 
             </div>
 

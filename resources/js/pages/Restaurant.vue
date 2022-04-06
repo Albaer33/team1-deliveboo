@@ -37,7 +37,7 @@
                             <h5 class="card-title">{{ dish['nome'] }}</h5>
                             <p class="card-text">{{ dish['descrizione'] }}</p>
                             <p class="card-text">{{ dish['ingredienti'] }}</p>
-                            <div>{{ dish['prezzo'] }}</div>
+                            <div>{{ dish['prezzo'] }}€</div>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                         </div>
                         

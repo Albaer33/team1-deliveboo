@@ -48,7 +48,7 @@
                         </div>
                         <div class="col">
                             <div class="info_wrapper w-100 h-100 d-flex justify-content-center align-items-center">
-                                <h5>{{order.priceTot}}</h5>
+                                <h5>{{order.priceTot}}€</h5>
                             </div>
                         </div>
                         <div class="col">
