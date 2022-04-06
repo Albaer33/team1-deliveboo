@@ -45,14 +45,14 @@
         </nav>
         <div class="container-fluid">
             <div class="row height_ms">
-                <nav class="col-sm-1 col-md-2 d-none d-md-block sidebar py-4 dashboard_ms">
+                <nav class="col-2 col-sm-2 col-md-3 sidebar py-4 dashboard_ms">
                     <div class="sidebar-sticky">
                         
                         <ul class="nav flex-column">
                             <li class="nav-item dashboard">
                                 <a class="nav-link d-flex align-items-center active btn-ms" href="{{ route('admin.home') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path fill="#00CCBC" d="M16.869,0l-1.123,10.578L13.832,1.66L7.793,2.918l1.896,8.918L1,13.66l1.546,7.112L17.845,24l3.498-7.751L23,0.638L16.869,0z M11.5,15.5c-0.552,0-1-0.448-1-1c0-0.552,0.448-1,1-1s1,0.448,1,1C12.5,15.052,12.052,15.5,11.5,15.5z M15.5,17.5c-0.552,0-1-0.448-1-1c0-0.552,0.448-1,1-1s1,0.448,1,1C16.5,17.052,16.052,17.5,15.5,17.5z"/></svg>
-                                    Deliveboo
+                                    <span class="d-none d-md-block">Deliveboo</span>
                                 </a>
                             </li>
                             
@@ -61,7 +61,7 @@
                                 <li class="nav-item dashboard">
                                     <a class="nav-link d-flex align-items-center active btn-ms" href="{{ route('admin.restaurants.create') }}">
                                         <i class="fas fa-plus"></i>
-                                        Aggiungi il tuo ristorante
+                                        <span class="d-none d-md-block">Aggiungi il tuo ristorante</span>
                                     </a>
                                 </li>
     
@@ -70,28 +70,28 @@
                                 <li class="nav-item dashboard">
                                     <a class="d-flex align-items-center nav-link active btn-ms" href="{{ route('admin.restaurants.index') }}">
                                         <i class="fas fa-utensils"></i>
-                                        Dettagli ristorante
+                                        <span class="d-none d-md-block">Dettagli ristorante</span>
                                     </a>
                                 </li>
     
                                 <li class="nav-item dashboard">
                                     <a class="nav-link d-flex align-items-center active btn-ms" href="{{ route('admin.dishes.create') }}">
                                         <i class="fas fa-hamburger"></i>
-                                        Aggiungi un piatto
+                                        <span class="d-none d-md-block">Aggiungi un piatto</span>
                                     </a>
                                 </li>
                                 
                                 <li class="nav-item dashboard">
                                     <a class="nav-link d-flex align-items-center active btn-ms" href="{{ route('admin.dishes.index') }}">
                                         <i class="far fa-eye"></i>
-                                        Visualizza tutti i piatti
+                                        <span class="d-none d-md-block">Visualizza tutti i piatti</span>
                                     </a>
                                 </li>
     
                                 <li class="nav-item dashboard">
                                     <a class="nav-link d-flex align-items-center active btn-ms" href="{{ route('admin.orders.index') }}">
                                         <i class="fas fa-money-bill"></i>
-                                        Storico ordini
+                                        <span class="d-none d-md-block">Storico ordini</span>
                                     </a>
                                 </li>
                                 
@@ -102,7 +102,7 @@
                     </div>
                 </nav>
     
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 py-4 overflow_ms height_ms">
+                <main role="main" class="col-10 col-sm-10 col-md-9  px-4 py-4 overflow_ms height_ms">
                     @yield('content')
                 </main>
             </div>
