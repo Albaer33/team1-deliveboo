@@ -1,10 +1,7 @@
 <template>
 
     <div class="container row justify-content-center">
-
-        <!-- <div id="dropin" /> -->
-
-    <!-- authorization="sandbox_csryh9w7_jcvymfwrf26rzh7c"  -->
+        
         <div v-if="this.sendSuccess" class="form_container col-sm-12 col-md-12 col-lg-6 col-xl-4 p-2">
             <div>
 
@@ -21,10 +18,6 @@
                         @load="onLoad"
                         
                     >
-
-<!--                     <template v-slot:button="slotProps">
-                        <v-btn @click="slotProps.submit" color="success"></v-btn>
-                    </template> -->
 
                     </v-braintree>
 

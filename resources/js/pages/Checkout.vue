@@ -3,15 +3,7 @@
 
         <h1 >CARRELLO</h1>
 
-        <div v-if="orders.length > 0" class="container row justify-content-center">
-
-                <!-- Step one: add an empty container to your page -->
-
-
-<!--             {{token}} -->
-
-            <!-- {{form}} -->
-           
+        <div v-if="orders.length > 0" class="container row justify-content-center">           
 
             <div class="container col-sm-12 col-md-12 col-lg-6 col-xl-4">
 
@@ -30,33 +22,6 @@
             </div>
 
             <Payment ref="paymentRef" @loading="handleLoading" @onSuccess="paymentOnSuccess" @onError="paymentOnError" :ordini="orders"/>
-
-<!--             <button
-            
-                v-if="!disableBuyButton"
-                class="w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white"
-                @click.prevent="beforeBuy"
-
-            >
-
-                Procedi con l'acquisto
-
-            </button>
-            <button
-            
-                v-else
-                class="w-full text-center px-4 py-3 bg-green-500 rounded-md shadow-md text-white"
-
-
-            >
-
-                {{
-
-                    loadingPayment ? 'Loading...' : 'Procedi con l\'acquisto'
-
-                }}
-
-        </button> -->
 
         </div>
         <div v-else class="d-flex justify-content-center">
@@ -101,11 +66,6 @@ export default {
 
         }
     },
-    async mounted() {
-
-        
-
-    },
     props: {
 
         orders: Array
@@ -119,11 +79,15 @@ export default {
 
             this.orders.forEach(element => {
 
-                price += parseFloat(element['priceTot']);
+                
+
+                partialPrice = parseFloat(element['priceTot']);
+
+                price += partialPrice;
 
             });
 
-            return price;
+            return price.toFixed(2);
 
         },
         handleLoading: function(){
@@ -137,19 +101,9 @@ export default {
             this.buy()
 
         },
-        paymentOnError(error){
-
-
-
-        },
         beforeBuy: function(){
 
             this.$refs.paymentRef.$refs.paymentBtnRef.click()
-
-        },
-        buy: function(){
-
-
 
         },
              
@@ -158,7 +112,6 @@ export default {
     created: function(){
         window.scrollTo(0, 0);
         this.loadingPayment = false;
-        /* this.handleLoading(); */
     }
 
 }

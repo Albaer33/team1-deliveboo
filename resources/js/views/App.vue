@@ -55,7 +55,7 @@ export default {
 
             order.priceTot = parseFloat(order.priceTot)
 
-            order.price= parseFloat(order.price)
+            order.price = parseFloat(order.price)
 
             order.priceTot += order.price
 
